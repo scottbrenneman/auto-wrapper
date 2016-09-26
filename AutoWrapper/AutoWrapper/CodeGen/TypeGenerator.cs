@@ -75,15 +75,14 @@ namespace AutoWrapper.CodeGen
 			{
 				var memberProperty = property.ToMemberProperty();
 
-				if (memberProperty.HasGet)
-				{
-					var foo = new CodeThrowExceptionStatement(new CodeObjectCreateExpression(typeof(NotImplementedException)));
-
-					memberProperty.GetStatements.Add(foo);
-				}
+				// TODO: add implementation of body
 
 				generatedType.Members.Add(memberProperty);
 			}
+
+			// TODO: add generation of functions
+			// TODO: add composition of wrapped type
+			// TODO: add implementation of generated functions
 
 			return generatedType;
 		}

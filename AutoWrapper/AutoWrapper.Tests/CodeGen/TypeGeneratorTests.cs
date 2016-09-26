@@ -43,11 +43,11 @@ namespace AutoWrapper.Tests.CodeGen
 		[Fact]
 		public void ShouldUseName_WhenGenerating_GivenName()
 		{
-			Given.Name = "ISomeRenamedType";
+			Given.Name = "SomeRenamedWrappedType";
 
 			When(Generating, Compiling);
 
-			Then.GeneratedType.Name.Should().Be("ISomeRenamedType");
+			Then.GeneratedType.Name.Should().Be("SomeRenamedWrappedType");
 		}
 
 		[Fact]
