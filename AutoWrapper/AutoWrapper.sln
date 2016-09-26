@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoWrapper", "AutoWrapper\AutoWrapper.csproj", "{47AA95AF-1528-45BE-82A2-E08C38CF5E63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoWrapper.Tests", "AutoWrapper.Tests\AutoWrapper.Tests.csproj", "{30A3B2AC-9FB3-472C-A087-443BF1071C49}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47AA95AF-1528-45BE-82A2-E08C38CF5E63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47AA95AF-1528-45BE-82A2-E08C38CF5E63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47AA95AF-1528-45BE-82A2-E08C38CF5E63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47AA95AF-1528-45BE-82A2-E08C38CF5E63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30A3B2AC-9FB3-472C-A087-443BF1071C49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30A3B2AC-9FB3-472C-A087-443BF1071C49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30A3B2AC-9FB3-472C-A087-443BF1071C49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30A3B2AC-9FB3-472C-A087-443BF1071C49}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
