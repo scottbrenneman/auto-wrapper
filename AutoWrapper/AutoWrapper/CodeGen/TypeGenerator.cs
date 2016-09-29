@@ -55,6 +55,13 @@ namespace AutoWrapper.CodeGen
 				TypeAttributes = _typeAttributes
 			};
 
+			generatedType.Members.Add(new CodeMemberField(_type, "_wrapped") { Attributes = MemberAttributes.Private });
+
+			var constructor = new CodeConstructor() { Attributes = MemberAttributes.Public };
+			constructor.Parameters.Add(new CodeParameterDeclarationExpression(_type, "wrapped"));
+			constructor.Statements.Add(new CodeAssignStatement(new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "_wrapped"), new CodeArgumentReferenceExpression("wrapped")));
+			generatedType.Members.Add(constructor);
+
 			var methods = _type
 				.GetMethods(BindingFlags.Public | BindingFlags.Instance)
 				.Where(m => m.IsSpecialName == false)
@@ -63,6 +70,8 @@ namespace AutoWrapper.CodeGen
 			foreach (var method in methods)
 			{
 				var memberMethod = method.ToMemberMethod();
+
+				// TODO: add implementation of generated functions
 
 				generatedType.Members.Add(memberMethod);
 			}
@@ -80,10 +89,6 @@ namespace AutoWrapper.CodeGen
 				generatedType.Members.Add(memberProperty);
 			}
 
-			// TODO: add generation of functions
-			// TODO: add composition of wrapped type
-			// TODO: add implementation of generated functions
-
 			return generatedType;
 		}
 
@@ -96,9 +101,10 @@ namespace AutoWrapper.CodeGen
 			using (var provider = CodeDomProvider.CreateProvider("CSharp"))
 			using (var writer = new StringWriter())
 			{
-				var options = new CodeGeneratorOptions();
+				var options = new CodeGeneratorOptions { BracingStyle = "C" };
 
 				provider.GenerateCodeFromType(contract, writer, options);
+				writer.WriteLine();
 				provider.GenerateCodeFromType(generatedType, writer, options);
 
 				return writer.ToString();

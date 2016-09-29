@@ -7,6 +7,7 @@ using Randal.Core.Testing.XUnit;
 using System;
 using System.CodeDom.Compiler;
 using System.Linq;
+using System.Reflection;
 using Xunit;
 
 namespace AutoWrapper.Tests.CodeGen
@@ -103,6 +104,18 @@ namespace AutoWrapper.Tests.CodeGen
 			Then.GeneratedType.Should().NotHaveMethod("GetHashCode", new Type[0]);
 		}
 
+		[Fact]
+		public void ShouldComposeWrappedType_WhenGenerating()
+		{
+			When(Generating, Compiling);
+
+			Then.WrappedField.Should().NotBeNull();
+			Then.WrappedField.FieldType.Should().Be<SomeType>();
+
+			Then.Constructor.Should().NotBeNull();
+			Then.Constructor.GetParameters().First().ParameterType.Should().Be<SomeType>();
+		}
+
 		private void Generating()
 		{
 			var options = Then.Target.WrapperFor<SomeType>();
@@ -138,6 +151,8 @@ namespace AutoWrapper.Tests.CodeGen
 			{
 				Then.Contract = Then.CompilerResults.CompiledAssembly.Types().FirstOrDefault(t => t.IsInterface);
 				Then.GeneratedType = Then.CompilerResults.CompiledAssembly.Types().First(t => t.IsClass);
+				Then.WrappedField = Then.GeneratedType.GetField("_wrapped", BindingFlags.NonPublic | BindingFlags.Instance);
+				Then.Constructor = Then.GeneratedType.GetConstructor(new[] { typeof(SomeType) });
 			}
 		}
 
@@ -153,6 +168,8 @@ namespace AutoWrapper.Tests.CodeGen
 			public CompilerResults CompilerResults;
 			public Type Contract;
 			public Type GeneratedType;
+			public FieldInfo WrappedField;
+			public ConstructorInfo Constructor;
 		}
 
 		private class SomeType
