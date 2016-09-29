@@ -55,12 +55,7 @@ namespace AutoWrapper.CodeGen
 				TypeAttributes = _typeAttributes
 			};
 
-			generatedType.Members.Add(new CodeMemberField(_type, "_wrapped") { Attributes = MemberAttributes.Private });
-
-			var constructor = new CodeConstructor() { Attributes = MemberAttributes.Public };
-			constructor.Parameters.Add(new CodeParameterDeclarationExpression(_type, "wrapped"));
-			constructor.Statements.Add(new CodeAssignStatement(new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "_wrapped"), new CodeArgumentReferenceExpression("wrapped")));
-			generatedType.Members.Add(constructor);
+			generatedType.Members.AddRange(CompositionMembersFor(_type));
 
 			var methods = _type
 				.GetMethods(BindingFlags.Public | BindingFlags.Instance)
@@ -109,6 +104,27 @@ namespace AutoWrapper.CodeGen
 
 				return writer.ToString();
 			}
+		}
+
+		private static CodeTypeMember[] CompositionMembersFor(Type type)
+		{
+			var members = new CodeTypeMember[2];
+
+			members[0] = new CodeMemberField(type, "_wrapped") { Attributes = MemberAttributes.Private };
+
+			var constructor = new CodeConstructor() { Attributes = MemberAttributes.Public };
+
+			constructor.Parameters.Add(new CodeParameterDeclarationExpression(type, "wrapped"));
+
+			constructor.Statements.Add(
+				new CodeAssignStatement(
+					new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "_wrapped"),
+					new CodeArgumentReferenceExpression("wrapped"))
+			);
+
+			members[1] = constructor;
+
+			return members;
 		}
 
 		ITypeGeneratorOptions ITypeGeneratorOptions.AsPublic()
