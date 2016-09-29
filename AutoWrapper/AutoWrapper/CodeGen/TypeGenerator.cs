@@ -26,16 +26,16 @@ namespace AutoWrapper.CodeGen
 
 		public ITypeGeneratorOptions WrapperFor<TType>()
 		{
-            return WrapperFor(typeof(TType));
+			return WrapperFor(typeof(TType));
 		}
 
-        public ITypeGeneratorOptions WrapperFor(Type type)
-        {
+		public ITypeGeneratorOptions WrapperFor(Type type)
+		{
 			_type = type;
-            _contractGenerator.ContractFor(type);
+			_contractGenerator.ContractFor(type);
 
-            return this;
-        }
+			return this;
+		}
 
 		public static ITypeGeneratorOptions CreateWrapperFor<TType>()
 		{
@@ -59,6 +59,8 @@ namespace AutoWrapper.CodeGen
 				TypeAttributes = _typeAttributes
 			};
 
+			generatedType.Members.AddRange(CompositionMembersFor(_type));
+
 			var methods = _type
 				.GetMethods(BindingFlags.Public | BindingFlags.Instance)
 				.Where(m => m.IsSpecialName == false)
@@ -67,6 +69,8 @@ namespace AutoWrapper.CodeGen
 			foreach (var method in methods)
 			{
 				var memberMethod = method.ToMemberMethod();
+
+				// TODO: add implementation of generated functions
 
 				generatedType.Members.Add(memberMethod);
 			}
@@ -84,10 +88,6 @@ namespace AutoWrapper.CodeGen
 				generatedType.Members.Add(memberProperty);
 			}
 
-			// TODO: add generation of functions
-			// TODO: add composition of wrapped type
-			// TODO: add implementation of generated functions
-
 			return generatedType;
 		}
 
@@ -100,13 +100,35 @@ namespace AutoWrapper.CodeGen
 			using (var provider = CodeDomProvider.CreateProvider("CSharp"))
 			using (var writer = new StringWriter())
 			{
-				var options = new CodeGeneratorOptions();
+				var options = new CodeGeneratorOptions { BracingStyle = "C" };
 
 				provider.GenerateCodeFromType(contract, writer, options);
+				writer.WriteLine();
 				provider.GenerateCodeFromType(generatedType, writer, options);
 
 				return writer.ToString();
 			}
+		}
+
+		private static CodeTypeMember[] CompositionMembersFor(Type type)
+		{
+			var members = new CodeTypeMember[2];
+
+			members[0] = new CodeMemberField(type, "_wrapped") { Attributes = MemberAttributes.Private };
+
+			var constructor = new CodeConstructor() { Attributes = MemberAttributes.Public };
+
+			constructor.Parameters.Add(new CodeParameterDeclarationExpression(type, "wrapped"));
+
+			constructor.Statements.Add(
+				new CodeAssignStatement(
+					new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "_wrapped"),
+					new CodeArgumentReferenceExpression("wrapped"))
+			);
+
+			members[1] = constructor;
+
+			return members;
 		}
 
 		ITypeGeneratorOptions ITypeGeneratorOptions.AsPublic()
