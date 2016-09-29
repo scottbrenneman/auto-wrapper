@@ -26,12 +26,16 @@ namespace AutoWrapper.CodeGen
 
 		public ITypeGeneratorOptions WrapperFor<TType>()
 		{
-			_type = typeof(TType);
-
-			_contractGenerator.ContractFor<TType>();
-
-			return this;
+            return WrapperFor(typeof(TType));
 		}
+
+        public ITypeGeneratorOptions WrapperFor(Type type)
+        {
+			_type = type;
+            _contractGenerator.ContractFor(type);
+
+            return this;
+        }
 
 		public static ITypeGeneratorOptions CreateWrapperFor<TType>()
 		{
