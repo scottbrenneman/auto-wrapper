@@ -79,7 +79,25 @@ namespace AutoWrapper.CodeGen
 			{
 				var memberProperty = property.ToMemberProperty();
 
-				// TODO: add implementation of body
+				if (memberProperty.HasGet)
+				{
+					memberProperty.GetStatements.Add(
+						new CodeMethodReturnStatement(
+							new CodePropertyReferenceExpression(
+								new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "_wrapped"),
+								memberProperty.Name))
+					);
+				}
+
+				if (memberProperty.HasSet)
+				{
+					memberProperty.SetStatements.Add(
+						new CodeAssignStatement(
+							new CodePropertyReferenceExpression(
+								new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "_wrapped"), memberProperty.Name),
+							new CodePropertySetValueReferenceExpression())
+					);
+				}
 
 				generatedType.Members.Add(memberProperty);
 			}
