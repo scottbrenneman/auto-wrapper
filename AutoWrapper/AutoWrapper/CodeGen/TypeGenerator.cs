@@ -15,7 +15,7 @@ namespace AutoWrapper.CodeGen
 		private TypeAttributes _typeAttributes = TypeAttributes.Class;
 		private string _name;
 		private ITypeNamingStrategy _namingStrategy;
-		private List<Type> _excludedTypes = new List<Type>();
+		private readonly List<Type> _excludedTypes = new List<Type>();
 
 		private readonly IContractGenerator _contractGenerator;
 
@@ -26,9 +26,13 @@ namespace AutoWrapper.CodeGen
 
 		public ITypeGeneratorOptions WrapperFor<TType>()
 		{
-			_type = typeof(TType);
+			return WrapperFor(typeof(TType));
+		}
 
-			_contractGenerator.ContractFor<TType>();
+		public ITypeGeneratorOptions WrapperFor(Type type)
+		{
+			_type = type;
+			_contractGenerator.ContractFor(type);
 
 			return this;
 		}

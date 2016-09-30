@@ -19,12 +19,17 @@ namespace AutoWrapper.CodeGen
 
 		public IContractGeneratorOptions ContractFor<TType>()
         {
-			_type = typeof(TType);
-
-			return this;
+            return ContractFor(typeof(TType));
         }
 
-		public static IContractGeneratorOptions CreateContractFor<TType>()
+        public IContractGeneratorOptions ContractFor(Type type)
+        {
+            _type = type;
+
+            return this;
+        }
+
+        public static IContractGeneratorOptions CreateContractFor<TType>()
 		{
 			return new ContractGenerator().ContractFor<TType>();
 		}
