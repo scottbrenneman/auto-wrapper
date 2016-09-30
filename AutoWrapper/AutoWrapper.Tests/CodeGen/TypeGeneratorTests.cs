@@ -94,14 +94,11 @@ namespace AutoWrapper.Tests.CodeGen
 		[Fact]
 		public void ShouldExcludeMembers_WhenGenerating_GivenExcludingMembersFrom()
 		{
-			Given.Exclude = typeof(object);
+			Given.Exclude = typeof(SomeTypeBase);
 
 			When(Generating, Compiling);
 
-			Then.GeneratedType.Should().NotHaveMethod("ToString", new Type[0]);
-			Then.GeneratedType.Should().NotHaveMethod("Equals", new[] { typeof(object) });
-			Then.GeneratedType.Should().NotHaveMethod("GetType", new Type[0]);
-			Then.GeneratedType.Should().NotHaveMethod("GetHashCode", new Type[0]);
+			Then.GeneratedType.Should().NotHaveMethod("InheritedFunction", new Type[0]);
 		}
 
 		[Fact]
@@ -138,7 +135,14 @@ namespace AutoWrapper.Tests.CodeGen
 		private void Compiling()
 		{
 			var provider = new CSharpCodeProvider();
-			var parameters = new CompilerParameters
+
+			var referencedAssemblies =
+				AppDomain.CurrentDomain.GetAssemblies()
+					.Where(a => !a.IsDynamic)
+					.Select(a => a.Location)
+					.ToArray();
+
+			var parameters = new CompilerParameters(referencedAssemblies)
 			{
 				GenerateInMemory = true
 			};
@@ -172,13 +176,18 @@ namespace AutoWrapper.Tests.CodeGen
 			public ConstructorInfo Constructor;
 		}
 
-		private class SomeType
+		public sealed class SomeType : SomeTypeBase
 		{
 			public void Function1() { throw new NotImplementedException(); }
 			public int Function2(int x) { throw new NotImplementedException(); }
 			public string Function3(int x, string s) { throw new NotImplementedException(); }
 			public bool Property1 { get; set; }
 			public object Property2 { get; }
+		}
+
+		public class SomeTypeBase
+		{
+			public void InheritedFunction() { throw new NotImplementedException(); }
 		}
 	}
 }

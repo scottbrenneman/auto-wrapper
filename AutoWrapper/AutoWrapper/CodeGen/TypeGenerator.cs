@@ -66,7 +66,19 @@ namespace AutoWrapper.CodeGen
 			{
 				var memberMethod = method.ToMemberMethod();
 
-				// TODO: add implementation of generated functions
+				var invokeExpression =
+					new CodeMethodInvokeExpression(
+						new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "_wrapped"),
+						memberMethod.Name,
+						memberMethod.Parameters.OfType<CodeParameterDeclarationExpression>()
+							.Select(p => new CodeVariableReferenceExpression(p.Name))
+							.ToArray()
+					);
+
+				if (memberMethod.ReturnType.BaseType == "System.Void")
+					memberMethod.Statements.Add(invokeExpression);
+				else
+					memberMethod.Statements.Add(new CodeMethodReturnStatement(invokeExpression));
 
 				generatedType.Members.Add(memberMethod);
 			}
