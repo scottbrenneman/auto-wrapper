@@ -1,17 +1,15 @@
-﻿using AutoWrapper.CodeGen.Contracts;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using AutoWrapper.CodeGen.Contracts;
 
 namespace AutoWrapper.CodeGen
 {
-	public sealed class WrapperTypeContainer
+	public sealed class WrapperTypeContainer : IWrapperTypeContainer
 	{
-		public WrapperTypeContainer(ITypeNamingStrategy typeNamingStrategy, IContractNamingStrategy contractNamingStrategy)
+		public WrapperTypeContainer()
 		{
-			_typeNamingStrategy = typeNamingStrategy;
-			_contractNamingStrategy = contractNamingStrategy;
 			_typesToWrap = new List<Type>();
 		}
 
@@ -42,18 +40,6 @@ namespace AutoWrapper.CodeGen
 			Register(typeof(TType));
 		}
 
-		public string ResolveTypeName(Type type)
-		{
-			return _typeNamingStrategy.TypeNameFor(type);
-		}
-
-		public string ResolveContractName(Type type)
-		{
-			return _contractNamingStrategy.ContractNameFor(type);
-		}
-
-		private readonly ITypeNamingStrategy _typeNamingStrategy;
-		private readonly IContractNamingStrategy _contractNamingStrategy;
 		private readonly List<Type> _typesToWrap;
 	}
 }
