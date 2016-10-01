@@ -9,8 +9,116 @@ using System.Reflection;
 
 namespace AutoWrapper.CodeGen
 {
-	public class TypeGenerator : ITypeGeneratorOptions
+	public class TypeGeneratorOptions : ITypeGeneratorOptions
 	{
+		private ITypeNamingStrategy _typeNamingStrategy;
+		private IContractNamingStrategy _contractNamingStrategy;
+		private readonly IWrapperTypeContainer _wrapperTypeContainer;
+		private TypeAttributes _typeAttributes;
+
+		public TypeGeneratorOptions() : this(null, null, null)
+		{
+		}
+
+		public TypeGeneratorOptions(IWrapperTypeContainer wrapperTypeContainer, ITypeNamingStrategy typeNamingStrategy, IContractNamingStrategy contractNamingStrategy)
+		{
+			_typeNamingStrategy = typeNamingStrategy ?? new DefaultTypeNamingStrategy();
+			_contractNamingStrategy = contractNamingStrategy ?? new DefaultContractNamingStrategy();
+			_wrapperTypeContainer = wrapperTypeContainer ?? new WrapperTypeContainer();
+		}
+
+		public ITypeGeneratorOptions WrapperFor<TType>()
+			where TType : class
+		{
+			_wrapperTypeContainer.Register<TType>();
+			return this;
+		}
+
+		public ITypeGeneratorOptions WrapperFor(Type type)
+		{
+			_wrapperTypeContainer.Register(type);
+			return this;
+		}
+
+		public ITypeGeneratorOptions AsPublic()
+		{
+			_typeAttributes |= TypeAttributes.Public;
+
+			return this;
+		}
+
+		public ITypeGeneratorOptions AsPartial()
+		{
+			throw new NotImplementedException();
+		}
+
+		public ITypeGeneratorOptions WithName(string name)
+		{
+			throw new NotImplementedException();
+		}
+
+		public ITypeGeneratorOptions WithNamingStrategy(ITypeNamingStrategy strategy)
+		{
+			if (strategy == null)
+				throw new ArgumentNullException(nameof(strategy));
+
+			_typeNamingStrategy = strategy;
+
+			return this;
+		}
+
+		public ITypeGeneratorOptions WithNamingStrategy(IContractNamingStrategy strategy)
+		{
+			if(strategy == null)
+				throw new ArgumentNullException(nameof(strategy));
+
+			_contractNamingStrategy = strategy;
+
+			return this;
+		}
+
+		public ITypeGeneratorOptions WithNoContract()
+		{
+			throw new NotImplementedException();
+		}
+
+		public ITypeGeneratorOptions WithNoImplementation()
+		{
+			throw new NotImplementedException();
+		}
+
+		public ITypeGeneratorOptions ExcludingMembersFrom<T>()
+		{
+			return ((ITypeGeneratorOptions)this).ExcludingMembersFrom(typeof(T));
+		}
+
+		public ITypeGeneratorOptions ExcludingMembersFrom(Type type)
+		{
+			_wrapperTypeContainer.Unregister(type);
+
+			return this;
+		}
+
+		public string GetTypeNameFor(Type type)
+		{
+			return _typeNamingStrategy.TypeNameFor(type);
+		}
+
+		public string GetContractNameFor(Type type)
+		{
+			return _contractNamingStrategy.ContractNameFor(type);
+		}
+
+		public static ITypeGeneratorOptions CreateOptionsFor<TType>()
+			where TType : class
+		{
+			return new TypeGeneratorOptions().WrapperFor<TType>();
+		}
+	}
+
+	public class TypeGenerator : IGenerator
+	{
+		private readonly ITypeGeneratorOptions _typeGeneratorOptions;
 		private Type _type;
 		private TypeAttributes _typeAttributes = TypeAttributes.Class;
 		private string _name;
@@ -19,26 +127,16 @@ namespace AutoWrapper.CodeGen
 
 		private readonly IContractGenerator _contractGenerator;
 
-		public TypeGenerator(IContractGenerator contractGenerator = null)
+		public TypeGenerator(ITypeGeneratorOptions typeGeneratorOptions, IContractGenerator contractGenerator = null)
 		{
+			_typeGeneratorOptions = typeGeneratorOptions;
 			_contractGenerator = contractGenerator ?? new ContractGenerator();
 		}
-
-		public ITypeGeneratorOptions WrapperFor<TType>()
-		{
-			return WrapperFor(typeof(TType));
-		}
-
-		public ITypeGeneratorOptions WrapperFor(Type type)
-		{
-			_type = type;
-			_contractGenerator.ContractFor(type);
-
-			return this;
-		}
-
+		
 		public static ITypeGeneratorOptions CreateWrapperFor<TType>()
 		{
+			var options = new TypeGeneratorOptions();
+			options.WrapperFor<TType>();
 			return new TypeGenerator().WrapperFor<TType>();
 		}
 
@@ -161,55 +259,6 @@ namespace AutoWrapper.CodeGen
 			return members;
 		}
 
-		ITypeGeneratorOptions ITypeGeneratorOptions.AsPublic()
-		{
-			_typeAttributes |= TypeAttributes.Public;
-
-			return this;
-		}
-
-		ITypeGeneratorOptions ITypeGeneratorOptions.AsPartial()
-		{
-			throw new NotImplementedException();
-		}
-
-		ITypeGeneratorOptions ITypeGeneratorOptions.WithName(string name)
-		{
-			_name = name;
-
-			return this;
-		}
-
-		ITypeGeneratorOptions ITypeGeneratorOptions.WithNamingStrategy(ITypeNamingStrategy strategy)
-		{
-			_name = null;
-
-			_namingStrategy = strategy;
-
-			return this;
-		}
-
-		ITypeGeneratorOptions ITypeGeneratorOptions.WithNoContract()
-		{
-			throw new NotImplementedException();
-		}
-
-		ITypeGeneratorOptions ITypeGeneratorOptions.WithNoImplementation()
-		{
-			throw new NotImplementedException();
-		}
-
-		ITypeGeneratorOptions ITypeGeneratorOptions.ExcludingMembersFrom<T>()
-		{
-			return ((ITypeGeneratorOptions)this).ExcludingMembersFrom(typeof(T));
-		}
-
-		ITypeGeneratorOptions ITypeGeneratorOptions.ExcludingMembersFrom(Type type)
-		{
-			if (!_excludedTypes.Contains(type))
-				_excludedTypes.Add(type);
-
-			return this;
-		}
+		
 	}
 }

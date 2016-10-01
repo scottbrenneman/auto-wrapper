@@ -40,6 +40,17 @@ namespace AutoWrapper.CodeGen
 			Register(typeof(TType));
 		}
 
+		public void Unregister<TType>()
+			where TType : class
+		{
+			_typesToWrap.Remove(typeof(TType));
+		}
+
+		public void Unregister(Type type)
+		{
+			_typesToWrap.Remove(type);
+		}
+
 		private readonly List<Type> _typesToWrap;
 	}
 }

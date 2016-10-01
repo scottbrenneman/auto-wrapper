@@ -8,6 +8,7 @@ namespace AutoWrapper.CodeGen.Contracts
 		ITypeGeneratorOptions AsPartial();
 		ITypeGeneratorOptions WithName(string name);
 		ITypeGeneratorOptions WithNamingStrategy(ITypeNamingStrategy strategy);
+		ITypeGeneratorOptions WithNamingStrategy(IContractNamingStrategy strategy);
 		ITypeGeneratorOptions WithNoContract();
 		ITypeGeneratorOptions WithNoImplementation();
 		ITypeGeneratorOptions ExcludingMembersFrom<T>();
