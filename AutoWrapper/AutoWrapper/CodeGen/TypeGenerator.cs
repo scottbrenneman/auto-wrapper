@@ -2,6 +2,7 @@
 using System;
 using System.CodeDom;
 using System.CodeDom.Compiler;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Reflection;
 
 namespace AutoWrapper.CodeGen
 {
-	public class TypeGeneratorOptions : ITypeGeneratorOptions
+	public class TypeGeneratorOptions : ITypeGeneratorOptions, IEnumerable<Type>
 	{
 		private ITypeNamingStrategy _typeNamingStrategy;
 		private IContractNamingStrategy _contractNamingStrategy;
@@ -114,16 +115,21 @@ namespace AutoWrapper.CodeGen
 		{
 			return new TypeGeneratorOptions().WrapperFor<TType>();
 		}
+
+		public IEnumerator<Type> GetEnumerator()
+		{
+			return _wrapperTypeContainer.GetEnumerator();
+		}
+
+		IEnumerator IEnumerable.GetEnumerator()
+		{
+			return _wrapperTypeContainer.GetEnumerator();
+		}
 	}
 
 	public class TypeGenerator : IGenerator
 	{
 		private readonly ITypeGeneratorOptions _typeGeneratorOptions;
-		private Type _type;
-		private TypeAttributes _typeAttributes = TypeAttributes.Class;
-		private string _name;
-		private ITypeNamingStrategy _namingStrategy;
-		private readonly List<Type> _excludedTypes = new List<Type>();
 
 		private readonly IContractGenerator _contractGenerator;
 
@@ -133,14 +139,14 @@ namespace AutoWrapper.CodeGen
 			_contractGenerator = contractGenerator ?? new ContractGenerator();
 		}
 		
-		public static ITypeGeneratorOptions CreateWrapperFor<TType>()
-		{
-			var options = new TypeGeneratorOptions();
-			options.WrapperFor<TType>();
-			return new TypeGenerator().WrapperFor<TType>();
-		}
+		//public static ITypeGeneratorOptions CreateWrapperFor<TType>()
+		//{
+		//	var options = new TypeGeneratorOptions();
+		//	options.WrapperFor<TType>();
+		//	return new TypeGenerator().WrapperFor<TType>();
+		//}
 
-		CodeTypeDeclaration IGenerator.GenerateDeclaration()
+		public CodeTypeDeclaration GenerateDeclaration()
 		{
 			var name = _name;
 
@@ -219,7 +225,7 @@ namespace AutoWrapper.CodeGen
 			return generatedType;
 		}
 
-		string IGenerator.GenerateCode()
+		public string GenerateCode()
 		{
 			var contract = ((IGenerator)_contractGenerator).GenerateDeclaration();
 
@@ -258,7 +264,5 @@ namespace AutoWrapper.CodeGen
 
 			return members;
 		}
-
-		
 	}
 }

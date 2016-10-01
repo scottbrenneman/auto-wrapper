@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -49,6 +50,16 @@ namespace AutoWrapper.CodeGen
 		public void Unregister(Type type)
 		{
 			_typesToWrap.Remove(type);
+		}
+
+		public IEnumerator<Type> GetEnumerator()
+		{
+			return _typesToWrap.GetEnumerator();
+		}
+
+		IEnumerator IEnumerable.GetEnumerator()
+		{
+			return _typesToWrap.GetEnumerator();
 		}
 
 		private readonly List<Type> _typesToWrap;

@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace AutoWrapper.CodeGen.Contracts
 {
-	public interface IWrapperTypeContainer
+	public interface IWrapperTypeContainer : IEnumerable<Type>
 	{
 		IEnumerable<Type> RegisteredTypes { get; }
 

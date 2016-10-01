@@ -2,7 +2,7 @@
 
 namespace AutoWrapper.CodeGen.Contracts
 {
-	public interface ITypeGeneratorOptions : IGenerator
+	public interface ITypeGeneratorOptions
 	{
 		ITypeGeneratorOptions AsPublic();
 		ITypeGeneratorOptions AsPartial();
