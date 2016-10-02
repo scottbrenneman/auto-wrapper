@@ -12,17 +12,14 @@ namespace AutoWrapper.CodeGen
 	{
 		private readonly ITypeGeneratorOptions _typeGeneratorOptions;
 
-		private readonly IContractGenerator _contractGenerator;
-
-		public TypeGenerator(ITypeGeneratorOptions typeGeneratorOptions, IContractGenerator contractGenerator = null)
+		public TypeGenerator(ITypeGeneratorOptions typeGeneratorOptions)
 		{
 			_typeGeneratorOptions = typeGeneratorOptions;
-			_contractGenerator = contractGenerator ?? new ContractGenerator();
 		}
 		
 		public CodeTypeDeclaration GenerateDeclaration(Type type)
 		{
-			var name = _typeGeneratorOptions.GetTypeNameFor(type);
+			var name = _typeGeneratorOptions.GetNameFor(type);
 
 			var generatedType = new CodeTypeDeclaration(name)
 			{
@@ -102,8 +99,6 @@ namespace AutoWrapper.CodeGen
 
 		public string GenerateCode(Type type)
 		{
-			var contract = ((IGenerator)_contractGenerator).GenerateDeclaration(type);
-
 			var generatedType = ((IGenerator)this).GenerateDeclaration(type);
 
 			using (var provider = CodeDomProvider.CreateProvider("CSharp"))
@@ -111,8 +106,6 @@ namespace AutoWrapper.CodeGen
 			{
 				var options = new CodeGeneratorOptions { BracingStyle = "C" };
 
-				provider.GenerateCodeFromType(contract, writer, options);
-				writer.WriteLine();
 				provider.GenerateCodeFromType(generatedType, writer, options);
 
 				return writer.ToString();

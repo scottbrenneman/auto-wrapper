@@ -1,13 +1,19 @@
 ﻿using System;
+using System.Reflection;
 
 namespace AutoWrapper.CodeGen.Contracts
 {
-    public interface IContractGeneratorOptions : IGenerator
+	public interface IContractGeneratorOptionsBuilder
+	{
+		IContractGeneratorOptionsBuilder WithPublic();
+		IContractGeneratorOptionsBuilder WithNamingStrategy(IContractNamingStrategy strategy);
+		IContractGeneratorOptions AsOptions { get; }
+	}
+
+	public interface IContractGeneratorOptions
     {
-		IContractGeneratorOptions AsPublic();
-		IContractGeneratorOptions WithName(string name);
-		IContractGeneratorOptions WithNamingStrategy(IContractNamingStrategy strategy);
-		IContractGeneratorOptions ExcludingMembersFrom<T>();
-		IContractGeneratorOptions ExcludingMembersFrom(Type type);
+		string GetNameFor(Type type);
+	    TypeAttributes GetTypeAttributes();
+		IContractGeneratorOptionsBuilder AsBuilder { get; }
 	}
 }

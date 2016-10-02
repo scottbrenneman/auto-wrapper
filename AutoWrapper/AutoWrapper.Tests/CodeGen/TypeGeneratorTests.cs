@@ -115,7 +115,7 @@ namespace AutoWrapper.Tests.CodeGen
 
 		private void Generating()
 		{
-			Then.Code = Then.Target.GenerateCode(Then.Options.First());
+			Then.Code = Then.Target.GenerateCode(typeof(SomeType));
 		}
 
 		private void Compiling()
@@ -148,10 +148,10 @@ namespace AutoWrapper.Tests.CodeGen
 
 		protected override void Creating()
 		{
-			var options = new TypeGeneratorOptions().WrapperFor<SomeType>();
+			var options = new TypeGeneratorOptions();
 
 			if (GivensDefined("AsPublicWasCalled"))
-				options.AsPublic();
+				options.WithPublic();
 
 			if (GivensDefined("Name"))
 				options.WithName(Given.Name);

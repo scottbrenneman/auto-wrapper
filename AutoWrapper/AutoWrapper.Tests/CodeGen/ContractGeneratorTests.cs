@@ -97,21 +97,7 @@ namespace AutoWrapper.Tests.CodeGen
 
 		private void Generating()
 		{
-			var options = Then.Target.ContractFor<SomeType>();
-
-			if (GivensDefined("AsPublicWasCalled"))
-				options.AsPublic();
-
-			if (GivensDefined("Name"))
-				options.WithName(Given.Name);
-
-			if (GivensDefined("CustomNamingStrategy"))
-				options.WithNamingStrategy(Given.CustomNamingStrategy);
-
-			if (GivensDefined("Exclude"))
-				options.ExcludingMembersFrom(Given.Exclude);
-
-			Then.Code = options.GenerateCode(typeof(SomeType));
+			Then.Code = Then.Target.GenerateCode(typeof(SomeType));
 		}
 
 		private void Compiling()
@@ -132,6 +118,15 @@ namespace AutoWrapper.Tests.CodeGen
 
 		protected override void Creating()
 		{
+			var options = new ContractGeneratorOptions();
+
+			if (GivensDefined("AsPublicWasCalled"))
+				options.WithPublic();
+			
+			if (GivensDefined("CustomNamingStrategy"))
+				options.WithNamingStrategy(Given.CustomNamingStrategy);
+
+			Then.Options = options;
 			Then.Target = new ContractGenerator();
 		}
 
@@ -141,6 +136,7 @@ namespace AutoWrapper.Tests.CodeGen
 			public string Code;
 			public CompilerResults CompilerResults;
 			public Type Contract;
+			public ContractGeneratorOptions Options;
 		}
 
 		private class SomeType

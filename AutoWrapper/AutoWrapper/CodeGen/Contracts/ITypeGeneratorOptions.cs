@@ -6,22 +6,17 @@ namespace AutoWrapper.CodeGen.Contracts
 {
 	public interface ITypeGeneratorOptionsBuilder
 	{
-		ITypeGeneratorOptionsBuilder AsPublic();
-		ITypeGeneratorOptionsBuilder AsPartial();
-		ITypeGeneratorOptionsBuilder WithName(string name);
+		ITypeGeneratorOptionsBuilder WithPublic();
+		ITypeGeneratorOptionsBuilder WithPartial();
 		ITypeGeneratorOptionsBuilder WithNamingStrategy(ITypeNamingStrategy strategy);
-		ITypeGeneratorOptionsBuilder WithNamingStrategy(IContractNamingStrategy strategy);
 		ITypeGeneratorOptionsBuilder WithNoContract();
 		ITypeGeneratorOptionsBuilder WithNoImplementation();
-		ITypeGeneratorOptionsBuilder ExcludingMembersFrom<T>();
-		ITypeGeneratorOptionsBuilder ExcludingMembersFrom(Type type);
 		ITypeGeneratorOptions AsOptions { get; }
 	}
 
-	public interface ITypeGeneratorOptions : IEnumerable<Type>
+	public interface ITypeGeneratorOptions
 	{
-		string GetTypeNameFor(Type type);
-		string GetContractNameFor(Type type);
+		string GetNameFor(Type type);
 		TypeAttributes GetTypeAttributes();
 		ITypeGeneratorOptionsBuilder AsBuilder { get; }
 	}
