@@ -34,7 +34,7 @@ namespace AutoWrapper.CodeGen
 			return new ContractGenerator().ContractFor<TType>();
 		}
 
-		CodeTypeDeclaration IGenerator.GenerateDeclaration()
+		CodeTypeDeclaration IGenerator.GenerateDeclaration(Type type)
 		{
 			if (_type == null) throw new InvalidOperationException("Specify type by calling ContractFor<TType> prior to generation.");
 
@@ -71,9 +71,9 @@ namespace AutoWrapper.CodeGen
 			return contract;
 		}
 
-		string IGenerator.GenerateCode()
+		string IGenerator.GenerateCode(Type type)
 		{
-			var contract = ((IGenerator)this).GenerateDeclaration();
+			var contract = ((IGenerator)this).GenerateDeclaration(type);
 
 			using (var provider = CodeDomProvider.CreateProvider("CSharp"))
 			using (var writer = new StringWriter())

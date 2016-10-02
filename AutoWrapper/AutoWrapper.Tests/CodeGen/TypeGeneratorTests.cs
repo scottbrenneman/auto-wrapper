@@ -115,21 +115,7 @@ namespace AutoWrapper.Tests.CodeGen
 
 		private void Generating()
 		{
-			var options = Then.Target.WrapperFor<SomeType>();
-
-			if (GivensDefined("AsPublicWasCalled"))
-				options.AsPublic();
-
-			if (GivensDefined("Name"))
-				options.WithName(Given.Name);
-
-			if (GivensDefined("CustomNamingStrategy"))
-				options.WithNamingStrategy(Given.CustomNamingStrategy);
-
-			if (GivensDefined("Exclude"))
-				options.ExcludingMembersFrom(Given.Exclude);
-
-			Then.Code = options.GenerateCode();
+			Then.Code = Then.Target.GenerateCode(Then.Options.First());
 		}
 
 		private void Compiling()
@@ -162,7 +148,19 @@ namespace AutoWrapper.Tests.CodeGen
 
 		protected override void Creating()
 		{
-			Then.Target = new TypeGenerator();
+			var options = new TypeGeneratorOptions().WrapperFor<SomeType>();
+
+			if (GivensDefined("AsPublicWasCalled"))
+				options.AsPublic();
+
+			if (GivensDefined("Name"))
+				options.WithName(Given.Name);
+
+			if (GivensDefined("CustomNamingStrategy"))
+				options.WithNamingStrategy(Given.CustomNamingStrategy);
+
+			Then.Options = options.AsOptions;
+			Then.Target = new TypeGenerator(Then.Options);
 		}
 
 		public class Thens
@@ -174,6 +172,7 @@ namespace AutoWrapper.Tests.CodeGen
 			public Type GeneratedType;
 			public FieldInfo WrappedField;
 			public ConstructorInfo Constructor;
+			public ITypeGeneratorOptions Options;
 		}
 
 		public sealed class SomeType : SomeTypeBase

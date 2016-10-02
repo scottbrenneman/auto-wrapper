@@ -111,7 +111,7 @@ namespace AutoWrapper.Tests.CodeGen
 			if (GivensDefined("Exclude"))
 				options.ExcludingMembersFrom(Given.Exclude);
 
-			Then.Code = options.GenerateCode();
+			Then.Code = options.GenerateCode(typeof(SomeType));
 		}
 
 		private void Compiling()
