@@ -28,9 +28,8 @@ namespace AutoWrapper.CodeGen
 
 			var contract = new CodeTypeDeclaration(name)
 			{
-				IsInterface = true,
-				// Setting attributes is changing interface to class???
-				//TypeAttributes = _contractGeneratorOptions.GetTypeAttributes()
+				TypeAttributes = _contractGeneratorOptions.GetTypeAttributes(),
+				IsInterface = true
 			};
 
 			var methods = type
@@ -52,7 +51,7 @@ namespace AutoWrapper.CodeGen
 				{
 					Name = "Wrapped",
 					HasGet = true,
-					Type = new CodeTypeReference(type.Name),
+					Type = new CodeTypeReference(type),
 					Attributes = MemberAttributes.Public | MemberAttributes.Final
 				}
 			);

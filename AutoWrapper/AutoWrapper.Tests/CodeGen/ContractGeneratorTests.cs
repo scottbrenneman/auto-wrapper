@@ -11,7 +11,7 @@ using Xunit;
 
 namespace AutoWrapper.Tests.CodeGen
 {
-	public class ContractGeneratorTests : XUnitTestBase<ContractGeneratorTests.Thens>
+	public sealed class ContractGeneratorTests : XUnitTestBase<ContractGeneratorTests.Thens>
     {
 		[Fact]
 		public void ShouldCompile_WhenGenerating()
@@ -103,7 +103,14 @@ namespace AutoWrapper.Tests.CodeGen
 		private void Compiling()
 		{
 			var provider = new CSharpCodeProvider();
-			var parameters = new CompilerParameters
+
+			var referencedAssemblies =
+				AppDomain.CurrentDomain.GetAssemblies()
+					.Where(a => !a.IsDynamic)
+					.Select(a => a.Location)
+					.ToArray();
+
+			var parameters = new CompilerParameters(referencedAssemblies)
 			{
 				GenerateInMemory = true
 			};
@@ -130,7 +137,7 @@ namespace AutoWrapper.Tests.CodeGen
 			Then.Target = new ContractGenerator();
 		}
 
-		public class Thens
+		public sealed class Thens
 		{
 			public ContractGenerator Target;
 			public string Code;
@@ -139,7 +146,7 @@ namespace AutoWrapper.Tests.CodeGen
 			public ContractGeneratorOptions Options;
 		}
 
-		private class SomeType
+		public sealed class SomeType
 		{
 			public void Function1() { throw new NotImplementedException(); }
 			public int Function2(int x) { throw new NotImplementedException(); }
