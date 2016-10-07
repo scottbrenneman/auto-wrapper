@@ -3,7 +3,7 @@ using AutoWrapper.CodeGen.Contracts;
 using FluentAssertions;
 using Microsoft.CSharp;
 using Moq;
-using Randal.Core.Testing.XUnit;
+using GwtUnit.XUnit;
 using System;
 using System.CodeDom.Compiler;
 using System.Linq;

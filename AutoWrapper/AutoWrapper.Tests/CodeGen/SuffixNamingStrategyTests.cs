@@ -5,14 +5,14 @@ using Xunit;
 
 namespace AutoWrapper.Tests.CodeGen
 {
-	public sealed class DefaultNamingStrategyTests : XUnitTestBase<DefaultNamingStrategyTests.Thens>
+	public sealed class SuffixNamingStrategyTests : XUnitTestBase<SuffixNamingStrategyTests.Thens>
 	{
 		[Fact]
 		public void ShouldPrefixTypeWithI_WhenGeneratingContractName()
 		{
 			When(GeneratingContractName);
 
-			Then.ContractName.Should().Be("ISomeType");
+			Then.ContractName.Should().Be("ISomeTypeWrapper");
 		}
 
 		[Fact]
@@ -20,7 +20,7 @@ namespace AutoWrapper.Tests.CodeGen
 		{
 			When(GeneratingTypeName);
 
-			Then.TypeName.Should().Be("WrappedSomeType");
+			Then.TypeName.Should().Be("SomeTypeWrapper");
 		}
 
 		private void GeneratingContractName()
@@ -35,12 +35,12 @@ namespace AutoWrapper.Tests.CodeGen
 
 		protected override void Creating()
 		{
-			Then.Target = new DefaultNamingStrategy();
+			Then.Target = new SuffixNamingStrategy();
 		}
 
 		public sealed class Thens
 		{
-			public DefaultNamingStrategy Target;
+			public SuffixNamingStrategy Target;
 			public string ContractName;
 			public string TypeName;
 		}

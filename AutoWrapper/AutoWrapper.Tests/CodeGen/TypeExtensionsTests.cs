@@ -1,6 +1,6 @@
 ﻿using AutoWrapper.CodeGen;
 using FluentAssertions;
-using Randal.Core.Testing.XUnit;
+using GwtUnit.XUnit;
 using System;
 using System.CodeDom;
 using System.Reflection;
