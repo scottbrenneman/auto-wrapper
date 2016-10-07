@@ -34,14 +34,15 @@ namespace AutoWrapper.CodeGen
 
 			var methods = type
 				.GetMethods(BindingFlags.Public | BindingFlags.Instance)
-				.Where(m => m.IsSpecialName == false);
-				
+				.Where(m => m.IsSpecialName == false)
+				.Where(m => _contractGeneratorOptions.IsExcluded(m) == false);
 
 			foreach (var method in methods)
 				contract.Members.Add(method.ToMemberMethod());
 
 			var properties = type
-				.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+				.GetProperties(BindingFlags.Public | BindingFlags.Instance)
+				.Where(p => _contractGeneratorOptions.IsExcluded(p) == false);
 
 			foreach (var property in properties)
 				contract.Members.Add(property.ToMemberProperty());

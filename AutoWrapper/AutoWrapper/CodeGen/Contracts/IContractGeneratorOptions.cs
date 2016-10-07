@@ -7,13 +7,15 @@ namespace AutoWrapper.CodeGen.Contracts
 	{
 		IContractGeneratorOptionsBuilder WithPublic();
 		IContractGeneratorOptionsBuilder WithNamingStrategy(IContractNamingStrategy strategy);
+		IContractGeneratorOptionsBuilder ExcludeMembersFrom(Type type);
 		IContractGeneratorOptions AsOptions { get; }
 	}
 
 	public interface IContractGeneratorOptions
     {
+		TypeAttributes GetTypeAttributes();
 		string GetNameFor(Type type);
-	    TypeAttributes GetTypeAttributes();
+		bool IsExcluded(MemberInfo member);
 		IContractGeneratorOptionsBuilder AsBuilder { get; }
 	}
 }
