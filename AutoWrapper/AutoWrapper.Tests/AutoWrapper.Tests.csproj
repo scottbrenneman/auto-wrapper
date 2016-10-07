@@ -98,8 +98,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="CodeGen\DefaultContractNamingStrategyTests.cs" />
-    <Compile Include="CodeGen\DefaultTypeNamingStrategyTests.cs" />
+    <Compile Include="CodeGen\DefaultNamingStrategyTests.cs" />
     <Compile Include="CodeGen\TypeExtensionsTests.cs" />
     <Compile Include="CodeGen\TypeGeneratorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

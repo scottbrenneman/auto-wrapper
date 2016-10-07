@@ -13,7 +13,7 @@ namespace AutoWrapper.CodeGen
 
 		public ContractGeneratorOptions(IContractNamingStrategy contractNamingStrategy)
 		{
-			_contractNamingStrategy = contractNamingStrategy ?? new DefaultContractNamingStrategy();
+			_contractNamingStrategy = contractNamingStrategy ?? new DefaultNamingStrategy();
 		}
 
 		public IContractGeneratorOptions AsOptions => this;

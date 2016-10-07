@@ -134,7 +134,7 @@ namespace AutoWrapper.Tests.CodeGen
 				options.WithNamingStrategy(Given.CustomNamingStrategy);
 
 			Then.Options = options;
-			Then.Target = new ContractGenerator();
+			Then.Target = new ContractGenerator(options);
 		}
 
 		public sealed class Thens

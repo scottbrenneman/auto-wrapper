@@ -16,7 +16,7 @@ namespace AutoWrapper.CodeGen
 
 		public TypeGeneratorOptions(ITypeNamingStrategy typeNamingStrategy)
 		{
-			_typeNamingStrategy = typeNamingStrategy ?? new DefaultTypeNamingStrategy();
+			_typeNamingStrategy = typeNamingStrategy ?? new DefaultNamingStrategy();
 			
 		}
 
