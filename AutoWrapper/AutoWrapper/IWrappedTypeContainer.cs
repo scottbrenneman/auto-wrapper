@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace AutoWrapper.CodeGen.Contracts
+namespace AutoWrapper
 {
-	public interface IWrapperTypeContainer : IEnumerable<Type>
+	public interface IWrappedTypeContainer : IEnumerable<Type>
 	{
 		IEnumerable<Type> RegisteredTypes { get; }
 

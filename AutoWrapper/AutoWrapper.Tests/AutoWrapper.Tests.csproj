@@ -96,7 +96,7 @@
     <Compile Include="CodeGen\DefaultNamingStrategyTests.cs" />
     <Compile Include="CodeGen\TypeExtensionsTests.cs" />
     <Compile Include="CodeGen\TypeGeneratorTests.cs" />
-    <Compile Include="CodeGen\WrapperTypeContainerTests.cs" />
+    <Compile Include="WrappedTypeContainerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CodeGen\ContractGeneratorTests.cs" />
     <Compile Include="TestClasses\SomeType.cs" />

@@ -19,7 +19,7 @@ namespace AutoWrapper
 
 		public static string TypesInAssembly(Assembly assembly)
 		{
-			var container = new WrapperTypeContainer();
+			var container = new WrappedTypeContainer();
 			container.RegisterAssembly(assembly);
 
 			var typeOptions = new TypeGeneratorOptions()

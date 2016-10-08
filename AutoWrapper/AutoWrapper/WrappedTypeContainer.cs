@@ -3,13 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using AutoWrapper.CodeGen.Contracts;
 
-namespace AutoWrapper.CodeGen
+namespace AutoWrapper
 {
-	public sealed class WrapperTypeContainer : IWrapperTypeContainer
+	public sealed class WrappedTypeContainer : IWrappedTypeContainer
 	{
-		public WrapperTypeContainer()
+		public WrappedTypeContainer()
 		{
 			_typesToWrap = new List<Type>();
 		}

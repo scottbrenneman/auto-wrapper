@@ -1,13 +1,12 @@
 ﻿using System.DirectoryServices;
-using AutoWrapper.CodeGen;
 using AutoWrapper.Tests.TestClasses;
 using FluentAssertions;
 using GwtUnit.XUnit;
 using Xunit;
 
-namespace AutoWrapper.Tests.CodeGen
+namespace AutoWrapper.Tests
 {
-	public sealed class WrapperTypeContainerTests : XUnitTestBase<WrapperTypeContainerTests.Thens>
+	public sealed class WrappedTypeContainerTests : XUnitTestBase<WrappedTypeContainerTests.Thens>
 	{
 		[Fact]
 		public void ShouldHaveRegisteredType_WhenRegistering_GivenSomeType()
@@ -50,7 +49,7 @@ namespace AutoWrapper.Tests.CodeGen
 
 		protected override void Creating()
 		{
-			Then.Target = new WrapperTypeContainer();
+			Then.Target = new WrappedTypeContainer();
 		}
 
 		private void Registering()
@@ -82,7 +81,7 @@ namespace AutoWrapper.Tests.CodeGen
 
 		public sealed class Thens
 		{
-			public WrapperTypeContainer Target;
+			public WrappedTypeContainer Target;
 		}
 	}
 }
