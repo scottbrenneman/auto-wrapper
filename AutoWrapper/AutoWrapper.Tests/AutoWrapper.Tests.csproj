@@ -93,7 +93,6 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="CodeGen\SuffixNamingStrategyTests.cs" />
     <Compile Include="CodeGen\DefaultNamingStrategyTests.cs" />
     <Compile Include="CodeGen\TypeExtensionsTests.cs" />
     <Compile Include="CodeGen\TypeGeneratorTests.cs" />

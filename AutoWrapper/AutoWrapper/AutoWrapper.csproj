@@ -46,7 +46,6 @@
     <Compile Include="CodeGen\Contracts\IWrapperTypeContainer.cs" />
     <Compile Include="CodeGen\TypeGeneratorOptions.cs" />
     <Compile Include="CodeGen\WrapperTypeContainer.cs" />
-    <Compile Include="CodeGen\SuffixNamingStrategy.cs" />
     <Compile Include="CodeGen\DefaultNamingStrategy.cs" />
     <Compile Include="CodeGen\TypeExtensions.cs" />
     <Compile Include="CodeGen\TypeGenerator.cs" />

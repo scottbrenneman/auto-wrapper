@@ -9,19 +9,19 @@ namespace AutoWrapper.Tests.CodeGen
 	public sealed class DefaultNamingStrategyTests : XUnitTestBase<DefaultNamingStrategyTests.Thens>
 	{
 		[Fact]
-		public void ShouldPrefixTypeWithI_WhenGeneratingContractName()
+		public void ShouldSuffixType_WhenGeneratingContractName()
 		{
 			When(GeneratingContractName);
 
-			Then.ContractName.Should().Be("ISomeType");
+			Then.ContractName.Should().Be("ISomeTypeWrapper");
 		}
 
 		[Fact]
-		public void ShouldPrefixTypeWithWrapped_WhenGeneratingTypeName()
+		public void ShouldSuffixType_WhenGeneratingTypeName()
 		{
 			When(GeneratingTypeName);
 
-			Then.TypeName.Should().Be("WrappedSomeType");
+			Then.TypeName.Should().Be("SomeTypeWrapper");
 		}
 
 		private void GeneratingContractName()

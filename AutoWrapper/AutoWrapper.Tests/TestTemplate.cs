@@ -1,14 +1,7 @@
-﻿
-
-
-
-
-
-
-namespace AutoWrapper.Examples.DirectoryServices
+﻿namespace AutoWrapper.Examples.DirectoryServices
 {
 /*
-internal interface IActiveDirectorySecurity {
+internal interface IActiveDirectorySecurityWrapper {
     
     System.Type AccessRightType {
         get;
@@ -107,22 +100,14 @@ internal interface IActiveDirectorySecurity {
     void SetSecurityDescriptorBinaryForm(byte[] binaryForm);
     
     void SetSecurityDescriptorBinaryForm(byte[] binaryForm, System.Security.AccessControl.AccessControlSections includeSections);
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedActiveDirectorySecurity
+public partial class ActiveDirectorySecurityWrapper
 {
     
     private System.DirectoryServices.ActiveDirectorySecurity _wrapped;
     
-    public WrappedActiveDirectorySecurity(System.DirectoryServices.ActiveDirectorySecurity wrapped)
+    public ActiveDirectorySecurityWrapper(System.DirectoryServices.ActiveDirectorySecurity wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -369,7 +354,7 @@ public partial class WrappedActiveDirectorySecurity
     }
 }
 
-internal interface IActiveDirectoryAccessRule {
+internal interface IActiveDirectoryAccessRuleWrapper {
     
     System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights {
         get;
@@ -414,22 +399,14 @@ internal interface IActiveDirectoryAccessRule {
     System.DirectoryServices.ActiveDirectoryAccessRule Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedActiveDirectoryAccessRule
+public partial class ActiveDirectoryAccessRuleWrapper
 {
     
     private System.DirectoryServices.ActiveDirectoryAccessRule _wrapped;
     
-    public WrappedActiveDirectoryAccessRule(System.DirectoryServices.ActiveDirectoryAccessRule wrapped)
+    public ActiveDirectoryAccessRuleWrapper(System.DirectoryServices.ActiveDirectoryAccessRule wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -535,7 +512,7 @@ public partial class WrappedActiveDirectoryAccessRule
     }
 }
 
-internal interface IListChildrenAccessRule {
+internal interface IListChildrenAccessRuleWrapper {
     
     System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights {
         get;
@@ -580,22 +557,14 @@ internal interface IListChildrenAccessRule {
     System.DirectoryServices.ListChildrenAccessRule Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedListChildrenAccessRule
+public partial class ListChildrenAccessRuleWrapper
 {
     
     private System.DirectoryServices.ListChildrenAccessRule _wrapped;
     
-    public WrappedListChildrenAccessRule(System.DirectoryServices.ListChildrenAccessRule wrapped)
+    public ListChildrenAccessRuleWrapper(System.DirectoryServices.ListChildrenAccessRule wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -701,7 +670,7 @@ public partial class WrappedListChildrenAccessRule
     }
 }
 
-internal interface ICreateChildAccessRule {
+internal interface ICreateChildAccessRuleWrapper {
     
     System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights {
         get;
@@ -746,22 +715,14 @@ internal interface ICreateChildAccessRule {
     System.DirectoryServices.CreateChildAccessRule Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedCreateChildAccessRule
+public partial class CreateChildAccessRuleWrapper
 {
     
     private System.DirectoryServices.CreateChildAccessRule _wrapped;
     
-    public WrappedCreateChildAccessRule(System.DirectoryServices.CreateChildAccessRule wrapped)
+    public CreateChildAccessRuleWrapper(System.DirectoryServices.CreateChildAccessRule wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -867,7 +828,7 @@ public partial class WrappedCreateChildAccessRule
     }
 }
 
-internal interface IDeleteChildAccessRule {
+internal interface IDeleteChildAccessRuleWrapper {
     
     System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights {
         get;
@@ -912,22 +873,14 @@ internal interface IDeleteChildAccessRule {
     System.DirectoryServices.DeleteChildAccessRule Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedDeleteChildAccessRule
+public partial class DeleteChildAccessRuleWrapper
 {
     
     private System.DirectoryServices.DeleteChildAccessRule _wrapped;
     
-    public WrappedDeleteChildAccessRule(System.DirectoryServices.DeleteChildAccessRule wrapped)
+    public DeleteChildAccessRuleWrapper(System.DirectoryServices.DeleteChildAccessRule wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -1033,7 +986,7 @@ public partial class WrappedDeleteChildAccessRule
     }
 }
 
-internal interface IPropertyAccessRule {
+internal interface IPropertyAccessRuleWrapper {
     
     System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights {
         get;
@@ -1078,22 +1031,14 @@ internal interface IPropertyAccessRule {
     System.DirectoryServices.PropertyAccessRule Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedPropertyAccessRule
+public partial class PropertyAccessRuleWrapper
 {
     
     private System.DirectoryServices.PropertyAccessRule _wrapped;
     
-    public WrappedPropertyAccessRule(System.DirectoryServices.PropertyAccessRule wrapped)
+    public PropertyAccessRuleWrapper(System.DirectoryServices.PropertyAccessRule wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -1199,7 +1144,7 @@ public partial class WrappedPropertyAccessRule
     }
 }
 
-internal interface IPropertySetAccessRule {
+internal interface IPropertySetAccessRuleWrapper {
     
     System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights {
         get;
@@ -1244,22 +1189,14 @@ internal interface IPropertySetAccessRule {
     System.DirectoryServices.PropertySetAccessRule Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedPropertySetAccessRule
+public partial class PropertySetAccessRuleWrapper
 {
     
     private System.DirectoryServices.PropertySetAccessRule _wrapped;
     
-    public WrappedPropertySetAccessRule(System.DirectoryServices.PropertySetAccessRule wrapped)
+    public PropertySetAccessRuleWrapper(System.DirectoryServices.PropertySetAccessRule wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -1365,7 +1302,7 @@ public partial class WrappedPropertySetAccessRule
     }
 }
 
-internal interface IExtendedRightAccessRule {
+internal interface IExtendedRightAccessRuleWrapper {
     
     System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights {
         get;
@@ -1410,22 +1347,14 @@ internal interface IExtendedRightAccessRule {
     System.DirectoryServices.ExtendedRightAccessRule Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedExtendedRightAccessRule
+public partial class ExtendedRightAccessRuleWrapper
 {
     
     private System.DirectoryServices.ExtendedRightAccessRule _wrapped;
     
-    public WrappedExtendedRightAccessRule(System.DirectoryServices.ExtendedRightAccessRule wrapped)
+    public ExtendedRightAccessRuleWrapper(System.DirectoryServices.ExtendedRightAccessRule wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -1531,7 +1460,7 @@ public partial class WrappedExtendedRightAccessRule
     }
 }
 
-internal interface IDeleteTreeAccessRule {
+internal interface IDeleteTreeAccessRuleWrapper {
     
     System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights {
         get;
@@ -1576,22 +1505,14 @@ internal interface IDeleteTreeAccessRule {
     System.DirectoryServices.DeleteTreeAccessRule Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedDeleteTreeAccessRule
+public partial class DeleteTreeAccessRuleWrapper
 {
     
     private System.DirectoryServices.DeleteTreeAccessRule _wrapped;
     
-    public WrappedDeleteTreeAccessRule(System.DirectoryServices.DeleteTreeAccessRule wrapped)
+    public DeleteTreeAccessRuleWrapper(System.DirectoryServices.DeleteTreeAccessRule wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -1697,7 +1618,7 @@ public partial class WrappedDeleteTreeAccessRule
     }
 }
 
-internal interface IActiveDirectoryAuditRule {
+internal interface IActiveDirectoryAuditRuleWrapper {
     
     System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights {
         get;
@@ -1742,22 +1663,14 @@ internal interface IActiveDirectoryAuditRule {
     System.DirectoryServices.ActiveDirectoryAuditRule Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedActiveDirectoryAuditRule
+public partial class ActiveDirectoryAuditRuleWrapper
 {
     
     private System.DirectoryServices.ActiveDirectoryAuditRule _wrapped;
     
-    public WrappedActiveDirectoryAuditRule(System.DirectoryServices.ActiveDirectoryAuditRule wrapped)
+    public ActiveDirectoryAuditRuleWrapper(System.DirectoryServices.ActiveDirectoryAuditRule wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -1863,7 +1776,7 @@ public partial class WrappedActiveDirectoryAuditRule
     }
 }
 
-internal interface IDSDescriptionAttribute {
+internal interface IDSDescriptionAttributeWrapper {
     
     string Description {
         get;
@@ -1884,18 +1797,14 @@ internal interface IDSDescriptionAttribute {
     bool IsDefaultAttribute();
     
     bool Match(object obj);
-    
-    string ToString();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedDSDescriptionAttribute
+public partial class DSDescriptionAttributeWrapper
 {
     
     private System.DirectoryServices.DSDescriptionAttribute _wrapped;
     
-    public WrappedDSDescriptionAttribute(System.DirectoryServices.DSDescriptionAttribute wrapped)
+    public DSDescriptionAttributeWrapper(System.DirectoryServices.DSDescriptionAttribute wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -1947,7 +1856,7 @@ public partial class WrappedDSDescriptionAttribute
     }
 }
 
-internal interface IDirectoryEntries {
+internal interface IDirectoryEntriesWrapper {
     
     System.DirectoryServices.SchemaNameCollection SchemaFilter {
         get;
@@ -1966,22 +1875,14 @@ internal interface IDirectoryEntries {
     void Remove(System.DirectoryServices.DirectoryEntry entry);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedDirectoryEntries
+public partial class DirectoryEntriesWrapper
 {
     
     private System.DirectoryServices.DirectoryEntries _wrapped;
     
-    public WrappedDirectoryEntries(System.DirectoryServices.DirectoryEntries wrapped)
+    public DirectoryEntriesWrapper(System.DirectoryServices.DirectoryEntries wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -2040,7 +1941,7 @@ public partial class WrappedDirectoryEntries
     }
 }
 
-internal interface IDirectoryEntry {
+internal interface IDirectoryEntryWrapper {
     
     System.DirectoryServices.AuthenticationTypes AuthenticationType {
         get;
@@ -2159,20 +2060,14 @@ internal interface IDirectoryEntry {
     object InitializeLifetimeService();
     
     System.Runtime.Remoting.ObjRef CreateObjRef(System.Type requestedType);
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedDirectoryEntry
+public partial class DirectoryEntryWrapper
 {
     
     private System.DirectoryServices.DirectoryEntry _wrapped;
     
-    public WrappedDirectoryEntry(System.DirectoryServices.DirectoryEntry wrapped)
+    public DirectoryEntryWrapper(System.DirectoryServices.DirectoryEntry wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -2451,7 +2346,7 @@ public partial class WrappedDirectoryEntry
     }
 }
 
-internal interface IDirectoryEntryConfiguration {
+internal interface IDirectoryEntryConfigurationWrapper {
     
     System.DirectoryServices.ReferralChasingOption Referral {
         get;
@@ -2487,22 +2382,14 @@ internal interface IDirectoryEntryConfiguration {
     bool IsMutuallyAuthenticated();
     
     void SetUserNameQueryQuota(string accountName);
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedDirectoryEntryConfiguration
+public partial class DirectoryEntryConfigurationWrapper
 {
     
     private System.DirectoryServices.DirectoryEntryConfiguration _wrapped;
     
-    public WrappedDirectoryEntryConfiguration(System.DirectoryServices.DirectoryEntryConfiguration wrapped)
+    public DirectoryEntryConfigurationWrapper(System.DirectoryServices.DirectoryEntryConfiguration wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -2603,7 +2490,7 @@ public partial class WrappedDirectoryEntryConfiguration
     }
 }
 
-internal interface IDirectorySearcher {
+internal interface IDirectorySearcherWrapper {
     
     bool CacheResults {
         get;
@@ -2735,20 +2622,14 @@ internal interface IDirectorySearcher {
     object InitializeLifetimeService();
     
     System.Runtime.Remoting.ObjRef CreateObjRef(System.Type requestedType);
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedDirectorySearcher
+public partial class DirectorySearcherWrapper
 {
     
     private System.DirectoryServices.DirectorySearcher _wrapped;
     
-    public WrappedDirectorySearcher(System.DirectoryServices.DirectorySearcher wrapped)
+    public DirectorySearcherWrapper(System.DirectoryServices.DirectorySearcher wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -3072,7 +2953,7 @@ public partial class WrappedDirectorySearcher
     }
 }
 
-internal interface IDirectoryServicesPermission {
+internal interface IDirectoryServicesPermissionWrapper {
     
     System.DirectoryServices.DirectoryServicesPermissionEntryCollection PermissionEntries {
         get;
@@ -3109,16 +2990,14 @@ internal interface IDirectoryServicesPermission {
     bool Equals(object obj);
     
     int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedDirectoryServicesPermission
+public partial class DirectoryServicesPermissionWrapper
 {
     
     private System.DirectoryServices.DirectoryServicesPermission _wrapped;
     
-    public WrappedDirectoryServicesPermission(System.DirectoryServices.DirectoryServicesPermission wrapped)
+    public DirectoryServicesPermissionWrapper(System.DirectoryServices.DirectoryServicesPermission wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -3207,7 +3086,7 @@ public partial class WrappedDirectoryServicesPermission
     }
 }
 
-internal interface IDirectoryServicesPermissionAttribute {
+internal interface IDirectoryServicesPermissionAttributeWrapper {
     
     string Path {
         get;
@@ -3246,18 +3125,14 @@ internal interface IDirectoryServicesPermissionAttribute {
     bool Match(object obj);
     
     bool IsDefaultAttribute();
-    
-    string ToString();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedDirectoryServicesPermissionAttribute
+public partial class DirectoryServicesPermissionAttributeWrapper
 {
     
     private System.DirectoryServices.DirectoryServicesPermissionAttribute _wrapped;
     
-    public WrappedDirectoryServicesPermissionAttribute(System.DirectoryServices.DirectoryServicesPermissionAttribute wrapped)
+    public DirectoryServicesPermissionAttributeWrapper(System.DirectoryServices.DirectoryServicesPermissionAttribute wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -3354,7 +3229,7 @@ public partial class WrappedDirectoryServicesPermissionAttribute
     }
 }
 
-internal interface IDirectoryServicesPermissionEntry {
+internal interface IDirectoryServicesPermissionEntryWrapper {
     
     string Path {
         get;
@@ -3367,22 +3242,14 @@ internal interface IDirectoryServicesPermissionEntry {
     System.DirectoryServices.DirectoryServicesPermissionEntry Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedDirectoryServicesPermissionEntry
+public partial class DirectoryServicesPermissionEntryWrapper
 {
     
     private System.DirectoryServices.DirectoryServicesPermissionEntry _wrapped;
     
-    public WrappedDirectoryServicesPermissionEntry(System.DirectoryServices.DirectoryServicesPermissionEntry wrapped)
+    public DirectoryServicesPermissionEntryWrapper(System.DirectoryServices.DirectoryServicesPermissionEntry wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -3424,7 +3291,7 @@ public partial class WrappedDirectoryServicesPermissionEntry
     }
 }
 
-internal interface IDirectoryServicesPermissionEntryCollection {
+internal interface IDirectoryServicesPermissionEntryCollectionWrapper {
     
     System.DirectoryServices.DirectoryServicesPermissionEntry Item {
         get;
@@ -3465,22 +3332,14 @@ internal interface IDirectoryServicesPermissionEntryCollection {
     void RemoveAt(int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedDirectoryServicesPermissionEntryCollection
+public partial class DirectoryServicesPermissionEntryCollectionWrapper
 {
     
     private System.DirectoryServices.DirectoryServicesPermissionEntryCollection _wrapped;
     
-    public WrappedDirectoryServicesPermissionEntryCollection(System.DirectoryServices.DirectoryServicesPermissionEntryCollection wrapped)
+    public DirectoryServicesPermissionEntryCollectionWrapper(System.DirectoryServices.DirectoryServicesPermissionEntryCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -3593,7 +3452,7 @@ public partial class WrappedDirectoryServicesPermissionEntryCollection
     }
 }
 
-internal interface IDirectorySynchronization {
+internal interface IDirectorySynchronizationWrapper {
     
     System.DirectoryServices.DirectorySynchronizationOptions Option {
         get;
@@ -3611,22 +3470,14 @@ internal interface IDirectorySynchronization {
     void ResetDirectorySynchronizationCookie(byte[] cookie);
     
     System.DirectoryServices.DirectorySynchronization Copy();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedDirectorySynchronization
+public partial class DirectorySynchronizationWrapper
 {
     
     private System.DirectoryServices.DirectorySynchronization _wrapped;
     
-    public WrappedDirectorySynchronization(System.DirectoryServices.DirectorySynchronization wrapped)
+    public DirectorySynchronizationWrapper(System.DirectoryServices.DirectorySynchronization wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -3684,7 +3535,7 @@ public partial class WrappedDirectorySynchronization
     }
 }
 
-internal interface IDirectoryVirtualListView {
+internal interface IDirectoryVirtualListViewWrapper {
     
     int BeforeCount {
         get;
@@ -3724,22 +3575,14 @@ internal interface IDirectoryVirtualListView {
     System.DirectoryServices.DirectoryVirtualListView Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedDirectoryVirtualListView
+public partial class DirectoryVirtualListViewWrapper
 {
     
     private System.DirectoryServices.DirectoryVirtualListView _wrapped;
     
-    public WrappedDirectoryVirtualListView(System.DirectoryServices.DirectoryVirtualListView wrapped)
+    public DirectoryVirtualListViewWrapper(System.DirectoryServices.DirectoryVirtualListView wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -3849,29 +3692,21 @@ public partial class WrappedDirectoryVirtualListView
     }
 }
 
-internal interface IDirectoryVirtualListViewContext {
+internal interface IDirectoryVirtualListViewContextWrapper {
     
     System.DirectoryServices.DirectoryVirtualListViewContext Wrapped {
         get;
     }
     
     System.DirectoryServices.DirectoryVirtualListViewContext Copy();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedDirectoryVirtualListViewContext
+public partial class DirectoryVirtualListViewContextWrapper
 {
     
     private System.DirectoryServices.DirectoryVirtualListViewContext _wrapped;
     
-    public WrappedDirectoryVirtualListViewContext(System.DirectoryServices.DirectoryVirtualListViewContext wrapped)
+    public DirectoryVirtualListViewContextWrapper(System.DirectoryServices.DirectoryVirtualListViewContext wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -3902,7 +3737,7 @@ public partial class WrappedDirectoryVirtualListViewContext
     }
 }
 
-internal interface IPropertyCollection {
+internal interface IPropertyCollectionWrapper {
     
     System.DirectoryServices.PropertyValueCollection Item {
         get;
@@ -3929,22 +3764,14 @@ internal interface IPropertyCollection {
     void CopyTo(System.DirectoryServices.PropertyValueCollection[] array, int index);
     
     System.Collections.IDictionaryEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedPropertyCollection
+public partial class PropertyCollectionWrapper
 {
     
     private System.DirectoryServices.PropertyCollection _wrapped;
     
-    public WrappedPropertyCollection(System.DirectoryServices.PropertyCollection wrapped)
+    public PropertyCollectionWrapper(System.DirectoryServices.PropertyCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -4017,7 +3844,7 @@ public partial class WrappedPropertyCollection
     }
 }
 
-internal interface IPropertyValueCollection {
+internal interface IPropertyValueCollectionWrapper {
     
     object Item {
         get;
@@ -4067,22 +3894,14 @@ internal interface IPropertyValueCollection {
     void RemoveAt(int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedPropertyValueCollection
+public partial class PropertyValueCollectionWrapper
 {
     
     private System.DirectoryServices.PropertyValueCollection _wrapped;
     
-    public WrappedPropertyValueCollection(System.DirectoryServices.PropertyValueCollection wrapped)
+    public PropertyValueCollectionWrapper(System.DirectoryServices.PropertyValueCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -4215,7 +4034,7 @@ public partial class WrappedPropertyValueCollection
     }
 }
 
-internal interface IResultPropertyCollection {
+internal interface IResultPropertyCollectionWrapper {
     
     System.DirectoryServices.ResultPropertyValueCollection Item {
         get;
@@ -4246,22 +4065,14 @@ internal interface IResultPropertyCollection {
     void Clear();
     
     System.Collections.IDictionaryEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedResultPropertyCollection
+public partial class ResultPropertyCollectionWrapper
 {
     
     private System.DirectoryServices.ResultPropertyCollection _wrapped;
     
-    public WrappedResultPropertyCollection(System.DirectoryServices.ResultPropertyCollection wrapped)
+    public ResultPropertyCollectionWrapper(System.DirectoryServices.ResultPropertyCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -4344,7 +4155,7 @@ public partial class WrappedResultPropertyCollection
     }
 }
 
-internal interface IResultPropertyValueCollection {
+internal interface IResultPropertyValueCollectionWrapper {
     
     object Item {
         get;
@@ -4365,22 +4176,14 @@ internal interface IResultPropertyValueCollection {
     void CopyTo(object[] values, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedResultPropertyValueCollection
+public partial class ResultPropertyValueCollectionWrapper
 {
     
     private System.DirectoryServices.ResultPropertyValueCollection _wrapped;
     
-    public WrappedResultPropertyValueCollection(System.DirectoryServices.ResultPropertyValueCollection wrapped)
+    public ResultPropertyValueCollectionWrapper(System.DirectoryServices.ResultPropertyValueCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -4442,7 +4245,7 @@ public partial class WrappedResultPropertyValueCollection
     }
 }
 
-internal interface ISchemaNameCollection {
+internal interface ISchemaNameCollectionWrapper {
     
     string Item {
         get;
@@ -4478,22 +4281,14 @@ internal interface ISchemaNameCollection {
     void Remove(string value);
     
     void RemoveAt(int index);
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedSchemaNameCollection
+public partial class SchemaNameCollectionWrapper
 {
     
     private System.DirectoryServices.SchemaNameCollection _wrapped;
     
-    public WrappedSchemaNameCollection(System.DirectoryServices.SchemaNameCollection wrapped)
+    public SchemaNameCollectionWrapper(System.DirectoryServices.SchemaNameCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -4594,7 +4389,7 @@ public partial class WrappedSchemaNameCollection
     }
 }
 
-internal interface ISearchResult {
+internal interface ISearchResultWrapper {
     
     string Path {
         get;
@@ -4609,22 +4404,14 @@ internal interface ISearchResult {
     }
     
     System.DirectoryServices.DirectoryEntry GetDirectoryEntry();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedSearchResult
+public partial class SearchResultWrapper
 {
     
     private System.DirectoryServices.SearchResult _wrapped;
     
-    public WrappedSearchResult(System.DirectoryServices.SearchResult wrapped)
+    public SearchResultWrapper(System.DirectoryServices.SearchResult wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -4671,7 +4458,7 @@ public partial class WrappedSearchResult
     }
 }
 
-internal interface ISearchResultCollection {
+internal interface ISearchResultCollectionWrapper {
     
     System.DirectoryServices.SearchResult Item {
         get;
@@ -4708,22 +4495,14 @@ internal interface ISearchResultCollection {
     object InitializeLifetimeService();
     
     System.Runtime.Remoting.ObjRef CreateObjRef(System.Type requestedType);
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedSearchResultCollection
+public partial class SearchResultCollectionWrapper
 {
     
     private System.DirectoryServices.SearchResultCollection _wrapped;
     
-    public WrappedSearchResultCollection(System.DirectoryServices.SearchResultCollection wrapped)
+    public SearchResultCollectionWrapper(System.DirectoryServices.SearchResultCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -4821,7 +4600,7 @@ public partial class WrappedSearchResultCollection
     }
 }
 
-internal interface ISortOption {
+internal interface ISortOptionWrapper {
     
     string PropertyName {
         get;
@@ -4836,22 +4615,14 @@ internal interface ISortOption {
     System.DirectoryServices.SortOption Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedSortOption
+public partial class SortOptionWrapper
 {
     
     private System.DirectoryServices.SortOption _wrapped;
     
-    public WrappedSortOption(System.DirectoryServices.SortOption wrapped)
+    public SortOptionWrapper(System.DirectoryServices.SortOption wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -4901,7 +4672,7 @@ public partial class WrappedSortOption
     }
 }
 
-internal interface IDirectoryServicesCOMException {
+internal interface IDirectoryServicesCOMExceptionWrapper {
     
     int ExtendedError {
         get;
@@ -4961,20 +4732,14 @@ internal interface IDirectoryServicesCOMException {
     System.Exception GetBaseException();
     
     System.Type GetType();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedDirectoryServicesCOMException
+public partial class DirectoryServicesCOMExceptionWrapper
 {
     
     private System.DirectoryServices.DirectoryServicesCOMException _wrapped;
     
-    public WrappedDirectoryServicesCOMException(System.DirectoryServices.DirectoryServicesCOMException wrapped)
+    public DirectoryServicesCOMExceptionWrapper(System.DirectoryServices.DirectoryServicesCOMException wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -5115,7 +4880,7 @@ public partial class WrappedDirectoryServicesCOMException
     }
 }
 
-internal interface IActiveDirectoryReplicationMetadata {
+internal interface IActiveDirectoryReplicationMetadataWrapper {
     
     System.DirectoryServices.ActiveDirectory.AttributeMetadata Item {
         get;
@@ -5146,22 +4911,14 @@ internal interface IActiveDirectoryReplicationMetadata {
     void Clear();
     
     System.Collections.IDictionaryEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedActiveDirectoryReplicationMetadata
+public partial class ActiveDirectoryReplicationMetadataWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata _wrapped;
     
-    public WrappedActiveDirectoryReplicationMetadata(System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata wrapped)
+    public ActiveDirectoryReplicationMetadataWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -5244,7 +5001,7 @@ public partial class WrappedActiveDirectoryReplicationMetadata
     }
 }
 
-internal interface IActiveDirectorySchedule {
+internal interface IActiveDirectoryScheduleWrapper {
     
     bool[,,] RawSchedule {
         get;
@@ -5262,22 +5019,14 @@ internal interface IActiveDirectorySchedule {
     void SetDailySchedule(System.DirectoryServices.ActiveDirectory.HourOfDay fromHour, System.DirectoryServices.ActiveDirectory.MinuteOfHour fromMinute, System.DirectoryServices.ActiveDirectory.HourOfDay toHour, System.DirectoryServices.ActiveDirectory.MinuteOfHour toMinute);
     
     void ResetSchedule();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedActiveDirectorySchedule
+public partial class ActiveDirectoryScheduleWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule _wrapped;
     
-    public WrappedActiveDirectorySchedule(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule wrapped)
+    public ActiveDirectoryScheduleWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -5335,7 +5084,7 @@ public partial class WrappedActiveDirectorySchedule
     }
 }
 
-internal interface IActiveDirectorySchema {
+internal interface IActiveDirectorySchemaWrapper {
     
     System.DirectoryServices.ActiveDirectory.DirectoryServer SchemaRoleOwner {
         get;
@@ -5376,20 +5125,14 @@ internal interface IActiveDirectorySchema {
     void Dispose();
     
     string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedActiveDirectorySchema
+public partial class ActiveDirectorySchemaWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ActiveDirectorySchema _wrapped;
     
-    public WrappedActiveDirectorySchema(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchema wrapped)
+    public ActiveDirectorySchemaWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchema wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -5496,7 +5239,7 @@ public partial class WrappedActiveDirectorySchema
     }
 }
 
-internal interface IActiveDirectorySchemaClass {
+internal interface IActiveDirectorySchemaClassWrapper {
     
     string Name {
         get;
@@ -5575,20 +5318,14 @@ internal interface IActiveDirectorySchemaClass {
     string ToString();
     
     System.DirectoryServices.DirectoryEntry GetDirectoryEntry();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedActiveDirectorySchemaClass
+public partial class ActiveDirectorySchemaClassWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass _wrapped;
     
-    public WrappedActiveDirectorySchemaClass(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass wrapped)
+    public ActiveDirectorySchemaClassWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -5778,7 +5515,7 @@ public partial class WrappedActiveDirectorySchemaClass
     }
 }
 
-internal interface IActiveDirectorySchemaClassCollection {
+internal interface IActiveDirectorySchemaClassCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass Item {
         get;
@@ -5821,22 +5558,14 @@ internal interface IActiveDirectorySchemaClassCollection {
     void RemoveAt(int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedActiveDirectorySchemaClassCollection
+public partial class ActiveDirectorySchemaClassCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClassCollection _wrapped;
     
-    public WrappedActiveDirectorySchemaClassCollection(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClassCollection wrapped)
+    public ActiveDirectorySchemaClassCollectionWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClassCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -5954,7 +5683,7 @@ public partial class WrappedActiveDirectorySchemaClassCollection
     }
 }
 
-internal interface IActiveDirectorySchemaProperty {
+internal interface IActiveDirectorySchemaPropertyWrapper {
     
     string Name {
         get;
@@ -6055,20 +5784,14 @@ internal interface IActiveDirectorySchemaProperty {
     string ToString();
     
     System.DirectoryServices.DirectoryEntry GetDirectoryEntry();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedActiveDirectorySchemaProperty
+public partial class ActiveDirectorySchemaPropertyWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty _wrapped;
     
-    public WrappedActiveDirectorySchemaProperty(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty wrapped)
+    public ActiveDirectorySchemaPropertyWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -6317,7 +6040,7 @@ public partial class WrappedActiveDirectorySchemaProperty
     }
 }
 
-internal interface IActiveDirectorySchemaPropertyCollection {
+internal interface IActiveDirectorySchemaPropertyCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty Item {
         get;
@@ -6360,22 +6083,14 @@ internal interface IActiveDirectorySchemaPropertyCollection {
     void RemoveAt(int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedActiveDirectorySchemaPropertyCollection
+public partial class ActiveDirectorySchemaPropertyCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaPropertyCollection _wrapped;
     
-    public WrappedActiveDirectorySchemaPropertyCollection(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaPropertyCollection wrapped)
+    public ActiveDirectorySchemaPropertyCollectionWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaPropertyCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -6493,7 +6208,7 @@ public partial class WrappedActiveDirectorySchemaPropertyCollection
     }
 }
 
-internal interface IActiveDirectorySite {
+internal interface IActiveDirectorySiteWrapper {
     
     string Name {
         get;
@@ -6564,20 +6279,14 @@ internal interface IActiveDirectorySite {
     System.DirectoryServices.DirectoryEntry GetDirectoryEntry();
     
     void Dispose();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedActiveDirectorySite
+public partial class ActiveDirectorySiteWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ActiveDirectorySite _wrapped;
     
-    public WrappedActiveDirectorySite(System.DirectoryServices.ActiveDirectory.ActiveDirectorySite wrapped)
+    public ActiveDirectorySiteWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySite wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -6743,7 +6452,7 @@ public partial class WrappedActiveDirectorySite
     }
 }
 
-internal interface IActiveDirectorySiteCollection {
+internal interface IActiveDirectorySiteCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.ActiveDirectorySite Item {
         get;
@@ -6784,22 +6493,14 @@ internal interface IActiveDirectorySiteCollection {
     void RemoveAt(int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedActiveDirectorySiteCollection
+public partial class ActiveDirectorySiteCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteCollection _wrapped;
     
-    public WrappedActiveDirectorySiteCollection(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteCollection wrapped)
+    public ActiveDirectorySiteCollectionWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -6912,7 +6613,7 @@ public partial class WrappedActiveDirectorySiteCollection
     }
 }
 
-internal interface IActiveDirectorySiteLink {
+internal interface IActiveDirectorySiteLinkWrapper {
     
     string Name {
         get;
@@ -6969,20 +6670,14 @@ internal interface IActiveDirectorySiteLink {
     System.DirectoryServices.DirectoryEntry GetDirectoryEntry();
     
     void Dispose();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedActiveDirectorySiteLink
+public partial class ActiveDirectorySiteLinkWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink _wrapped;
     
-    public WrappedActiveDirectorySiteLink(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink wrapped)
+    public ActiveDirectorySiteLinkWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -7124,7 +6819,7 @@ public partial class WrappedActiveDirectorySiteLink
     }
 }
 
-internal interface IActiveDirectorySiteLinkBridge {
+internal interface IActiveDirectorySiteLinkBridgeWrapper {
     
     string Name {
         get;
@@ -7151,20 +6846,14 @@ internal interface IActiveDirectorySiteLinkBridge {
     System.DirectoryServices.DirectoryEntry GetDirectoryEntry();
     
     void Dispose();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedActiveDirectorySiteLinkBridge
+public partial class ActiveDirectorySiteLinkBridgeWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge _wrapped;
     
-    public WrappedActiveDirectorySiteLinkBridge(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge wrapped)
+    public ActiveDirectorySiteLinkBridgeWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -7234,7 +6923,7 @@ public partial class WrappedActiveDirectorySiteLinkBridge
     }
 }
 
-internal interface IActiveDirectorySiteLinkCollection {
+internal interface IActiveDirectorySiteLinkCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink Item {
         get;
@@ -7275,22 +6964,14 @@ internal interface IActiveDirectorySiteLinkCollection {
     void RemoveAt(int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedActiveDirectorySiteLinkCollection
+public partial class ActiveDirectorySiteLinkCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkCollection _wrapped;
     
-    public WrappedActiveDirectorySiteLinkCollection(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkCollection wrapped)
+    public ActiveDirectorySiteLinkCollectionWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -7403,7 +7084,7 @@ public partial class WrappedActiveDirectorySiteLinkCollection
     }
 }
 
-internal interface IActiveDirectorySubnet {
+internal interface IActiveDirectorySubnetWrapper {
     
     string Name {
         get;
@@ -7432,20 +7113,14 @@ internal interface IActiveDirectorySubnet {
     System.DirectoryServices.DirectoryEntry GetDirectoryEntry();
     
     void Dispose();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedActiveDirectorySubnet
+public partial class ActiveDirectorySubnetWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet _wrapped;
     
-    public WrappedActiveDirectorySubnet(System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet wrapped)
+    public ActiveDirectorySubnetWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -7523,7 +7198,7 @@ public partial class WrappedActiveDirectorySubnet
     }
 }
 
-internal interface IActiveDirectorySubnetCollection {
+internal interface IActiveDirectorySubnetCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet Item {
         get;
@@ -7564,22 +7239,14 @@ internal interface IActiveDirectorySubnetCollection {
     void RemoveAt(int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedActiveDirectorySubnetCollection
+public partial class ActiveDirectorySubnetCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnetCollection _wrapped;
     
-    public WrappedActiveDirectorySubnetCollection(System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnetCollection wrapped)
+    public ActiveDirectorySubnetCollectionWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnetCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -7692,7 +7359,7 @@ public partial class WrappedActiveDirectorySubnetCollection
     }
 }
 
-internal interface IAdamInstance {
+internal interface IAdamInstanceWrapper {
     
     System.DirectoryServices.ActiveDirectory.ConfigurationSet ConfigurationSet {
         get;
@@ -7785,20 +7452,14 @@ internal interface IAdamInstance {
     void MoveToAnotherSite(string siteName);
     
     System.DirectoryServices.DirectoryEntry GetDirectoryEntry();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedAdamInstance
+public partial class AdamInstanceWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.AdamInstance _wrapped;
     
-    public WrappedAdamInstance(System.DirectoryServices.ActiveDirectory.AdamInstance wrapped)
+    public AdamInstanceWrapper(System.DirectoryServices.ActiveDirectory.AdamInstance wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -8016,7 +7677,7 @@ public partial class WrappedAdamInstance
     }
 }
 
-internal interface IAdamInstanceCollection {
+internal interface IAdamInstanceCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.AdamInstance Item {
         get;
@@ -8037,22 +7698,14 @@ internal interface IAdamInstanceCollection {
     void CopyTo(System.DirectoryServices.ActiveDirectory.AdamInstance[] adamInstances, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedAdamInstanceCollection
+public partial class AdamInstanceCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.AdamInstanceCollection _wrapped;
     
-    public WrappedAdamInstanceCollection(System.DirectoryServices.ActiveDirectory.AdamInstanceCollection wrapped)
+    public AdamInstanceCollectionWrapper(System.DirectoryServices.ActiveDirectory.AdamInstanceCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -8114,7 +7767,7 @@ public partial class WrappedAdamInstanceCollection
     }
 }
 
-internal interface IApplicationPartition {
+internal interface IApplicationPartitionWrapper {
     
     System.DirectoryServices.ActiveDirectory.DirectoryServerCollection DirectoryServers {
         get;
@@ -8158,20 +7811,14 @@ internal interface IApplicationPartition {
     void Dispose();
     
     string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedApplicationPartition
+public partial class ApplicationPartitionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ApplicationPartition _wrapped;
     
-    public WrappedApplicationPartition(System.DirectoryServices.ActiveDirectory.ApplicationPartition wrapped)
+    public ApplicationPartitionWrapper(System.DirectoryServices.ActiveDirectory.ApplicationPartition wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -8285,7 +7932,7 @@ public partial class WrappedApplicationPartition
     }
 }
 
-internal interface IApplicationPartitionCollection {
+internal interface IApplicationPartitionCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.ApplicationPartition Item {
         get;
@@ -8306,22 +7953,14 @@ internal interface IApplicationPartitionCollection {
     void CopyTo(System.DirectoryServices.ActiveDirectory.ApplicationPartition[] applicationPartitions, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedApplicationPartitionCollection
+public partial class ApplicationPartitionCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ApplicationPartitionCollection _wrapped;
     
-    public WrappedApplicationPartitionCollection(System.DirectoryServices.ActiveDirectory.ApplicationPartitionCollection wrapped)
+    public ApplicationPartitionCollectionWrapper(System.DirectoryServices.ActiveDirectory.ApplicationPartitionCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -8383,7 +8022,7 @@ public partial class WrappedApplicationPartitionCollection
     }
 }
 
-internal interface IAttributeMetadata {
+internal interface IAttributeMetadataWrapper {
     
     string Name {
         get;
@@ -8416,22 +8055,14 @@ internal interface IAttributeMetadata {
     System.DirectoryServices.ActiveDirectory.AttributeMetadata Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedAttributeMetadata
+public partial class AttributeMetadataWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.AttributeMetadata _wrapped;
     
-    public WrappedAttributeMetadata(System.DirectoryServices.ActiveDirectory.AttributeMetadata wrapped)
+    public AttributeMetadataWrapper(System.DirectoryServices.ActiveDirectory.AttributeMetadata wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -8513,7 +8144,7 @@ public partial class WrappedAttributeMetadata
     }
 }
 
-internal interface IAttributeMetadataCollection {
+internal interface IAttributeMetadataCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.AttributeMetadata Item {
         get;
@@ -8534,22 +8165,14 @@ internal interface IAttributeMetadataCollection {
     void CopyTo(System.DirectoryServices.ActiveDirectory.AttributeMetadata[] metadata, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedAttributeMetadataCollection
+public partial class AttributeMetadataCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.AttributeMetadataCollection _wrapped;
     
-    public WrappedAttributeMetadataCollection(System.DirectoryServices.ActiveDirectory.AttributeMetadataCollection wrapped)
+    public AttributeMetadataCollectionWrapper(System.DirectoryServices.ActiveDirectory.AttributeMetadataCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -8611,7 +8234,7 @@ public partial class WrappedAttributeMetadataCollection
     }
 }
 
-internal interface IConfigurationSet {
+internal interface IConfigurationSetWrapper {
     
     string Name {
         get;
@@ -8666,20 +8289,14 @@ internal interface IConfigurationSet {
     void SetSecurityLevel(System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel securityLevel);
     
     string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedConfigurationSet
+public partial class ConfigurationSetWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ConfigurationSet _wrapped;
     
-    public WrappedConfigurationSet(System.DirectoryServices.ActiveDirectory.ConfigurationSet wrapped)
+    public ConfigurationSetWrapper(System.DirectoryServices.ActiveDirectory.ConfigurationSet wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -8811,7 +8428,7 @@ public partial class WrappedConfigurationSet
     }
 }
 
-internal interface IDirectoryContext {
+internal interface IDirectoryContextWrapper {
     
     string Name {
         get;
@@ -8828,22 +8445,14 @@ internal interface IDirectoryContext {
     System.DirectoryServices.ActiveDirectory.DirectoryContext Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedDirectoryContext
+public partial class DirectoryContextWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.DirectoryContext _wrapped;
     
-    public WrappedDirectoryContext(System.DirectoryServices.ActiveDirectory.DirectoryContext wrapped)
+    public DirectoryContextWrapper(System.DirectoryServices.ActiveDirectory.DirectoryContext wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -8893,7 +8502,7 @@ public partial class WrappedDirectoryContext
     }
 }
 
-internal interface IDirectoryServerCollection {
+internal interface IDirectoryServerCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.DirectoryServer Item {
         get;
@@ -8932,22 +8541,14 @@ internal interface IDirectoryServerCollection {
     void RemoveAt(int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedDirectoryServerCollection
+public partial class DirectoryServerCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.DirectoryServerCollection _wrapped;
     
-    public WrappedDirectoryServerCollection(System.DirectoryServices.ActiveDirectory.DirectoryServerCollection wrapped)
+    public DirectoryServerCollectionWrapper(System.DirectoryServices.ActiveDirectory.DirectoryServerCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -9055,7 +8656,7 @@ public partial class WrappedDirectoryServerCollection
     }
 }
 
-internal interface IDomain {
+internal interface IDomainWrapper {
     
     System.DirectoryServices.ActiveDirectory.Forest Forest {
         get;
@@ -9158,20 +8759,14 @@ internal interface IDomain {
     void Dispose();
     
     string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedDomain
+public partial class DomainWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.Domain _wrapped;
     
-    public WrappedDomain(System.DirectoryServices.ActiveDirectory.Domain wrapped)
+    public DomainWrapper(System.DirectoryServices.ActiveDirectory.Domain wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -9417,7 +9012,7 @@ public partial class WrappedDomain
     }
 }
 
-internal interface IDomainCollection {
+internal interface IDomainCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.Domain Item {
         get;
@@ -9438,22 +9033,14 @@ internal interface IDomainCollection {
     void CopyTo(System.DirectoryServices.ActiveDirectory.Domain[] domains, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedDomainCollection
+public partial class DomainCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.DomainCollection _wrapped;
     
-    public WrappedDomainCollection(System.DirectoryServices.ActiveDirectory.DomainCollection wrapped)
+    public DomainCollectionWrapper(System.DirectoryServices.ActiveDirectory.DomainCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -9515,7 +9102,7 @@ public partial class WrappedDomainCollection
     }
 }
 
-internal interface ISyncUpdateCallback {
+internal interface ISyncUpdateCallbackWrapper {
     
     System.Reflection.MethodInfo Method {
         get;
@@ -9546,18 +9133,14 @@ internal interface ISyncUpdateCallback {
     object DynamicInvoke(object[] args);
     
     object Clone();
-    
-    string ToString();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedSyncUpdateCallback
+public partial class SyncUpdateCallbackWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.SyncUpdateCallback _wrapped;
     
-    public WrappedSyncUpdateCallback(System.DirectoryServices.ActiveDirectory.SyncUpdateCallback wrapped)
+    public SyncUpdateCallbackWrapper(System.DirectoryServices.ActiveDirectory.SyncUpdateCallback wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -9634,7 +9217,7 @@ public partial class WrappedSyncUpdateCallback
     }
 }
 
-internal interface IDomainController {
+internal interface IDomainControllerWrapper {
     
     System.DirectoryServices.ActiveDirectory.Forest Forest {
         get;
@@ -9730,20 +9313,14 @@ internal interface IDomainController {
     void MoveToAnotherSite(string siteName);
     
     System.DirectoryServices.DirectoryEntry GetDirectoryEntry();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedDomainController
+public partial class DomainControllerWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.DomainController _wrapped;
     
-    public WrappedDomainController(System.DirectoryServices.ActiveDirectory.DomainController wrapped)
+    public DomainControllerWrapper(System.DirectoryServices.ActiveDirectory.DomainController wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -9967,7 +9544,7 @@ public partial class WrappedDomainController
     }
 }
 
-internal interface IDomainControllerCollection {
+internal interface IDomainControllerCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.DomainController Item {
         get;
@@ -9988,22 +9565,14 @@ internal interface IDomainControllerCollection {
     void CopyTo(System.DirectoryServices.ActiveDirectory.DomainController[] domainControllers, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedDomainControllerCollection
+public partial class DomainControllerCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.DomainControllerCollection _wrapped;
     
-    public WrappedDomainControllerCollection(System.DirectoryServices.ActiveDirectory.DomainControllerCollection wrapped)
+    public DomainControllerCollectionWrapper(System.DirectoryServices.ActiveDirectory.DomainControllerCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -10065,7 +9634,7 @@ public partial class WrappedDomainControllerCollection
     }
 }
 
-internal interface ISyncFromAllServersErrorInformation {
+internal interface ISyncFromAllServersErrorInformationWrapper {
     
     System.DirectoryServices.ActiveDirectory.SyncFromAllServersErrorCategory ErrorCategory {
         get;
@@ -10090,22 +9659,14 @@ internal interface ISyncFromAllServersErrorInformation {
     System.DirectoryServices.ActiveDirectory.SyncFromAllServersErrorInformation Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedSyncFromAllServersErrorInformation
+public partial class SyncFromAllServersErrorInformationWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.SyncFromAllServersErrorInformation _wrapped;
     
-    public WrappedSyncFromAllServersErrorInformation(System.DirectoryServices.ActiveDirectory.SyncFromAllServersErrorInformation wrapped)
+    public SyncFromAllServersErrorInformationWrapper(System.DirectoryServices.ActiveDirectory.SyncFromAllServersErrorInformation wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -10171,7 +9732,7 @@ public partial class WrappedSyncFromAllServersErrorInformation
     }
 }
 
-internal interface IActiveDirectoryObjectNotFoundException {
+internal interface IActiveDirectoryObjectNotFoundExceptionWrapper {
     
     System.Type Type {
         get;
@@ -10227,20 +9788,14 @@ internal interface IActiveDirectoryObjectNotFoundException {
     string ToString();
     
     System.Type GetType();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedActiveDirectoryObjectNotFoundException
+public partial class ActiveDirectoryObjectNotFoundExceptionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException _wrapped;
     
-    public WrappedActiveDirectoryObjectNotFoundException(System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException wrapped)
+    public ActiveDirectoryObjectNotFoundExceptionWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -10373,7 +9928,7 @@ public partial class WrappedActiveDirectoryObjectNotFoundException
     }
 }
 
-internal interface IActiveDirectoryOperationException {
+internal interface IActiveDirectoryOperationExceptionWrapper {
     
     int ErrorCode {
         get;
@@ -10425,20 +9980,14 @@ internal interface IActiveDirectoryOperationException {
     string ToString();
     
     System.Type GetType();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedActiveDirectoryOperationException
+public partial class ActiveDirectoryOperationExceptionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException _wrapped;
     
-    public WrappedActiveDirectoryOperationException(System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException wrapped)
+    public ActiveDirectoryOperationExceptionWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -10563,7 +10112,7 @@ public partial class WrappedActiveDirectoryOperationException
     }
 }
 
-internal interface IActiveDirectoryServerDownException {
+internal interface IActiveDirectoryServerDownExceptionWrapper {
     
     int ErrorCode {
         get;
@@ -10619,20 +10168,14 @@ internal interface IActiveDirectoryServerDownException {
     string ToString();
     
     System.Type GetType();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedActiveDirectoryServerDownException
+public partial class ActiveDirectoryServerDownExceptionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException _wrapped;
     
-    public WrappedActiveDirectoryServerDownException(System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException wrapped)
+    public ActiveDirectoryServerDownExceptionWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -10765,7 +10308,7 @@ public partial class WrappedActiveDirectoryServerDownException
     }
 }
 
-internal interface IActiveDirectoryObjectExistsException {
+internal interface IActiveDirectoryObjectExistsExceptionWrapper {
     
     string Message {
         get;
@@ -10813,20 +10356,14 @@ internal interface IActiveDirectoryObjectExistsException {
     void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);
     
     System.Type GetType();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedActiveDirectoryObjectExistsException
+public partial class ActiveDirectoryObjectExistsExceptionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException _wrapped;
     
-    public WrappedActiveDirectoryObjectExistsException(System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException wrapped)
+    public ActiveDirectoryObjectExistsExceptionWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -10943,7 +10480,7 @@ public partial class WrappedActiveDirectoryObjectExistsException
     }
 }
 
-internal interface ISyncFromAllServersOperationException {
+internal interface ISyncFromAllServersOperationExceptionWrapper {
     
     System.DirectoryServices.ActiveDirectory.SyncFromAllServersErrorInformation[] ErrorInformation {
         get;
@@ -10999,20 +10536,14 @@ internal interface ISyncFromAllServersOperationException {
     string ToString();
     
     System.Type GetType();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedSyncFromAllServersOperationException
+public partial class SyncFromAllServersOperationExceptionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.SyncFromAllServersOperationException _wrapped;
     
-    public WrappedSyncFromAllServersOperationException(System.DirectoryServices.ActiveDirectory.SyncFromAllServersOperationException wrapped)
+    public SyncFromAllServersOperationExceptionWrapper(System.DirectoryServices.ActiveDirectory.SyncFromAllServersOperationException wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -11145,7 +10676,7 @@ public partial class WrappedSyncFromAllServersOperationException
     }
 }
 
-internal interface IForestTrustCollisionException {
+internal interface IForestTrustCollisionExceptionWrapper {
     
     System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollisionCollection Collisions {
         get;
@@ -11201,20 +10732,14 @@ internal interface IForestTrustCollisionException {
     string ToString();
     
     System.Type GetType();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedForestTrustCollisionException
+public partial class ForestTrustCollisionExceptionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ForestTrustCollisionException _wrapped;
     
-    public WrappedForestTrustCollisionException(System.DirectoryServices.ActiveDirectory.ForestTrustCollisionException wrapped)
+    public ForestTrustCollisionExceptionWrapper(System.DirectoryServices.ActiveDirectory.ForestTrustCollisionException wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -11347,7 +10872,7 @@ public partial class WrappedForestTrustCollisionException
     }
 }
 
-internal interface IForest {
+internal interface IForestWrapper {
     
     string Name {
         get;
@@ -11452,20 +10977,14 @@ internal interface IForest {
     void UpdateTrustRelationship(System.DirectoryServices.ActiveDirectory.Forest targetForest, System.DirectoryServices.ActiveDirectory.TrustDirection newTrustDirection);
     
     void RepairTrustRelationship(System.DirectoryServices.ActiveDirectory.Forest targetForest);
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedForest
+public partial class ForestWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.Forest _wrapped;
     
-    public WrappedForest(System.DirectoryServices.ActiveDirectory.Forest wrapped)
+    public ForestWrapper(System.DirectoryServices.ActiveDirectory.Forest wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -11714,7 +11233,7 @@ public partial class WrappedForest
     }
 }
 
-internal interface IForestTrustRelationshipCollision {
+internal interface IForestTrustRelationshipCollisionWrapper {
     
     System.DirectoryServices.ActiveDirectory.ForestTrustCollisionType CollisionType {
         get;
@@ -11735,22 +11254,14 @@ internal interface IForestTrustRelationshipCollision {
     System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollision Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedForestTrustRelationshipCollision
+public partial class ForestTrustRelationshipCollisionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollision _wrapped;
     
-    public WrappedForestTrustRelationshipCollision(System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollision wrapped)
+    public ForestTrustRelationshipCollisionWrapper(System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollision wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -11808,7 +11319,7 @@ public partial class WrappedForestTrustRelationshipCollision
     }
 }
 
-internal interface IForestTrustRelationshipCollisionCollection {
+internal interface IForestTrustRelationshipCollisionCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollision Item {
         get;
@@ -11829,22 +11340,14 @@ internal interface IForestTrustRelationshipCollisionCollection {
     void CopyTo(System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollision[] array, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedForestTrustRelationshipCollisionCollection
+public partial class ForestTrustRelationshipCollisionCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollisionCollection _wrapped;
     
-    public WrappedForestTrustRelationshipCollisionCollection(System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollisionCollection wrapped)
+    public ForestTrustRelationshipCollisionCollectionWrapper(System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollisionCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -11906,7 +11409,7 @@ public partial class WrappedForestTrustRelationshipCollisionCollection
     }
 }
 
-internal interface IForestTrustDomainInfoCollection {
+internal interface IForestTrustDomainInfoCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.ForestTrustDomainInformation Item {
         get;
@@ -11927,22 +11430,14 @@ internal interface IForestTrustDomainInfoCollection {
     void CopyTo(System.DirectoryServices.ActiveDirectory.ForestTrustDomainInformation[] array, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedForestTrustDomainInfoCollection
+public partial class ForestTrustDomainInfoCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ForestTrustDomainInfoCollection _wrapped;
     
-    public WrappedForestTrustDomainInfoCollection(System.DirectoryServices.ActiveDirectory.ForestTrustDomainInfoCollection wrapped)
+    public ForestTrustDomainInfoCollectionWrapper(System.DirectoryServices.ActiveDirectory.ForestTrustDomainInfoCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -12004,7 +11499,7 @@ public partial class WrappedForestTrustDomainInfoCollection
     }
 }
 
-internal interface IForestTrustDomainInformation {
+internal interface IForestTrustDomainInformationWrapper {
     
     string DnsName {
         get;
@@ -12026,22 +11521,14 @@ internal interface IForestTrustDomainInformation {
     System.DirectoryServices.ActiveDirectory.ForestTrustDomainInformation Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedForestTrustDomainInformation
+public partial class ForestTrustDomainInformationWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ForestTrustDomainInformation _wrapped;
     
-    public WrappedForestTrustDomainInformation(System.DirectoryServices.ActiveDirectory.ForestTrustDomainInformation wrapped)
+    public ForestTrustDomainInformationWrapper(System.DirectoryServices.ActiveDirectory.ForestTrustDomainInformation wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -12103,7 +11590,7 @@ public partial class WrappedForestTrustDomainInformation
     }
 }
 
-internal interface IForestTrustRelationshipInformation {
+internal interface IForestTrustRelationshipInformationWrapper {
     
     System.DirectoryServices.ActiveDirectory.TopLevelNameCollection TopLevelNames {
         get;
@@ -12138,22 +11625,14 @@ internal interface IForestTrustRelationshipInformation {
     }
     
     void Save();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedForestTrustRelationshipInformation
+public partial class ForestTrustRelationshipInformationWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipInformation _wrapped;
     
-    public WrappedForestTrustRelationshipInformation(System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipInformation wrapped)
+    public ForestTrustRelationshipInformationWrapper(System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipInformation wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -12240,7 +11719,7 @@ public partial class WrappedForestTrustRelationshipInformation
     }
 }
 
-internal interface IGlobalCatalog {
+internal interface IGlobalCatalogWrapper {
     
     System.DirectoryServices.ActiveDirectory.Forest Forest {
         get;
@@ -12340,20 +11819,14 @@ internal interface IGlobalCatalog {
     void MoveToAnotherSite(string siteName);
     
     System.DirectoryServices.DirectoryEntry GetDirectoryEntry();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedGlobalCatalog
+public partial class GlobalCatalogWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.GlobalCatalog _wrapped;
     
-    public WrappedGlobalCatalog(System.DirectoryServices.ActiveDirectory.GlobalCatalog wrapped)
+    public GlobalCatalogWrapper(System.DirectoryServices.ActiveDirectory.GlobalCatalog wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -12587,7 +12060,7 @@ public partial class WrappedGlobalCatalog
     }
 }
 
-internal interface IGlobalCatalogCollection {
+internal interface IGlobalCatalogCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.GlobalCatalog Item {
         get;
@@ -12608,22 +12081,14 @@ internal interface IGlobalCatalogCollection {
     void CopyTo(System.DirectoryServices.ActiveDirectory.GlobalCatalog[] globalCatalogs, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedGlobalCatalogCollection
+public partial class GlobalCatalogCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection _wrapped;
     
-    public WrappedGlobalCatalogCollection(System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection wrapped)
+    public GlobalCatalogCollectionWrapper(System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -12685,7 +12150,7 @@ public partial class WrappedGlobalCatalogCollection
     }
 }
 
-internal interface IReadOnlyActiveDirectorySchemaClassCollection {
+internal interface IReadOnlyActiveDirectorySchemaClassCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass Item {
         get;
@@ -12706,22 +12171,14 @@ internal interface IReadOnlyActiveDirectorySchemaClassCollection {
     void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass[] classes, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedReadOnlyActiveDirectorySchemaClassCollection
+public partial class ReadOnlyActiveDirectorySchemaClassCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaClassCollection _wrapped;
     
-    public WrappedReadOnlyActiveDirectorySchemaClassCollection(System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaClassCollection wrapped)
+    public ReadOnlyActiveDirectorySchemaClassCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaClassCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -12783,7 +12240,7 @@ public partial class WrappedReadOnlyActiveDirectorySchemaClassCollection
     }
 }
 
-internal interface IReadOnlyActiveDirectorySchemaPropertyCollection {
+internal interface IReadOnlyActiveDirectorySchemaPropertyCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty Item {
         get;
@@ -12804,22 +12261,14 @@ internal interface IReadOnlyActiveDirectorySchemaPropertyCollection {
     void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty[] properties, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedReadOnlyActiveDirectorySchemaPropertyCollection
+public partial class ReadOnlyActiveDirectorySchemaPropertyCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaPropertyCollection _wrapped;
     
-    public WrappedReadOnlyActiveDirectorySchemaPropertyCollection(System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaPropertyCollection wrapped)
+    public ReadOnlyActiveDirectorySchemaPropertyCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaPropertyCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -12881,7 +12330,7 @@ public partial class WrappedReadOnlyActiveDirectorySchemaPropertyCollection
     }
 }
 
-internal interface IReadOnlyDirectoryServerCollection {
+internal interface IReadOnlyDirectoryServerCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.DirectoryServer Item {
         get;
@@ -12902,22 +12351,14 @@ internal interface IReadOnlyDirectoryServerCollection {
     void CopyTo(System.DirectoryServices.ActiveDirectory.DirectoryServer[] directoryServers, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedReadOnlyDirectoryServerCollection
+public partial class ReadOnlyDirectoryServerCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ReadOnlyDirectoryServerCollection _wrapped;
     
-    public WrappedReadOnlyDirectoryServerCollection(System.DirectoryServices.ActiveDirectory.ReadOnlyDirectoryServerCollection wrapped)
+    public ReadOnlyDirectoryServerCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReadOnlyDirectoryServerCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -12979,7 +12420,7 @@ public partial class WrappedReadOnlyDirectoryServerCollection
     }
 }
 
-internal interface IReadOnlySiteCollection {
+internal interface IReadOnlySiteCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.ActiveDirectorySite Item {
         get;
@@ -13000,22 +12441,14 @@ internal interface IReadOnlySiteCollection {
     void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectorySite[] sites, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedReadOnlySiteCollection
+public partial class ReadOnlySiteCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ReadOnlySiteCollection _wrapped;
     
-    public WrappedReadOnlySiteCollection(System.DirectoryServices.ActiveDirectory.ReadOnlySiteCollection wrapped)
+    public ReadOnlySiteCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReadOnlySiteCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -13077,7 +12510,7 @@ public partial class WrappedReadOnlySiteCollection
     }
 }
 
-internal interface IReadOnlySiteLinkBridgeCollection {
+internal interface IReadOnlySiteLinkBridgeCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge Item {
         get;
@@ -13098,22 +12531,14 @@ internal interface IReadOnlySiteLinkBridgeCollection {
     void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge[] bridges, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedReadOnlySiteLinkBridgeCollection
+public partial class ReadOnlySiteLinkBridgeCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkBridgeCollection _wrapped;
     
-    public WrappedReadOnlySiteLinkBridgeCollection(System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkBridgeCollection wrapped)
+    public ReadOnlySiteLinkBridgeCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkBridgeCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -13175,7 +12600,7 @@ public partial class WrappedReadOnlySiteLinkBridgeCollection
     }
 }
 
-internal interface IReadOnlySiteLinkCollection {
+internal interface IReadOnlySiteLinkCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink Item {
         get;
@@ -13196,22 +12621,14 @@ internal interface IReadOnlySiteLinkCollection {
     void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink[] links, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedReadOnlySiteLinkCollection
+public partial class ReadOnlySiteLinkCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkCollection _wrapped;
     
-    public WrappedReadOnlySiteLinkCollection(System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkCollection wrapped)
+    public ReadOnlySiteLinkCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -13273,7 +12690,7 @@ public partial class WrappedReadOnlySiteLinkCollection
     }
 }
 
-internal interface IReadOnlyStringCollection {
+internal interface IReadOnlyStringCollectionWrapper {
     
     string Item {
         get;
@@ -13294,22 +12711,14 @@ internal interface IReadOnlyStringCollection {
     void CopyTo(string[] values, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedReadOnlyStringCollection
+public partial class ReadOnlyStringCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ReadOnlyStringCollection _wrapped;
     
-    public WrappedReadOnlyStringCollection(System.DirectoryServices.ActiveDirectory.ReadOnlyStringCollection wrapped)
+    public ReadOnlyStringCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReadOnlyStringCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -13371,7 +12780,7 @@ public partial class WrappedReadOnlyStringCollection
     }
 }
 
-internal interface IReplicationConnection {
+internal interface IReplicationConnectionWrapper {
     
     string Name {
         get;
@@ -13441,20 +12850,14 @@ internal interface IReplicationConnection {
     string ToString();
     
     System.DirectoryServices.DirectoryEntry GetDirectoryEntry();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedReplicationConnection
+public partial class ReplicationConnectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ReplicationConnection _wrapped;
     
-    public WrappedReplicationConnection(System.DirectoryServices.ActiveDirectory.ReplicationConnection wrapped)
+    public ReplicationConnectionWrapper(System.DirectoryServices.ActiveDirectory.ReplicationConnection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -13624,7 +13027,7 @@ public partial class WrappedReplicationConnection
     }
 }
 
-internal interface IReplicationConnectionCollection {
+internal interface IReplicationConnectionCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.ReplicationConnection Item {
         get;
@@ -13645,22 +13048,14 @@ internal interface IReplicationConnectionCollection {
     void CopyTo(System.DirectoryServices.ActiveDirectory.ReplicationConnection[] connections, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedReplicationConnectionCollection
+public partial class ReplicationConnectionCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ReplicationConnectionCollection _wrapped;
     
-    public WrappedReplicationConnectionCollection(System.DirectoryServices.ActiveDirectory.ReplicationConnectionCollection wrapped)
+    public ReplicationConnectionCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReplicationConnectionCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -13722,7 +13117,7 @@ public partial class WrappedReplicationConnectionCollection
     }
 }
 
-internal interface IReplicationCursor {
+internal interface IReplicationCursorWrapper {
     
     string PartitionName {
         get;
@@ -13747,22 +13142,14 @@ internal interface IReplicationCursor {
     System.DirectoryServices.ActiveDirectory.ReplicationCursor Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedReplicationCursor
+public partial class ReplicationCursorWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ReplicationCursor _wrapped;
     
-    public WrappedReplicationCursor(System.DirectoryServices.ActiveDirectory.ReplicationCursor wrapped)
+    public ReplicationCursorWrapper(System.DirectoryServices.ActiveDirectory.ReplicationCursor wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -13828,7 +13215,7 @@ public partial class WrappedReplicationCursor
     }
 }
 
-internal interface IReplicationCursorCollection {
+internal interface IReplicationCursorCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.ReplicationCursor Item {
         get;
@@ -13849,22 +13236,14 @@ internal interface IReplicationCursorCollection {
     void CopyTo(System.DirectoryServices.ActiveDirectory.ReplicationCursor[] values, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedReplicationCursorCollection
+public partial class ReplicationCursorCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ReplicationCursorCollection _wrapped;
     
-    public WrappedReplicationCursorCollection(System.DirectoryServices.ActiveDirectory.ReplicationCursorCollection wrapped)
+    public ReplicationCursorCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReplicationCursorCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -13926,7 +13305,7 @@ public partial class WrappedReplicationCursorCollection
     }
 }
 
-internal interface IReplicationFailure {
+internal interface IReplicationFailureWrapper {
     
     string SourceServer {
         get;
@@ -13951,22 +13330,14 @@ internal interface IReplicationFailure {
     System.DirectoryServices.ActiveDirectory.ReplicationFailure Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedReplicationFailure
+public partial class ReplicationFailureWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ReplicationFailure _wrapped;
     
-    public WrappedReplicationFailure(System.DirectoryServices.ActiveDirectory.ReplicationFailure wrapped)
+    public ReplicationFailureWrapper(System.DirectoryServices.ActiveDirectory.ReplicationFailure wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -14032,7 +13403,7 @@ public partial class WrappedReplicationFailure
     }
 }
 
-internal interface IReplicationFailureCollection {
+internal interface IReplicationFailureCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.ReplicationFailure Item {
         get;
@@ -14053,22 +13424,14 @@ internal interface IReplicationFailureCollection {
     void CopyTo(System.DirectoryServices.ActiveDirectory.ReplicationFailure[] failures, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedReplicationFailureCollection
+public partial class ReplicationFailureCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ReplicationFailureCollection _wrapped;
     
-    public WrappedReplicationFailureCollection(System.DirectoryServices.ActiveDirectory.ReplicationFailureCollection wrapped)
+    public ReplicationFailureCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReplicationFailureCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -14130,7 +13493,7 @@ public partial class WrappedReplicationFailureCollection
     }
 }
 
-internal interface IReplicationNeighbor {
+internal interface IReplicationNeighborWrapper {
     
     string PartitionName {
         get;
@@ -14183,22 +13546,14 @@ internal interface IReplicationNeighbor {
     System.DirectoryServices.ActiveDirectory.ReplicationNeighbor Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedReplicationNeighbor
+public partial class ReplicationNeighborWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ReplicationNeighbor _wrapped;
     
-    public WrappedReplicationNeighbor(System.DirectoryServices.ActiveDirectory.ReplicationNeighbor wrapped)
+    public ReplicationNeighborWrapper(System.DirectoryServices.ActiveDirectory.ReplicationNeighbor wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -14320,7 +13675,7 @@ public partial class WrappedReplicationNeighbor
     }
 }
 
-internal interface IReplicationNeighborCollection {
+internal interface IReplicationNeighborCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.ReplicationNeighbor Item {
         get;
@@ -14341,22 +13696,14 @@ internal interface IReplicationNeighborCollection {
     void CopyTo(System.DirectoryServices.ActiveDirectory.ReplicationNeighbor[] neighbors, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedReplicationNeighborCollection
+public partial class ReplicationNeighborCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ReplicationNeighborCollection _wrapped;
     
-    public WrappedReplicationNeighborCollection(System.DirectoryServices.ActiveDirectory.ReplicationNeighborCollection wrapped)
+    public ReplicationNeighborCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReplicationNeighborCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -14418,7 +13765,7 @@ public partial class WrappedReplicationNeighborCollection
     }
 }
 
-internal interface IReplicationOperation {
+internal interface IReplicationOperationWrapper {
     
     System.DateTime TimeEnqueued {
         get;
@@ -14447,22 +13794,14 @@ internal interface IReplicationOperation {
     System.DirectoryServices.ActiveDirectory.ReplicationOperation Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedReplicationOperation
+public partial class ReplicationOperationWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ReplicationOperation _wrapped;
     
-    public WrappedReplicationOperation(System.DirectoryServices.ActiveDirectory.ReplicationOperation wrapped)
+    public ReplicationOperationWrapper(System.DirectoryServices.ActiveDirectory.ReplicationOperation wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -14536,7 +13875,7 @@ public partial class WrappedReplicationOperation
     }
 }
 
-internal interface IReplicationOperationCollection {
+internal interface IReplicationOperationCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.ReplicationOperation Item {
         get;
@@ -14557,22 +13896,14 @@ internal interface IReplicationOperationCollection {
     void CopyTo(System.DirectoryServices.ActiveDirectory.ReplicationOperation[] operations, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedReplicationOperationCollection
+public partial class ReplicationOperationCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ReplicationOperationCollection _wrapped;
     
-    public WrappedReplicationOperationCollection(System.DirectoryServices.ActiveDirectory.ReplicationOperationCollection wrapped)
+    public ReplicationOperationCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReplicationOperationCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -14634,7 +13965,7 @@ public partial class WrappedReplicationOperationCollection
     }
 }
 
-internal interface IReplicationOperationInformation {
+internal interface IReplicationOperationInformationWrapper {
     
     System.DateTime OperationStartTime {
         get;
@@ -14651,22 +13982,14 @@ internal interface IReplicationOperationInformation {
     System.DirectoryServices.ActiveDirectory.ReplicationOperationInformation Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedReplicationOperationInformation
+public partial class ReplicationOperationInformationWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ReplicationOperationInformation _wrapped;
     
-    public WrappedReplicationOperationInformation(System.DirectoryServices.ActiveDirectory.ReplicationOperationInformation wrapped)
+    public ReplicationOperationInformationWrapper(System.DirectoryServices.ActiveDirectory.ReplicationOperationInformation wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -14716,7 +14039,7 @@ public partial class WrappedReplicationOperationInformation
     }
 }
 
-internal interface IActiveDirectoryInterSiteTransport {
+internal interface IActiveDirectoryInterSiteTransportWrapper {
     
     System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType TransportType {
         get;
@@ -14751,20 +14074,14 @@ internal interface IActiveDirectoryInterSiteTransport {
     void Dispose();
     
     string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedActiveDirectoryInterSiteTransport
+public partial class ActiveDirectoryInterSiteTransportWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ActiveDirectoryInterSiteTransport _wrapped;
     
-    public WrappedActiveDirectoryInterSiteTransport(System.DirectoryServices.ActiveDirectory.ActiveDirectoryInterSiteTransport wrapped)
+    public ActiveDirectoryInterSiteTransportWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectoryInterSiteTransport wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -14853,7 +14170,7 @@ public partial class WrappedActiveDirectoryInterSiteTransport
     }
 }
 
-internal interface IActiveDirectoryRoleCollection {
+internal interface IActiveDirectoryRoleCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.ActiveDirectoryRole Item {
         get;
@@ -14874,22 +14191,14 @@ internal interface IActiveDirectoryRoleCollection {
     void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectoryRole[] roles, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedActiveDirectoryRoleCollection
+public partial class ActiveDirectoryRoleCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.ActiveDirectoryRoleCollection _wrapped;
     
-    public WrappedActiveDirectoryRoleCollection(System.DirectoryServices.ActiveDirectory.ActiveDirectoryRoleCollection wrapped)
+    public ActiveDirectoryRoleCollectionWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectoryRoleCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -14951,7 +14260,7 @@ public partial class WrappedActiveDirectoryRoleCollection
     }
 }
 
-internal interface IAdamRoleCollection {
+internal interface IAdamRoleCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.AdamRole Item {
         get;
@@ -14972,22 +14281,14 @@ internal interface IAdamRoleCollection {
     void CopyTo(System.DirectoryServices.ActiveDirectory.AdamRole[] roles, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedAdamRoleCollection
+public partial class AdamRoleCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.AdamRoleCollection _wrapped;
     
-    public WrappedAdamRoleCollection(System.DirectoryServices.ActiveDirectory.AdamRoleCollection wrapped)
+    public AdamRoleCollectionWrapper(System.DirectoryServices.ActiveDirectory.AdamRoleCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -15049,7 +14350,7 @@ public partial class WrappedAdamRoleCollection
     }
 }
 
-internal interface ITopLevelName {
+internal interface ITopLevelNameWrapper {
     
     string Name {
         get;
@@ -15063,22 +14364,14 @@ internal interface ITopLevelName {
     System.DirectoryServices.ActiveDirectory.TopLevelName Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedTopLevelName
+public partial class TopLevelNameWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.TopLevelName _wrapped;
     
-    public WrappedTopLevelName(System.DirectoryServices.ActiveDirectory.TopLevelName wrapped)
+    public TopLevelNameWrapper(System.DirectoryServices.ActiveDirectory.TopLevelName wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -15124,7 +14417,7 @@ public partial class WrappedTopLevelName
     }
 }
 
-internal interface ITopLevelNameCollection {
+internal interface ITopLevelNameCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.TopLevelName Item {
         get;
@@ -15145,22 +14438,14 @@ internal interface ITopLevelNameCollection {
     void CopyTo(System.DirectoryServices.ActiveDirectory.TopLevelName[] names, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedTopLevelNameCollection
+public partial class TopLevelNameCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.TopLevelNameCollection _wrapped;
     
-    public WrappedTopLevelNameCollection(System.DirectoryServices.ActiveDirectory.TopLevelNameCollection wrapped)
+    public TopLevelNameCollectionWrapper(System.DirectoryServices.ActiveDirectory.TopLevelNameCollection wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -15222,7 +14507,7 @@ public partial class WrappedTopLevelNameCollection
     }
 }
 
-internal interface ITrustRelationshipInformation {
+internal interface ITrustRelationshipInformationWrapper {
     
     string SourceName {
         get;
@@ -15243,22 +14528,14 @@ internal interface ITrustRelationshipInformation {
     System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation Wrapped {
         get;
     }
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedTrustRelationshipInformation
+public partial class TrustRelationshipInformationWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation _wrapped;
     
-    public WrappedTrustRelationshipInformation(System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation wrapped)
+    public TrustRelationshipInformationWrapper(System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation wrapped)
     {
         this._wrapped = wrapped;
     }
@@ -15316,7 +14593,7 @@ public partial class WrappedTrustRelationshipInformation
     }
 }
 
-internal interface ITrustRelationshipInformationCollection {
+internal interface ITrustRelationshipInformationCollectionWrapper {
     
     System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation Item {
         get;
@@ -15337,22 +14614,14 @@ internal interface ITrustRelationshipInformationCollection {
     void CopyTo(System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation[] array, int index);
     
     System.Collections.IEnumerator GetEnumerator();
-    
-    string ToString();
-    
-    bool Equals(object obj);
-    
-    int GetHashCode();
-    
-    System.Type GetType();
 }
 
-public partial class WrappedTrustRelationshipInformationCollection
+public partial class TrustRelationshipInformationCollectionWrapper
 {
     
     private System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection _wrapped;
     
-    public WrappedTrustRelationshipInformationCollection(System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection wrapped)
+    public TrustRelationshipInformationCollectionWrapper(System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection wrapped)
     {
         this._wrapped = wrapped;
     }

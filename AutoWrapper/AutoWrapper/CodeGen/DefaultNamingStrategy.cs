@@ -7,12 +7,12 @@ namespace AutoWrapper.CodeGen
 	{
 		public string ContractNameFor(Type type)
 		{
-			return 'I' + type.Name;
+			return $"I{type.Name}Wrapper";
 		}
 
 		public string TypeNameFor(Type type)
 		{
-			return "Wrapped" + type.Name;
+			return $"{type.Name}Wrapper";
 		}
 	}
 }
