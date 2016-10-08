@@ -32,11 +32,6 @@ namespace AutoWrapper.CodeGen
 			return this;
 		}
 
-		public ITypeGeneratorOptionsBuilder WithName(string name)
-		{
-			throw new NotImplementedException();
-		}
-
 		public ITypeGeneratorOptionsBuilder WithNamingStrategy(ITypeNamingStrategy strategy)
 		{
 			if (strategy == null)

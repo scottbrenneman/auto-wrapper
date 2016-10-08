@@ -40,7 +40,12 @@ namespace AutoWrapper.CodeGen
 			return this;
 		}
 
-		public IContractGeneratorOptionsBuilder ExcludeMembersFrom(Type type)
+		public IContractGeneratorOptionsBuilder ExcludeMembersDeclaredOn<TType>()
+		{
+			return ExcludeMembersDeclaredOn(typeof(TType));
+		}
+
+		public IContractGeneratorOptionsBuilder ExcludeMembersDeclaredOn(Type type)
 		{
 			if (_excludedTypes.Contains(type) == false)
 				_excludedTypes.Add(type);

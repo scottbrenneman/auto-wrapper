@@ -82,7 +82,7 @@ namespace AutoWrapper.Tests.CodeGen
 		}
 
 		[Fact]
-		public void ShouldExcludeMembers_WhenGenerating_GivenExcludingMembersFrom()
+		public void ShouldExcludeMembers_WhenGenerating_GivenExcludedType()
 		{
 			Given.Type = typeof(SomeType);
 			Given.Exclude = typeof(object);
@@ -131,7 +131,7 @@ namespace AutoWrapper.Tests.CodeGen
 				options.WithNamingStrategy(Given.CustomNamingStrategy);
 
 			if (GivensDefined("Exclude"))
-				options.ExcludeMembersFrom(Given.Exclude);
+				options.ExcludeMembersDeclaredOn(Given.Exclude);
 
 			Then.Target = new ContractGenerator(options);
 		}

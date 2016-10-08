@@ -101,10 +101,7 @@ namespace AutoWrapper.Tests.CodeGen
 					.Select(a => a.Location)
 					.ToArray();
 
-			var parameters = new CompilerParameters(referencedAssemblies)
-			{
-				GenerateInMemory = true
-			};
+			var parameters = new CompilerParameters(referencedAssemblies) { GenerateInMemory = true };
 
 			var code = $"namespace AutoWrapper.Tests.CodeGen {{ {Then.Code} }}";
 
@@ -112,7 +109,6 @@ namespace AutoWrapper.Tests.CodeGen
 
 			if (Then.CompilerResults.Errors.HasErrors == false)
 			{
-				Then.Contract = Then.CompilerResults.CompiledAssembly.Types().FirstOrDefault(t => t.IsInterface);
 				Then.GeneratedType = Then.CompilerResults.CompiledAssembly.Types().First(t => t.IsClass);
 				Then.WrappedField = Then.GeneratedType.GetField("_wrapped", BindingFlags.NonPublic | BindingFlags.Instance);
 				Then.Constructor = Then.GeneratedType.GetConstructor(new[] { typeof(SomeType) });
@@ -126,14 +122,10 @@ namespace AutoWrapper.Tests.CodeGen
 			if (GivensDefined("AsPublicWasCalled"))
 				options.WithPublic();
 
-			if (GivensDefined("Name"))
-				options.WithName(Given.Name);
-
 			if (GivensDefined("CustomNamingStrategy"))
 				options.WithNamingStrategy(Given.CustomNamingStrategy);
 
-			Then.Options = options.AsOptions;
-			Then.Target = new TypeGenerator(Then.Options);
+			Then.Target = new TypeGenerator(options.AsOptions);
 		}
 
 		public class Thens
@@ -141,11 +133,9 @@ namespace AutoWrapper.Tests.CodeGen
 			public TypeGenerator Target;
 			public string Code;
 			public CompilerResults CompilerResults;
-			public Type Contract;
 			public Type GeneratedType;
 			public FieldInfo WrappedField;
 			public ConstructorInfo Constructor;
-			public ITypeGeneratorOptions Options;
 		}
 	}
 }

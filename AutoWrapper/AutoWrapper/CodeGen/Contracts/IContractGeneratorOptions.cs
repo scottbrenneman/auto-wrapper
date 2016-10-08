@@ -7,7 +7,8 @@ namespace AutoWrapper.CodeGen.Contracts
 	{
 		IContractGeneratorOptionsBuilder WithPublic();
 		IContractGeneratorOptionsBuilder WithNamingStrategy(IContractNamingStrategy strategy);
-		IContractGeneratorOptionsBuilder ExcludeMembersFrom(Type type);
+		IContractGeneratorOptionsBuilder ExcludeMembersDeclaredOn<TType>();
+		IContractGeneratorOptionsBuilder ExcludeMembersDeclaredOn(Type type);
 		IContractGeneratorOptions AsOptions { get; }
 	}
 

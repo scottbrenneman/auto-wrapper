@@ -17,7 +17,7 @@ namespace AutoWrapper.Tests.CodeGen
 		}
 
 		[Fact]
-		public void ShouldPrefixTypeWithWrapped_WhenGeneratingTypeName()
+		public void ShouldSuffixTypeWithWrapper_WhenGeneratingTypeName()
 		{
 			When(GeneratingTypeName);
 
