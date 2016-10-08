@@ -14,12 +14,35 @@ namespace AutoWrapper
 
 		public static string TypesInAssemblyWith(Type type)
 		{
-			throw new NotImplementedException();
+			return TypesInAssembly(Assembly.GetAssembly(type));
 		}
 
 		public static string TypesInAssembly(Assembly assembly)
 		{
-			throw new NotImplementedException();
+			var container = new WrapperTypeContainer();
+			container.RegisterAssembly(assembly);
+
+			var typeOptions = new TypeGeneratorOptions()
+				.WithPartial()
+				.WithPublic()
+				.AsOptions;
+
+			var contractOptions = new ContractGeneratorOptions();
+
+			var typeGenerator = new TypeGenerator(typeOptions);
+
+			var contractGenerator = new ContractGenerator(contractOptions);
+
+			var code = new StringBuilder();
+
+			foreach (var type in container.RegisteredTypes)
+			{
+				code.AppendLine(contractGenerator.GenerateCode(type));
+
+				code.AppendLine(typeGenerator.GenerateCode(type));
+			}
+
+			return code.ToString();
 		}
 	}
 }

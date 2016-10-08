@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Reflection;
 
 namespace AutoWrapper.CodeGen.Contracts
@@ -18,6 +17,7 @@ namespace AutoWrapper.CodeGen.Contracts
 	{
 		string GetNameFor(Type type);
 		TypeAttributes GetTypeAttributes();
+		bool UsePartial { get; }
 		ITypeGeneratorOptionsBuilder AsBuilder { get; }
 	}
 }

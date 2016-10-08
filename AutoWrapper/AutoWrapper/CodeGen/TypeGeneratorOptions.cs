@@ -28,7 +28,8 @@ namespace AutoWrapper.CodeGen
 
 		public ITypeGeneratorOptionsBuilder WithPartial()
 		{
-			throw new NotImplementedException();
+			UsePartial = true;
+			return this;
 		}
 
 		public ITypeGeneratorOptionsBuilder WithName(string name)
@@ -65,6 +66,8 @@ namespace AutoWrapper.CodeGen
 		{
 			return _typeAttributes;
 		}
+
+		public bool UsePartial { get; private set; }
 
 		public ITypeGeneratorOptionsBuilder AsBuilder => this;
 

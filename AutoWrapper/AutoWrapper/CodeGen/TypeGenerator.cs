@@ -24,9 +24,10 @@ namespace AutoWrapper.CodeGen
 			var generatedType = new CodeTypeDeclaration(name)
 			{
 				IsClass = true,
-				TypeAttributes = _typeGeneratorOptions.GetTypeAttributes()
+				TypeAttributes = _typeGeneratorOptions.GetTypeAttributes(),
+				IsPartial = _typeGeneratorOptions.UsePartial
 			};
-
+			
 			generatedType.Members.AddRange(CompositionMembersFor(type));
 
 			GenerateMethods(type, generatedType);
