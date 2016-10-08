@@ -8,6 +8,7 @@ using System;
 using System.CodeDom.Compiler;
 using System.Linq;
 using System.Reflection;
+using AutoWrapper.Tests.TestClasses;
 using Xunit;
 
 namespace AutoWrapper.Tests.CodeGen
@@ -24,14 +25,6 @@ namespace AutoWrapper.Tests.CodeGen
 		}
 
 		[Fact]
-		public void ShouldGenerateContract_WhenGenerating()
-		{
-			When(Generating, Compiling);
-
-			Then.Contract.Should().NotBeNull();
-		}
-
-		[Fact]
 		public void ShouldGenerateAsPublic_WhenGenerating_GivenAsPublic()
 		{
 			Given.AsPublicWasCalled = true;
@@ -39,16 +32,6 @@ namespace AutoWrapper.Tests.CodeGen
 			When(Generating, Compiling);
 
 			Then.GeneratedType.IsPublic.Should().BeTrue();
-		}
-
-		[Fact]
-		public void ShouldUseName_WhenGenerating_GivenName()
-		{
-			Given.Name = "SomeRenamedWrappedType";
-
-			When(Generating, Compiling);
-
-			Then.GeneratedType.Name.Should().Be("SomeRenamedWrappedType");
 		}
 
 		[Fact]
@@ -77,8 +60,8 @@ namespace AutoWrapper.Tests.CodeGen
 		{
 			When(Generating, Compiling);
 
-			Then.GeneratedType.Should().HaveMethod("Function1", new Type[0]);
-			Then.GeneratedType.Should().HaveMethod("Function2", new[] { typeof(int) });
+			Then.GeneratedType.Should().HaveMethod("Function1", new[] { typeof(int) });
+			Then.GeneratedType.Should().HaveMethod("Function2", new[] { typeof(bool), typeof(object) });
 			Then.GeneratedType.Should().HaveMethod("Function3", new[] { typeof(int), typeof(string) });
 		}
 
@@ -89,16 +72,6 @@ namespace AutoWrapper.Tests.CodeGen
 
 			Then.GeneratedType.Should().HaveProperty<bool>("Property1");
 			Then.GeneratedType.Should().HaveProperty<object>("Property2");
-		}
-
-		[Fact]
-		public void ShouldExcludeMembers_WhenGenerating_GivenExcludingMembersFrom()
-		{
-			Given.Exclude = typeof(SomeTypeBase);
-
-			When(Generating, Compiling);
-
-			Then.GeneratedType.Should().NotHaveMethod("InheritedFunction", new Type[0]);
 		}
 
 		[Fact]
@@ -173,20 +146,6 @@ namespace AutoWrapper.Tests.CodeGen
 			public FieldInfo WrappedField;
 			public ConstructorInfo Constructor;
 			public ITypeGeneratorOptions Options;
-		}
-
-		public sealed class SomeType : SomeTypeBase
-		{
-			public void Function1() { throw new NotImplementedException(); }
-			public int Function2(int x) { throw new NotImplementedException(); }
-			public string Function3(int x, string s) { throw new NotImplementedException(); }
-			public bool Property1 { get; set; }
-			public object Property2 { get; }
-		}
-
-		public class SomeTypeBase
-		{
-			public void InheritedFunction() { throw new NotImplementedException(); }
 		}
 	}
 }

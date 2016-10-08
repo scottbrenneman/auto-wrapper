@@ -7,6 +7,7 @@ using GwtUnit.XUnit;
 using System;
 using System.CodeDom.Compiler;
 using System.Linq;
+using AutoWrapper.Tests.TestClasses;
 using Xunit;
 
 namespace AutoWrapper.Tests.CodeGen
@@ -33,17 +34,6 @@ namespace AutoWrapper.Tests.CodeGen
 			When(Generating, Compiling);
 
 			Then.Contract.IsPublic.Should().BeTrue();
-		}
-
-		[Fact(Skip = "Not sure this is really needed")]
-		public void ShouldUseName_WhenGenerating_GivenName()
-		{
-			Given.Type = typeof(SomeType);
-			Given.Name = "ISomeRenamedType";
-
-			When(Generating, Compiling);
-
-			Then.Contract.Name.Should().Be("ISomeRenamedType");
 		}
 
 		[Fact]
@@ -75,8 +65,8 @@ namespace AutoWrapper.Tests.CodeGen
 
 			When(Generating, Compiling);
 
-			Then.Contract.Should().HaveMethod("Function1", new Type[0]);
-			Then.Contract.Should().HaveMethod("Function2", new[] { typeof(int) });
+			Then.Contract.Should().HaveMethod("Function1", new[] { typeof(int) });
+			Then.Contract.Should().HaveMethod("Function2", new[] { typeof(bool), typeof(object) });
 			Then.Contract.Should().HaveMethod("Function3", new[] { typeof(int), typeof(string) });
 		}
 
@@ -152,15 +142,6 @@ namespace AutoWrapper.Tests.CodeGen
 			public string Code;
 			public CompilerResults CompilerResults;
 			public Type Contract;
-		}
-
-		public sealed class SomeType
-		{
-			public void Function1() { throw new NotImplementedException(); }
-			public int Function2(int x) { throw new NotImplementedException(); }
-			public string Function3(int x, string s) { throw new NotImplementedException(); }
-			public bool Property1 { get; set; }
-			public object Property2 { get; }
 		}
     }
 }

@@ -7,7 +7,6 @@ namespace AutoWrapper.CodeGen
 	public class TypeGeneratorOptions : ITypeGeneratorOptions, ITypeGeneratorOptionsBuilder
 	{
 		private ITypeNamingStrategy _typeNamingStrategy;
-		private IContractNamingStrategy _contractNamingStrategy;
 		private TypeAttributes _typeAttributes;
 
 		public TypeGeneratorOptions() : this(null)

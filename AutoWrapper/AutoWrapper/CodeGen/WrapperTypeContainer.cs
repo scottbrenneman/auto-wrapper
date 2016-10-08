@@ -20,7 +20,7 @@ namespace AutoWrapper.CodeGen
 		{
 			_typesToWrap.AddRange(
 				 assembly.GetTypes()
-				 .Where(t => t.IsClass && t.IsPublic && t.IsAbstract == false && t.GetInterfaces().Length == 0)
+				 .Where(t => t.IsClass && t.IsPublic && t.IsAbstract == false)
 				 .ToArray()
 			);
 		}

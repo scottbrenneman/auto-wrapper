@@ -1,4 +1,5 @@
 ﻿using AutoWrapper.CodeGen;
+using AutoWrapper.Tests.TestClasses;
 using FluentAssertions;
 using GwtUnit.XUnit;
 using Xunit;
@@ -44,7 +45,5 @@ namespace AutoWrapper.Tests.CodeGen
 			public string ContractName;
 			public string TypeName;
 		}
-
-		private sealed class SomeType { }
 	}
 }
