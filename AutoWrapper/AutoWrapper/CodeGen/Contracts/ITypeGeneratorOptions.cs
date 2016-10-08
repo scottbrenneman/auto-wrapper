@@ -8,7 +8,6 @@ namespace AutoWrapper.CodeGen.Contracts
 		ITypeGeneratorOptionsBuilder WithPublic();
 		ITypeGeneratorOptionsBuilder WithPartial();
 		ITypeGeneratorOptionsBuilder WithNamingStrategy(ITypeNamingStrategy strategy);
-		ITypeGeneratorOptionsBuilder WithNoContract();
 		ITypeGeneratorOptionsBuilder WithNoImplementation();
 		ITypeGeneratorOptions AsOptions { get; }
 	}

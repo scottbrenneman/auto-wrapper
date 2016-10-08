@@ -16,13 +16,11 @@ namespace AutoWrapper.CodeGen
 		public TypeGeneratorOptions(ITypeNamingStrategy typeNamingStrategy)
 		{
 			_typeNamingStrategy = typeNamingStrategy ?? new DefaultNamingStrategy();
-			
 		}
 
 		public ITypeGeneratorOptionsBuilder WithPublic()
 		{
 			_typeAttributes |= TypeAttributes.Public;
-
 			return this;
 		}
 
@@ -40,11 +38,6 @@ namespace AutoWrapper.CodeGen
 			_typeNamingStrategy = strategy;
 
 			return this;
-		}
-
-		public ITypeGeneratorOptionsBuilder WithNoContract()
-		{
-			throw new NotImplementedException();
 		}
 
 		public ITypeGeneratorOptionsBuilder WithNoImplementation()
