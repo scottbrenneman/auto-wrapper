@@ -1,11 +1,11 @@
 ﻿using AutoWrapper.CodeGen;
 using AutoWrapper.CodeGen.Contracts;
 using FluentAssertions;
-using Microsoft.CSharp;
 using Moq;
 using GwtUnit.XUnit;
 using System;
-using System.CodeDom.Compiler;
+using System.CodeDom;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using AutoWrapper.Tests.TestClasses;
@@ -16,12 +16,31 @@ namespace AutoWrapper.Tests.CodeGen
 	public class TypeGeneratorTests : XUnitTestBase<TypeGeneratorTests.Thens>
 	{
 		[Fact]
-		public void ShouldCompile_WhenGenerating()
+		public void ShouldHaveDeclaration_WhenGenerating()
 		{
-			When(Generating, Compiling);
+			When(Generating);
 
-			Then.CompilerResults.Errors.HasErrors.Should().BeFalse();
-			Then.CompilerResults.Errors.HasWarnings.Should().BeFalse();
+			Then.CodeTypeDeclaration.ShouldBeEquivalentTo(new
+			{
+				Attributes = 20482,
+				IsClass = true,
+				IsEnum = false,
+				IsInterface = false,
+				IsPartial = false,
+				IsStruct = false,
+				LinePragma = (CodeLinePragma)null,
+				Name = "SomeTypeWrapper",
+				TypeAttributes = TypeAttributes.AnsiClass
+			}, options => options.ExcludingMissingMembers());
+
+			Then.CodeTypeDeclaration.BaseTypes.Should().HaveCount(0);
+			Then.CodeTypeDeclaration.Comments.Should().HaveCount(0);
+			Then.CodeTypeDeclaration.CustomAttributes.Should().HaveCount(0);
+			Then.CodeTypeDeclaration.EndDirectives.Should().HaveCount(0);
+			Then.CodeTypeDeclaration.Members.Should().HaveCount(12);
+			Then.CodeTypeDeclaration.StartDirectives.Should().HaveCount(0);
+			Then.CodeTypeDeclaration.TypeParameters.Should().HaveCount(0);
+			Then.CodeTypeDeclaration.UserData.Should().HaveCount(0);
 		}
 
 		[Fact]
@@ -29,9 +48,9 @@ namespace AutoWrapper.Tests.CodeGen
 		{
 			Given.AsPublicWasCalled = true;
 
-			When(Generating, Compiling);
+			When(Generating);
 
-			Then.GeneratedType.IsPublic.Should().BeTrue();
+			Then.CodeTypeDeclaration.TypeAttributes.Should().HaveFlag(TypeAttributes.Public);
 		}
 
 		[Fact]
@@ -39,82 +58,61 @@ namespace AutoWrapper.Tests.CodeGen
 		{
 			Given.CustomNamingStrategy = CustomNamingStrategy();
 
-			When(Generating, Compiling);
+			When(Generating);
 
-			Then.GeneratedType.Name.Should().Be("CustomTypeName");
+			Then.CodeTypeDeclaration.Name.Should().Be("CustomTypeName");
 		}
 
-		private static ITypeNamingStrategy CustomNamingStrategy()
+		[Theory,
+		InlineData(0, ".ctor", new[] { "AutoWrapper.Tests.TestClasses.SomeType" }),
+		InlineData(1, "Equals", new[] { "System.Object" }),
+		InlineData(2, "Function1", new [] { "System.Int32" }),
+		InlineData(3, "Function2", new[] { "System.Boolean", "System.Object" }),
+		InlineData(4, "Function3", new[] { "System.Int32", "System.String" }),
+		InlineData(5, "GetHashCode", new string[0]),
+		InlineData(6, "GetType", new string[0]),
+		InlineData(7, "InheritedFunction", new string[0]),
+		InlineData(8, "ToString", new string[0])
+		]
+		public void ShouldDeclareFunctions_WhenGenerating_GivenTypeWithFunctions(int index, string name, params string[] paramterTypes)
 		{
-			var customNamingStrategy = new Mock<ITypeNamingStrategy>();
+			When(Generating);
 
-			customNamingStrategy
-				.Setup(s => s.TypeNameFor(It.IsAny<Type>()))
-				.Returns("CustomTypeName");
+			Then.Methods.Should().HaveCount(9);
 
-			return customNamingStrategy.Object;
-		}
+			Then.Methods[index].Name.Should().Be(name);
+			Then.Methods[index].Parameters.Should().HaveCount(paramterTypes.Length);
 
-		[Fact]
-		public void ShouldDeclareFunctions_WhenGenerating_GivenTypeWithFunctions()
-		{
-			When(Generating, Compiling);
-
-			Then.GeneratedType.Should().HaveMethod("Function1", new[] { typeof(int) });
-			Then.GeneratedType.Should().HaveMethod("Function2", new[] { typeof(bool), typeof(object) });
-			Then.GeneratedType.Should().HaveMethod("Function3", new[] { typeof(int), typeof(string) });
+			for (var n = 0; n < paramterTypes.Length; n++)
+			{	
+				Then.Methods[index].Parameters[n].Type.BaseType.Should().Be(paramterTypes[n]);
+			}
 		}
 
 		[Fact]
 		public void ShouldDeclareProperties_WhenGenerating_GivenTypeWithProperties()
 		{
-			When(Generating, Compiling);
+			When(Generating);
 
-			Then.GeneratedType.Should().HaveProperty<bool>("Property1");
-			Then.GeneratedType.Should().HaveProperty<object>("Property2");
+			Then.Properties.Should().HaveCount(2);
+
+			Then.Properties[0].Name.Should().Be("Property1");
+			Then.Properties[0].Type.BaseType.Should().Be("System.Boolean");
+			Then.Properties[1].Name.Should().Be("Property2");
+			Then.Properties[1].Type.BaseType.Should().Be("System.Object");
 		}
 
 		[Fact]
 		public void ShouldComposeWrappedType_WhenGenerating()
 		{
-			When(Generating, Compiling);
+			When(Generating);
 
-			Then.WrappedField.Should().NotBeNull();
-			Then.WrappedField.FieldType.Should().Be<SomeType>();
+			Then.Fields.Should().HaveCount(1);
 
-			Then.Constructor.Should().NotBeNull();
-			Then.Constructor.GetParameters().First().ParameterType.Should().Be<SomeType>();
+			Then.Fields[0].Name.Should().Be("_wrapped");
+			Then.Fields[0].Type.BaseType.Should().Be("AutoWrapper.Tests.TestClasses.SomeType");
 		}
-
-		private void Generating()
-		{
-			Then.Code = Then.Target.GenerateCode(typeof(SomeType));
-		}
-
-		private void Compiling()
-		{
-			var provider = new CSharpCodeProvider();
-
-			var referencedAssemblies =
-				AppDomain.CurrentDomain.GetAssemblies()
-					.Where(a => !a.IsDynamic)
-					.Select(a => a.Location)
-					.ToArray();
-
-			var parameters = new CompilerParameters(referencedAssemblies) { GenerateInMemory = true };
-
-			var code = $"namespace AutoWrapper.Tests.CodeGen {{ {Then.Code} }}";
-
-			Then.CompilerResults = provider.CompileAssemblyFromSource(parameters, code);
-
-			if (Then.CompilerResults.Errors.HasErrors == false)
-			{
-				Then.GeneratedType = Then.CompilerResults.CompiledAssembly.Types().First(t => t.IsClass);
-				Then.WrappedField = Then.GeneratedType.GetField("_wrapped", BindingFlags.NonPublic | BindingFlags.Instance);
-				Then.Constructor = Then.GeneratedType.GetConstructor(new[] { typeof(SomeType) });
-			}
-		}
-
+		
 		protected override void Creating()
 		{
 			var options = new TypeGeneratorOptions();
@@ -128,14 +126,49 @@ namespace AutoWrapper.Tests.CodeGen
 			Then.Target = new TypeGenerator(options.AsOptions);
 		}
 
+		private void Generating()
+		{
+			Then.CodeTypeDeclaration = Then.Target.GenerateDeclaration(typeof(SomeType));
+
+			Then.Methods = Then.CodeTypeDeclaration.Members
+				.Cast<CodeTypeMember>()
+				.Select(m => m as CodeMemberMethod)
+				.Where(f => f != null)
+				.OrderBy(f => f.Name)
+				.ToList();
+
+			Then.Properties = Then.CodeTypeDeclaration.Members
+				.Cast<CodeTypeMember>()
+				.Select(m => m as CodeMemberProperty)
+				.Where(f => f != null)
+				.ToList();
+
+			Then.Fields = Then.CodeTypeDeclaration.Members
+				.Cast<CodeTypeMember>()
+				.Select(m => m as CodeMemberField)
+				.Where(f => f != null)
+				.ToList();
+		}
+
+		private static ITypeNamingStrategy CustomNamingStrategy()
+		{
+			var customNamingStrategy = new Mock<ITypeNamingStrategy>();
+
+			customNamingStrategy
+				.Setup(s => s.TypeNameFor(It.IsAny<Type>()))
+				.Returns("CustomTypeName");
+
+			return customNamingStrategy.Object;
+		}
+
 		public class Thens
 		{
 			public TypeGenerator Target;
 			public string Code;
-			public CompilerResults CompilerResults;
-			public Type GeneratedType;
-			public FieldInfo WrappedField;
-			public ConstructorInfo Constructor;
+			public CodeTypeDeclaration CodeTypeDeclaration;
+			public List<CodeMemberMethod> Methods;
+			public List<CodeMemberProperty> Properties;
+			public List<CodeMemberField> Fields;
 		}
 	}
 }

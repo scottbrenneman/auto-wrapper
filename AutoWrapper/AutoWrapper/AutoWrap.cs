@@ -35,13 +35,26 @@ namespace AutoWrapper
 
 			var contractGenerator = new ContractGenerator(contractOptions);
 
+			var codeGenerator = new CodeGenerator();
+
 			var code = new StringBuilder();
 
 			foreach (var type in container.RegisteredTypes)
 			{
-				code.AppendLine(contractGenerator.GenerateCode(type));
+				code.AppendLine(
+					codeGenerator.GenerateCode(
+						contractGenerator.GenerateDeclaration(type)
+					)
+				);
+			}
 
-				code.AppendLine(typeGenerator.GenerateCode(type));
+			foreach (var type in container.RegisteredTypes)
+			{ 
+				code.AppendLine(
+					codeGenerator.GenerateCode(
+						typeGenerator.GenerateDeclaration(type)
+					)
+				);
 			}
 
 			return code.ToString();

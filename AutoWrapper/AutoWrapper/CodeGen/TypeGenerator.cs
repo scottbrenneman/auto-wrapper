@@ -1,8 +1,6 @@
 ﻿using AutoWrapper.CodeGen.Contracts;
 using System;
 using System.CodeDom;
-using System.CodeDom.Compiler;
-using System.IO;
 using System.Linq;
 using System.Reflection;
 
@@ -95,21 +93,6 @@ namespace AutoWrapper.CodeGen
 					memberMethod.Statements.Add(new CodeMethodReturnStatement(invokeExpression));
 
 				generatedType.Members.Add(memberMethod);
-			}
-		}
-
-		public string GenerateCode(Type type)
-		{
-			var generatedType = ((IGenerator)this).GenerateDeclaration(type);
-
-			using (var provider = CodeDomProvider.CreateProvider("CSharp"))
-			using (var writer = new StringWriter())
-			{
-				var options = new CodeGeneratorOptions { BracingStyle = "C" };
-
-				provider.GenerateCodeFromType(generatedType, writer, options);
-
-				return writer.ToString();
 			}
 		}
 
