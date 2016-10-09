@@ -1,9 +1,10 @@
 ﻿using AutoWrapper.CodeGen;
 using FluentAssertions;
-using Randal.Core.Testing.XUnit;
+using GwtUnit.XUnit;
 using System;
 using System.CodeDom;
 using System.Reflection;
+using AutoWrapper.Tests.TestClasses;
 using Xunit;
 
 namespace AutoWrapper.Tests.CodeGen
@@ -32,7 +33,7 @@ namespace AutoWrapper.Tests.CodeGen
 			When(CreatingMemberMethod);
 
 			Then.MemberMethod1.ReturnType.BaseType.Should().Be("System.Void");
-			Then.MemberMethod2.ReturnType.BaseType.Should().Be("System.String");
+			Then.MemberMethod2.ReturnType.BaseType.Should().Be("System.Int32");
 		}
 
 		[Fact]
@@ -104,7 +105,7 @@ namespace AutoWrapper.Tests.CodeGen
 
 			When(CreatingMemberProperty);
 
-			Then.MemberProperty1.Type.BaseType.Should().Be("System.Int32");
+			Then.MemberProperty1.Type.BaseType.Should().Be("System.Boolean");
 			Then.MemberProperty2.Type.BaseType.Should().Be("System.Object");
 		}
 
@@ -139,10 +140,10 @@ namespace AutoWrapper.Tests.CodeGen
 			When(CreatingMemberProperty);
 
 			Then.MemberProperty1.HasGet.Should().BeTrue();
-			Then.MemberProperty1.HasSet.Should().BeFalse();
+			Then.MemberProperty1.HasSet.Should().BeTrue();
 
 			Then.MemberProperty2.HasGet.Should().BeTrue();
-			Then.MemberProperty2.HasSet.Should().BeTrue();
+			Then.MemberProperty2.HasSet.Should().BeFalse();
 		}
 
 		private void CreatingMemberProperty()
@@ -163,16 +164,6 @@ namespace AutoWrapper.Tests.CodeGen
 
 			public CodeMemberProperty MemberProperty1;
 			public CodeMemberProperty MemberProperty2;
-		}
-
-		private class SomeType
-		{
-			public void Function1(int x) { throw new NotImplementedException(); }
-			public string Function2(bool b, object o) { throw new NotImplementedException(); }
-			protected void NotSupportedFunction() { throw new NotImplementedException(); }
-			public int Property1 { get; }
-			public object Property2 { get; set; }
-			protected object NotSupportedProperty { get; set; }
 		}
 	}
 }

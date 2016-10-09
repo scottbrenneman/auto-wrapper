@@ -2,94 +2,45 @@
 using System;
 using System.CodeDom;
 using System.CodeDom.Compiler;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 
 namespace AutoWrapper.CodeGen
 {
-	public class TypeGenerator : ITypeGeneratorOptions
+	public class TypeGenerator : IGenerator
 	{
-		private Type _type;
-		private TypeAttributes _typeAttributes = TypeAttributes.Class;
-		private string _name;
-		private ITypeNamingStrategy _namingStrategy;
-		private readonly List<Type> _excludedTypes = new List<Type>();
+		private readonly ITypeGeneratorOptions _typeGeneratorOptions;
 
-		private readonly IContractGenerator _contractGenerator;
-
-		public TypeGenerator(IContractGenerator contractGenerator = null)
+		public TypeGenerator(ITypeGeneratorOptions typeGeneratorOptions)
 		{
-			_contractGenerator = contractGenerator ?? new ContractGenerator();
+			_typeGeneratorOptions = typeGeneratorOptions;
 		}
-
-		public ITypeGeneratorOptions WrapperFor<TType>()
+		
+		public CodeTypeDeclaration GenerateDeclaration(Type type)
 		{
-			return WrapperFor(typeof(TType));
-		}
-
-		public ITypeGeneratorOptions WrapperFor(Type type)
-		{
-			_type = type;
-			_contractGenerator.ContractFor(type);
-
-			return this;
-		}
-
-		public static ITypeGeneratorOptions CreateWrapperFor<TType>()
-		{
-			return new TypeGenerator().WrapperFor<TType>();
-		}
-
-		CodeTypeDeclaration IGenerator.GenerateDeclaration()
-		{
-			var name = _name;
-
-			if (name == null)
-			{
-				var namingStrategy = _namingStrategy ?? new DefaultTypeNamingStrategy();
-
-				name = namingStrategy.TypeNameFor(_type);
-			}
+			var name = _typeGeneratorOptions.GetNameFor(type);
 
 			var generatedType = new CodeTypeDeclaration(name)
 			{
 				IsClass = true,
-				TypeAttributes = _typeAttributes
+				TypeAttributes = _typeGeneratorOptions.GetTypeAttributes(),
+				IsPartial = _typeGeneratorOptions.UsePartial
 			};
+			
+			generatedType.Members.AddRange(CompositionMembersFor(type));
 
-			generatedType.Members.AddRange(CompositionMembersFor(_type));
+			GenerateMethods(type, generatedType);
 
-			var methods = _type
-				.GetMethods(BindingFlags.Public | BindingFlags.Instance)
-				.Where(m => m.IsSpecialName == false)
-				.Where(m => _excludedTypes.Contains(m.DeclaringType) == false);
+			GenerateProperties(type, generatedType);
 
-			foreach (var method in methods)
-			{
-				var memberMethod = method.ToMemberMethod();
+			return generatedType;
+		}
 
-				var invokeExpression =
-					new CodeMethodInvokeExpression(
-						new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "_wrapped"),
-						memberMethod.Name,
-						memberMethod.Parameters.OfType<CodeParameterDeclarationExpression>()
-							.Select(p => new CodeVariableReferenceExpression(p.Name))
-							.ToArray()
-					);
-
-				if (memberMethod.ReturnType.BaseType == "System.Void")
-					memberMethod.Statements.Add(invokeExpression);
-				else
-					memberMethod.Statements.Add(new CodeMethodReturnStatement(invokeExpression));
-
-				generatedType.Members.Add(memberMethod);
-			}
-
-			var properties = _type
-				.GetProperties(BindingFlags.Public | BindingFlags.Instance)
-				.Where(p => _excludedTypes.Contains(p.DeclaringType) == false);
+		private static void GenerateProperties(IReflect type, CodeTypeDeclaration generatedType)
+		{
+			var properties = type
+				.GetProperties(BindingFlags.Public | BindingFlags.Instance);
 
 			foreach (var property in properties)
 			{
@@ -117,23 +68,45 @@ namespace AutoWrapper.CodeGen
 
 				generatedType.Members.Add(memberProperty);
 			}
-
-			return generatedType;
 		}
 
-		string IGenerator.GenerateCode()
+		private static void GenerateMethods(IReflect type, CodeTypeDeclaration generatedType)
 		{
-			var contract = ((IGenerator)_contractGenerator).GenerateDeclaration();
+			var methods = type
+				.GetMethods(BindingFlags.Public | BindingFlags.Instance)
+				.Where(m => m.IsSpecialName == false);
 
-			var generatedType = ((IGenerator)this).GenerateDeclaration();
+			foreach (var method in methods)
+			{
+				var memberMethod = method.ToMemberMethod();
+
+				var invokeExpression =
+					new CodeMethodInvokeExpression(
+						new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "_wrapped"),
+						memberMethod.Name,
+						memberMethod.Parameters.OfType<CodeParameterDeclarationExpression>()
+							.Select(p => (CodeExpression) new CodeVariableReferenceExpression(p.Name))
+							.ToArray()
+					);
+
+				if (memberMethod.ReturnType.BaseType == "System.Void")
+					memberMethod.Statements.Add(invokeExpression);
+				else
+					memberMethod.Statements.Add(new CodeMethodReturnStatement(invokeExpression));
+
+				generatedType.Members.Add(memberMethod);
+			}
+		}
+
+		public string GenerateCode(Type type)
+		{
+			var generatedType = ((IGenerator)this).GenerateDeclaration(type);
 
 			using (var provider = CodeDomProvider.CreateProvider("CSharp"))
 			using (var writer = new StringWriter())
 			{
 				var options = new CodeGeneratorOptions { BracingStyle = "C" };
 
-				provider.GenerateCodeFromType(contract, writer, options);
-				writer.WriteLine();
 				provider.GenerateCodeFromType(generatedType, writer, options);
 
 				return writer.ToString();
@@ -159,57 +132,6 @@ namespace AutoWrapper.CodeGen
 			members[1] = constructor;
 
 			return members;
-		}
-
-		ITypeGeneratorOptions ITypeGeneratorOptions.AsPublic()
-		{
-			_typeAttributes |= TypeAttributes.Public;
-
-			return this;
-		}
-
-		ITypeGeneratorOptions ITypeGeneratorOptions.AsPartial()
-		{
-			throw new NotImplementedException();
-		}
-
-		ITypeGeneratorOptions ITypeGeneratorOptions.WithName(string name)
-		{
-			_name = name;
-
-			return this;
-		}
-
-		ITypeGeneratorOptions ITypeGeneratorOptions.WithNamingStrategy(ITypeNamingStrategy strategy)
-		{
-			_name = null;
-
-			_namingStrategy = strategy;
-
-			return this;
-		}
-
-		ITypeGeneratorOptions ITypeGeneratorOptions.WithNoContract()
-		{
-			throw new NotImplementedException();
-		}
-
-		ITypeGeneratorOptions ITypeGeneratorOptions.WithNoImplementation()
-		{
-			throw new NotImplementedException();
-		}
-
-		ITypeGeneratorOptions ITypeGeneratorOptions.ExcludingMembersFrom<T>()
-		{
-			return ((ITypeGeneratorOptions)this).ExcludingMembersFrom(typeof(T));
-		}
-
-		ITypeGeneratorOptions ITypeGeneratorOptions.ExcludingMembersFrom(Type type)
-		{
-			if (!_excludedTypes.Contains(type))
-				_excludedTypes.Add(type);
-
-			return this;
 		}
 	}
 }

@@ -3,19 +3,22 @@ using AutoWrapper.CodeGen.Contracts;
 using FluentAssertions;
 using Microsoft.CSharp;
 using Moq;
-using Randal.Core.Testing.XUnit;
+using GwtUnit.XUnit;
 using System;
 using System.CodeDom.Compiler;
 using System.Linq;
+using AutoWrapper.Tests.TestClasses;
 using Xunit;
 
 namespace AutoWrapper.Tests.CodeGen
 {
-	public class ContractGeneratorTests : XUnitTestBase<ContractGeneratorTests.Thens>
+	public sealed class ContractGeneratorTests : XUnitTestBase<ContractGeneratorTests.Thens>
     {
 		[Fact]
 		public void ShouldCompile_WhenGenerating()
 		{
+			Given.Type = typeof(SomeType);
+
 			When(Generating, Compiling);
 
 			Then.CompilerResults.Errors.HasErrors.Should().BeFalse();
@@ -25,6 +28,7 @@ namespace AutoWrapper.Tests.CodeGen
 		[Fact]
 		public void ShouldGenerateAsPublic_WhenGenerating_GivenAsPublic()
 		{
+			Given.Type = typeof(SomeType);
 			Given.AsPublicWasCalled = true;
 
 			When(Generating, Compiling);
@@ -33,18 +37,9 @@ namespace AutoWrapper.Tests.CodeGen
 		}
 
 		[Fact]
-		public void ShouldUseName_WhenGenerating_GivenName()
-		{
-			Given.Name = "ISomeRenamedType";
-
-			When(Generating, Compiling);
-
-			Then.Contract.Name.Should().Be("ISomeRenamedType");
-		}
-
-		[Fact]
 		public void ShouldUseNamingStrategy_WhenGenerating_GivenNamingStrategy()
 		{
+			Given.Type = typeof(SomeType);
 			Given.CustomNamingStrategy = CustomNamingStrategy();
 
 			When(Generating, Compiling);
@@ -66,16 +61,20 @@ namespace AutoWrapper.Tests.CodeGen
 		[Fact]
 		public void ShouldDeclareFunctions_WhenGenerating_GivenTypeWithFunctions()
 		{
+			Given.Type = typeof(SomeType);
+
 			When(Generating, Compiling);
 
-			Then.Contract.Should().HaveMethod("Function1", new Type[0]);
-			Then.Contract.Should().HaveMethod("Function2", new[] { typeof(int) });
+			Then.Contract.Should().HaveMethod("Function1", new[] { typeof(int) });
+			Then.Contract.Should().HaveMethod("Function2", new[] { typeof(bool), typeof(object) });
 			Then.Contract.Should().HaveMethod("Function3", new[] { typeof(int), typeof(string) });
 		}
 
 		[Fact]
 		public void ShouldDeclareProperties_WhenGenerating_GivenTypeWithProperties()
 		{
+			Given.Type = typeof(SomeType);
+
 			When(Generating, Compiling);
 
 			Then.Contract.Should().HaveProperty<bool>("Property1");
@@ -83,8 +82,9 @@ namespace AutoWrapper.Tests.CodeGen
 		}
 
 		[Fact]
-		public void ShouldExcludeMembers_WhenGenerating_GivenExcludingMembersFrom()
+		public void ShouldExcludeMembers_WhenGenerating_GivenExcludedType()
 		{
+			Given.Type = typeof(SomeType);
 			Given.Exclude = typeof(object);
 
 			When(Generating, Compiling);
@@ -97,30 +97,20 @@ namespace AutoWrapper.Tests.CodeGen
 
 		private void Generating()
 		{
-			var options = Then.Target.ContractFor<SomeType>();
-
-			if (GivensDefined("AsPublicWasCalled"))
-				options.AsPublic();
-
-			if (GivensDefined("Name"))
-				options.WithName(Given.Name);
-
-			if (GivensDefined("CustomNamingStrategy"))
-				options.WithNamingStrategy(Given.CustomNamingStrategy);
-
-			if (GivensDefined("Exclude"))
-				options.ExcludingMembersFrom(Given.Exclude);
-
-			Then.Code = options.GenerateCode();
+			Then.Code = Then.Target.GenerateCode(Given.Type);
 		}
 
 		private void Compiling()
 		{
 			var provider = new CSharpCodeProvider();
-			var parameters = new CompilerParameters
-			{
-				GenerateInMemory = true
-			};
+
+			var referencedAssemblies =
+				AppDomain.CurrentDomain.GetAssemblies()
+					.Where(a => !a.IsDynamic)
+					.Select(a => a.Location)
+					.ToArray();
+
+			var parameters = new CompilerParameters(referencedAssemblies) { GenerateInMemory = true };
 
 			var code = $"namespace AutoWrapper.Tests.CodeGen {{ {Then.Code} }}";
 
@@ -132,24 +122,26 @@ namespace AutoWrapper.Tests.CodeGen
 
 		protected override void Creating()
 		{
-			Then.Target = new ContractGenerator();
+			var options = new ContractGeneratorOptions();
+
+			if (GivensDefined("AsPublicWasCalled"))
+				options.WithPublic();
+			
+			if (GivensDefined("CustomNamingStrategy"))
+				options.WithNamingStrategy(Given.CustomNamingStrategy);
+
+			if (GivensDefined("Exclude"))
+				options.ExcludeMembersDeclaredOn(Given.Exclude);
+
+			Then.Target = new ContractGenerator(options);
 		}
 
-		public class Thens
+		public sealed class Thens
 		{
 			public ContractGenerator Target;
 			public string Code;
 			public CompilerResults CompilerResults;
 			public Type Contract;
-		}
-
-		private class SomeType
-		{
-			public void Function1() { throw new NotImplementedException(); }
-			public int Function2(int x) { throw new NotImplementedException(); }
-			public string Function3(int x, string s) { throw new NotImplementedException(); }
-			public bool Property1 { get; set; }
-			public object Property2 { get; }
 		}
     }
 }

@@ -37,18 +37,16 @@
   <ItemGroup>
     <Compile Include="AutoWrap.cs" />
     <Compile Include="CodeGen\ContractGenerator.cs" />
-    <Compile Include="CodeGen\Contracts\IContractGenerator.cs" />
+    <Compile Include="CodeGen\ContractGeneratorOptions.cs" />
     <Compile Include="CodeGen\Contracts\IContractGeneratorOptions.cs" />
     <Compile Include="CodeGen\Contracts\IContractNamingStrategy.cs" />
     <Compile Include="CodeGen\Contracts\IGenerator.cs" />
     <Compile Include="CodeGen\Contracts\ITypeGeneratorOptions.cs" />
     <Compile Include="CodeGen\Contracts\ITypeNamingStrategy.cs" />
-    <Compile Include="CodeGen\Contracts\IWrapperTypeContainer.cs" />
-    <Compile Include="CodeGen\WrapperTypeContainer.cs" />
-    <Compile Include="CodeGen\SuffixContractNamingStrategy.cs" />
-    <Compile Include="CodeGen\DefaultContractNamingStrategy.cs" />
-    <Compile Include="CodeGen\SuffixTypeNamingStrategy.cs" />
-    <Compile Include="CodeGen\DefaultTypeNamingStrategy.cs" />
+    <Compile Include="IWrappedTypeContainer.cs" />
+    <Compile Include="CodeGen\TypeGeneratorOptions.cs" />
+    <Compile Include="WrappedTypeContainer.cs" />
+    <Compile Include="CodeGen\DefaultNamingStrategy.cs" />
     <Compile Include="CodeGen\TypeExtensions.cs" />
     <Compile Include="CodeGen\TypeGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

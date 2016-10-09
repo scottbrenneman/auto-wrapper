@@ -2,78 +2,67 @@
 using System;
 using System.CodeDom;
 using System.CodeDom.Compiler;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
 
 namespace AutoWrapper.CodeGen
 {
-    public class ContractGenerator : IContractGenerator, IContractGeneratorOptions
+    public class ContractGenerator : IGenerator
     {
-		private Type _type;
-		private TypeAttributes _typeAttributes = TypeAttributes.Interface;
-		private string _name;
-		private IContractNamingStrategy _namingStrategy;
-		private List<Type> _excludedTypes = new List<Type>();
+	    private readonly IContractGeneratorOptions _contractGeneratorOptions;
 
-		public IContractGeneratorOptions ContractFor<TType>()
-        {
-            return ContractFor(typeof(TType));
-        }
+	    public ContractGenerator() : this(null) { }
 
-        public IContractGeneratorOptions ContractFor(Type type)
-        {
-            _type = type;
-
-            return this;
-        }
-
-        public static IContractGeneratorOptions CreateContractFor<TType>()
+		public ContractGenerator(IContractGeneratorOptions contractGeneratorOptions)
 		{
-			return new ContractGenerator().ContractFor<TType>();
+			_contractGeneratorOptions = contractGeneratorOptions ?? new ContractGeneratorOptions();
 		}
 
-		CodeTypeDeclaration IGenerator.GenerateDeclaration()
+		public CodeTypeDeclaration GenerateDeclaration(Type type)
 		{
-			if (_type == null) throw new InvalidOperationException("Specify type by calling ContractFor<TType> prior to generation.");
+			if (type == null)
+				throw new ArgumentNullException(nameof(type));
 
-			var name = _name;
-
-			if (name == null)
-			{
-				var namingStrategy = _namingStrategy ?? new DefaultContractNamingStrategy();
-
-				name = namingStrategy.ContractNameFor(_type);
-			}
+			var name = _contractGeneratorOptions.GetNameFor(type);
 
 			var contract = new CodeTypeDeclaration(name)
 			{
-				IsInterface = true,
-				TypeAttributes = _typeAttributes
+				TypeAttributes = _contractGeneratorOptions.GetTypeAttributes(),
+				IsInterface = true
 			};
 
-			var methods = _type
+			var methods = type
 				.GetMethods(BindingFlags.Public | BindingFlags.Instance)
 				.Where(m => m.IsSpecialName == false)
-				.Where(m => _excludedTypes.Contains(m.DeclaringType) == false);
+				.Where(m => _contractGeneratorOptions.IsExcluded(m) == false);
 
 			foreach (var method in methods)
 				contract.Members.Add(method.ToMemberMethod());
 
-			var properties = _type
+			var properties = type
 				.GetProperties(BindingFlags.Public | BindingFlags.Instance)
-				.Where(p => _excludedTypes.Contains(p.DeclaringType) == false);
+				.Where(p => _contractGeneratorOptions.IsExcluded(p) == false);
 
 			foreach (var property in properties)
 				contract.Members.Add(property.ToMemberProperty());
 
+			contract.Members.Add(
+				new CodeMemberProperty()
+				{
+					Name = "Wrapped",
+					HasGet = true,
+					Type = new CodeTypeReference(type),
+					Attributes = MemberAttributes.Public | MemberAttributes.Final
+				}
+			);
+
 			return contract;
 		}
 
-		string IGenerator.GenerateCode()
+		public string GenerateCode(Type type)
 		{
-			var contract = ((IGenerator)this).GenerateDeclaration();
+			var contract = GenerateDeclaration(type);
 
 			using (var provider = CodeDomProvider.CreateProvider("CSharp"))
 			using (var writer = new StringWriter())
@@ -82,42 +71,6 @@ namespace AutoWrapper.CodeGen
 
 				return writer.ToString();
 			}
-		}
-
-		IContractGeneratorOptions IContractGeneratorOptions.AsPublic()
-		{
-			_typeAttributes |= TypeAttributes.Public;
-
-			return this;
-		}
-
-		IContractGeneratorOptions IContractGeneratorOptions.WithName(string name)
-        {
-			_name = name;
-
-			return this;
-		}
-
-		IContractGeneratorOptions IContractGeneratorOptions.WithNamingStrategy(IContractNamingStrategy strategy)
-		{
-			_name = null;
-
-			_namingStrategy = strategy;
-
-			return this;
-		}
-
-		IContractGeneratorOptions IContractGeneratorOptions.ExcludingMembersFrom<T>()
-		{
-			return ((IContractGeneratorOptions) this).ExcludingMembersFrom(typeof(T));
-		}
-
-		IContractGeneratorOptions IContractGeneratorOptions.ExcludingMembersFrom(Type type)
-		{
-			if (!_excludedTypes.Contains(type))
-				_excludedTypes.Add(type);
-
-			return this;
 		}
 	}
 }

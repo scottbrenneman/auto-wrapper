@@ -50,6 +50,10 @@
       <HintPath>..\packages\FluentAssertions.4.14.0\lib\net45\FluentAssertions.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="GwtUnit, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GwtUnit.1.0.0\lib\net45\GwtUnit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Moq, Version=4.5.21.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
       <HintPath>..\packages\Moq.4.5.21\lib\net45\Moq.dll</HintPath>
@@ -59,11 +63,8 @@
       <HintPath>..\packages\Randal.Core.1.2.0\lib\net45\Randal.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Randal.Core.Testing, Version=3.4.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Randal.Core.Testing.3.4.2\lib\net45\Randal.Core.Testing.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
@@ -89,21 +90,16 @@
         <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
       </ItemGroup>
     </When>
-    <Otherwise>
-      <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
-          <Private>False</Private>
-        </Reference>
-      </ItemGroup>
-    </Otherwise>
+    <Otherwise />
   </Choose>
   <ItemGroup>
-    <Compile Include="CodeGen\DefaultContractNamingStrategyTests.cs" />
-    <Compile Include="CodeGen\DefaultTypeNamingStrategyTests.cs" />
+    <Compile Include="CodeGen\DefaultNamingStrategyTests.cs" />
     <Compile Include="CodeGen\TypeExtensionsTests.cs" />
     <Compile Include="CodeGen\TypeGeneratorTests.cs" />
+    <Compile Include="WrappedTypeContainerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CodeGen\ContractGeneratorTests.cs" />
+    <Compile Include="TestClasses\SomeType.cs" />
     <Compile Include="TestTemplate.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
