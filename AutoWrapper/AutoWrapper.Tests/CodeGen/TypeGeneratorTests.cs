@@ -29,7 +29,7 @@ namespace AutoWrapper.Tests.CodeGen
 				IsPartial = false,
 				IsStruct = false,
 				LinePragma = (CodeLinePragma)null,
-				Name = "SomeTypeWrapper",
+				Name = "SomeTypeWrapper", 
 				TypeAttributes = TypeAttributes.AnsiClass
 			}, options => options.ExcludingMissingMembers());
 
@@ -37,7 +37,7 @@ namespace AutoWrapper.Tests.CodeGen
 			Then.CodeTypeDeclaration.Comments.Should().HaveCount(0);
 			Then.CodeTypeDeclaration.CustomAttributes.Should().HaveCount(0);
 			Then.CodeTypeDeclaration.EndDirectives.Should().HaveCount(0);
-			Then.CodeTypeDeclaration.Members.Should().HaveCount(12);
+			Then.CodeTypeDeclaration.Members.Should().HaveCount(13);
 			Then.CodeTypeDeclaration.StartDirectives.Should().HaveCount(0);
 			Then.CodeTypeDeclaration.TypeParameters.Should().HaveCount(0);
 			Then.CodeTypeDeclaration.UserData.Should().HaveCount(0);
@@ -69,16 +69,17 @@ namespace AutoWrapper.Tests.CodeGen
 		InlineData(2, "Function1", new [] { "System.Int32" }),
 		InlineData(3, "Function2", new[] { "System.Boolean", "System.Object" }),
 		InlineData(4, "Function3", new[] { "System.Int32", "System.String" }),
-		InlineData(5, "GetHashCode", new string[0]),
-		InlineData(6, "GetType", new string[0]),
-		InlineData(7, "InheritedFunction", new string[0]),
-		InlineData(8, "ToString", new string[0])
+		InlineData(5, "Function4", new[] { "System.Int32", "System.String", "System.Object" }),
+		InlineData(6, "GetHashCode", new string[0]),
+		InlineData(7, "GetType", new string[0]),
+		InlineData(8, "InheritedFunction", new string[0]),
+		InlineData(9, "ToString", new string[0])
 		]
 		public void ShouldDeclareFunctions_WhenGenerating_GivenTypeWithFunctions(int index, string name, params string[] paramterTypes)
 		{
 			When(Generating);
 
-			Then.Methods.Should().HaveCount(9);
+			Then.Methods.Should().HaveCount(10);
 
 			Then.Methods[index].Name.Should().Be(name);
 			Then.Methods[index].Parameters.Should().HaveCount(paramterTypes.Length);
@@ -87,6 +88,23 @@ namespace AutoWrapper.Tests.CodeGen
 			{	
 				Then.Methods[index].Parameters[n].Type.BaseType.Should().Be(paramterTypes[n]);
 			}
+		}
+
+		[Theory,
+		InlineData("Function1", 0, FieldDirection.In),
+		InlineData("Function2", 0, FieldDirection.In),
+		InlineData("Function3", 0, FieldDirection.In),
+		InlineData("Function4", 0, FieldDirection.Out),
+		InlineData("Function4", 1, FieldDirection.Ref),
+		InlineData("Function4", 2, FieldDirection.In)]
+		public void ShouldHaveDirectionalParameters_WhenGenerating_GivenMethod(string method, int parameter, FieldDirection direction)
+		{
+			When(Generating);
+
+			var memberMethod = Then.Methods.First(x => x.Name == method);
+			memberMethod.Should().NotBeNull();
+
+			memberMethod.Parameters[parameter].Direction.Should().Be(direction);
 		}
 
 		[Fact]
@@ -110,7 +128,7 @@ namespace AutoWrapper.Tests.CodeGen
 			Then.Fields.Should().HaveCount(1);
 
 			Then.Fields[0].Name.Should().Be("_wrapped");
-			Then.Fields[0].Type.BaseType.Should().Be("AutoWrapper.Tests.TestClasses.SomeType");
+			Then.Fields[0].Type.BaseType.Should().Be("readonly AutoWrapper.Tests.TestClasses.SomeType");
 		}
 		
 		protected override void Creating()

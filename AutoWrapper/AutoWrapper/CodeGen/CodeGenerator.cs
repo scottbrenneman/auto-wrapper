@@ -23,7 +23,17 @@ namespace AutoWrapper.CodeGen
 				return writer.ToString();
 			}
 		}
-		
+
+		public string GenerateCode(CodeCompileUnit codeCompileUnit)
+		{
+			using (var writer = new StringWriter())
+			{
+				_provider.GenerateCodeFromCompileUnit(codeCompileUnit, writer, _options);
+
+				return writer.ToString();
+			}
+		}
+
 		public void Dispose()
 		{
 			_provider.Dispose();

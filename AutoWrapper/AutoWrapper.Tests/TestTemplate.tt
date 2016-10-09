@@ -1,13 +1,8 @@
 ﻿<#@ template debug="true" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
 <#@ assembly name="System.Core" #>
 <#@ assembly name="$(TargetDir)AutoWrapper.dll" #>
 <#@ assembly name="System.DirectoryServices" #>
 <#@ import namespace="AutoWrapper" #>
 <#@ import namespace="System.DirectoryServices" #>
-<#@ output extension=".cs" #>
-namespace AutoWrapper.Examples.DirectoryServices
-{
-/*
-<#= AutoWrap.TypesInAssemblyWith(typeof(DirectoryEntry)) #>
-*/
-}
+<#= AutoWrap.TypesInAssemblyWith(typeof(DirectoryEntry), "AutoWrapper.Samples.WrappersForDirectoryServices") #>

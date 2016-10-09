@@ -21,11 +21,27 @@ namespace AutoWrapper.CodeGen
 
 			foreach (var parameter in methodInfo.GetParameters())
 			{
-				memberMethod.Parameters
-					.Add(new CodeParameterDeclarationExpression(parameter.ParameterType, parameter.Name));
+				memberMethod.Parameters.Add(parameter.ToParameterDeclaration());
 			}
 
 			return memberMethod;
+		}
+
+		public static CodeParameterDeclarationExpression ToParameterDeclaration(this ParameterInfo parameter)
+		{
+			var type = parameter.ParameterType.IsByRef
+				? parameter.ParameterType.GetElementType()
+				: parameter.ParameterType;
+
+			var direction = parameter.ParameterType.IsByRef
+				? (parameter.IsOut ? FieldDirection.Out : FieldDirection.Ref)
+				: FieldDirection.In;
+
+
+			return new CodeParameterDeclarationExpression(type.FullName, parameter.Name)
+			{
+				Direction = direction
+			};
 		}
 
 		public static CodeMemberProperty ToMemberProperty(this PropertyInfo propertyInfo)

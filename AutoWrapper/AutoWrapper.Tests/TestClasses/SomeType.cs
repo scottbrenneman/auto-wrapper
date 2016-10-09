@@ -12,6 +12,8 @@ namespace AutoWrapper.Tests.TestClasses
 
 		public string Function3(int x, string s) { throw new NotImplementedException(); }
 
+		public string Function4(out int x, ref string s, object o) { throw new NotImplementedException(); }
+
 		public bool Property1 { get; set; }
 
 		public object Property2 { get; }

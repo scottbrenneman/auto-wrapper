@@ -40,6 +40,8 @@ namespace AutoWrapper.CodeGen
 			var properties = type
 				.GetProperties(BindingFlags.Public | BindingFlags.Instance);
 
+			var wrappedField = new CodeFieldReferenceExpression(This, WrappedFieldName);
+
 			foreach (var property in properties)
 			{
 				var memberProperty = property.ToMemberProperty();
@@ -49,7 +51,7 @@ namespace AutoWrapper.CodeGen
 					memberProperty.GetStatements.Add(
 						new CodeMethodReturnStatement(
 							new CodePropertyReferenceExpression(
-								new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "_wrapped"),
+								wrappedField,
 								memberProperty.Name))
 					);
 				}
@@ -59,7 +61,7 @@ namespace AutoWrapper.CodeGen
 					memberProperty.SetStatements.Add(
 						new CodeAssignStatement(
 							new CodePropertyReferenceExpression(
-								new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "_wrapped"), memberProperty.Name),
+								wrappedField, memberProperty.Name),
 							new CodePropertySetValueReferenceExpression())
 					);
 				}
@@ -80,7 +82,7 @@ namespace AutoWrapper.CodeGen
 
 				var invokeExpression =
 					new CodeMethodInvokeExpression(
-						new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "_wrapped"),
+						new CodeFieldReferenceExpression(This, WrappedFieldName),
 						memberMethod.Name,
 						memberMethod.Parameters.OfType<CodeParameterDeclarationExpression>()
 							.Select(p => (CodeExpression) new CodeVariableReferenceExpression(p.Name))
@@ -100,21 +102,25 @@ namespace AutoWrapper.CodeGen
 		{
 			var members = new CodeTypeMember[2];
 
-			members[0] = new CodeMemberField(type, "_wrapped") { Attributes = MemberAttributes.Private };
+			members[0] = new CodeMemberField($"readonly {type}", WrappedFieldName) { Attributes = MemberAttributes.Private };
 
 			var constructor = new CodeConstructor() { Attributes = MemberAttributes.Public };
 
-			constructor.Parameters.Add(new CodeParameterDeclarationExpression(type, "wrapped"));
+			constructor.Parameters.Add(new CodeParameterDeclarationExpression(type, WrappedVariableName));
 
 			constructor.Statements.Add(
 				new CodeAssignStatement(
-					new CodeFieldReferenceExpression(new CodeThisReferenceExpression(), "_wrapped"),
-					new CodeArgumentReferenceExpression("wrapped"))
+					new CodeFieldReferenceExpression(This, WrappedFieldName),
+					new CodeArgumentReferenceExpression(WrappedVariableName))
 			);
 
 			members[1] = constructor;
 
 			return members;
 		}
+
+		private static readonly CodeThisReferenceExpression This = new CodeThisReferenceExpression();
+
+		private const string WrappedVariableName = "wrapped", WrappedFieldName = "_wrapped";
 	}
 }

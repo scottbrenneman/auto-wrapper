@@ -1,5 +1,6 @@
 ﻿using AutoWrapper.CodeGen;
 using System;
+using System.CodeDom;
 using System.Reflection;
 using System.Text;
 
@@ -12,12 +13,12 @@ namespace AutoWrapper
 			throw new NotImplementedException();
 		}
 
-		public static string TypesInAssemblyWith(Type type)
+		public static string TypesInAssemblyWith(Type type, string namespaceForWrappers)
 		{
-			return TypesInAssembly(Assembly.GetAssembly(type));
+			return TypesInAssembly(Assembly.GetAssembly(type), namespaceForWrappers);
 		}
 
-		public static string TypesInAssembly(Assembly assembly)
+		public static string TypesInAssembly(Assembly assembly, string namespaceForWrappers)
 		{
 			var container = new WrappedTypeContainer();
 			container.RegisterAssembly(assembly);
@@ -37,27 +38,27 @@ namespace AutoWrapper
 
 			var codeGenerator = new CodeGenerator();
 
-			var code = new StringBuilder();
+			var ns = new CodeNamespace(namespaceForWrappers);
+			ns.Imports.Add(new CodeNamespaceImport("System"));
+			
+			foreach (var type in container.RegisteredTypes)
+			{
+				ns.Types.Add(
+					contractGenerator.GenerateDeclaration(type)
+				);
+			}
 
 			foreach (var type in container.RegisteredTypes)
 			{
-				code.AppendLine(
-					codeGenerator.GenerateCode(
-						contractGenerator.GenerateDeclaration(type)
-					)
+				ns.Types.Add(
+					typeGenerator.GenerateDeclaration(type)
 				);
 			}
 
-			foreach (var type in container.RegisteredTypes)
-			{ 
-				code.AppendLine(
-					codeGenerator.GenerateCode(
-						typeGenerator.GenerateDeclaration(type)
-					)
-				);
-			}
-
-			return code.ToString();
+			var targetUnit = new CodeCompileUnit();
+			targetUnit.Namespaces.Add(ns);
+			
+			return codeGenerator.GenerateCode(targetUnit);
 		}
 	}
 }

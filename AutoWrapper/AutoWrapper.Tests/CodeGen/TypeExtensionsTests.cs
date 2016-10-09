@@ -12,63 +12,74 @@ namespace AutoWrapper.Tests.CodeGen
 	public class TypeExtensionsTests : XUnitTestBase<TypeExtensionsTests.Thens>
 	{
 		#region MemberMethod
-		[Fact]
-		public void ShouldSetName_WhenCreatingMemberMethod_GivenMethodInfo()
+		[Theory,
+		InlineData("Function1"),
+		InlineData("Function2"),
+		InlineData("Function3")]
+		public void ShouldSetName_WhenCreatingMemberMethod_GivenMethodInfo(string name)
 		{
-			Given.MethodInfo1 = typeof(SomeType).GetMethod("Function1");
-			Given.MethodInfo2 = typeof(SomeType).GetMethod("Function2");
+			Given.MethodInfo = typeof(SomeType).GetMethod(name);
 
 			When(CreatingMemberMethod);
 
-			Then.MemberMethod1.Name.Should().Be("Function1");
-			Then.MemberMethod2.Name.Should().Be("Function2");
+			Then.MemberMethod.Name.Should().Be(name);
 		}
 
 		[Fact]
-		public void ShouldSetReturnType_WhenCreatingMemberMethod_GivenMethodInfo()
+		public void ShouldSetParameters_WhenCreatingMemberMethod_GivenMethodInfoForFunction1()
 		{
-			Given.MethodInfo1 = typeof(SomeType).GetMethod("Function1");
+			Given.MethodInfo = typeof(SomeType).GetMethod("Function1");
 			Given.MethodInfo2 = typeof(SomeType).GetMethod("Function2");
 
 			When(CreatingMemberMethod);
 
-			Then.MemberMethod1.ReturnType.BaseType.Should().Be("System.Void");
-			Then.MemberMethod2.ReturnType.BaseType.Should().Be("System.Int32");
+			Then.MemberMethod.Parameters[0].Type.BaseType.Should().Be("System.Int32");
+			Then.MemberMethod.Parameters[0].Name.Should().Be("x");
 		}
 
 		[Fact]
-		public void ShouldSetParameters_WhenCreatingMemberMethod_GivenMethodInfo()
+		public void ShouldSetParameters_WhenCreatingMemberMethod_GivenMethodInfoForFunction2()
 		{
-			Given.MethodInfo1 = typeof(SomeType).GetMethod("Function1");
-			Given.MethodInfo2 = typeof(SomeType).GetMethod("Function2");
-
+			Given.MethodInfo = typeof(SomeType).GetMethod("Function2");
+			
 			When(CreatingMemberMethod);
 
-			Then.MemberMethod1.Parameters[0].Type.BaseType.Should().Be("System.Int32");
-			Then.MemberMethod1.Parameters[0].Name.Should().Be("x");
-
-			Then.MemberMethod2.Parameters[0].Type.BaseType.Should().Be("System.Boolean");
-			Then.MemberMethod2.Parameters[0].Name.Should().Be("b");
-			Then.MemberMethod2.Parameters[1].Type.BaseType.Should().Be("System.Object");
-			Then.MemberMethod2.Parameters[1].Name.Should().Be("o");
+			Then.MemberMethod.Parameters[0].Type.BaseType.Should().Be("System.Boolean");
+			Then.MemberMethod.Parameters[0].Name.Should().Be("b");
+			Then.MemberMethod.Parameters[1].Type.BaseType.Should().Be("System.Object");
+			Then.MemberMethod.Parameters[1].Name.Should().Be("o");
 		}
 
 		[Fact]
-		public void ShouldBePublic_WhenCreatingMemberMethod_GivenMethodInfo()
+		public void ShouldSetParameters_WhenCreatingMemberMethod_GivenMethodInfoForFunction3()
 		{
-			Given.MethodInfo1 = typeof(SomeType).GetMethod("Function1");
-			Given.MethodInfo2 = typeof(SomeType).GetMethod("Function2");
+			Given.MethodInfo = typeof(SomeType).GetMethod("Function3");
 
 			When(CreatingMemberMethod);
 
-			Then.MemberMethod1.Attributes.Should().HaveFlag(MemberAttributes.Public);
-			Then.MemberMethod2.Attributes.Should().HaveFlag(MemberAttributes.Public);
+			Then.MemberMethod.Parameters[0].Type.BaseType.Should().Be("System.Int32");
+			Then.MemberMethod.Parameters[0].Name.Should().Be("x");
+			Then.MemberMethod.Parameters[1].Type.BaseType.Should().Be("System.String");
+			Then.MemberMethod.Parameters[1].Name.Should().Be("s");
+		}
+
+		[Theory,
+		InlineData("Function1", MemberAttributes.Public),
+		InlineData("Function2", MemberAttributes.Public),
+		InlineData("Function3", MemberAttributes.Public)]
+		public void ShouldBePublic_WhenCreatingMemberMethod_GivenMethodInfo(string name, MemberAttributes attributes)
+		{
+			Given.MethodInfo = typeof(SomeType).GetMethod(name);
+			
+			When(CreatingMemberMethod);
+
+			Then.MemberMethod.Attributes.Should().HaveFlag(attributes);
 		}
 
 		[Fact]
 		public void ShouldThrow_WhenCreatingMemberMethod_GivenNonPublicMethodInfo()
 		{
-			Given.MethodInfo1 = typeof(SomeType).GetMethod("NotSupportedFunction", BindingFlags.NonPublic | BindingFlags.Instance);
+			Given.MethodInfo = typeof(SomeType).GetMethod("NotSupportedFunction", BindingFlags.NonPublic | BindingFlags.Instance);
 
 			WhenLastActionDeferred(CreatingMemberMethod);
 
@@ -79,8 +90,7 @@ namespace AutoWrapper.Tests.CodeGen
 		{
 			Func<MethodInfo, CodeMemberMethod> func = m => m.ToMemberMethod();
 
-			Then.MemberMethod1 = func(Given.MethodInfo1);
-			Then.MemberMethod2 = func(Given.MethodInfo2);
+			Then.MemberMethod = func(Given.MethodInfo);
 		}
 		#endregion
 
@@ -159,8 +169,8 @@ namespace AutoWrapper.Tests.CodeGen
 
 		public class Thens
 		{
-			public CodeMemberMethod MemberMethod1;
-			public CodeMemberMethod MemberMethod2;
+			public CodeMemberMethod MemberMethod;
+			//public CodeMemberMethod MemberMethod2;
 
 			public CodeMemberProperty MemberProperty1;
 			public CodeMemberProperty MemberProperty2;
