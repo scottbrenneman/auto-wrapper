@@ -35,7 +35,7 @@ namespace AutoWrapper.Tests.CodeGen
 				TypeAttributes = TypeAttributes.Interface
 			}, options => options.ExcludingMissingMembers());
 
-			Then.CodeTypeDeclaration.Members.Should().HaveCount(12);
+			Then.CodeTypeDeclaration.Members.Should().HaveCount(13);
 
 			Then.CodeTypeDeclaration.BaseTypes.Should().HaveCount(0);
 			Then.CodeTypeDeclaration.Comments.Should().HaveCount(1);

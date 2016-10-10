@@ -49,10 +49,13 @@ namespace AutoWrapper.CodeGen
 
 		public static CodeMemberProperty ToMemberProperty(this PropertyInfo propertyInfo)
 		{
-			if (propertyInfo == null) throw new ArgumentNullException(nameof(propertyInfo));
-			if (propertyInfo.GetAccessors().Any() == false) throw new NotSupportedException("Non-public properties are not supported.");
+			if (propertyInfo == null)
+				throw new ArgumentNullException(nameof(propertyInfo));
 
-			return new CodeMemberProperty
+			if (propertyInfo.GetAccessors().Any() == false)
+				throw new NotSupportedException("Non-public properties are not supported.");
+
+			var property = new CodeMemberProperty
 			{
 				Attributes = MemberAttributes.Final | MemberAttributes.Public,
 				Name = propertyInfo.Name,
@@ -60,6 +63,21 @@ namespace AutoWrapper.CodeGen
 				HasGet = propertyInfo.CanRead,
 				HasSet = propertyInfo.CanWrite
 			};
+
+			if (propertyInfo.IsIndexer())
+			{
+				foreach (var parameter in propertyInfo.GetIndexParameters())
+				{
+					property.Parameters.Add(parameter.ToParameterDeclaration());
+				}
+			}
+
+			return property;
+		}
+
+		public static bool IsIndexer(this PropertyInfo propertyInfo)
+		{
+			return propertyInfo.GetIndexParameters().Length > 0;
 		}
 
 		public static readonly List<string> MethodsToOverride = new List<string> { "ToString", "GetHashCode", "Equals" };

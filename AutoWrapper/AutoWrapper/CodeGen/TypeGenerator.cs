@@ -44,8 +44,7 @@ namespace AutoWrapper.CodeGen
 
 		private static void GenerateProperties(IReflect type, CodeTypeDeclaration generatedType)
 		{
-			var properties = type
-				.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+			var properties = type.GetProperties(BindingFlags.Public | BindingFlags.Instance);
 
 			foreach (var property in properties)
 			{
@@ -53,26 +52,67 @@ namespace AutoWrapper.CodeGen
 
 				if (memberProperty.HasGet)
 				{
-					memberProperty.GetStatements.Add(
-						new CodeMethodReturnStatement(
-							new CodePropertyReferenceExpression(
-								WrappedField,
-								memberProperty.Name))
-					);
+					BuildPropertyGetter(memberProperty, property);
 				}
 
 				if (memberProperty.HasSet)
 				{
-					memberProperty.SetStatements.Add(
-						new CodeAssignStatement(
-							new CodePropertyReferenceExpression(
-								WrappedField, memberProperty.Name),
-							new CodePropertySetValueReferenceExpression())
-					);
+					BuildPropertySetter(memberProperty, property);
 				}
 
 				generatedType.Members.Add(memberProperty);
 			}
+		}
+
+		private static void BuildPropertySetter(CodeMemberProperty memberProperty, PropertyInfo property)
+		{
+			if (property.IsIndexer())
+			{
+				memberProperty.SetStatements.Add(
+					new CodeAssignStatement(
+						new CodeIndexerExpression(
+							WrappedField,
+							memberProperty.Parameters.Cast<CodeParameterDeclarationExpression>()
+								.Select(p => new CodeVariableReferenceExpression(p.Name))
+								.ToArray<CodeExpression>()),
+
+						new CodePropertySetValueReferenceExpression()
+					)
+				);
+
+				return;
+			}
+
+			memberProperty.SetStatements.Add(
+				new CodeAssignStatement(
+					new CodePropertyReferenceExpression(
+						WrappedField, memberProperty.Name),
+					new CodePropertySetValueReferenceExpression())
+			);
+		}
+
+		private static void BuildPropertyGetter(CodeMemberProperty memberProperty, PropertyInfo property)
+		{
+			if (property.IsIndexer())
+			{
+				memberProperty.GetStatements.Add(
+					new CodeMethodReturnStatement(
+						new CodeIndexerExpression(
+							WrappedField,
+							memberProperty.Parameters.Cast<CodeParameterDeclarationExpression>()
+								.Select(p => new CodeVariableReferenceExpression(p.Name))
+								.ToArray<CodeExpression>()))
+				);
+
+				return;
+			}
+
+			memberProperty.GetStatements.Add(
+				new CodeMethodReturnStatement(
+					new CodePropertyReferenceExpression(
+						WrappedField,
+						memberProperty.Name))
+			);
 		}
 
 		private static void GenerateMethods(IReflect type, CodeTypeDeclaration generatedType)

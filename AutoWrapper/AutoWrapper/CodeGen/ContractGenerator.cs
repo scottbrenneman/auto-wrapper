@@ -33,7 +33,7 @@ namespace AutoWrapper.CodeGen
 			var methods = type
 				.GetMethods(BindingFlags.Public | BindingFlags.Instance)
 				.Where(m => m.IsSpecialName == false)
-				.Where(m => _contractGeneratorOptions.IsExcluded(m) == false);
+				.Where(m => _contractGeneratorOptions.IsExcluded(m) == false );
 
 			foreach (var method in methods)
 				contract.Members.Add(method.ToMemberMethod());

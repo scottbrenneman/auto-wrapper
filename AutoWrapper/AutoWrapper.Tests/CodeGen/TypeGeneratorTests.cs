@@ -36,7 +36,7 @@ namespace AutoWrapper.Tests.CodeGen
 			Then.CodeTypeDeclaration.BaseTypes.Should().HaveCount(1);
 			Then.CodeTypeDeclaration.BaseTypes[0].BaseType.Should().Be("ISomeTypeWrapper");
 
-			Then.CodeTypeDeclaration.Members.Should().HaveCount(13);
+			Then.CodeTypeDeclaration.Members.Should().HaveCount(14);
 			
 			Then.CodeTypeDeclaration.Comments.Should().HaveCount(0);
 			Then.CodeTypeDeclaration.CustomAttributes.Should().HaveCount(0);
@@ -112,13 +112,14 @@ namespace AutoWrapper.Tests.CodeGen
 		[Theory,
 		InlineData(0, "Property1", "System.Boolean"),
 		InlineData(1, "Property2", "System.Object"),
-		InlineData(2, "Wrapped", "AutoWrapper.Tests.TestClasses.SomeType")
+		InlineData(2, "Item", "System.String"),
+		InlineData(3, "Wrapped", "AutoWrapper.Tests.TestClasses.SomeType")
 		]
 		public void ShouldDeclareProperties_WhenGenerating_GivenTypeWithProperties(int index, string name, string type)
 		{
 			When(Generating);
 
-			Then.Properties.Should().HaveCount(3);
+			Then.Properties.Should().HaveCount(4);
 
 			Then.Properties[index].Name.Should().Be(name);
 			Then.Properties[index].Type.BaseType.Should().Be(type);
