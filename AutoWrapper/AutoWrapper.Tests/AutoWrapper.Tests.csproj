@@ -97,6 +97,11 @@
     <Compile Include="CodeGen\DefaultNamingStrategyTests.cs" />
     <Compile Include="CodeGen\TypeExtensionsTests.cs" />
     <Compile Include="CodeGen\TypeGeneratorTests.cs" />
+    <Compile Include="SomeType.cs">
+      <DependentUpon>SomeType.tt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="WrappedTypeContainerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CodeGen\ContractGeneratorTests.cs" />
@@ -117,6 +122,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="SomeType.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SomeType.cs</LastGenOutput>
+    </Content>
     <Content Include="DirectoryServices.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>DirectoryServices.cs</LastGenOutput>
