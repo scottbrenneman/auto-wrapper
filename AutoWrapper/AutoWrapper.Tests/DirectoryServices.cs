@@ -4972,14 +4972,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ActiveDirectorySecurityWrapper(System.DirectoryServices.ActiveDirectorySecurity wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.Type AccessRightType
 		{
 			get
 			{
-				return this._wrapped.AccessRightType;
+				return _wrapped.AccessRightType;
 			}
 		}
 		
@@ -4987,7 +4987,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.AccessRuleType;
+				return _wrapped.AccessRuleType;
 			}
 		}
 		
@@ -4995,7 +4995,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.AuditRuleType;
+				return _wrapped.AuditRuleType;
 			}
 		}
 		
@@ -5003,7 +5003,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.AreAccessRulesProtected;
+				return _wrapped.AreAccessRulesProtected;
 			}
 		}
 		
@@ -5011,7 +5011,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.AreAuditRulesProtected;
+				return _wrapped.AreAuditRulesProtected;
 			}
 		}
 		
@@ -5019,7 +5019,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.AreAccessRulesCanonical;
+				return _wrapped.AreAccessRulesCanonical;
 			}
 		}
 		
@@ -5027,7 +5027,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.AreAuditRulesCanonical;
+				return _wrapped.AreAuditRulesCanonical;
 			}
 		}
 		
@@ -5035,188 +5035,188 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void AddAccessRule(System.DirectoryServices.ActiveDirectoryAccessRule rule)
 		{
-			this._wrapped.AddAccessRule(rule);
+			_wrapped.AddAccessRule(rule);
 		}
 		
 		public void SetAccessRule(System.DirectoryServices.ActiveDirectoryAccessRule rule)
 		{
-			this._wrapped.SetAccessRule(rule);
+			_wrapped.SetAccessRule(rule);
 		}
 		
 		public void ResetAccessRule(System.DirectoryServices.ActiveDirectoryAccessRule rule)
 		{
-			this._wrapped.ResetAccessRule(rule);
+			_wrapped.ResetAccessRule(rule);
 		}
 		
 		public void RemoveAccess(System.Security.Principal.IdentityReference identity, System.Security.AccessControl.AccessControlType type)
 		{
-			this._wrapped.RemoveAccess(identity, type);
+			_wrapped.RemoveAccess(identity, type);
 		}
 		
 		public bool RemoveAccessRule(System.DirectoryServices.ActiveDirectoryAccessRule rule)
 		{
-			return this._wrapped.RemoveAccessRule(rule);
+			return _wrapped.RemoveAccessRule(rule);
 		}
 		
 		public void RemoveAccessRuleSpecific(System.DirectoryServices.ActiveDirectoryAccessRule rule)
 		{
-			this._wrapped.RemoveAccessRuleSpecific(rule);
+			_wrapped.RemoveAccessRuleSpecific(rule);
 		}
 		
 		public bool ModifyAccessRule(System.Security.AccessControl.AccessControlModification modification, System.Security.AccessControl.AccessRule rule, out bool modified)
 		{
-			return this._wrapped.ModifyAccessRule(modification, rule, out modified);
+			return _wrapped.ModifyAccessRule(modification, rule, out modified);
 		}
 		
 		public void PurgeAccessRules(System.Security.Principal.IdentityReference identity)
 		{
-			this._wrapped.PurgeAccessRules(identity);
+			_wrapped.PurgeAccessRules(identity);
 		}
 		
 		public void AddAuditRule(System.DirectoryServices.ActiveDirectoryAuditRule rule)
 		{
-			this._wrapped.AddAuditRule(rule);
+			_wrapped.AddAuditRule(rule);
 		}
 		
 		public void SetAuditRule(System.DirectoryServices.ActiveDirectoryAuditRule rule)
 		{
-			this._wrapped.SetAuditRule(rule);
+			_wrapped.SetAuditRule(rule);
 		}
 		
 		public void RemoveAudit(System.Security.Principal.IdentityReference identity)
 		{
-			this._wrapped.RemoveAudit(identity);
+			_wrapped.RemoveAudit(identity);
 		}
 		
 		public bool RemoveAuditRule(System.DirectoryServices.ActiveDirectoryAuditRule rule)
 		{
-			return this._wrapped.RemoveAuditRule(rule);
+			return _wrapped.RemoveAuditRule(rule);
 		}
 		
 		public void RemoveAuditRuleSpecific(System.DirectoryServices.ActiveDirectoryAuditRule rule)
 		{
-			this._wrapped.RemoveAuditRuleSpecific(rule);
+			_wrapped.RemoveAuditRuleSpecific(rule);
 		}
 		
 		public bool ModifyAuditRule(System.Security.AccessControl.AccessControlModification modification, System.Security.AccessControl.AuditRule rule, out bool modified)
 		{
-			return this._wrapped.ModifyAuditRule(modification, rule, out modified);
+			return _wrapped.ModifyAuditRule(modification, rule, out modified);
 		}
 		
 		public void PurgeAuditRules(System.Security.Principal.IdentityReference identity)
 		{
-			this._wrapped.PurgeAuditRules(identity);
+			_wrapped.PurgeAuditRules(identity);
 		}
 		
 		public System.Security.AccessControl.AccessRule AccessRuleFactory(System.Security.Principal.IdentityReference identityReference, int accessMask, bool isInherited, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags, System.Security.AccessControl.AccessControlType type)
 		{
-			return this._wrapped.AccessRuleFactory(identityReference, accessMask, isInherited, inheritanceFlags, propagationFlags, type);
+			return _wrapped.AccessRuleFactory(identityReference, accessMask, isInherited, inheritanceFlags, propagationFlags, type);
 		}
 		
 		public System.Security.AccessControl.AccessRule AccessRuleFactory(System.Security.Principal.IdentityReference identityReference, int accessMask, bool isInherited, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags, System.Security.AccessControl.AccessControlType type, System.Guid objectGuid, System.Guid inheritedObjectGuid)
 		{
-			return this._wrapped.AccessRuleFactory(identityReference, accessMask, isInherited, inheritanceFlags, propagationFlags, type, objectGuid, inheritedObjectGuid);
+			return _wrapped.AccessRuleFactory(identityReference, accessMask, isInherited, inheritanceFlags, propagationFlags, type, objectGuid, inheritedObjectGuid);
 		}
 		
 		public System.Security.AccessControl.AuditRule AuditRuleFactory(System.Security.Principal.IdentityReference identityReference, int accessMask, bool isInherited, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags, System.Security.AccessControl.AuditFlags flags)
 		{
-			return this._wrapped.AuditRuleFactory(identityReference, accessMask, isInherited, inheritanceFlags, propagationFlags, flags);
+			return _wrapped.AuditRuleFactory(identityReference, accessMask, isInherited, inheritanceFlags, propagationFlags, flags);
 		}
 		
 		public System.Security.AccessControl.AuditRule AuditRuleFactory(System.Security.Principal.IdentityReference identityReference, int accessMask, bool isInherited, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags, System.Security.AccessControl.AuditFlags flags, System.Guid objectGuid, System.Guid inheritedObjectGuid)
 		{
-			return this._wrapped.AuditRuleFactory(identityReference, accessMask, isInherited, inheritanceFlags, propagationFlags, flags, objectGuid, inheritedObjectGuid);
+			return _wrapped.AuditRuleFactory(identityReference, accessMask, isInherited, inheritanceFlags, propagationFlags, flags, objectGuid, inheritedObjectGuid);
 		}
 		
 		public System.Security.AccessControl.AuthorizationRuleCollection GetAccessRules(bool includeExplicit, bool includeInherited, System.Type targetType)
 		{
-			return this._wrapped.GetAccessRules(includeExplicit, includeInherited, targetType);
+			return _wrapped.GetAccessRules(includeExplicit, includeInherited, targetType);
 		}
 		
 		public System.Security.AccessControl.AuthorizationRuleCollection GetAuditRules(bool includeExplicit, bool includeInherited, System.Type targetType)
 		{
-			return this._wrapped.GetAuditRules(includeExplicit, includeInherited, targetType);
+			return _wrapped.GetAuditRules(includeExplicit, includeInherited, targetType);
 		}
 		
 		public byte[] GetSecurityDescriptorBinaryForm()
 		{
-			return this._wrapped.GetSecurityDescriptorBinaryForm();
+			return _wrapped.GetSecurityDescriptorBinaryForm();
 		}
 		
 		public System.Security.Principal.IdentityReference GetOwner(System.Type targetType)
 		{
-			return this._wrapped.GetOwner(targetType);
+			return _wrapped.GetOwner(targetType);
 		}
 		
 		public void SetOwner(System.Security.Principal.IdentityReference identity)
 		{
-			this._wrapped.SetOwner(identity);
+			_wrapped.SetOwner(identity);
 		}
 		
 		public System.Security.Principal.IdentityReference GetGroup(System.Type targetType)
 		{
-			return this._wrapped.GetGroup(targetType);
+			return _wrapped.GetGroup(targetType);
 		}
 		
 		public void SetGroup(System.Security.Principal.IdentityReference identity)
 		{
-			this._wrapped.SetGroup(identity);
+			_wrapped.SetGroup(identity);
 		}
 		
 		public void SetAccessRuleProtection(bool isProtected, bool preserveInheritance)
 		{
-			this._wrapped.SetAccessRuleProtection(isProtected, preserveInheritance);
+			_wrapped.SetAccessRuleProtection(isProtected, preserveInheritance);
 		}
 		
 		public void SetAuditRuleProtection(bool isProtected, bool preserveInheritance)
 		{
-			this._wrapped.SetAuditRuleProtection(isProtected, preserveInheritance);
+			_wrapped.SetAuditRuleProtection(isProtected, preserveInheritance);
 		}
 		
 		public string GetSecurityDescriptorSddlForm(System.Security.AccessControl.AccessControlSections includeSections)
 		{
-			return this._wrapped.GetSecurityDescriptorSddlForm(includeSections);
+			return _wrapped.GetSecurityDescriptorSddlForm(includeSections);
 		}
 		
 		public void SetSecurityDescriptorSddlForm(string sddlForm)
 		{
-			this._wrapped.SetSecurityDescriptorSddlForm(sddlForm);
+			_wrapped.SetSecurityDescriptorSddlForm(sddlForm);
 		}
 		
 		public void SetSecurityDescriptorSddlForm(string sddlForm, System.Security.AccessControl.AccessControlSections includeSections)
 		{
-			this._wrapped.SetSecurityDescriptorSddlForm(sddlForm, includeSections);
+			_wrapped.SetSecurityDescriptorSddlForm(sddlForm, includeSections);
 		}
 		
 		public void SetSecurityDescriptorBinaryForm(byte[] binaryForm)
 		{
-			this._wrapped.SetSecurityDescriptorBinaryForm(binaryForm);
+			_wrapped.SetSecurityDescriptorBinaryForm(binaryForm);
 		}
 		
 		public void SetSecurityDescriptorBinaryForm(byte[] binaryForm, System.Security.AccessControl.AccessControlSections includeSections)
 		{
-			this._wrapped.SetSecurityDescriptorBinaryForm(binaryForm, includeSections);
+			_wrapped.SetSecurityDescriptorBinaryForm(binaryForm, includeSections);
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -5227,14 +5227,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ActiveDirectoryAccessRuleWrapper(System.DirectoryServices.ActiveDirectoryAccessRule wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
 		{
 			get
 			{
-				return this._wrapped.ActiveDirectoryRights;
+				return _wrapped.ActiveDirectoryRights;
 			}
 		}
 		
@@ -5242,7 +5242,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritanceType;
+				return _wrapped.InheritanceType;
 			}
 		}
 		
@@ -5250,7 +5250,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ObjectType;
+				return _wrapped.ObjectType;
 			}
 		}
 		
@@ -5258,7 +5258,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritedObjectType;
+				return _wrapped.InheritedObjectType;
 			}
 		}
 		
@@ -5266,7 +5266,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ObjectFlags;
+				return _wrapped.ObjectFlags;
 			}
 		}
 		
@@ -5274,7 +5274,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.AccessControlType;
+				return _wrapped.AccessControlType;
 			}
 		}
 		
@@ -5282,7 +5282,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IdentityReference;
+				return _wrapped.IdentityReference;
 			}
 		}
 		
@@ -5290,7 +5290,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IsInherited;
+				return _wrapped.IsInherited;
 			}
 		}
 		
@@ -5298,7 +5298,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritanceFlags;
+				return _wrapped.InheritanceFlags;
 			}
 		}
 		
@@ -5306,7 +5306,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PropagationFlags;
+				return _wrapped.PropagationFlags;
 			}
 		}
 		
@@ -5314,23 +5314,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -5341,14 +5341,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ListChildrenAccessRuleWrapper(System.DirectoryServices.ListChildrenAccessRule wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
 		{
 			get
 			{
-				return this._wrapped.ActiveDirectoryRights;
+				return _wrapped.ActiveDirectoryRights;
 			}
 		}
 		
@@ -5356,7 +5356,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritanceType;
+				return _wrapped.InheritanceType;
 			}
 		}
 		
@@ -5364,7 +5364,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ObjectType;
+				return _wrapped.ObjectType;
 			}
 		}
 		
@@ -5372,7 +5372,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritedObjectType;
+				return _wrapped.InheritedObjectType;
 			}
 		}
 		
@@ -5380,7 +5380,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ObjectFlags;
+				return _wrapped.ObjectFlags;
 			}
 		}
 		
@@ -5388,7 +5388,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.AccessControlType;
+				return _wrapped.AccessControlType;
 			}
 		}
 		
@@ -5396,7 +5396,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IdentityReference;
+				return _wrapped.IdentityReference;
 			}
 		}
 		
@@ -5404,7 +5404,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IsInherited;
+				return _wrapped.IsInherited;
 			}
 		}
 		
@@ -5412,7 +5412,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritanceFlags;
+				return _wrapped.InheritanceFlags;
 			}
 		}
 		
@@ -5420,7 +5420,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PropagationFlags;
+				return _wrapped.PropagationFlags;
 			}
 		}
 		
@@ -5428,23 +5428,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -5455,14 +5455,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public CreateChildAccessRuleWrapper(System.DirectoryServices.CreateChildAccessRule wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
 		{
 			get
 			{
-				return this._wrapped.ActiveDirectoryRights;
+				return _wrapped.ActiveDirectoryRights;
 			}
 		}
 		
@@ -5470,7 +5470,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritanceType;
+				return _wrapped.InheritanceType;
 			}
 		}
 		
@@ -5478,7 +5478,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ObjectType;
+				return _wrapped.ObjectType;
 			}
 		}
 		
@@ -5486,7 +5486,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritedObjectType;
+				return _wrapped.InheritedObjectType;
 			}
 		}
 		
@@ -5494,7 +5494,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ObjectFlags;
+				return _wrapped.ObjectFlags;
 			}
 		}
 		
@@ -5502,7 +5502,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.AccessControlType;
+				return _wrapped.AccessControlType;
 			}
 		}
 		
@@ -5510,7 +5510,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IdentityReference;
+				return _wrapped.IdentityReference;
 			}
 		}
 		
@@ -5518,7 +5518,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IsInherited;
+				return _wrapped.IsInherited;
 			}
 		}
 		
@@ -5526,7 +5526,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritanceFlags;
+				return _wrapped.InheritanceFlags;
 			}
 		}
 		
@@ -5534,7 +5534,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PropagationFlags;
+				return _wrapped.PropagationFlags;
 			}
 		}
 		
@@ -5542,23 +5542,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -5569,14 +5569,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public DeleteChildAccessRuleWrapper(System.DirectoryServices.DeleteChildAccessRule wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
 		{
 			get
 			{
-				return this._wrapped.ActiveDirectoryRights;
+				return _wrapped.ActiveDirectoryRights;
 			}
 		}
 		
@@ -5584,7 +5584,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritanceType;
+				return _wrapped.InheritanceType;
 			}
 		}
 		
@@ -5592,7 +5592,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ObjectType;
+				return _wrapped.ObjectType;
 			}
 		}
 		
@@ -5600,7 +5600,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritedObjectType;
+				return _wrapped.InheritedObjectType;
 			}
 		}
 		
@@ -5608,7 +5608,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ObjectFlags;
+				return _wrapped.ObjectFlags;
 			}
 		}
 		
@@ -5616,7 +5616,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.AccessControlType;
+				return _wrapped.AccessControlType;
 			}
 		}
 		
@@ -5624,7 +5624,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IdentityReference;
+				return _wrapped.IdentityReference;
 			}
 		}
 		
@@ -5632,7 +5632,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IsInherited;
+				return _wrapped.IsInherited;
 			}
 		}
 		
@@ -5640,7 +5640,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritanceFlags;
+				return _wrapped.InheritanceFlags;
 			}
 		}
 		
@@ -5648,7 +5648,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PropagationFlags;
+				return _wrapped.PropagationFlags;
 			}
 		}
 		
@@ -5656,23 +5656,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -5683,14 +5683,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public PropertyAccessRuleWrapper(System.DirectoryServices.PropertyAccessRule wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
 		{
 			get
 			{
-				return this._wrapped.ActiveDirectoryRights;
+				return _wrapped.ActiveDirectoryRights;
 			}
 		}
 		
@@ -5698,7 +5698,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritanceType;
+				return _wrapped.InheritanceType;
 			}
 		}
 		
@@ -5706,7 +5706,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ObjectType;
+				return _wrapped.ObjectType;
 			}
 		}
 		
@@ -5714,7 +5714,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritedObjectType;
+				return _wrapped.InheritedObjectType;
 			}
 		}
 		
@@ -5722,7 +5722,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ObjectFlags;
+				return _wrapped.ObjectFlags;
 			}
 		}
 		
@@ -5730,7 +5730,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.AccessControlType;
+				return _wrapped.AccessControlType;
 			}
 		}
 		
@@ -5738,7 +5738,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IdentityReference;
+				return _wrapped.IdentityReference;
 			}
 		}
 		
@@ -5746,7 +5746,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IsInherited;
+				return _wrapped.IsInherited;
 			}
 		}
 		
@@ -5754,7 +5754,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritanceFlags;
+				return _wrapped.InheritanceFlags;
 			}
 		}
 		
@@ -5762,7 +5762,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PropagationFlags;
+				return _wrapped.PropagationFlags;
 			}
 		}
 		
@@ -5770,23 +5770,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -5797,14 +5797,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public PropertySetAccessRuleWrapper(System.DirectoryServices.PropertySetAccessRule wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
 		{
 			get
 			{
-				return this._wrapped.ActiveDirectoryRights;
+				return _wrapped.ActiveDirectoryRights;
 			}
 		}
 		
@@ -5812,7 +5812,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritanceType;
+				return _wrapped.InheritanceType;
 			}
 		}
 		
@@ -5820,7 +5820,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ObjectType;
+				return _wrapped.ObjectType;
 			}
 		}
 		
@@ -5828,7 +5828,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritedObjectType;
+				return _wrapped.InheritedObjectType;
 			}
 		}
 		
@@ -5836,7 +5836,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ObjectFlags;
+				return _wrapped.ObjectFlags;
 			}
 		}
 		
@@ -5844,7 +5844,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.AccessControlType;
+				return _wrapped.AccessControlType;
 			}
 		}
 		
@@ -5852,7 +5852,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IdentityReference;
+				return _wrapped.IdentityReference;
 			}
 		}
 		
@@ -5860,7 +5860,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IsInherited;
+				return _wrapped.IsInherited;
 			}
 		}
 		
@@ -5868,7 +5868,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritanceFlags;
+				return _wrapped.InheritanceFlags;
 			}
 		}
 		
@@ -5876,7 +5876,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PropagationFlags;
+				return _wrapped.PropagationFlags;
 			}
 		}
 		
@@ -5884,23 +5884,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -5911,14 +5911,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ExtendedRightAccessRuleWrapper(System.DirectoryServices.ExtendedRightAccessRule wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
 		{
 			get
 			{
-				return this._wrapped.ActiveDirectoryRights;
+				return _wrapped.ActiveDirectoryRights;
 			}
 		}
 		
@@ -5926,7 +5926,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritanceType;
+				return _wrapped.InheritanceType;
 			}
 		}
 		
@@ -5934,7 +5934,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ObjectType;
+				return _wrapped.ObjectType;
 			}
 		}
 		
@@ -5942,7 +5942,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritedObjectType;
+				return _wrapped.InheritedObjectType;
 			}
 		}
 		
@@ -5950,7 +5950,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ObjectFlags;
+				return _wrapped.ObjectFlags;
 			}
 		}
 		
@@ -5958,7 +5958,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.AccessControlType;
+				return _wrapped.AccessControlType;
 			}
 		}
 		
@@ -5966,7 +5966,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IdentityReference;
+				return _wrapped.IdentityReference;
 			}
 		}
 		
@@ -5974,7 +5974,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IsInherited;
+				return _wrapped.IsInherited;
 			}
 		}
 		
@@ -5982,7 +5982,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritanceFlags;
+				return _wrapped.InheritanceFlags;
 			}
 		}
 		
@@ -5990,7 +5990,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PropagationFlags;
+				return _wrapped.PropagationFlags;
 			}
 		}
 		
@@ -5998,23 +5998,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -6025,14 +6025,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public DeleteTreeAccessRuleWrapper(System.DirectoryServices.DeleteTreeAccessRule wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
 		{
 			get
 			{
-				return this._wrapped.ActiveDirectoryRights;
+				return _wrapped.ActiveDirectoryRights;
 			}
 		}
 		
@@ -6040,7 +6040,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritanceType;
+				return _wrapped.InheritanceType;
 			}
 		}
 		
@@ -6048,7 +6048,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ObjectType;
+				return _wrapped.ObjectType;
 			}
 		}
 		
@@ -6056,7 +6056,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritedObjectType;
+				return _wrapped.InheritedObjectType;
 			}
 		}
 		
@@ -6064,7 +6064,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ObjectFlags;
+				return _wrapped.ObjectFlags;
 			}
 		}
 		
@@ -6072,7 +6072,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.AccessControlType;
+				return _wrapped.AccessControlType;
 			}
 		}
 		
@@ -6080,7 +6080,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IdentityReference;
+				return _wrapped.IdentityReference;
 			}
 		}
 		
@@ -6088,7 +6088,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IsInherited;
+				return _wrapped.IsInherited;
 			}
 		}
 		
@@ -6096,7 +6096,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritanceFlags;
+				return _wrapped.InheritanceFlags;
 			}
 		}
 		
@@ -6104,7 +6104,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PropagationFlags;
+				return _wrapped.PropagationFlags;
 			}
 		}
 		
@@ -6112,23 +6112,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -6139,14 +6139,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ActiveDirectoryAuditRuleWrapper(System.DirectoryServices.ActiveDirectoryAuditRule wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
 		{
 			get
 			{
-				return this._wrapped.ActiveDirectoryRights;
+				return _wrapped.ActiveDirectoryRights;
 			}
 		}
 		
@@ -6154,7 +6154,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritanceType;
+				return _wrapped.InheritanceType;
 			}
 		}
 		
@@ -6162,7 +6162,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ObjectType;
+				return _wrapped.ObjectType;
 			}
 		}
 		
@@ -6170,7 +6170,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritedObjectType;
+				return _wrapped.InheritedObjectType;
 			}
 		}
 		
@@ -6178,7 +6178,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ObjectFlags;
+				return _wrapped.ObjectFlags;
 			}
 		}
 		
@@ -6186,7 +6186,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.AuditFlags;
+				return _wrapped.AuditFlags;
 			}
 		}
 		
@@ -6194,7 +6194,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IdentityReference;
+				return _wrapped.IdentityReference;
 			}
 		}
 		
@@ -6202,7 +6202,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IsInherited;
+				return _wrapped.IsInherited;
 			}
 		}
 		
@@ -6210,7 +6210,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InheritanceFlags;
+				return _wrapped.InheritanceFlags;
 			}
 		}
 		
@@ -6218,7 +6218,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PropagationFlags;
+				return _wrapped.PropagationFlags;
 			}
 		}
 		
@@ -6226,23 +6226,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -6253,14 +6253,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public DSDescriptionAttributeWrapper(System.DirectoryServices.DSDescriptionAttribute wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string Description
 		{
 			get
 			{
-				return this._wrapped.Description;
+				return _wrapped.Description;
 			}
 		}
 		
@@ -6268,7 +6268,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.TypeId;
+				return _wrapped.TypeId;
 			}
 		}
 		
@@ -6276,33 +6276,33 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 		
 		public bool IsDefaultAttribute()
 		{
-			return this._wrapped.IsDefaultAttribute();
+			return _wrapped.IsDefaultAttribute();
 		}
 		
 		public bool Match(object obj)
 		{
-			return this._wrapped.Match(obj);
+			return _wrapped.Match(obj);
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 	}
 	
@@ -6313,14 +6313,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public DirectoryEntriesWrapper(System.DirectoryServices.DirectoryEntries wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.SchemaNameCollection SchemaFilter
 		{
 			get
 			{
-				return this._wrapped.SchemaFilter;
+				return _wrapped.SchemaFilter;
 			}
 		}
 		
@@ -6328,48 +6328,48 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public System.DirectoryServices.DirectoryEntry Add(string name, string schemaClassName)
 		{
-			return this._wrapped.Add(name, schemaClassName);
+			return _wrapped.Add(name, schemaClassName);
 		}
 		
 		public System.DirectoryServices.DirectoryEntry Find(string name)
 		{
-			return this._wrapped.Find(name);
+			return _wrapped.Find(name);
 		}
 		
 		public System.DirectoryServices.DirectoryEntry Find(string name, string schemaClassName)
 		{
-			return this._wrapped.Find(name, schemaClassName);
+			return _wrapped.Find(name, schemaClassName);
 		}
 		
 		public void Remove(System.DirectoryServices.DirectoryEntry entry)
 		{
-			this._wrapped.Remove(entry);
+			_wrapped.Remove(entry);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -6380,18 +6380,18 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public DirectoryEntryWrapper(System.DirectoryServices.DirectoryEntry wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.AuthenticationTypes AuthenticationType
 		{
 			get
 			{
-				return this._wrapped.AuthenticationType;
+				return _wrapped.AuthenticationType;
 			}
 			set
 			{
-				this._wrapped.AuthenticationType = value;
+				_wrapped.AuthenticationType = value;
 			}
 		}
 		
@@ -6399,7 +6399,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Children;
+				return _wrapped.Children;
 			}
 		}
 		
@@ -6407,7 +6407,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Guid;
+				return _wrapped.Guid;
 			}
 		}
 		
@@ -6415,11 +6415,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ObjectSecurity;
+				return _wrapped.ObjectSecurity;
 			}
 			set
 			{
-				this._wrapped.ObjectSecurity = value;
+				_wrapped.ObjectSecurity = value;
 			}
 		}
 		
@@ -6427,7 +6427,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Name;
+				return _wrapped.Name;
 			}
 		}
 		
@@ -6435,7 +6435,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.NativeGuid;
+				return _wrapped.NativeGuid;
 			}
 		}
 		
@@ -6443,7 +6443,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.NativeObject;
+				return _wrapped.NativeObject;
 			}
 		}
 		
@@ -6451,7 +6451,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Parent;
+				return _wrapped.Parent;
 			}
 		}
 		
@@ -6459,7 +6459,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			set
 			{
-				this._wrapped.Password = value;
+				_wrapped.Password = value;
 			}
 		}
 		
@@ -6467,11 +6467,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Path;
+				return _wrapped.Path;
 			}
 			set
 			{
-				this._wrapped.Path = value;
+				_wrapped.Path = value;
 			}
 		}
 		
@@ -6479,7 +6479,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Properties;
+				return _wrapped.Properties;
 			}
 		}
 		
@@ -6487,7 +6487,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SchemaClassName;
+				return _wrapped.SchemaClassName;
 			}
 		}
 		
@@ -6495,7 +6495,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SchemaEntry;
+				return _wrapped.SchemaEntry;
 			}
 		}
 		
@@ -6503,11 +6503,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.UsePropertyCache;
+				return _wrapped.UsePropertyCache;
 			}
 			set
 			{
-				this._wrapped.UsePropertyCache = value;
+				_wrapped.UsePropertyCache = value;
 			}
 		}
 		
@@ -6515,11 +6515,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Username;
+				return _wrapped.Username;
 			}
 			set
 			{
-				this._wrapped.Username = value;
+				_wrapped.Username = value;
 			}
 		}
 		
@@ -6527,7 +6527,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Options;
+				return _wrapped.Options;
 			}
 		}
 		
@@ -6535,11 +6535,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Site;
+				return _wrapped.Site;
 			}
 			set
 			{
-				this._wrapped.Site = value;
+				_wrapped.Site = value;
 			}
 		}
 		
@@ -6547,7 +6547,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Container;
+				return _wrapped.Container;
 			}
 		}
 		
@@ -6555,108 +6555,108 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void Close()
 		{
-			this._wrapped.Close();
+			_wrapped.Close();
 		}
 		
 		public void CommitChanges()
 		{
-			this._wrapped.CommitChanges();
+			_wrapped.CommitChanges();
 		}
 		
 		public System.DirectoryServices.DirectoryEntry CopyTo(System.DirectoryServices.DirectoryEntry newParent)
 		{
-			return this._wrapped.CopyTo(newParent);
+			return _wrapped.CopyTo(newParent);
 		}
 		
 		public System.DirectoryServices.DirectoryEntry CopyTo(System.DirectoryServices.DirectoryEntry newParent, string newName)
 		{
-			return this._wrapped.CopyTo(newParent, newName);
+			return _wrapped.CopyTo(newParent, newName);
 		}
 		
 		public void DeleteTree()
 		{
-			this._wrapped.DeleteTree();
+			_wrapped.DeleteTree();
 		}
 		
 		public object Invoke(string methodName, object[] args)
 		{
-			return this._wrapped.Invoke(methodName, args);
+			return _wrapped.Invoke(methodName, args);
 		}
 		
 		public object InvokeGet(string propertyName)
 		{
-			return this._wrapped.InvokeGet(propertyName);
+			return _wrapped.InvokeGet(propertyName);
 		}
 		
 		public void InvokeSet(string propertyName, object[] args)
 		{
-			this._wrapped.InvokeSet(propertyName, args);
+			_wrapped.InvokeSet(propertyName, args);
 		}
 		
 		public void MoveTo(System.DirectoryServices.DirectoryEntry newParent)
 		{
-			this._wrapped.MoveTo(newParent);
+			_wrapped.MoveTo(newParent);
 		}
 		
 		public void MoveTo(System.DirectoryServices.DirectoryEntry newParent, string newName)
 		{
-			this._wrapped.MoveTo(newParent, newName);
+			_wrapped.MoveTo(newParent, newName);
 		}
 		
 		public void RefreshCache()
 		{
-			this._wrapped.RefreshCache();
+			_wrapped.RefreshCache();
 		}
 		
 		public void RefreshCache(string[] propertyNames)
 		{
-			this._wrapped.RefreshCache(propertyNames);
+			_wrapped.RefreshCache(propertyNames);
 		}
 		
 		public void Rename(string newName)
 		{
-			this._wrapped.Rename(newName);
+			_wrapped.Rename(newName);
 		}
 		
 		public void Dispose()
 		{
-			this._wrapped.Dispose();
+			_wrapped.Dispose();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public object GetLifetimeService()
 		{
-			return this._wrapped.GetLifetimeService();
+			return _wrapped.GetLifetimeService();
 		}
 		
 		public object InitializeLifetimeService()
 		{
-			return this._wrapped.InitializeLifetimeService();
+			return _wrapped.InitializeLifetimeService();
 		}
 		
 		public System.Runtime.Remoting.ObjRef CreateObjRef(System.Type requestedType)
 		{
-			return this._wrapped.CreateObjRef(requestedType);
+			return _wrapped.CreateObjRef(requestedType);
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -6667,18 +6667,18 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public DirectoryEntryConfigurationWrapper(System.DirectoryServices.DirectoryEntryConfiguration wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ReferralChasingOption Referral
 		{
 			get
 			{
-				return this._wrapped.Referral;
+				return _wrapped.Referral;
 			}
 			set
 			{
-				this._wrapped.Referral = value;
+				_wrapped.Referral = value;
 			}
 		}
 		
@@ -6686,11 +6686,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SecurityMasks;
+				return _wrapped.SecurityMasks;
 			}
 			set
 			{
-				this._wrapped.SecurityMasks = value;
+				_wrapped.SecurityMasks = value;
 			}
 		}
 		
@@ -6698,11 +6698,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PageSize;
+				return _wrapped.PageSize;
 			}
 			set
 			{
-				this._wrapped.PageSize = value;
+				_wrapped.PageSize = value;
 			}
 		}
 		
@@ -6710,11 +6710,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PasswordPort;
+				return _wrapped.PasswordPort;
 			}
 			set
 			{
-				this._wrapped.PasswordPort = value;
+				_wrapped.PasswordPort = value;
 			}
 		}
 		
@@ -6722,11 +6722,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PasswordEncoding;
+				return _wrapped.PasswordEncoding;
 			}
 			set
 			{
-				this._wrapped.PasswordEncoding = value;
+				_wrapped.PasswordEncoding = value;
 			}
 		}
 		
@@ -6734,38 +6734,38 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public string GetCurrentServerName()
 		{
-			return this._wrapped.GetCurrentServerName();
+			return _wrapped.GetCurrentServerName();
 		}
 		
 		public bool IsMutuallyAuthenticated()
 		{
-			return this._wrapped.IsMutuallyAuthenticated();
+			return _wrapped.IsMutuallyAuthenticated();
 		}
 		
 		public void SetUserNameQueryQuota(string accountName)
 		{
-			this._wrapped.SetUserNameQueryQuota(accountName);
+			_wrapped.SetUserNameQueryQuota(accountName);
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -6776,18 +6776,18 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public DirectorySearcherWrapper(System.DirectoryServices.DirectorySearcher wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public bool CacheResults
 		{
 			get
 			{
-				return this._wrapped.CacheResults;
+				return _wrapped.CacheResults;
 			}
 			set
 			{
-				this._wrapped.CacheResults = value;
+				_wrapped.CacheResults = value;
 			}
 		}
 		
@@ -6795,11 +6795,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ClientTimeout;
+				return _wrapped.ClientTimeout;
 			}
 			set
 			{
-				this._wrapped.ClientTimeout = value;
+				_wrapped.ClientTimeout = value;
 			}
 		}
 		
@@ -6807,11 +6807,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PropertyNamesOnly;
+				return _wrapped.PropertyNamesOnly;
 			}
 			set
 			{
-				this._wrapped.PropertyNamesOnly = value;
+				_wrapped.PropertyNamesOnly = value;
 			}
 		}
 		
@@ -6819,11 +6819,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Filter;
+				return _wrapped.Filter;
 			}
 			set
 			{
-				this._wrapped.Filter = value;
+				_wrapped.Filter = value;
 			}
 		}
 		
@@ -6831,11 +6831,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PageSize;
+				return _wrapped.PageSize;
 			}
 			set
 			{
-				this._wrapped.PageSize = value;
+				_wrapped.PageSize = value;
 			}
 		}
 		
@@ -6843,7 +6843,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PropertiesToLoad;
+				return _wrapped.PropertiesToLoad;
 			}
 		}
 		
@@ -6851,11 +6851,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ReferralChasing;
+				return _wrapped.ReferralChasing;
 			}
 			set
 			{
-				this._wrapped.ReferralChasing = value;
+				_wrapped.ReferralChasing = value;
 			}
 		}
 		
@@ -6863,11 +6863,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SearchScope;
+				return _wrapped.SearchScope;
 			}
 			set
 			{
-				this._wrapped.SearchScope = value;
+				_wrapped.SearchScope = value;
 			}
 		}
 		
@@ -6875,11 +6875,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ServerPageTimeLimit;
+				return _wrapped.ServerPageTimeLimit;
 			}
 			set
 			{
-				this._wrapped.ServerPageTimeLimit = value;
+				_wrapped.ServerPageTimeLimit = value;
 			}
 		}
 		
@@ -6887,11 +6887,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ServerTimeLimit;
+				return _wrapped.ServerTimeLimit;
 			}
 			set
 			{
-				this._wrapped.ServerTimeLimit = value;
+				_wrapped.ServerTimeLimit = value;
 			}
 		}
 		
@@ -6899,11 +6899,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SizeLimit;
+				return _wrapped.SizeLimit;
 			}
 			set
 			{
-				this._wrapped.SizeLimit = value;
+				_wrapped.SizeLimit = value;
 			}
 		}
 		
@@ -6911,11 +6911,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SearchRoot;
+				return _wrapped.SearchRoot;
 			}
 			set
 			{
-				this._wrapped.SearchRoot = value;
+				_wrapped.SearchRoot = value;
 			}
 		}
 		
@@ -6923,11 +6923,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Sort;
+				return _wrapped.Sort;
 			}
 			set
 			{
-				this._wrapped.Sort = value;
+				_wrapped.Sort = value;
 			}
 		}
 		
@@ -6935,11 +6935,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Asynchronous;
+				return _wrapped.Asynchronous;
 			}
 			set
 			{
-				this._wrapped.Asynchronous = value;
+				_wrapped.Asynchronous = value;
 			}
 		}
 		
@@ -6947,11 +6947,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Tombstone;
+				return _wrapped.Tombstone;
 			}
 			set
 			{
-				this._wrapped.Tombstone = value;
+				_wrapped.Tombstone = value;
 			}
 		}
 		
@@ -6959,11 +6959,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.AttributeScopeQuery;
+				return _wrapped.AttributeScopeQuery;
 			}
 			set
 			{
-				this._wrapped.AttributeScopeQuery = value;
+				_wrapped.AttributeScopeQuery = value;
 			}
 		}
 		
@@ -6971,11 +6971,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.DerefAlias;
+				return _wrapped.DerefAlias;
 			}
 			set
 			{
-				this._wrapped.DerefAlias = value;
+				_wrapped.DerefAlias = value;
 			}
 		}
 		
@@ -6983,11 +6983,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SecurityMasks;
+				return _wrapped.SecurityMasks;
 			}
 			set
 			{
-				this._wrapped.SecurityMasks = value;
+				_wrapped.SecurityMasks = value;
 			}
 		}
 		
@@ -6995,11 +6995,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ExtendedDN;
+				return _wrapped.ExtendedDN;
 			}
 			set
 			{
-				this._wrapped.ExtendedDN = value;
+				_wrapped.ExtendedDN = value;
 			}
 		}
 		
@@ -7007,11 +7007,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.DirectorySynchronization;
+				return _wrapped.DirectorySynchronization;
 			}
 			set
 			{
-				this._wrapped.DirectorySynchronization = value;
+				_wrapped.DirectorySynchronization = value;
 			}
 		}
 		
@@ -7019,11 +7019,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.VirtualListView;
+				return _wrapped.VirtualListView;
 			}
 			set
 			{
-				this._wrapped.VirtualListView = value;
+				_wrapped.VirtualListView = value;
 			}
 		}
 		
@@ -7031,11 +7031,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Site;
+				return _wrapped.Site;
 			}
 			set
 			{
-				this._wrapped.Site = value;
+				_wrapped.Site = value;
 			}
 		}
 		
@@ -7043,7 +7043,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Container;
+				return _wrapped.Container;
 			}
 		}
 		
@@ -7051,53 +7051,53 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public System.DirectoryServices.SearchResult FindOne()
 		{
-			return this._wrapped.FindOne();
+			return _wrapped.FindOne();
 		}
 		
 		public System.DirectoryServices.SearchResultCollection FindAll()
 		{
-			return this._wrapped.FindAll();
+			return _wrapped.FindAll();
 		}
 		
 		public void Dispose()
 		{
-			this._wrapped.Dispose();
+			_wrapped.Dispose();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public object GetLifetimeService()
 		{
-			return this._wrapped.GetLifetimeService();
+			return _wrapped.GetLifetimeService();
 		}
 		
 		public object InitializeLifetimeService()
 		{
-			return this._wrapped.InitializeLifetimeService();
+			return _wrapped.InitializeLifetimeService();
 		}
 		
 		public System.Runtime.Remoting.ObjRef CreateObjRef(System.Type requestedType)
 		{
-			return this._wrapped.CreateObjRef(requestedType);
+			return _wrapped.CreateObjRef(requestedType);
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -7108,14 +7108,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public DirectoryServicesPermissionWrapper(System.DirectoryServices.DirectoryServicesPermission wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.DirectoryServicesPermissionEntryCollection PermissionEntries
 		{
 			get
 			{
-				return this._wrapped.PermissionEntries;
+				return _wrapped.PermissionEntries;
 			}
 		}
 		
@@ -7123,78 +7123,78 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public System.Security.IPermission Copy()
 		{
-			return this._wrapped.Copy();
+			return _wrapped.Copy();
 		}
 		
 		public void FromXml(System.Security.SecurityElement securityElement)
 		{
-			this._wrapped.FromXml(securityElement);
+			_wrapped.FromXml(securityElement);
 		}
 		
 		public System.Security.IPermission Intersect(System.Security.IPermission target)
 		{
-			return this._wrapped.Intersect(target);
+			return _wrapped.Intersect(target);
 		}
 		
 		public bool IsSubsetOf(System.Security.IPermission target)
 		{
-			return this._wrapped.IsSubsetOf(target);
+			return _wrapped.IsSubsetOf(target);
 		}
 		
 		public bool IsUnrestricted()
 		{
-			return this._wrapped.IsUnrestricted();
+			return _wrapped.IsUnrestricted();
 		}
 		
 		public System.Security.SecurityElement ToXml()
 		{
-			return this._wrapped.ToXml();
+			return _wrapped.ToXml();
 		}
 		
 		public System.Security.IPermission Union(System.Security.IPermission target)
 		{
-			return this._wrapped.Union(target);
+			return _wrapped.Union(target);
 		}
 		
 		public void Demand()
 		{
-			this._wrapped.Demand();
+			_wrapped.Demand();
 		}
 		
 		public void Assert()
 		{
-			this._wrapped.Assert();
+			_wrapped.Assert();
 		}
 		
 		public void Deny()
 		{
-			this._wrapped.Deny();
+			_wrapped.Deny();
 		}
 		
 		public void PermitOnly()
 		{
-			this._wrapped.PermitOnly();
+			_wrapped.PermitOnly();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -7205,18 +7205,18 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public DirectoryServicesPermissionAttributeWrapper(System.DirectoryServices.DirectoryServicesPermissionAttribute wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string Path
 		{
 			get
 			{
-				return this._wrapped.Path;
+				return _wrapped.Path;
 			}
 			set
 			{
-				this._wrapped.Path = value;
+				_wrapped.Path = value;
 			}
 		}
 		
@@ -7224,11 +7224,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PermissionAccess;
+				return _wrapped.PermissionAccess;
 			}
 			set
 			{
-				this._wrapped.PermissionAccess = value;
+				_wrapped.PermissionAccess = value;
 			}
 		}
 		
@@ -7236,11 +7236,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Action;
+				return _wrapped.Action;
 			}
 			set
 			{
-				this._wrapped.Action = value;
+				_wrapped.Action = value;
 			}
 		}
 		
@@ -7248,11 +7248,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Unrestricted;
+				return _wrapped.Unrestricted;
 			}
 			set
 			{
-				this._wrapped.Unrestricted = value;
+				_wrapped.Unrestricted = value;
 			}
 		}
 		
@@ -7260,7 +7260,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.TypeId;
+				return _wrapped.TypeId;
 			}
 		}
 		
@@ -7268,38 +7268,38 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public System.Security.IPermission CreatePermission()
 		{
-			return this._wrapped.CreatePermission();
+			return _wrapped.CreatePermission();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 		
 		public bool Match(object obj)
 		{
-			return this._wrapped.Match(obj);
+			return _wrapped.Match(obj);
 		}
 		
 		public bool IsDefaultAttribute()
 		{
-			return this._wrapped.IsDefaultAttribute();
+			return _wrapped.IsDefaultAttribute();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 	}
 	
@@ -7310,14 +7310,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public DirectoryServicesPermissionEntryWrapper(System.DirectoryServices.DirectoryServicesPermissionEntry wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string Path
 		{
 			get
 			{
-				return this._wrapped.Path;
+				return _wrapped.Path;
 			}
 		}
 		
@@ -7325,7 +7325,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PermissionAccess;
+				return _wrapped.PermissionAccess;
 			}
 		}
 		
@@ -7333,23 +7333,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -7360,18 +7360,18 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public DirectoryServicesPermissionEntryCollectionWrapper(System.DirectoryServices.DirectoryServicesPermissionEntryCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.DirectoryServicesPermissionEntry this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 			set
 			{
-				this._wrapped[index] = value;
+				_wrapped[index] = value;
 			}
 		}
 		
@@ -7379,11 +7379,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Capacity;
+				return _wrapped.Capacity;
 			}
 			set
 			{
-				this._wrapped.Capacity = value;
+				_wrapped.Capacity = value;
 			}
 		}
 		
@@ -7391,7 +7391,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -7399,78 +7399,78 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public int Add(System.DirectoryServices.DirectoryServicesPermissionEntry value)
 		{
-			return this._wrapped.Add(value);
+			return _wrapped.Add(value);
 		}
 		
 		public void AddRange(System.DirectoryServices.DirectoryServicesPermissionEntry[] value)
 		{
-			this._wrapped.AddRange(value);
+			_wrapped.AddRange(value);
 		}
 		
 		public void AddRange(System.DirectoryServices.DirectoryServicesPermissionEntryCollection value)
 		{
-			this._wrapped.AddRange(value);
+			_wrapped.AddRange(value);
 		}
 		
 		public bool Contains(System.DirectoryServices.DirectoryServicesPermissionEntry value)
 		{
-			return this._wrapped.Contains(value);
+			return _wrapped.Contains(value);
 		}
 		
 		public void CopyTo(System.DirectoryServices.DirectoryServicesPermissionEntry[] array, int index)
 		{
-			this._wrapped.CopyTo(array, index);
+			_wrapped.CopyTo(array, index);
 		}
 		
 		public int IndexOf(System.DirectoryServices.DirectoryServicesPermissionEntry value)
 		{
-			return this._wrapped.IndexOf(value);
+			return _wrapped.IndexOf(value);
 		}
 		
 		public void Insert(int index, System.DirectoryServices.DirectoryServicesPermissionEntry value)
 		{
-			this._wrapped.Insert(index, value);
+			_wrapped.Insert(index, value);
 		}
 		
 		public void Remove(System.DirectoryServices.DirectoryServicesPermissionEntry value)
 		{
-			this._wrapped.Remove(value);
+			_wrapped.Remove(value);
 		}
 		
 		public void Clear()
 		{
-			this._wrapped.Clear();
+			_wrapped.Clear();
 		}
 		
 		public void RemoveAt(int index)
 		{
-			this._wrapped.RemoveAt(index);
+			_wrapped.RemoveAt(index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -7481,18 +7481,18 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public DirectorySynchronizationWrapper(System.DirectoryServices.DirectorySynchronization wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.DirectorySynchronizationOptions Option
 		{
 			get
 			{
-				return this._wrapped.Option;
+				return _wrapped.Option;
 			}
 			set
 			{
-				this._wrapped.Option = value;
+				_wrapped.Option = value;
 			}
 		}
 		
@@ -7500,43 +7500,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public byte[] GetDirectorySynchronizationCookie()
 		{
-			return this._wrapped.GetDirectorySynchronizationCookie();
+			return _wrapped.GetDirectorySynchronizationCookie();
 		}
 		
 		public void ResetDirectorySynchronizationCookie()
 		{
-			this._wrapped.ResetDirectorySynchronizationCookie();
+			_wrapped.ResetDirectorySynchronizationCookie();
 		}
 		
 		public void ResetDirectorySynchronizationCookie(byte[] cookie)
 		{
-			this._wrapped.ResetDirectorySynchronizationCookie(cookie);
+			_wrapped.ResetDirectorySynchronizationCookie(cookie);
 		}
 		
 		public System.DirectoryServices.DirectorySynchronization Copy()
 		{
-			return this._wrapped.Copy();
+			return _wrapped.Copy();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -7547,18 +7547,18 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public DirectoryVirtualListViewWrapper(System.DirectoryServices.DirectoryVirtualListView wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public int BeforeCount
 		{
 			get
 			{
-				return this._wrapped.BeforeCount;
+				return _wrapped.BeforeCount;
 			}
 			set
 			{
-				this._wrapped.BeforeCount = value;
+				_wrapped.BeforeCount = value;
 			}
 		}
 		
@@ -7566,11 +7566,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.AfterCount;
+				return _wrapped.AfterCount;
 			}
 			set
 			{
-				this._wrapped.AfterCount = value;
+				_wrapped.AfterCount = value;
 			}
 		}
 		
@@ -7578,11 +7578,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Offset;
+				return _wrapped.Offset;
 			}
 			set
 			{
-				this._wrapped.Offset = value;
+				_wrapped.Offset = value;
 			}
 		}
 		
@@ -7590,11 +7590,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.TargetPercentage;
+				return _wrapped.TargetPercentage;
 			}
 			set
 			{
-				this._wrapped.TargetPercentage = value;
+				_wrapped.TargetPercentage = value;
 			}
 		}
 		
@@ -7602,11 +7602,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Target;
+				return _wrapped.Target;
 			}
 			set
 			{
-				this._wrapped.Target = value;
+				_wrapped.Target = value;
 			}
 		}
 		
@@ -7614,11 +7614,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ApproximateTotal;
+				return _wrapped.ApproximateTotal;
 			}
 			set
 			{
-				this._wrapped.ApproximateTotal = value;
+				_wrapped.ApproximateTotal = value;
 			}
 		}
 		
@@ -7626,11 +7626,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.DirectoryVirtualListViewContext;
+				return _wrapped.DirectoryVirtualListViewContext;
 			}
 			set
 			{
-				this._wrapped.DirectoryVirtualListViewContext = value;
+				_wrapped.DirectoryVirtualListViewContext = value;
 			}
 		}
 		
@@ -7638,23 +7638,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -7665,35 +7665,35 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public DirectoryVirtualListViewContextWrapper(System.DirectoryServices.DirectoryVirtualListViewContext wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.DirectoryVirtualListViewContext Wrapped
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public System.DirectoryServices.DirectoryVirtualListViewContext Copy()
 		{
-			return this._wrapped.Copy();
+			return _wrapped.Copy();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -7704,14 +7704,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public PropertyCollectionWrapper(System.DirectoryServices.PropertyCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.PropertyValueCollection this[string propertyName]
 		{
 			get
 			{
-				return this._wrapped[propertyName];
+				return _wrapped[propertyName];
 			}
 		}
 		
@@ -7719,7 +7719,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -7727,7 +7727,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PropertyNames;
+				return _wrapped.PropertyNames;
 			}
 		}
 		
@@ -7735,7 +7735,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Values;
+				return _wrapped.Values;
 			}
 		}
 		
@@ -7743,38 +7743,38 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(string propertyName)
 		{
-			return this._wrapped.Contains(propertyName);
+			return _wrapped.Contains(propertyName);
 		}
 		
 		public void CopyTo(System.DirectoryServices.PropertyValueCollection[] array, int index)
 		{
-			this._wrapped.CopyTo(array, index);
+			_wrapped.CopyTo(array, index);
 		}
 		
 		public System.Collections.IDictionaryEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -7785,18 +7785,18 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public PropertyValueCollectionWrapper(System.DirectoryServices.PropertyValueCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public object this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 			set
 			{
-				this._wrapped[index] = value;
+				_wrapped[index] = value;
 			}
 		}
 		
@@ -7804,7 +7804,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PropertyName;
+				return _wrapped.PropertyName;
 			}
 		}
 		
@@ -7812,11 +7812,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Value;
+				return _wrapped.Value;
 			}
 			set
 			{
-				this._wrapped.Value = value;
+				_wrapped.Value = value;
 			}
 		}
 		
@@ -7824,11 +7824,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Capacity;
+				return _wrapped.Capacity;
 			}
 			set
 			{
-				this._wrapped.Capacity = value;
+				_wrapped.Capacity = value;
 			}
 		}
 		
@@ -7836,7 +7836,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -7844,78 +7844,78 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public int Add(object value)
 		{
-			return this._wrapped.Add(value);
+			return _wrapped.Add(value);
 		}
 		
 		public void AddRange(object[] value)
 		{
-			this._wrapped.AddRange(value);
+			_wrapped.AddRange(value);
 		}
 		
 		public void AddRange(System.DirectoryServices.PropertyValueCollection value)
 		{
-			this._wrapped.AddRange(value);
+			_wrapped.AddRange(value);
 		}
 		
 		public bool Contains(object value)
 		{
-			return this._wrapped.Contains(value);
+			return _wrapped.Contains(value);
 		}
 		
 		public void CopyTo(object[] array, int index)
 		{
-			this._wrapped.CopyTo(array, index);
+			_wrapped.CopyTo(array, index);
 		}
 		
 		public int IndexOf(object value)
 		{
-			return this._wrapped.IndexOf(value);
+			return _wrapped.IndexOf(value);
 		}
 		
 		public void Insert(int index, object value)
 		{
-			this._wrapped.Insert(index, value);
+			_wrapped.Insert(index, value);
 		}
 		
 		public void Remove(object value)
 		{
-			this._wrapped.Remove(value);
+			_wrapped.Remove(value);
 		}
 		
 		public void Clear()
 		{
-			this._wrapped.Clear();
+			_wrapped.Clear();
 		}
 		
 		public void RemoveAt(int index)
 		{
-			this._wrapped.RemoveAt(index);
+			_wrapped.RemoveAt(index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -7926,14 +7926,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ResultPropertyCollectionWrapper(System.DirectoryServices.ResultPropertyCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ResultPropertyValueCollection this[string name]
 		{
 			get
 			{
-				return this._wrapped[name];
+				return _wrapped[name];
 			}
 		}
 		
@@ -7941,7 +7941,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PropertyNames;
+				return _wrapped.PropertyNames;
 			}
 		}
 		
@@ -7949,7 +7949,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Values;
+				return _wrapped.Values;
 			}
 		}
 		
@@ -7957,7 +7957,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -7965,48 +7965,48 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(string propertyName)
 		{
-			return this._wrapped.Contains(propertyName);
+			return _wrapped.Contains(propertyName);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ResultPropertyValueCollection[] array, int index)
 		{
-			this._wrapped.CopyTo(array, index);
+			_wrapped.CopyTo(array, index);
 		}
 		
 		public void CopyTo(System.Array array, int index)
 		{
-			this._wrapped.CopyTo(array, index);
+			_wrapped.CopyTo(array, index);
 		}
 		
 		public void Clear()
 		{
-			this._wrapped.Clear();
+			_wrapped.Clear();
 		}
 		
 		public System.Collections.IDictionaryEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -8017,14 +8017,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ResultPropertyValueCollectionWrapper(System.DirectoryServices.ResultPropertyValueCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public object this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -8032,7 +8032,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -8040,43 +8040,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(object value)
 		{
-			return this._wrapped.Contains(value);
+			return _wrapped.Contains(value);
 		}
 		
 		public int IndexOf(object value)
 		{
-			return this._wrapped.IndexOf(value);
+			return _wrapped.IndexOf(value);
 		}
 		
 		public void CopyTo(object[] values, int index)
 		{
-			this._wrapped.CopyTo(values, index);
+			_wrapped.CopyTo(values, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -8087,18 +8087,18 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public SchemaNameCollectionWrapper(System.DirectoryServices.SchemaNameCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 			set
 			{
-				this._wrapped[index] = value;
+				_wrapped[index] = value;
 			}
 		}
 		
@@ -8106,7 +8106,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -8114,78 +8114,78 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public int Add(string value)
 		{
-			return this._wrapped.Add(value);
+			return _wrapped.Add(value);
 		}
 		
 		public void AddRange(string[] value)
 		{
-			this._wrapped.AddRange(value);
+			_wrapped.AddRange(value);
 		}
 		
 		public void AddRange(System.DirectoryServices.SchemaNameCollection value)
 		{
-			this._wrapped.AddRange(value);
+			_wrapped.AddRange(value);
 		}
 		
 		public void Clear()
 		{
-			this._wrapped.Clear();
+			_wrapped.Clear();
 		}
 		
 		public bool Contains(string value)
 		{
-			return this._wrapped.Contains(value);
+			return _wrapped.Contains(value);
 		}
 		
 		public void CopyTo(string[] stringArray, int index)
 		{
-			this._wrapped.CopyTo(stringArray, index);
+			_wrapped.CopyTo(stringArray, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public int IndexOf(string value)
 		{
-			return this._wrapped.IndexOf(value);
+			return _wrapped.IndexOf(value);
 		}
 		
 		public void Insert(int index, string value)
 		{
-			this._wrapped.Insert(index, value);
+			_wrapped.Insert(index, value);
 		}
 		
 		public void Remove(string value)
 		{
-			this._wrapped.Remove(value);
+			_wrapped.Remove(value);
 		}
 		
 		public void RemoveAt(int index)
 		{
-			this._wrapped.RemoveAt(index);
+			_wrapped.RemoveAt(index);
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -8196,14 +8196,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public SearchResultWrapper(System.DirectoryServices.SearchResult wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string Path
 		{
 			get
 			{
-				return this._wrapped.Path;
+				return _wrapped.Path;
 			}
 		}
 		
@@ -8211,7 +8211,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Properties;
+				return _wrapped.Properties;
 			}
 		}
 		
@@ -8219,28 +8219,28 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public System.DirectoryServices.DirectoryEntry GetDirectoryEntry()
 		{
-			return this._wrapped.GetDirectoryEntry();
+			return _wrapped.GetDirectoryEntry();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -8251,14 +8251,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public SearchResultCollectionWrapper(System.DirectoryServices.SearchResultCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.SearchResult this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -8266,7 +8266,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -8274,7 +8274,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Handle;
+				return _wrapped.Handle;
 			}
 		}
 		
@@ -8282,7 +8282,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PropertiesLoaded;
+				return _wrapped.PropertiesLoaded;
 			}
 		}
 		
@@ -8290,63 +8290,63 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void Dispose()
 		{
-			this._wrapped.Dispose();
+			_wrapped.Dispose();
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public bool Contains(System.DirectoryServices.SearchResult result)
 		{
-			return this._wrapped.Contains(result);
+			return _wrapped.Contains(result);
 		}
 		
 		public void CopyTo(System.DirectoryServices.SearchResult[] results, int index)
 		{
-			this._wrapped.CopyTo(results, index);
+			_wrapped.CopyTo(results, index);
 		}
 		
 		public int IndexOf(System.DirectoryServices.SearchResult result)
 		{
-			return this._wrapped.IndexOf(result);
+			return _wrapped.IndexOf(result);
 		}
 		
 		public object GetLifetimeService()
 		{
-			return this._wrapped.GetLifetimeService();
+			return _wrapped.GetLifetimeService();
 		}
 		
 		public object InitializeLifetimeService()
 		{
-			return this._wrapped.InitializeLifetimeService();
+			return _wrapped.InitializeLifetimeService();
 		}
 		
 		public System.Runtime.Remoting.ObjRef CreateObjRef(System.Type requestedType)
 		{
-			return this._wrapped.CreateObjRef(requestedType);
+			return _wrapped.CreateObjRef(requestedType);
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -8357,18 +8357,18 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public SortOptionWrapper(System.DirectoryServices.SortOption wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string PropertyName
 		{
 			get
 			{
-				return this._wrapped.PropertyName;
+				return _wrapped.PropertyName;
 			}
 			set
 			{
-				this._wrapped.PropertyName = value;
+				_wrapped.PropertyName = value;
 			}
 		}
 		
@@ -8376,11 +8376,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Direction;
+				return _wrapped.Direction;
 			}
 			set
 			{
-				this._wrapped.Direction = value;
+				_wrapped.Direction = value;
 			}
 		}
 		
@@ -8388,23 +8388,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -8415,14 +8415,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public DirectoryServicesCOMExceptionWrapper(System.DirectoryServices.DirectoryServicesCOMException wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public int ExtendedError
 		{
 			get
 			{
-				return this._wrapped.ExtendedError;
+				return _wrapped.ExtendedError;
 			}
 		}
 		
@@ -8430,7 +8430,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ExtendedErrorMessage;
+				return _wrapped.ExtendedErrorMessage;
 			}
 		}
 		
@@ -8438,7 +8438,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ErrorCode;
+				return _wrapped.ErrorCode;
 			}
 		}
 		
@@ -8446,7 +8446,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Message;
+				return _wrapped.Message;
 			}
 		}
 		
@@ -8454,7 +8454,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Data;
+				return _wrapped.Data;
 			}
 		}
 		
@@ -8462,7 +8462,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InnerException;
+				return _wrapped.InnerException;
 			}
 		}
 		
@@ -8470,7 +8470,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.TargetSite;
+				return _wrapped.TargetSite;
 			}
 		}
 		
@@ -8478,7 +8478,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.StackTrace;
+				return _wrapped.StackTrace;
 			}
 		}
 		
@@ -8486,11 +8486,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.HelpLink;
+				return _wrapped.HelpLink;
 			}
 			set
 			{
-				this._wrapped.HelpLink = value;
+				_wrapped.HelpLink = value;
 			}
 		}
 		
@@ -8498,11 +8498,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Source;
+				return _wrapped.Source;
 			}
 			set
 			{
-				this._wrapped.Source = value;
+				_wrapped.Source = value;
 			}
 		}
 		
@@ -8510,7 +8510,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.HResult;
+				return _wrapped.HResult;
 			}
 		}
 		
@@ -8518,33 +8518,33 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void GetObjectData(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext)
 		{
-			this._wrapped.GetObjectData(serializationInfo, streamingContext);
+			_wrapped.GetObjectData(serializationInfo, streamingContext);
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public System.Exception GetBaseException()
 		{
-			return this._wrapped.GetBaseException();
+			return _wrapped.GetBaseException();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -8555,14 +8555,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ActiveDirectoryReplicationMetadataWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.AttributeMetadata this[string name]
 		{
 			get
 			{
-				return this._wrapped[name];
+				return _wrapped[name];
 			}
 		}
 		
@@ -8570,7 +8570,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.AttributeNames;
+				return _wrapped.AttributeNames;
 			}
 		}
 		
@@ -8578,7 +8578,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Values;
+				return _wrapped.Values;
 			}
 		}
 		
@@ -8586,7 +8586,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -8594,48 +8594,48 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(string attributeName)
 		{
-			return this._wrapped.Contains(attributeName);
+			return _wrapped.Contains(attributeName);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.AttributeMetadata[] array, int index)
 		{
-			this._wrapped.CopyTo(array, index);
+			_wrapped.CopyTo(array, index);
 		}
 		
 		public void CopyTo(System.Array array, int index)
 		{
-			this._wrapped.CopyTo(array, index);
+			_wrapped.CopyTo(array, index);
 		}
 		
 		public void Clear()
 		{
-			this._wrapped.Clear();
+			_wrapped.Clear();
 		}
 		
 		public System.Collections.IDictionaryEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -8646,18 +8646,18 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ActiveDirectoryScheduleWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public bool[,,] RawSchedule
 		{
 			get
 			{
-				return this._wrapped.RawSchedule;
+				return _wrapped.RawSchedule;
 			}
 			set
 			{
-				this._wrapped.RawSchedule = value;
+				_wrapped.RawSchedule = value;
 			}
 		}
 		
@@ -8665,43 +8665,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void SetSchedule(System.DayOfWeek day, System.DirectoryServices.ActiveDirectory.HourOfDay fromHour, System.DirectoryServices.ActiveDirectory.MinuteOfHour fromMinute, System.DirectoryServices.ActiveDirectory.HourOfDay toHour, System.DirectoryServices.ActiveDirectory.MinuteOfHour toMinute)
 		{
-			this._wrapped.SetSchedule(day, fromHour, fromMinute, toHour, toMinute);
+			_wrapped.SetSchedule(day, fromHour, fromMinute, toHour, toMinute);
 		}
 		
 		public void SetSchedule(System.DayOfWeek[] days, System.DirectoryServices.ActiveDirectory.HourOfDay fromHour, System.DirectoryServices.ActiveDirectory.MinuteOfHour fromMinute, System.DirectoryServices.ActiveDirectory.HourOfDay toHour, System.DirectoryServices.ActiveDirectory.MinuteOfHour toMinute)
 		{
-			this._wrapped.SetSchedule(days, fromHour, fromMinute, toHour, toMinute);
+			_wrapped.SetSchedule(days, fromHour, fromMinute, toHour, toMinute);
 		}
 		
 		public void SetDailySchedule(System.DirectoryServices.ActiveDirectory.HourOfDay fromHour, System.DirectoryServices.ActiveDirectory.MinuteOfHour fromMinute, System.DirectoryServices.ActiveDirectory.HourOfDay toHour, System.DirectoryServices.ActiveDirectory.MinuteOfHour toMinute)
 		{
-			this._wrapped.SetDailySchedule(fromHour, fromMinute, toHour, toMinute);
+			_wrapped.SetDailySchedule(fromHour, fromMinute, toHour, toMinute);
 		}
 		
 		public void ResetSchedule()
 		{
-			this._wrapped.ResetSchedule();
+			_wrapped.ResetSchedule();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -8712,14 +8712,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ActiveDirectorySchemaWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchema wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.DirectoryServer SchemaRoleOwner
 		{
 			get
 			{
-				return this._wrapped.SchemaRoleOwner;
+				return _wrapped.SchemaRoleOwner;
 			}
 		}
 		
@@ -8727,7 +8727,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Name;
+				return _wrapped.Name;
 			}
 		}
 		
@@ -8735,88 +8735,88 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void RefreshSchema()
 		{
-			this._wrapped.RefreshSchema();
+			_wrapped.RefreshSchema();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass FindClass(string ldapDisplayName)
 		{
-			return this._wrapped.FindClass(ldapDisplayName);
+			return _wrapped.FindClass(ldapDisplayName);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass FindDefunctClass(string commonName)
 		{
-			return this._wrapped.FindDefunctClass(commonName);
+			return _wrapped.FindDefunctClass(commonName);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaClassCollection FindAllClasses()
 		{
-			return this._wrapped.FindAllClasses();
+			return _wrapped.FindAllClasses();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaClassCollection FindAllClasses(System.DirectoryServices.ActiveDirectory.SchemaClassType type)
 		{
-			return this._wrapped.FindAllClasses(type);
+			return _wrapped.FindAllClasses(type);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaClassCollection FindAllDefunctClasses()
 		{
-			return this._wrapped.FindAllDefunctClasses();
+			return _wrapped.FindAllDefunctClasses();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty FindProperty(string ldapDisplayName)
 		{
-			return this._wrapped.FindProperty(ldapDisplayName);
+			return _wrapped.FindProperty(ldapDisplayName);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty FindDefunctProperty(string commonName)
 		{
-			return this._wrapped.FindDefunctProperty(commonName);
+			return _wrapped.FindDefunctProperty(commonName);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaPropertyCollection FindAllProperties()
 		{
-			return this._wrapped.FindAllProperties();
+			return _wrapped.FindAllProperties();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaPropertyCollection FindAllProperties(System.DirectoryServices.ActiveDirectory.PropertyTypes type)
 		{
-			return this._wrapped.FindAllProperties(type);
+			return _wrapped.FindAllProperties(type);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaPropertyCollection FindAllDefunctProperties()
 		{
-			return this._wrapped.FindAllDefunctProperties();
+			return _wrapped.FindAllDefunctProperties();
 		}
 		
 		public System.DirectoryServices.DirectoryEntry GetDirectoryEntry()
 		{
-			return this._wrapped.GetDirectoryEntry();
+			return _wrapped.GetDirectoryEntry();
 		}
 		
 		public void Dispose()
 		{
-			this._wrapped.Dispose();
+			_wrapped.Dispose();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -8827,14 +8827,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ActiveDirectorySchemaClassWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string Name
 		{
 			get
 			{
-				return this._wrapped.Name;
+				return _wrapped.Name;
 			}
 		}
 		
@@ -8842,11 +8842,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.CommonName;
+				return _wrapped.CommonName;
 			}
 			set
 			{
-				this._wrapped.CommonName = value;
+				_wrapped.CommonName = value;
 			}
 		}
 		
@@ -8854,11 +8854,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Oid;
+				return _wrapped.Oid;
 			}
 			set
 			{
-				this._wrapped.Oid = value;
+				_wrapped.Oid = value;
 			}
 		}
 		
@@ -8866,11 +8866,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Description;
+				return _wrapped.Description;
 			}
 			set
 			{
-				this._wrapped.Description = value;
+				_wrapped.Description = value;
 			}
 		}
 		
@@ -8878,11 +8878,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IsDefunct;
+				return _wrapped.IsDefunct;
 			}
 			set
 			{
-				this._wrapped.IsDefunct = value;
+				_wrapped.IsDefunct = value;
 			}
 		}
 		
@@ -8890,7 +8890,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PossibleSuperiors;
+				return _wrapped.PossibleSuperiors;
 			}
 		}
 		
@@ -8898,7 +8898,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PossibleInferiors;
+				return _wrapped.PossibleInferiors;
 			}
 		}
 		
@@ -8906,7 +8906,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.MandatoryProperties;
+				return _wrapped.MandatoryProperties;
 			}
 		}
 		
@@ -8914,7 +8914,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.OptionalProperties;
+				return _wrapped.OptionalProperties;
 			}
 		}
 		
@@ -8922,7 +8922,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.AuxiliaryClasses;
+				return _wrapped.AuxiliaryClasses;
 			}
 		}
 		
@@ -8930,11 +8930,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SubClassOf;
+				return _wrapped.SubClassOf;
 			}
 			set
 			{
-				this._wrapped.SubClassOf = value;
+				_wrapped.SubClassOf = value;
 			}
 		}
 		
@@ -8942,11 +8942,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Type;
+				return _wrapped.Type;
 			}
 			set
 			{
-				this._wrapped.Type = value;
+				_wrapped.Type = value;
 			}
 		}
 		
@@ -8954,11 +8954,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SchemaGuid;
+				return _wrapped.SchemaGuid;
 			}
 			set
 			{
-				this._wrapped.SchemaGuid = value;
+				_wrapped.SchemaGuid = value;
 			}
 		}
 		
@@ -8966,11 +8966,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.DefaultObjectSecurityDescriptor;
+				return _wrapped.DefaultObjectSecurityDescriptor;
 			}
 			set
 			{
-				this._wrapped.DefaultObjectSecurityDescriptor = value;
+				_wrapped.DefaultObjectSecurityDescriptor = value;
 			}
 		}
 		
@@ -8978,43 +8978,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void Dispose()
 		{
-			this._wrapped.Dispose();
+			_wrapped.Dispose();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaPropertyCollection GetAllProperties()
 		{
-			return this._wrapped.GetAllProperties();
+			return _wrapped.GetAllProperties();
 		}
 		
 		public void Save()
 		{
-			this._wrapped.Save();
+			_wrapped.Save();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public System.DirectoryServices.DirectoryEntry GetDirectoryEntry()
 		{
-			return this._wrapped.GetDirectoryEntry();
+			return _wrapped.GetDirectoryEntry();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -9025,18 +9025,18 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ActiveDirectorySchemaClassCollectionWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClassCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 			set
 			{
-				this._wrapped[index] = value;
+				_wrapped[index] = value;
 			}
 		}
 		
@@ -9044,11 +9044,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Capacity;
+				return _wrapped.Capacity;
 			}
 			set
 			{
-				this._wrapped.Capacity = value;
+				_wrapped.Capacity = value;
 			}
 		}
 		
@@ -9056,7 +9056,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -9064,83 +9064,83 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public int Add(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass schemaClass)
 		{
-			return this._wrapped.Add(schemaClass);
+			return _wrapped.Add(schemaClass);
 		}
 		
 		public void AddRange(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass[] schemaClasses)
 		{
-			this._wrapped.AddRange(schemaClasses);
+			_wrapped.AddRange(schemaClasses);
 		}
 		
 		public void AddRange(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClassCollection schemaClasses)
 		{
-			this._wrapped.AddRange(schemaClasses);
+			_wrapped.AddRange(schemaClasses);
 		}
 		
 		public void AddRange(System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaClassCollection schemaClasses)
 		{
-			this._wrapped.AddRange(schemaClasses);
+			_wrapped.AddRange(schemaClasses);
 		}
 		
 		public void Remove(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass schemaClass)
 		{
-			this._wrapped.Remove(schemaClass);
+			_wrapped.Remove(schemaClass);
 		}
 		
 		public void Insert(int index, System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass schemaClass)
 		{
-			this._wrapped.Insert(index, schemaClass);
+			_wrapped.Insert(index, schemaClass);
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass schemaClass)
 		{
-			return this._wrapped.Contains(schemaClass);
+			return _wrapped.Contains(schemaClass);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass[] schemaClasses, int index)
 		{
-			this._wrapped.CopyTo(schemaClasses, index);
+			_wrapped.CopyTo(schemaClasses, index);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass schemaClass)
 		{
-			return this._wrapped.IndexOf(schemaClass);
+			return _wrapped.IndexOf(schemaClass);
 		}
 		
 		public void Clear()
 		{
-			this._wrapped.Clear();
+			_wrapped.Clear();
 		}
 		
 		public void RemoveAt(int index)
 		{
-			this._wrapped.RemoveAt(index);
+			_wrapped.RemoveAt(index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -9151,14 +9151,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ActiveDirectorySchemaPropertyWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string Name
 		{
 			get
 			{
-				return this._wrapped.Name;
+				return _wrapped.Name;
 			}
 		}
 		
@@ -9166,11 +9166,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.CommonName;
+				return _wrapped.CommonName;
 			}
 			set
 			{
-				this._wrapped.CommonName = value;
+				_wrapped.CommonName = value;
 			}
 		}
 		
@@ -9178,11 +9178,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Oid;
+				return _wrapped.Oid;
 			}
 			set
 			{
-				this._wrapped.Oid = value;
+				_wrapped.Oid = value;
 			}
 		}
 		
@@ -9190,11 +9190,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Syntax;
+				return _wrapped.Syntax;
 			}
 			set
 			{
-				this._wrapped.Syntax = value;
+				_wrapped.Syntax = value;
 			}
 		}
 		
@@ -9202,11 +9202,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Description;
+				return _wrapped.Description;
 			}
 			set
 			{
-				this._wrapped.Description = value;
+				_wrapped.Description = value;
 			}
 		}
 		
@@ -9214,11 +9214,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IsSingleValued;
+				return _wrapped.IsSingleValued;
 			}
 			set
 			{
-				this._wrapped.IsSingleValued = value;
+				_wrapped.IsSingleValued = value;
 			}
 		}
 		
@@ -9226,11 +9226,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IsIndexed;
+				return _wrapped.IsIndexed;
 			}
 			set
 			{
-				this._wrapped.IsIndexed = value;
+				_wrapped.IsIndexed = value;
 			}
 		}
 		
@@ -9238,11 +9238,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IsIndexedOverContainer;
+				return _wrapped.IsIndexedOverContainer;
 			}
 			set
 			{
-				this._wrapped.IsIndexedOverContainer = value;
+				_wrapped.IsIndexedOverContainer = value;
 			}
 		}
 		
@@ -9250,11 +9250,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IsInAnr;
+				return _wrapped.IsInAnr;
 			}
 			set
 			{
-				this._wrapped.IsInAnr = value;
+				_wrapped.IsInAnr = value;
 			}
 		}
 		
@@ -9262,11 +9262,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IsOnTombstonedObject;
+				return _wrapped.IsOnTombstonedObject;
 			}
 			set
 			{
-				this._wrapped.IsOnTombstonedObject = value;
+				_wrapped.IsOnTombstonedObject = value;
 			}
 		}
 		
@@ -9274,11 +9274,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IsTupleIndexed;
+				return _wrapped.IsTupleIndexed;
 			}
 			set
 			{
-				this._wrapped.IsTupleIndexed = value;
+				_wrapped.IsTupleIndexed = value;
 			}
 		}
 		
@@ -9286,11 +9286,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IsInGlobalCatalog;
+				return _wrapped.IsInGlobalCatalog;
 			}
 			set
 			{
-				this._wrapped.IsInGlobalCatalog = value;
+				_wrapped.IsInGlobalCatalog = value;
 			}
 		}
 		
@@ -9298,11 +9298,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.RangeLower;
+				return _wrapped.RangeLower;
 			}
 			set
 			{
-				this._wrapped.RangeLower = value;
+				_wrapped.RangeLower = value;
 			}
 		}
 		
@@ -9310,11 +9310,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.RangeUpper;
+				return _wrapped.RangeUpper;
 			}
 			set
 			{
-				this._wrapped.RangeUpper = value;
+				_wrapped.RangeUpper = value;
 			}
 		}
 		
@@ -9322,11 +9322,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IsDefunct;
+				return _wrapped.IsDefunct;
 			}
 			set
 			{
-				this._wrapped.IsDefunct = value;
+				_wrapped.IsDefunct = value;
 			}
 		}
 		
@@ -9334,7 +9334,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Link;
+				return _wrapped.Link;
 			}
 		}
 		
@@ -9342,11 +9342,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.LinkId;
+				return _wrapped.LinkId;
 			}
 			set
 			{
-				this._wrapped.LinkId = value;
+				_wrapped.LinkId = value;
 			}
 		}
 		
@@ -9354,11 +9354,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SchemaGuid;
+				return _wrapped.SchemaGuid;
 			}
 			set
 			{
-				this._wrapped.SchemaGuid = value;
+				_wrapped.SchemaGuid = value;
 			}
 		}
 		
@@ -9366,38 +9366,38 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void Dispose()
 		{
-			this._wrapped.Dispose();
+			_wrapped.Dispose();
 		}
 		
 		public void Save()
 		{
-			this._wrapped.Save();
+			_wrapped.Save();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public System.DirectoryServices.DirectoryEntry GetDirectoryEntry()
 		{
-			return this._wrapped.GetDirectoryEntry();
+			return _wrapped.GetDirectoryEntry();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -9408,18 +9408,18 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ActiveDirectorySchemaPropertyCollectionWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaPropertyCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 			set
 			{
-				this._wrapped[index] = value;
+				_wrapped[index] = value;
 			}
 		}
 		
@@ -9427,11 +9427,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Capacity;
+				return _wrapped.Capacity;
 			}
 			set
 			{
-				this._wrapped.Capacity = value;
+				_wrapped.Capacity = value;
 			}
 		}
 		
@@ -9439,7 +9439,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -9447,83 +9447,83 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public int Add(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty schemaProperty)
 		{
-			return this._wrapped.Add(schemaProperty);
+			return _wrapped.Add(schemaProperty);
 		}
 		
 		public void AddRange(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty[] properties)
 		{
-			this._wrapped.AddRange(properties);
+			_wrapped.AddRange(properties);
 		}
 		
 		public void AddRange(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaPropertyCollection properties)
 		{
-			this._wrapped.AddRange(properties);
+			_wrapped.AddRange(properties);
 		}
 		
 		public void AddRange(System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaPropertyCollection properties)
 		{
-			this._wrapped.AddRange(properties);
+			_wrapped.AddRange(properties);
 		}
 		
 		public void Remove(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty schemaProperty)
 		{
-			this._wrapped.Remove(schemaProperty);
+			_wrapped.Remove(schemaProperty);
 		}
 		
 		public void Insert(int index, System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty schemaProperty)
 		{
-			this._wrapped.Insert(index, schemaProperty);
+			_wrapped.Insert(index, schemaProperty);
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty schemaProperty)
 		{
-			return this._wrapped.Contains(schemaProperty);
+			return _wrapped.Contains(schemaProperty);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty[] properties, int index)
 		{
-			this._wrapped.CopyTo(properties, index);
+			_wrapped.CopyTo(properties, index);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty schemaProperty)
 		{
-			return this._wrapped.IndexOf(schemaProperty);
+			return _wrapped.IndexOf(schemaProperty);
 		}
 		
 		public void Clear()
 		{
-			this._wrapped.Clear();
+			_wrapped.Clear();
 		}
 		
 		public void RemoveAt(int index)
 		{
-			this._wrapped.RemoveAt(index);
+			_wrapped.RemoveAt(index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -9534,14 +9534,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ActiveDirectorySiteWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySite wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string Name
 		{
 			get
 			{
-				return this._wrapped.Name;
+				return _wrapped.Name;
 			}
 		}
 		
@@ -9549,7 +9549,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Domains;
+				return _wrapped.Domains;
 			}
 		}
 		
@@ -9557,7 +9557,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Subnets;
+				return _wrapped.Subnets;
 			}
 		}
 		
@@ -9565,7 +9565,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Servers;
+				return _wrapped.Servers;
 			}
 		}
 		
@@ -9573,7 +9573,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.AdjacentSites;
+				return _wrapped.AdjacentSites;
 			}
 		}
 		
@@ -9581,7 +9581,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SiteLinks;
+				return _wrapped.SiteLinks;
 			}
 		}
 		
@@ -9589,11 +9589,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InterSiteTopologyGenerator;
+				return _wrapped.InterSiteTopologyGenerator;
 			}
 			set
 			{
-				this._wrapped.InterSiteTopologyGenerator = value;
+				_wrapped.InterSiteTopologyGenerator = value;
 			}
 		}
 		
@@ -9601,11 +9601,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Options;
+				return _wrapped.Options;
 			}
 			set
 			{
-				this._wrapped.Options = value;
+				_wrapped.Options = value;
 			}
 		}
 		
@@ -9613,11 +9613,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Location;
+				return _wrapped.Location;
 			}
 			set
 			{
-				this._wrapped.Location = value;
+				_wrapped.Location = value;
 			}
 		}
 		
@@ -9625,7 +9625,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.BridgeheadServers;
+				return _wrapped.BridgeheadServers;
 			}
 		}
 		
@@ -9633,7 +9633,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PreferredSmtpBridgeheadServers;
+				return _wrapped.PreferredSmtpBridgeheadServers;
 			}
 		}
 		
@@ -9641,7 +9641,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PreferredRpcBridgeheadServers;
+				return _wrapped.PreferredRpcBridgeheadServers;
 			}
 		}
 		
@@ -9649,11 +9649,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IntraSiteReplicationSchedule;
+				return _wrapped.IntraSiteReplicationSchedule;
 			}
 			set
 			{
-				this._wrapped.IntraSiteReplicationSchedule = value;
+				_wrapped.IntraSiteReplicationSchedule = value;
 			}
 		}
 		
@@ -9661,43 +9661,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void Save()
 		{
-			this._wrapped.Save();
+			_wrapped.Save();
 		}
 		
 		public void Delete()
 		{
-			this._wrapped.Delete();
+			_wrapped.Delete();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public System.DirectoryServices.DirectoryEntry GetDirectoryEntry()
 		{
-			return this._wrapped.GetDirectoryEntry();
+			return _wrapped.GetDirectoryEntry();
 		}
 		
 		public void Dispose()
 		{
-			this._wrapped.Dispose();
+			_wrapped.Dispose();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -9708,18 +9708,18 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ActiveDirectorySiteCollectionWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ActiveDirectorySite this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 			set
 			{
-				this._wrapped[index] = value;
+				_wrapped[index] = value;
 			}
 		}
 		
@@ -9727,11 +9727,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Capacity;
+				return _wrapped.Capacity;
 			}
 			set
 			{
-				this._wrapped.Capacity = value;
+				_wrapped.Capacity = value;
 			}
 		}
 		
@@ -9739,7 +9739,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -9747,78 +9747,78 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public int Add(System.DirectoryServices.ActiveDirectory.ActiveDirectorySite site)
 		{
-			return this._wrapped.Add(site);
+			return _wrapped.Add(site);
 		}
 		
 		public void AddRange(System.DirectoryServices.ActiveDirectory.ActiveDirectorySite[] sites)
 		{
-			this._wrapped.AddRange(sites);
+			_wrapped.AddRange(sites);
 		}
 		
 		public void AddRange(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteCollection sites)
 		{
-			this._wrapped.AddRange(sites);
+			_wrapped.AddRange(sites);
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.ActiveDirectorySite site)
 		{
-			return this._wrapped.Contains(site);
+			return _wrapped.Contains(site);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectorySite[] array, int index)
 		{
-			this._wrapped.CopyTo(array, index);
+			_wrapped.CopyTo(array, index);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.ActiveDirectorySite site)
 		{
-			return this._wrapped.IndexOf(site);
+			return _wrapped.IndexOf(site);
 		}
 		
 		public void Insert(int index, System.DirectoryServices.ActiveDirectory.ActiveDirectorySite site)
 		{
-			this._wrapped.Insert(index, site);
+			_wrapped.Insert(index, site);
 		}
 		
 		public void Remove(System.DirectoryServices.ActiveDirectory.ActiveDirectorySite site)
 		{
-			this._wrapped.Remove(site);
+			_wrapped.Remove(site);
 		}
 		
 		public void Clear()
 		{
-			this._wrapped.Clear();
+			_wrapped.Clear();
 		}
 		
 		public void RemoveAt(int index)
 		{
-			this._wrapped.RemoveAt(index);
+			_wrapped.RemoveAt(index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -9829,14 +9829,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ActiveDirectorySiteLinkWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string Name
 		{
 			get
 			{
-				return this._wrapped.Name;
+				return _wrapped.Name;
 			}
 		}
 		
@@ -9844,7 +9844,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.TransportType;
+				return _wrapped.TransportType;
 			}
 		}
 		
@@ -9852,7 +9852,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Sites;
+				return _wrapped.Sites;
 			}
 		}
 		
@@ -9860,11 +9860,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Cost;
+				return _wrapped.Cost;
 			}
 			set
 			{
-				this._wrapped.Cost = value;
+				_wrapped.Cost = value;
 			}
 		}
 		
@@ -9872,11 +9872,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ReplicationInterval;
+				return _wrapped.ReplicationInterval;
 			}
 			set
 			{
-				this._wrapped.ReplicationInterval = value;
+				_wrapped.ReplicationInterval = value;
 			}
 		}
 		
@@ -9884,11 +9884,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ReciprocalReplicationEnabled;
+				return _wrapped.ReciprocalReplicationEnabled;
 			}
 			set
 			{
-				this._wrapped.ReciprocalReplicationEnabled = value;
+				_wrapped.ReciprocalReplicationEnabled = value;
 			}
 		}
 		
@@ -9896,11 +9896,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.NotificationEnabled;
+				return _wrapped.NotificationEnabled;
 			}
 			set
 			{
-				this._wrapped.NotificationEnabled = value;
+				_wrapped.NotificationEnabled = value;
 			}
 		}
 		
@@ -9908,11 +9908,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.DataCompressionEnabled;
+				return _wrapped.DataCompressionEnabled;
 			}
 			set
 			{
-				this._wrapped.DataCompressionEnabled = value;
+				_wrapped.DataCompressionEnabled = value;
 			}
 		}
 		
@@ -9920,11 +9920,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InterSiteReplicationSchedule;
+				return _wrapped.InterSiteReplicationSchedule;
 			}
 			set
 			{
-				this._wrapped.InterSiteReplicationSchedule = value;
+				_wrapped.InterSiteReplicationSchedule = value;
 			}
 		}
 		
@@ -9932,43 +9932,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void Save()
 		{
-			this._wrapped.Save();
+			_wrapped.Save();
 		}
 		
 		public void Delete()
 		{
-			this._wrapped.Delete();
+			_wrapped.Delete();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public System.DirectoryServices.DirectoryEntry GetDirectoryEntry()
 		{
-			return this._wrapped.GetDirectoryEntry();
+			return _wrapped.GetDirectoryEntry();
 		}
 		
 		public void Dispose()
 		{
-			this._wrapped.Dispose();
+			_wrapped.Dispose();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -9979,14 +9979,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ActiveDirectorySiteLinkBridgeWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string Name
 		{
 			get
 			{
-				return this._wrapped.Name;
+				return _wrapped.Name;
 			}
 		}
 		
@@ -9994,7 +9994,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SiteLinks;
+				return _wrapped.SiteLinks;
 			}
 		}
 		
@@ -10002,7 +10002,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.TransportType;
+				return _wrapped.TransportType;
 			}
 		}
 		
@@ -10010,43 +10010,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void Save()
 		{
-			this._wrapped.Save();
+			_wrapped.Save();
 		}
 		
 		public void Delete()
 		{
-			this._wrapped.Delete();
+			_wrapped.Delete();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public System.DirectoryServices.DirectoryEntry GetDirectoryEntry()
 		{
-			return this._wrapped.GetDirectoryEntry();
+			return _wrapped.GetDirectoryEntry();
 		}
 		
 		public void Dispose()
 		{
-			this._wrapped.Dispose();
+			_wrapped.Dispose();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -10057,18 +10057,18 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ActiveDirectorySiteLinkCollectionWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 			set
 			{
-				this._wrapped[index] = value;
+				_wrapped[index] = value;
 			}
 		}
 		
@@ -10076,11 +10076,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Capacity;
+				return _wrapped.Capacity;
 			}
 			set
 			{
-				this._wrapped.Capacity = value;
+				_wrapped.Capacity = value;
 			}
 		}
 		
@@ -10088,7 +10088,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -10096,78 +10096,78 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public int Add(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink link)
 		{
-			return this._wrapped.Add(link);
+			return _wrapped.Add(link);
 		}
 		
 		public void AddRange(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink[] links)
 		{
-			this._wrapped.AddRange(links);
+			_wrapped.AddRange(links);
 		}
 		
 		public void AddRange(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkCollection links)
 		{
-			this._wrapped.AddRange(links);
+			_wrapped.AddRange(links);
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink link)
 		{
-			return this._wrapped.Contains(link);
+			return _wrapped.Contains(link);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink[] array, int index)
 		{
-			this._wrapped.CopyTo(array, index);
+			_wrapped.CopyTo(array, index);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink link)
 		{
-			return this._wrapped.IndexOf(link);
+			return _wrapped.IndexOf(link);
 		}
 		
 		public void Insert(int index, System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink link)
 		{
-			this._wrapped.Insert(index, link);
+			_wrapped.Insert(index, link);
 		}
 		
 		public void Remove(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink link)
 		{
-			this._wrapped.Remove(link);
+			_wrapped.Remove(link);
 		}
 		
 		public void Clear()
 		{
-			this._wrapped.Clear();
+			_wrapped.Clear();
 		}
 		
 		public void RemoveAt(int index)
 		{
-			this._wrapped.RemoveAt(index);
+			_wrapped.RemoveAt(index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -10178,14 +10178,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ActiveDirectorySubnetWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string Name
 		{
 			get
 			{
-				return this._wrapped.Name;
+				return _wrapped.Name;
 			}
 		}
 		
@@ -10193,11 +10193,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Site;
+				return _wrapped.Site;
 			}
 			set
 			{
-				this._wrapped.Site = value;
+				_wrapped.Site = value;
 			}
 		}
 		
@@ -10205,11 +10205,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Location;
+				return _wrapped.Location;
 			}
 			set
 			{
-				this._wrapped.Location = value;
+				_wrapped.Location = value;
 			}
 		}
 		
@@ -10217,43 +10217,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void Save()
 		{
-			this._wrapped.Save();
+			_wrapped.Save();
 		}
 		
 		public void Delete()
 		{
-			this._wrapped.Delete();
+			_wrapped.Delete();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public System.DirectoryServices.DirectoryEntry GetDirectoryEntry()
 		{
-			return this._wrapped.GetDirectoryEntry();
+			return _wrapped.GetDirectoryEntry();
 		}
 		
 		public void Dispose()
 		{
-			this._wrapped.Dispose();
+			_wrapped.Dispose();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -10264,18 +10264,18 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ActiveDirectorySubnetCollectionWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnetCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 			set
 			{
-				this._wrapped[index] = value;
+				_wrapped[index] = value;
 			}
 		}
 		
@@ -10283,11 +10283,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Capacity;
+				return _wrapped.Capacity;
 			}
 			set
 			{
-				this._wrapped.Capacity = value;
+				_wrapped.Capacity = value;
 			}
 		}
 		
@@ -10295,7 +10295,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -10303,78 +10303,78 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public int Add(System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet subnet)
 		{
-			return this._wrapped.Add(subnet);
+			return _wrapped.Add(subnet);
 		}
 		
 		public void AddRange(System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet[] subnets)
 		{
-			this._wrapped.AddRange(subnets);
+			_wrapped.AddRange(subnets);
 		}
 		
 		public void AddRange(System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnetCollection subnets)
 		{
-			this._wrapped.AddRange(subnets);
+			_wrapped.AddRange(subnets);
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet subnet)
 		{
-			return this._wrapped.Contains(subnet);
+			return _wrapped.Contains(subnet);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet[] array, int index)
 		{
-			this._wrapped.CopyTo(array, index);
+			_wrapped.CopyTo(array, index);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet subnet)
 		{
-			return this._wrapped.IndexOf(subnet);
+			return _wrapped.IndexOf(subnet);
 		}
 		
 		public void Insert(int index, System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet subnet)
 		{
-			this._wrapped.Insert(index, subnet);
+			_wrapped.Insert(index, subnet);
 		}
 		
 		public void Remove(System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet subnet)
 		{
-			this._wrapped.Remove(subnet);
+			_wrapped.Remove(subnet);
 		}
 		
 		public void Clear()
 		{
-			this._wrapped.Clear();
+			_wrapped.Clear();
 		}
 		
 		public void RemoveAt(int index)
 		{
-			this._wrapped.RemoveAt(index);
+			_wrapped.RemoveAt(index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -10385,14 +10385,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public AdamInstanceWrapper(System.DirectoryServices.ActiveDirectory.AdamInstance wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ConfigurationSet ConfigurationSet
 		{
 			get
 			{
-				return this._wrapped.ConfigurationSet;
+				return _wrapped.ConfigurationSet;
 			}
 		}
 		
@@ -10400,7 +10400,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.HostName;
+				return _wrapped.HostName;
 			}
 		}
 		
@@ -10408,7 +10408,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.LdapPort;
+				return _wrapped.LdapPort;
 			}
 		}
 		
@@ -10416,7 +10416,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SslPort;
+				return _wrapped.SslPort;
 			}
 		}
 		
@@ -10424,7 +10424,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Roles;
+				return _wrapped.Roles;
 			}
 		}
 		
@@ -10432,11 +10432,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.DefaultPartition;
+				return _wrapped.DefaultPartition;
 			}
 			set
 			{
-				this._wrapped.DefaultPartition = value;
+				_wrapped.DefaultPartition = value;
 			}
 		}
 		
@@ -10444,7 +10444,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IPAddress;
+				return _wrapped.IPAddress;
 			}
 		}
 		
@@ -10452,7 +10452,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SiteName;
+				return _wrapped.SiteName;
 			}
 		}
 		
@@ -10460,11 +10460,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SyncFromAllServersCallback;
+				return _wrapped.SyncFromAllServersCallback;
 			}
 			set
 			{
-				this._wrapped.SyncFromAllServersCallback = value;
+				_wrapped.SyncFromAllServersCallback = value;
 			}
 		}
 		
@@ -10472,7 +10472,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InboundConnections;
+				return _wrapped.InboundConnections;
 			}
 		}
 		
@@ -10480,7 +10480,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.OutboundConnections;
+				return _wrapped.OutboundConnections;
 			}
 		}
 		
@@ -10488,7 +10488,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Name;
+				return _wrapped.Name;
 			}
 		}
 		
@@ -10496,7 +10496,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Partitions;
+				return _wrapped.Partitions;
 			}
 		}
 		
@@ -10504,103 +10504,103 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void TransferRoleOwnership(System.DirectoryServices.ActiveDirectory.AdamRole role)
 		{
-			this._wrapped.TransferRoleOwnership(role);
+			_wrapped.TransferRoleOwnership(role);
 		}
 		
 		public void SeizeRoleOwnership(System.DirectoryServices.ActiveDirectory.AdamRole role)
 		{
-			this._wrapped.SeizeRoleOwnership(role);
+			_wrapped.SeizeRoleOwnership(role);
 		}
 		
 		public void CheckReplicationConsistency()
 		{
-			this._wrapped.CheckReplicationConsistency();
+			_wrapped.CheckReplicationConsistency();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReplicationCursorCollection GetReplicationCursors(string partition)
 		{
-			return this._wrapped.GetReplicationCursors(partition);
+			return _wrapped.GetReplicationCursors(partition);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReplicationOperationInformation GetReplicationOperationInformation()
 		{
-			return this._wrapped.GetReplicationOperationInformation();
+			return _wrapped.GetReplicationOperationInformation();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReplicationNeighborCollection GetReplicationNeighbors(string partition)
 		{
-			return this._wrapped.GetReplicationNeighbors(partition);
+			return _wrapped.GetReplicationNeighbors(partition);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReplicationNeighborCollection GetAllReplicationNeighbors()
 		{
-			return this._wrapped.GetAllReplicationNeighbors();
+			return _wrapped.GetAllReplicationNeighbors();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReplicationFailureCollection GetReplicationConnectionFailures()
 		{
-			return this._wrapped.GetReplicationConnectionFailures();
+			return _wrapped.GetReplicationConnectionFailures();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata GetReplicationMetadata(string objectPath)
 		{
-			return this._wrapped.GetReplicationMetadata(objectPath);
+			return _wrapped.GetReplicationMetadata(objectPath);
 		}
 		
 		public void SyncReplicaFromServer(string partition, string sourceServer)
 		{
-			this._wrapped.SyncReplicaFromServer(partition, sourceServer);
+			_wrapped.SyncReplicaFromServer(partition, sourceServer);
 		}
 		
 		public void TriggerSyncReplicaFromNeighbors(string partition)
 		{
-			this._wrapped.TriggerSyncReplicaFromNeighbors(partition);
+			_wrapped.TriggerSyncReplicaFromNeighbors(partition);
 		}
 		
 		public void SyncReplicaFromAllServers(string partition, System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions options)
 		{
-			this._wrapped.SyncReplicaFromAllServers(partition, options);
+			_wrapped.SyncReplicaFromAllServers(partition, options);
 		}
 		
 		public void Save()
 		{
-			this._wrapped.Save();
+			_wrapped.Save();
 		}
 		
 		public void Dispose()
 		{
-			this._wrapped.Dispose();
+			_wrapped.Dispose();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public void MoveToAnotherSite(string siteName)
 		{
-			this._wrapped.MoveToAnotherSite(siteName);
+			_wrapped.MoveToAnotherSite(siteName);
 		}
 		
 		public System.DirectoryServices.DirectoryEntry GetDirectoryEntry()
 		{
-			return this._wrapped.GetDirectoryEntry();
+			return _wrapped.GetDirectoryEntry();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -10611,14 +10611,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public AdamInstanceCollectionWrapper(System.DirectoryServices.ActiveDirectory.AdamInstanceCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.AdamInstance this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -10626,7 +10626,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -10634,43 +10634,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.AdamInstance adamInstance)
 		{
-			return this._wrapped.Contains(adamInstance);
+			return _wrapped.Contains(adamInstance);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.AdamInstance adamInstance)
 		{
-			return this._wrapped.IndexOf(adamInstance);
+			return _wrapped.IndexOf(adamInstance);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.AdamInstance[] adamInstances, int index)
 		{
-			this._wrapped.CopyTo(adamInstances, index);
+			_wrapped.CopyTo(adamInstances, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -10681,14 +10681,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ApplicationPartitionWrapper(System.DirectoryServices.ActiveDirectory.ApplicationPartition wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.DirectoryServerCollection DirectoryServers
 		{
 			get
 			{
-				return this._wrapped.DirectoryServers;
+				return _wrapped.DirectoryServers;
 			}
 		}
 		
@@ -10696,11 +10696,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SecurityReferenceDomain;
+				return _wrapped.SecurityReferenceDomain;
 			}
 			set
 			{
-				this._wrapped.SecurityReferenceDomain = value;
+				_wrapped.SecurityReferenceDomain = value;
 			}
 		}
 		
@@ -10708,7 +10708,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Name;
+				return _wrapped.Name;
 			}
 		}
 		
@@ -10716,83 +10716,83 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.DirectoryServer FindDirectoryServer()
 		{
-			return this._wrapped.FindDirectoryServer();
+			return _wrapped.FindDirectoryServer();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.DirectoryServer FindDirectoryServer(string siteName)
 		{
-			return this._wrapped.FindDirectoryServer(siteName);
+			return _wrapped.FindDirectoryServer(siteName);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.DirectoryServer FindDirectoryServer(bool forceRediscovery)
 		{
-			return this._wrapped.FindDirectoryServer(forceRediscovery);
+			return _wrapped.FindDirectoryServer(forceRediscovery);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.DirectoryServer FindDirectoryServer(string siteName, bool forceRediscovery)
 		{
-			return this._wrapped.FindDirectoryServer(siteName, forceRediscovery);
+			return _wrapped.FindDirectoryServer(siteName, forceRediscovery);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReadOnlyDirectoryServerCollection FindAllDirectoryServers()
 		{
-			return this._wrapped.FindAllDirectoryServers();
+			return _wrapped.FindAllDirectoryServers();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReadOnlyDirectoryServerCollection FindAllDirectoryServers(string siteName)
 		{
-			return this._wrapped.FindAllDirectoryServers(siteName);
+			return _wrapped.FindAllDirectoryServers(siteName);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReadOnlyDirectoryServerCollection FindAllDiscoverableDirectoryServers()
 		{
-			return this._wrapped.FindAllDiscoverableDirectoryServers();
+			return _wrapped.FindAllDiscoverableDirectoryServers();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReadOnlyDirectoryServerCollection FindAllDiscoverableDirectoryServers(string siteName)
 		{
-			return this._wrapped.FindAllDiscoverableDirectoryServers(siteName);
+			return _wrapped.FindAllDiscoverableDirectoryServers(siteName);
 		}
 		
 		public void Delete()
 		{
-			this._wrapped.Delete();
+			_wrapped.Delete();
 		}
 		
 		public void Save()
 		{
-			this._wrapped.Save();
+			_wrapped.Save();
 		}
 		
 		public System.DirectoryServices.DirectoryEntry GetDirectoryEntry()
 		{
-			return this._wrapped.GetDirectoryEntry();
+			return _wrapped.GetDirectoryEntry();
 		}
 		
 		public void Dispose()
 		{
-			this._wrapped.Dispose();
+			_wrapped.Dispose();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -10803,14 +10803,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ApplicationPartitionCollectionWrapper(System.DirectoryServices.ActiveDirectory.ApplicationPartitionCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ApplicationPartition this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -10818,7 +10818,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -10826,43 +10826,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.ApplicationPartition applicationPartition)
 		{
-			return this._wrapped.Contains(applicationPartition);
+			return _wrapped.Contains(applicationPartition);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.ApplicationPartition applicationPartition)
 		{
-			return this._wrapped.IndexOf(applicationPartition);
+			return _wrapped.IndexOf(applicationPartition);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.ApplicationPartition[] applicationPartitions, int index)
 		{
-			this._wrapped.CopyTo(applicationPartitions, index);
+			_wrapped.CopyTo(applicationPartitions, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -10873,14 +10873,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public AttributeMetadataWrapper(System.DirectoryServices.ActiveDirectory.AttributeMetadata wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string Name
 		{
 			get
 			{
-				return this._wrapped.Name;
+				return _wrapped.Name;
 			}
 		}
 		
@@ -10888,7 +10888,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Version;
+				return _wrapped.Version;
 			}
 		}
 		
@@ -10896,7 +10896,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.LastOriginatingChangeTime;
+				return _wrapped.LastOriginatingChangeTime;
 			}
 		}
 		
@@ -10904,7 +10904,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.LastOriginatingInvocationId;
+				return _wrapped.LastOriginatingInvocationId;
 			}
 		}
 		
@@ -10912,7 +10912,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.OriginatingChangeUsn;
+				return _wrapped.OriginatingChangeUsn;
 			}
 		}
 		
@@ -10920,7 +10920,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.LocalChangeUsn;
+				return _wrapped.LocalChangeUsn;
 			}
 		}
 		
@@ -10928,7 +10928,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.OriginatingServer;
+				return _wrapped.OriginatingServer;
 			}
 		}
 		
@@ -10936,23 +10936,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -10963,14 +10963,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public AttributeMetadataCollectionWrapper(System.DirectoryServices.ActiveDirectory.AttributeMetadataCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.AttributeMetadata this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -10978,7 +10978,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -10986,43 +10986,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.AttributeMetadata metadata)
 		{
-			return this._wrapped.Contains(metadata);
+			return _wrapped.Contains(metadata);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.AttributeMetadata metadata)
 		{
-			return this._wrapped.IndexOf(metadata);
+			return _wrapped.IndexOf(metadata);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.AttributeMetadata[] metadata, int index)
 		{
-			this._wrapped.CopyTo(metadata, index);
+			_wrapped.CopyTo(metadata, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -11033,14 +11033,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ConfigurationSetWrapper(System.DirectoryServices.ActiveDirectory.ConfigurationSet wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string Name
 		{
 			get
 			{
-				return this._wrapped.Name;
+				return _wrapped.Name;
 			}
 		}
 		
@@ -11048,7 +11048,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Sites;
+				return _wrapped.Sites;
 			}
 		}
 		
@@ -11056,7 +11056,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.AdamInstances;
+				return _wrapped.AdamInstances;
 			}
 		}
 		
@@ -11064,7 +11064,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ApplicationPartitions;
+				return _wrapped.ApplicationPartitions;
 			}
 		}
 		
@@ -11072,7 +11072,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Schema;
+				return _wrapped.Schema;
 			}
 		}
 		
@@ -11080,7 +11080,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SchemaRoleOwner;
+				return _wrapped.SchemaRoleOwner;
 			}
 		}
 		
@@ -11088,7 +11088,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.NamingRoleOwner;
+				return _wrapped.NamingRoleOwner;
 			}
 		}
 		
@@ -11096,73 +11096,73 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void Dispose()
 		{
-			this._wrapped.Dispose();
+			_wrapped.Dispose();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.AdamInstance FindAdamInstance()
 		{
-			return this._wrapped.FindAdamInstance();
+			return _wrapped.FindAdamInstance();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.AdamInstance FindAdamInstance(string partitionName)
 		{
-			return this._wrapped.FindAdamInstance(partitionName);
+			return _wrapped.FindAdamInstance(partitionName);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.AdamInstance FindAdamInstance(string partitionName, string siteName)
 		{
-			return this._wrapped.FindAdamInstance(partitionName, siteName);
+			return _wrapped.FindAdamInstance(partitionName, siteName);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.AdamInstanceCollection FindAllAdamInstances()
 		{
-			return this._wrapped.FindAllAdamInstances();
+			return _wrapped.FindAllAdamInstances();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.AdamInstanceCollection FindAllAdamInstances(string partitionName)
 		{
-			return this._wrapped.FindAllAdamInstances(partitionName);
+			return _wrapped.FindAllAdamInstances(partitionName);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.AdamInstanceCollection FindAllAdamInstances(string partitionName, string siteName)
 		{
-			return this._wrapped.FindAllAdamInstances(partitionName, siteName);
+			return _wrapped.FindAllAdamInstances(partitionName, siteName);
 		}
 		
 		public System.DirectoryServices.DirectoryEntry GetDirectoryEntry()
 		{
-			return this._wrapped.GetDirectoryEntry();
+			return _wrapped.GetDirectoryEntry();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel GetSecurityLevel()
 		{
-			return this._wrapped.GetSecurityLevel();
+			return _wrapped.GetSecurityLevel();
 		}
 		
 		public void SetSecurityLevel(System.DirectoryServices.ActiveDirectory.ReplicationSecurityLevel securityLevel)
 		{
-			this._wrapped.SetSecurityLevel(securityLevel);
+			_wrapped.SetSecurityLevel(securityLevel);
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -11173,14 +11173,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public DirectoryContextWrapper(System.DirectoryServices.ActiveDirectory.DirectoryContext wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string Name
 		{
 			get
 			{
-				return this._wrapped.Name;
+				return _wrapped.Name;
 			}
 		}
 		
@@ -11188,7 +11188,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.UserName;
+				return _wrapped.UserName;
 			}
 		}
 		
@@ -11196,7 +11196,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ContextType;
+				return _wrapped.ContextType;
 			}
 		}
 		
@@ -11204,23 +11204,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -11231,18 +11231,18 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public DirectoryServerCollectionWrapper(System.DirectoryServices.ActiveDirectory.DirectoryServerCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.DirectoryServer this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 			set
 			{
-				this._wrapped[index] = value;
+				_wrapped[index] = value;
 			}
 		}
 		
@@ -11250,11 +11250,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Capacity;
+				return _wrapped.Capacity;
 			}
 			set
 			{
-				this._wrapped.Capacity = value;
+				_wrapped.Capacity = value;
 			}
 		}
 		
@@ -11262,7 +11262,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -11270,73 +11270,73 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public int Add(System.DirectoryServices.ActiveDirectory.DirectoryServer server)
 		{
-			return this._wrapped.Add(server);
+			return _wrapped.Add(server);
 		}
 		
 		public void AddRange(System.DirectoryServices.ActiveDirectory.DirectoryServer[] servers)
 		{
-			this._wrapped.AddRange(servers);
+			_wrapped.AddRange(servers);
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.DirectoryServer server)
 		{
-			return this._wrapped.Contains(server);
+			return _wrapped.Contains(server);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.DirectoryServer[] array, int index)
 		{
-			this._wrapped.CopyTo(array, index);
+			_wrapped.CopyTo(array, index);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.DirectoryServer server)
 		{
-			return this._wrapped.IndexOf(server);
+			return _wrapped.IndexOf(server);
 		}
 		
 		public void Insert(int index, System.DirectoryServices.ActiveDirectory.DirectoryServer server)
 		{
-			this._wrapped.Insert(index, server);
+			_wrapped.Insert(index, server);
 		}
 		
 		public void Remove(System.DirectoryServices.ActiveDirectory.DirectoryServer server)
 		{
-			this._wrapped.Remove(server);
+			_wrapped.Remove(server);
 		}
 		
 		public void Clear()
 		{
-			this._wrapped.Clear();
+			_wrapped.Clear();
 		}
 		
 		public void RemoveAt(int index)
 		{
-			this._wrapped.RemoveAt(index);
+			_wrapped.RemoveAt(index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -11347,14 +11347,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public DomainWrapper(System.DirectoryServices.ActiveDirectory.Domain wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.Forest Forest
 		{
 			get
 			{
-				return this._wrapped.Forest;
+				return _wrapped.Forest;
 			}
 		}
 		
@@ -11362,7 +11362,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.DomainControllers;
+				return _wrapped.DomainControllers;
 			}
 		}
 		
@@ -11370,7 +11370,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Children;
+				return _wrapped.Children;
 			}
 		}
 		
@@ -11378,7 +11378,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.DomainMode;
+				return _wrapped.DomainMode;
 			}
 		}
 		
@@ -11386,7 +11386,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.DomainModeLevel;
+				return _wrapped.DomainModeLevel;
 			}
 		}
 		
@@ -11394,7 +11394,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Parent;
+				return _wrapped.Parent;
 			}
 		}
 		
@@ -11402,7 +11402,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PdcRoleOwner;
+				return _wrapped.PdcRoleOwner;
 			}
 		}
 		
@@ -11410,7 +11410,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.RidRoleOwner;
+				return _wrapped.RidRoleOwner;
 			}
 		}
 		
@@ -11418,7 +11418,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InfrastructureRoleOwner;
+				return _wrapped.InfrastructureRoleOwner;
 			}
 		}
 		
@@ -11426,7 +11426,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Name;
+				return _wrapped.Name;
 			}
 		}
 		
@@ -11434,163 +11434,163 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void RaiseDomainFunctionalityLevel(int domainMode)
 		{
-			this._wrapped.RaiseDomainFunctionalityLevel(domainMode);
+			_wrapped.RaiseDomainFunctionalityLevel(domainMode);
 		}
 		
 		public void RaiseDomainFunctionality(System.DirectoryServices.ActiveDirectory.DomainMode domainMode)
 		{
-			this._wrapped.RaiseDomainFunctionality(domainMode);
+			_wrapped.RaiseDomainFunctionality(domainMode);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.DomainController FindDomainController()
 		{
-			return this._wrapped.FindDomainController();
+			return _wrapped.FindDomainController();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.DomainController FindDomainController(string siteName)
 		{
-			return this._wrapped.FindDomainController(siteName);
+			return _wrapped.FindDomainController(siteName);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.DomainController FindDomainController(System.DirectoryServices.ActiveDirectory.LocatorOptions flag)
 		{
-			return this._wrapped.FindDomainController(flag);
+			return _wrapped.FindDomainController(flag);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.DomainController FindDomainController(string siteName, System.DirectoryServices.ActiveDirectory.LocatorOptions flag)
 		{
-			return this._wrapped.FindDomainController(siteName, flag);
+			return _wrapped.FindDomainController(siteName, flag);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.DomainControllerCollection FindAllDomainControllers()
 		{
-			return this._wrapped.FindAllDomainControllers();
+			return _wrapped.FindAllDomainControllers();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.DomainControllerCollection FindAllDomainControllers(string siteName)
 		{
-			return this._wrapped.FindAllDomainControllers(siteName);
+			return _wrapped.FindAllDomainControllers(siteName);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.DomainControllerCollection FindAllDiscoverableDomainControllers()
 		{
-			return this._wrapped.FindAllDiscoverableDomainControllers();
+			return _wrapped.FindAllDiscoverableDomainControllers();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.DomainControllerCollection FindAllDiscoverableDomainControllers(string siteName)
 		{
-			return this._wrapped.FindAllDiscoverableDomainControllers(siteName);
+			return _wrapped.FindAllDiscoverableDomainControllers(siteName);
 		}
 		
 		public System.DirectoryServices.DirectoryEntry GetDirectoryEntry()
 		{
-			return this._wrapped.GetDirectoryEntry();
+			return _wrapped.GetDirectoryEntry();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection GetAllTrustRelationships()
 		{
-			return this._wrapped.GetAllTrustRelationships();
+			return _wrapped.GetAllTrustRelationships();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation GetTrustRelationship(string targetDomainName)
 		{
-			return this._wrapped.GetTrustRelationship(targetDomainName);
+			return _wrapped.GetTrustRelationship(targetDomainName);
 		}
 		
 		public bool GetSelectiveAuthenticationStatus(string targetDomainName)
 		{
-			return this._wrapped.GetSelectiveAuthenticationStatus(targetDomainName);
+			return _wrapped.GetSelectiveAuthenticationStatus(targetDomainName);
 		}
 		
 		public void SetSelectiveAuthenticationStatus(string targetDomainName, bool enable)
 		{
-			this._wrapped.SetSelectiveAuthenticationStatus(targetDomainName, enable);
+			_wrapped.SetSelectiveAuthenticationStatus(targetDomainName, enable);
 		}
 		
 		public bool GetSidFilteringStatus(string targetDomainName)
 		{
-			return this._wrapped.GetSidFilteringStatus(targetDomainName);
+			return _wrapped.GetSidFilteringStatus(targetDomainName);
 		}
 		
 		public void SetSidFilteringStatus(string targetDomainName, bool enable)
 		{
-			this._wrapped.SetSidFilteringStatus(targetDomainName, enable);
+			_wrapped.SetSidFilteringStatus(targetDomainName, enable);
 		}
 		
 		public void DeleteLocalSideOfTrustRelationship(string targetDomainName)
 		{
-			this._wrapped.DeleteLocalSideOfTrustRelationship(targetDomainName);
+			_wrapped.DeleteLocalSideOfTrustRelationship(targetDomainName);
 		}
 		
 		public void DeleteTrustRelationship(System.DirectoryServices.ActiveDirectory.Domain targetDomain)
 		{
-			this._wrapped.DeleteTrustRelationship(targetDomain);
+			_wrapped.DeleteTrustRelationship(targetDomain);
 		}
 		
 		public void VerifyOutboundTrustRelationship(string targetDomainName)
 		{
-			this._wrapped.VerifyOutboundTrustRelationship(targetDomainName);
+			_wrapped.VerifyOutboundTrustRelationship(targetDomainName);
 		}
 		
 		public void VerifyTrustRelationship(System.DirectoryServices.ActiveDirectory.Domain targetDomain, System.DirectoryServices.ActiveDirectory.TrustDirection direction)
 		{
-			this._wrapped.VerifyTrustRelationship(targetDomain, direction);
+			_wrapped.VerifyTrustRelationship(targetDomain, direction);
 		}
 		
 		public void CreateLocalSideOfTrustRelationship(string targetDomainName, System.DirectoryServices.ActiveDirectory.TrustDirection direction, string trustPassword)
 		{
-			this._wrapped.CreateLocalSideOfTrustRelationship(targetDomainName, direction, trustPassword);
+			_wrapped.CreateLocalSideOfTrustRelationship(targetDomainName, direction, trustPassword);
 		}
 		
 		public void CreateTrustRelationship(System.DirectoryServices.ActiveDirectory.Domain targetDomain, System.DirectoryServices.ActiveDirectory.TrustDirection direction)
 		{
-			this._wrapped.CreateTrustRelationship(targetDomain, direction);
+			_wrapped.CreateTrustRelationship(targetDomain, direction);
 		}
 		
 		public void UpdateLocalSideOfTrustRelationship(string targetDomainName, string newTrustPassword)
 		{
-			this._wrapped.UpdateLocalSideOfTrustRelationship(targetDomainName, newTrustPassword);
+			_wrapped.UpdateLocalSideOfTrustRelationship(targetDomainName, newTrustPassword);
 		}
 		
 		public void UpdateLocalSideOfTrustRelationship(string targetDomainName, System.DirectoryServices.ActiveDirectory.TrustDirection newTrustDirection, string newTrustPassword)
 		{
-			this._wrapped.UpdateLocalSideOfTrustRelationship(targetDomainName, newTrustDirection, newTrustPassword);
+			_wrapped.UpdateLocalSideOfTrustRelationship(targetDomainName, newTrustDirection, newTrustPassword);
 		}
 		
 		public void UpdateTrustRelationship(System.DirectoryServices.ActiveDirectory.Domain targetDomain, System.DirectoryServices.ActiveDirectory.TrustDirection newTrustDirection)
 		{
-			this._wrapped.UpdateTrustRelationship(targetDomain, newTrustDirection);
+			_wrapped.UpdateTrustRelationship(targetDomain, newTrustDirection);
 		}
 		
 		public void RepairTrustRelationship(System.DirectoryServices.ActiveDirectory.Domain targetDomain)
 		{
-			this._wrapped.RepairTrustRelationship(targetDomain);
+			_wrapped.RepairTrustRelationship(targetDomain);
 		}
 		
 		public void Dispose()
 		{
-			this._wrapped.Dispose();
+			_wrapped.Dispose();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -11601,14 +11601,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public DomainCollectionWrapper(System.DirectoryServices.ActiveDirectory.DomainCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.Domain this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -11616,7 +11616,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -11624,43 +11624,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.Domain domain)
 		{
-			return this._wrapped.Contains(domain);
+			return _wrapped.Contains(domain);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.Domain domain)
 		{
-			return this._wrapped.IndexOf(domain);
+			return _wrapped.IndexOf(domain);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.Domain[] domains, int index)
 		{
-			this._wrapped.CopyTo(domains, index);
+			_wrapped.CopyTo(domains, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -11671,14 +11671,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public SyncUpdateCallbackWrapper(System.DirectoryServices.ActiveDirectory.SyncUpdateCallback wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.Reflection.MethodInfo Method
 		{
 			get
 			{
-				return this._wrapped.Method;
+				return _wrapped.Method;
 			}
 		}
 		
@@ -11686,7 +11686,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Target;
+				return _wrapped.Target;
 			}
 		}
 		
@@ -11694,58 +11694,58 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Invoke(System.DirectoryServices.ActiveDirectory.SyncFromAllServersEvent eventType, string targetServer, string sourceServer, System.DirectoryServices.ActiveDirectory.SyncFromAllServersOperationException exception)
 		{
-			return this._wrapped.Invoke(eventType, targetServer, sourceServer, exception);
+			return _wrapped.Invoke(eventType, targetServer, sourceServer, exception);
 		}
 		
 		public System.IAsyncResult BeginInvoke(System.DirectoryServices.ActiveDirectory.SyncFromAllServersEvent eventType, string targetServer, string sourceServer, System.DirectoryServices.ActiveDirectory.SyncFromAllServersOperationException exception, System.AsyncCallback callback, object @object)
 		{
-			return this._wrapped.BeginInvoke(eventType, targetServer, sourceServer, exception, callback, @object);
+			return _wrapped.BeginInvoke(eventType, targetServer, sourceServer, exception, callback, @object);
 		}
 		
 		public bool EndInvoke(System.IAsyncResult result)
 		{
-			return this._wrapped.EndInvoke(result);
+			return _wrapped.EndInvoke(result);
 		}
 		
 		public void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
 		{
-			this._wrapped.GetObjectData(info, context);
+			_wrapped.GetObjectData(info, context);
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public System.Delegate[] GetInvocationList()
 		{
-			return this._wrapped.GetInvocationList();
+			return _wrapped.GetInvocationList();
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 		
 		public object DynamicInvoke(object[] args)
 		{
-			return this._wrapped.DynamicInvoke(args);
+			return _wrapped.DynamicInvoke(args);
 		}
 		
 		public object Clone()
 		{
-			return this._wrapped.Clone();
+			return _wrapped.Clone();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 	}
 	
@@ -11756,14 +11756,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public DomainControllerWrapper(System.DirectoryServices.ActiveDirectory.DomainController wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.Forest Forest
 		{
 			get
 			{
-				return this._wrapped.Forest;
+				return _wrapped.Forest;
 			}
 		}
 		
@@ -11771,7 +11771,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.CurrentTime;
+				return _wrapped.CurrentTime;
 			}
 		}
 		
@@ -11779,7 +11779,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.HighestCommittedUsn;
+				return _wrapped.HighestCommittedUsn;
 			}
 		}
 		
@@ -11787,7 +11787,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.OSVersion;
+				return _wrapped.OSVersion;
 			}
 		}
 		
@@ -11795,7 +11795,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Roles;
+				return _wrapped.Roles;
 			}
 		}
 		
@@ -11803,7 +11803,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Domain;
+				return _wrapped.Domain;
 			}
 		}
 		
@@ -11811,7 +11811,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IPAddress;
+				return _wrapped.IPAddress;
 			}
 		}
 		
@@ -11819,7 +11819,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SiteName;
+				return _wrapped.SiteName;
 			}
 		}
 		
@@ -11827,11 +11827,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SyncFromAllServersCallback;
+				return _wrapped.SyncFromAllServersCallback;
 			}
 			set
 			{
-				this._wrapped.SyncFromAllServersCallback = value;
+				_wrapped.SyncFromAllServersCallback = value;
 			}
 		}
 		
@@ -11839,7 +11839,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InboundConnections;
+				return _wrapped.InboundConnections;
 			}
 		}
 		
@@ -11847,7 +11847,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.OutboundConnections;
+				return _wrapped.OutboundConnections;
 			}
 		}
 		
@@ -11855,7 +11855,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Name;
+				return _wrapped.Name;
 			}
 		}
 		
@@ -11863,7 +11863,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Partitions;
+				return _wrapped.Partitions;
 			}
 		}
 		
@@ -11871,113 +11871,113 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.GlobalCatalog EnableGlobalCatalog()
 		{
-			return this._wrapped.EnableGlobalCatalog();
+			return _wrapped.EnableGlobalCatalog();
 		}
 		
 		public bool IsGlobalCatalog()
 		{
-			return this._wrapped.IsGlobalCatalog();
+			return _wrapped.IsGlobalCatalog();
 		}
 		
 		public void TransferRoleOwnership(System.DirectoryServices.ActiveDirectory.ActiveDirectoryRole role)
 		{
-			this._wrapped.TransferRoleOwnership(role);
+			_wrapped.TransferRoleOwnership(role);
 		}
 		
 		public void SeizeRoleOwnership(System.DirectoryServices.ActiveDirectory.ActiveDirectoryRole role)
 		{
-			this._wrapped.SeizeRoleOwnership(role);
+			_wrapped.SeizeRoleOwnership(role);
 		}
 		
 		public System.DirectoryServices.DirectorySearcher GetDirectorySearcher()
 		{
-			return this._wrapped.GetDirectorySearcher();
+			return _wrapped.GetDirectorySearcher();
 		}
 		
 		public void CheckReplicationConsistency()
 		{
-			this._wrapped.CheckReplicationConsistency();
+			_wrapped.CheckReplicationConsistency();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReplicationCursorCollection GetReplicationCursors(string partition)
 		{
-			return this._wrapped.GetReplicationCursors(partition);
+			return _wrapped.GetReplicationCursors(partition);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReplicationOperationInformation GetReplicationOperationInformation()
 		{
-			return this._wrapped.GetReplicationOperationInformation();
+			return _wrapped.GetReplicationOperationInformation();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReplicationNeighborCollection GetReplicationNeighbors(string partition)
 		{
-			return this._wrapped.GetReplicationNeighbors(partition);
+			return _wrapped.GetReplicationNeighbors(partition);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReplicationNeighborCollection GetAllReplicationNeighbors()
 		{
-			return this._wrapped.GetAllReplicationNeighbors();
+			return _wrapped.GetAllReplicationNeighbors();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReplicationFailureCollection GetReplicationConnectionFailures()
 		{
-			return this._wrapped.GetReplicationConnectionFailures();
+			return _wrapped.GetReplicationConnectionFailures();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata GetReplicationMetadata(string objectPath)
 		{
-			return this._wrapped.GetReplicationMetadata(objectPath);
+			return _wrapped.GetReplicationMetadata(objectPath);
 		}
 		
 		public void SyncReplicaFromServer(string partition, string sourceServer)
 		{
-			this._wrapped.SyncReplicaFromServer(partition, sourceServer);
+			_wrapped.SyncReplicaFromServer(partition, sourceServer);
 		}
 		
 		public void TriggerSyncReplicaFromNeighbors(string partition)
 		{
-			this._wrapped.TriggerSyncReplicaFromNeighbors(partition);
+			_wrapped.TriggerSyncReplicaFromNeighbors(partition);
 		}
 		
 		public void SyncReplicaFromAllServers(string partition, System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions options)
 		{
-			this._wrapped.SyncReplicaFromAllServers(partition, options);
+			_wrapped.SyncReplicaFromAllServers(partition, options);
 		}
 		
 		public void Dispose()
 		{
-			this._wrapped.Dispose();
+			_wrapped.Dispose();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public void MoveToAnotherSite(string siteName)
 		{
-			this._wrapped.MoveToAnotherSite(siteName);
+			_wrapped.MoveToAnotherSite(siteName);
 		}
 		
 		public System.DirectoryServices.DirectoryEntry GetDirectoryEntry()
 		{
-			return this._wrapped.GetDirectoryEntry();
+			return _wrapped.GetDirectoryEntry();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -11988,14 +11988,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public DomainControllerCollectionWrapper(System.DirectoryServices.ActiveDirectory.DomainControllerCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.DomainController this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -12003,7 +12003,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -12011,43 +12011,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.DomainController domainController)
 		{
-			return this._wrapped.Contains(domainController);
+			return _wrapped.Contains(domainController);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.DomainController domainController)
 		{
-			return this._wrapped.IndexOf(domainController);
+			return _wrapped.IndexOf(domainController);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.DomainController[] domainControllers, int index)
 		{
-			this._wrapped.CopyTo(domainControllers, index);
+			_wrapped.CopyTo(domainControllers, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -12058,14 +12058,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public SyncFromAllServersErrorInformationWrapper(System.DirectoryServices.ActiveDirectory.SyncFromAllServersErrorInformation wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.SyncFromAllServersErrorCategory ErrorCategory
 		{
 			get
 			{
-				return this._wrapped.ErrorCategory;
+				return _wrapped.ErrorCategory;
 			}
 		}
 		
@@ -12073,7 +12073,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ErrorCode;
+				return _wrapped.ErrorCode;
 			}
 		}
 		
@@ -12081,7 +12081,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ErrorMessage;
+				return _wrapped.ErrorMessage;
 			}
 		}
 		
@@ -12089,7 +12089,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.TargetServer;
+				return _wrapped.TargetServer;
 			}
 		}
 		
@@ -12097,7 +12097,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SourceServer;
+				return _wrapped.SourceServer;
 			}
 		}
 		
@@ -12105,23 +12105,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -12132,14 +12132,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ActiveDirectoryObjectNotFoundExceptionWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.Type Type
 		{
 			get
 			{
-				return this._wrapped.Type;
+				return _wrapped.Type;
 			}
 		}
 		
@@ -12147,7 +12147,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Name;
+				return _wrapped.Name;
 			}
 		}
 		
@@ -12155,7 +12155,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Message;
+				return _wrapped.Message;
 			}
 		}
 		
@@ -12163,7 +12163,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Data;
+				return _wrapped.Data;
 			}
 		}
 		
@@ -12171,7 +12171,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InnerException;
+				return _wrapped.InnerException;
 			}
 		}
 		
@@ -12179,7 +12179,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.TargetSite;
+				return _wrapped.TargetSite;
 			}
 		}
 		
@@ -12187,7 +12187,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.StackTrace;
+				return _wrapped.StackTrace;
 			}
 		}
 		
@@ -12195,11 +12195,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.HelpLink;
+				return _wrapped.HelpLink;
 			}
 			set
 			{
-				this._wrapped.HelpLink = value;
+				_wrapped.HelpLink = value;
 			}
 		}
 		
@@ -12207,11 +12207,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Source;
+				return _wrapped.Source;
 			}
 			set
 			{
-				this._wrapped.Source = value;
+				_wrapped.Source = value;
 			}
 		}
 		
@@ -12219,7 +12219,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.HResult;
+				return _wrapped.HResult;
 			}
 		}
 		
@@ -12227,33 +12227,33 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void GetObjectData(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext)
 		{
-			this._wrapped.GetObjectData(serializationInfo, streamingContext);
+			_wrapped.GetObjectData(serializationInfo, streamingContext);
 		}
 		
 		public System.Exception GetBaseException()
 		{
-			return this._wrapped.GetBaseException();
+			return _wrapped.GetBaseException();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -12264,14 +12264,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ActiveDirectoryOperationExceptionWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public int ErrorCode
 		{
 			get
 			{
-				return this._wrapped.ErrorCode;
+				return _wrapped.ErrorCode;
 			}
 		}
 		
@@ -12279,7 +12279,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Message;
+				return _wrapped.Message;
 			}
 		}
 		
@@ -12287,7 +12287,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Data;
+				return _wrapped.Data;
 			}
 		}
 		
@@ -12295,7 +12295,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InnerException;
+				return _wrapped.InnerException;
 			}
 		}
 		
@@ -12303,7 +12303,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.TargetSite;
+				return _wrapped.TargetSite;
 			}
 		}
 		
@@ -12311,7 +12311,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.StackTrace;
+				return _wrapped.StackTrace;
 			}
 		}
 		
@@ -12319,11 +12319,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.HelpLink;
+				return _wrapped.HelpLink;
 			}
 			set
 			{
-				this._wrapped.HelpLink = value;
+				_wrapped.HelpLink = value;
 			}
 		}
 		
@@ -12331,11 +12331,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Source;
+				return _wrapped.Source;
 			}
 			set
 			{
-				this._wrapped.Source = value;
+				_wrapped.Source = value;
 			}
 		}
 		
@@ -12343,7 +12343,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.HResult;
+				return _wrapped.HResult;
 			}
 		}
 		
@@ -12351,33 +12351,33 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void GetObjectData(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext)
 		{
-			this._wrapped.GetObjectData(serializationInfo, streamingContext);
+			_wrapped.GetObjectData(serializationInfo, streamingContext);
 		}
 		
 		public System.Exception GetBaseException()
 		{
-			return this._wrapped.GetBaseException();
+			return _wrapped.GetBaseException();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -12388,14 +12388,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ActiveDirectoryServerDownExceptionWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public int ErrorCode
 		{
 			get
 			{
-				return this._wrapped.ErrorCode;
+				return _wrapped.ErrorCode;
 			}
 		}
 		
@@ -12403,7 +12403,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Name;
+				return _wrapped.Name;
 			}
 		}
 		
@@ -12411,7 +12411,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Message;
+				return _wrapped.Message;
 			}
 		}
 		
@@ -12419,7 +12419,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Data;
+				return _wrapped.Data;
 			}
 		}
 		
@@ -12427,7 +12427,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InnerException;
+				return _wrapped.InnerException;
 			}
 		}
 		
@@ -12435,7 +12435,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.TargetSite;
+				return _wrapped.TargetSite;
 			}
 		}
 		
@@ -12443,7 +12443,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.StackTrace;
+				return _wrapped.StackTrace;
 			}
 		}
 		
@@ -12451,11 +12451,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.HelpLink;
+				return _wrapped.HelpLink;
 			}
 			set
 			{
-				this._wrapped.HelpLink = value;
+				_wrapped.HelpLink = value;
 			}
 		}
 		
@@ -12463,11 +12463,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Source;
+				return _wrapped.Source;
 			}
 			set
 			{
-				this._wrapped.Source = value;
+				_wrapped.Source = value;
 			}
 		}
 		
@@ -12475,7 +12475,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.HResult;
+				return _wrapped.HResult;
 			}
 		}
 		
@@ -12483,33 +12483,33 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void GetObjectData(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext)
 		{
-			this._wrapped.GetObjectData(serializationInfo, streamingContext);
+			_wrapped.GetObjectData(serializationInfo, streamingContext);
 		}
 		
 		public System.Exception GetBaseException()
 		{
-			return this._wrapped.GetBaseException();
+			return _wrapped.GetBaseException();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -12520,14 +12520,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ActiveDirectoryObjectExistsExceptionWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string Message
 		{
 			get
 			{
-				return this._wrapped.Message;
+				return _wrapped.Message;
 			}
 		}
 		
@@ -12535,7 +12535,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Data;
+				return _wrapped.Data;
 			}
 		}
 		
@@ -12543,7 +12543,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InnerException;
+				return _wrapped.InnerException;
 			}
 		}
 		
@@ -12551,7 +12551,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.TargetSite;
+				return _wrapped.TargetSite;
 			}
 		}
 		
@@ -12559,7 +12559,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.StackTrace;
+				return _wrapped.StackTrace;
 			}
 		}
 		
@@ -12567,11 +12567,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.HelpLink;
+				return _wrapped.HelpLink;
 			}
 			set
 			{
-				this._wrapped.HelpLink = value;
+				_wrapped.HelpLink = value;
 			}
 		}
 		
@@ -12579,11 +12579,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Source;
+				return _wrapped.Source;
 			}
 			set
 			{
-				this._wrapped.Source = value;
+				_wrapped.Source = value;
 			}
 		}
 		
@@ -12591,7 +12591,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.HResult;
+				return _wrapped.HResult;
 			}
 		}
 		
@@ -12599,33 +12599,33 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public System.Exception GetBaseException()
 		{
-			return this._wrapped.GetBaseException();
+			return _wrapped.GetBaseException();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
 		{
-			this._wrapped.GetObjectData(info, context);
+			_wrapped.GetObjectData(info, context);
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -12636,14 +12636,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public SyncFromAllServersOperationExceptionWrapper(System.DirectoryServices.ActiveDirectory.SyncFromAllServersOperationException wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.SyncFromAllServersErrorInformation[] ErrorInformation
 		{
 			get
 			{
-				return this._wrapped.ErrorInformation;
+				return _wrapped.ErrorInformation;
 			}
 		}
 		
@@ -12651,7 +12651,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ErrorCode;
+				return _wrapped.ErrorCode;
 			}
 		}
 		
@@ -12659,7 +12659,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Message;
+				return _wrapped.Message;
 			}
 		}
 		
@@ -12667,7 +12667,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Data;
+				return _wrapped.Data;
 			}
 		}
 		
@@ -12675,7 +12675,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InnerException;
+				return _wrapped.InnerException;
 			}
 		}
 		
@@ -12683,7 +12683,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.TargetSite;
+				return _wrapped.TargetSite;
 			}
 		}
 		
@@ -12691,7 +12691,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.StackTrace;
+				return _wrapped.StackTrace;
 			}
 		}
 		
@@ -12699,11 +12699,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.HelpLink;
+				return _wrapped.HelpLink;
 			}
 			set
 			{
-				this._wrapped.HelpLink = value;
+				_wrapped.HelpLink = value;
 			}
 		}
 		
@@ -12711,11 +12711,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Source;
+				return _wrapped.Source;
 			}
 			set
 			{
-				this._wrapped.Source = value;
+				_wrapped.Source = value;
 			}
 		}
 		
@@ -12723,7 +12723,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.HResult;
+				return _wrapped.HResult;
 			}
 		}
 		
@@ -12731,33 +12731,33 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void GetObjectData(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext)
 		{
-			this._wrapped.GetObjectData(serializationInfo, streamingContext);
+			_wrapped.GetObjectData(serializationInfo, streamingContext);
 		}
 		
 		public System.Exception GetBaseException()
 		{
-			return this._wrapped.GetBaseException();
+			return _wrapped.GetBaseException();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -12768,14 +12768,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ForestTrustCollisionExceptionWrapper(System.DirectoryServices.ActiveDirectory.ForestTrustCollisionException wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollisionCollection Collisions
 		{
 			get
 			{
-				return this._wrapped.Collisions;
+				return _wrapped.Collisions;
 			}
 		}
 		
@@ -12783,7 +12783,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ErrorCode;
+				return _wrapped.ErrorCode;
 			}
 		}
 		
@@ -12791,7 +12791,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Message;
+				return _wrapped.Message;
 			}
 		}
 		
@@ -12799,7 +12799,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Data;
+				return _wrapped.Data;
 			}
 		}
 		
@@ -12807,7 +12807,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InnerException;
+				return _wrapped.InnerException;
 			}
 		}
 		
@@ -12815,7 +12815,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.TargetSite;
+				return _wrapped.TargetSite;
 			}
 		}
 		
@@ -12823,7 +12823,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.StackTrace;
+				return _wrapped.StackTrace;
 			}
 		}
 		
@@ -12831,11 +12831,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.HelpLink;
+				return _wrapped.HelpLink;
 			}
 			set
 			{
-				this._wrapped.HelpLink = value;
+				_wrapped.HelpLink = value;
 			}
 		}
 		
@@ -12843,11 +12843,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Source;
+				return _wrapped.Source;
 			}
 			set
 			{
-				this._wrapped.Source = value;
+				_wrapped.Source = value;
 			}
 		}
 		
@@ -12855,7 +12855,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.HResult;
+				return _wrapped.HResult;
 			}
 		}
 		
@@ -12863,33 +12863,33 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void GetObjectData(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext)
 		{
-			this._wrapped.GetObjectData(serializationInfo, streamingContext);
+			_wrapped.GetObjectData(serializationInfo, streamingContext);
 		}
 		
 		public System.Exception GetBaseException()
 		{
-			return this._wrapped.GetBaseException();
+			return _wrapped.GetBaseException();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -12900,14 +12900,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ForestWrapper(System.DirectoryServices.ActiveDirectory.Forest wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string Name
 		{
 			get
 			{
-				return this._wrapped.Name;
+				return _wrapped.Name;
 			}
 		}
 		
@@ -12915,7 +12915,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Sites;
+				return _wrapped.Sites;
 			}
 		}
 		
@@ -12923,7 +12923,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Domains;
+				return _wrapped.Domains;
 			}
 		}
 		
@@ -12931,7 +12931,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.GlobalCatalogs;
+				return _wrapped.GlobalCatalogs;
 			}
 		}
 		
@@ -12939,7 +12939,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ApplicationPartitions;
+				return _wrapped.ApplicationPartitions;
 			}
 		}
 		
@@ -12947,7 +12947,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ForestModeLevel;
+				return _wrapped.ForestModeLevel;
 			}
 		}
 		
@@ -12955,7 +12955,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ForestMode;
+				return _wrapped.ForestMode;
 			}
 		}
 		
@@ -12963,7 +12963,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.RootDomain;
+				return _wrapped.RootDomain;
 			}
 		}
 		
@@ -12971,7 +12971,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Schema;
+				return _wrapped.Schema;
 			}
 		}
 		
@@ -12979,7 +12979,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SchemaRoleOwner;
+				return _wrapped.SchemaRoleOwner;
 			}
 		}
 		
@@ -12987,7 +12987,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.NamingRoleOwner;
+				return _wrapped.NamingRoleOwner;
 			}
 		}
 		
@@ -12995,158 +12995,158 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void Dispose()
 		{
-			this._wrapped.Dispose();
+			_wrapped.Dispose();
 		}
 		
 		public void RaiseForestFunctionalityLevel(int forestMode)
 		{
-			this._wrapped.RaiseForestFunctionalityLevel(forestMode);
+			_wrapped.RaiseForestFunctionalityLevel(forestMode);
 		}
 		
 		public void RaiseForestFunctionality(System.DirectoryServices.ActiveDirectory.ForestMode forestMode)
 		{
-			this._wrapped.RaiseForestFunctionality(forestMode);
+			_wrapped.RaiseForestFunctionality(forestMode);
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.GlobalCatalog FindGlobalCatalog()
 		{
-			return this._wrapped.FindGlobalCatalog();
+			return _wrapped.FindGlobalCatalog();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.GlobalCatalog FindGlobalCatalog(string siteName)
 		{
-			return this._wrapped.FindGlobalCatalog(siteName);
+			return _wrapped.FindGlobalCatalog(siteName);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.GlobalCatalog FindGlobalCatalog(System.DirectoryServices.ActiveDirectory.LocatorOptions flag)
 		{
-			return this._wrapped.FindGlobalCatalog(flag);
+			return _wrapped.FindGlobalCatalog(flag);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.GlobalCatalog FindGlobalCatalog(string siteName, System.DirectoryServices.ActiveDirectory.LocatorOptions flag)
 		{
-			return this._wrapped.FindGlobalCatalog(siteName, flag);
+			return _wrapped.FindGlobalCatalog(siteName, flag);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection FindAllGlobalCatalogs()
 		{
-			return this._wrapped.FindAllGlobalCatalogs();
+			return _wrapped.FindAllGlobalCatalogs();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection FindAllGlobalCatalogs(string siteName)
 		{
-			return this._wrapped.FindAllGlobalCatalogs(siteName);
+			return _wrapped.FindAllGlobalCatalogs(siteName);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection FindAllDiscoverableGlobalCatalogs()
 		{
-			return this._wrapped.FindAllDiscoverableGlobalCatalogs();
+			return _wrapped.FindAllDiscoverableGlobalCatalogs();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection FindAllDiscoverableGlobalCatalogs(string siteName)
 		{
-			return this._wrapped.FindAllDiscoverableGlobalCatalogs(siteName);
+			return _wrapped.FindAllDiscoverableGlobalCatalogs(siteName);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection GetAllTrustRelationships()
 		{
-			return this._wrapped.GetAllTrustRelationships();
+			return _wrapped.GetAllTrustRelationships();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipInformation GetTrustRelationship(string targetForestName)
 		{
-			return this._wrapped.GetTrustRelationship(targetForestName);
+			return _wrapped.GetTrustRelationship(targetForestName);
 		}
 		
 		public bool GetSelectiveAuthenticationStatus(string targetForestName)
 		{
-			return this._wrapped.GetSelectiveAuthenticationStatus(targetForestName);
+			return _wrapped.GetSelectiveAuthenticationStatus(targetForestName);
 		}
 		
 		public void SetSelectiveAuthenticationStatus(string targetForestName, bool enable)
 		{
-			this._wrapped.SetSelectiveAuthenticationStatus(targetForestName, enable);
+			_wrapped.SetSelectiveAuthenticationStatus(targetForestName, enable);
 		}
 		
 		public bool GetSidFilteringStatus(string targetForestName)
 		{
-			return this._wrapped.GetSidFilteringStatus(targetForestName);
+			return _wrapped.GetSidFilteringStatus(targetForestName);
 		}
 		
 		public void SetSidFilteringStatus(string targetForestName, bool enable)
 		{
-			this._wrapped.SetSidFilteringStatus(targetForestName, enable);
+			_wrapped.SetSidFilteringStatus(targetForestName, enable);
 		}
 		
 		public void DeleteLocalSideOfTrustRelationship(string targetForestName)
 		{
-			this._wrapped.DeleteLocalSideOfTrustRelationship(targetForestName);
+			_wrapped.DeleteLocalSideOfTrustRelationship(targetForestName);
 		}
 		
 		public void DeleteTrustRelationship(System.DirectoryServices.ActiveDirectory.Forest targetForest)
 		{
-			this._wrapped.DeleteTrustRelationship(targetForest);
+			_wrapped.DeleteTrustRelationship(targetForest);
 		}
 		
 		public void VerifyOutboundTrustRelationship(string targetForestName)
 		{
-			this._wrapped.VerifyOutboundTrustRelationship(targetForestName);
+			_wrapped.VerifyOutboundTrustRelationship(targetForestName);
 		}
 		
 		public void VerifyTrustRelationship(System.DirectoryServices.ActiveDirectory.Forest targetForest, System.DirectoryServices.ActiveDirectory.TrustDirection direction)
 		{
-			this._wrapped.VerifyTrustRelationship(targetForest, direction);
+			_wrapped.VerifyTrustRelationship(targetForest, direction);
 		}
 		
 		public void CreateLocalSideOfTrustRelationship(string targetForestName, System.DirectoryServices.ActiveDirectory.TrustDirection direction, string trustPassword)
 		{
-			this._wrapped.CreateLocalSideOfTrustRelationship(targetForestName, direction, trustPassword);
+			_wrapped.CreateLocalSideOfTrustRelationship(targetForestName, direction, trustPassword);
 		}
 		
 		public void CreateTrustRelationship(System.DirectoryServices.ActiveDirectory.Forest targetForest, System.DirectoryServices.ActiveDirectory.TrustDirection direction)
 		{
-			this._wrapped.CreateTrustRelationship(targetForest, direction);
+			_wrapped.CreateTrustRelationship(targetForest, direction);
 		}
 		
 		public void UpdateLocalSideOfTrustRelationship(string targetForestName, string newTrustPassword)
 		{
-			this._wrapped.UpdateLocalSideOfTrustRelationship(targetForestName, newTrustPassword);
+			_wrapped.UpdateLocalSideOfTrustRelationship(targetForestName, newTrustPassword);
 		}
 		
 		public void UpdateLocalSideOfTrustRelationship(string targetForestName, System.DirectoryServices.ActiveDirectory.TrustDirection newTrustDirection, string newTrustPassword)
 		{
-			this._wrapped.UpdateLocalSideOfTrustRelationship(targetForestName, newTrustDirection, newTrustPassword);
+			_wrapped.UpdateLocalSideOfTrustRelationship(targetForestName, newTrustDirection, newTrustPassword);
 		}
 		
 		public void UpdateTrustRelationship(System.DirectoryServices.ActiveDirectory.Forest targetForest, System.DirectoryServices.ActiveDirectory.TrustDirection newTrustDirection)
 		{
-			this._wrapped.UpdateTrustRelationship(targetForest, newTrustDirection);
+			_wrapped.UpdateTrustRelationship(targetForest, newTrustDirection);
 		}
 		
 		public void RepairTrustRelationship(System.DirectoryServices.ActiveDirectory.Forest targetForest)
 		{
-			this._wrapped.RepairTrustRelationship(targetForest);
+			_wrapped.RepairTrustRelationship(targetForest);
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -13157,14 +13157,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ForestTrustRelationshipCollisionWrapper(System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollision wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ForestTrustCollisionType CollisionType
 		{
 			get
 			{
-				return this._wrapped.CollisionType;
+				return _wrapped.CollisionType;
 			}
 		}
 		
@@ -13172,7 +13172,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.TopLevelNameCollisionOption;
+				return _wrapped.TopLevelNameCollisionOption;
 			}
 		}
 		
@@ -13180,7 +13180,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.DomainCollisionOption;
+				return _wrapped.DomainCollisionOption;
 			}
 		}
 		
@@ -13188,7 +13188,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.CollisionRecord;
+				return _wrapped.CollisionRecord;
 			}
 		}
 		
@@ -13196,23 +13196,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -13223,14 +13223,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ForestTrustRelationshipCollisionCollectionWrapper(System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollisionCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollision this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -13238,7 +13238,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -13246,43 +13246,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollision collision)
 		{
-			return this._wrapped.Contains(collision);
+			return _wrapped.Contains(collision);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollision collision)
 		{
-			return this._wrapped.IndexOf(collision);
+			return _wrapped.IndexOf(collision);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollision[] array, int index)
 		{
-			this._wrapped.CopyTo(array, index);
+			_wrapped.CopyTo(array, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -13293,14 +13293,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ForestTrustDomainInfoCollectionWrapper(System.DirectoryServices.ActiveDirectory.ForestTrustDomainInfoCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ForestTrustDomainInformation this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -13308,7 +13308,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -13316,43 +13316,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.ForestTrustDomainInformation information)
 		{
-			return this._wrapped.Contains(information);
+			return _wrapped.Contains(information);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.ForestTrustDomainInformation information)
 		{
-			return this._wrapped.IndexOf(information);
+			return _wrapped.IndexOf(information);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.ForestTrustDomainInformation[] array, int index)
 		{
-			this._wrapped.CopyTo(array, index);
+			_wrapped.CopyTo(array, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -13363,14 +13363,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ForestTrustDomainInformationWrapper(System.DirectoryServices.ActiveDirectory.ForestTrustDomainInformation wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string DnsName
 		{
 			get
 			{
-				return this._wrapped.DnsName;
+				return _wrapped.DnsName;
 			}
 		}
 		
@@ -13378,7 +13378,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.NetBiosName;
+				return _wrapped.NetBiosName;
 			}
 		}
 		
@@ -13386,7 +13386,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.DomainSid;
+				return _wrapped.DomainSid;
 			}
 		}
 		
@@ -13394,11 +13394,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Status;
+				return _wrapped.Status;
 			}
 			set
 			{
-				this._wrapped.Status = value;
+				_wrapped.Status = value;
 			}
 		}
 		
@@ -13406,23 +13406,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -13433,14 +13433,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ForestTrustRelationshipInformationWrapper(System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipInformation wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.TopLevelNameCollection TopLevelNames
 		{
 			get
 			{
-				return this._wrapped.TopLevelNames;
+				return _wrapped.TopLevelNames;
 			}
 		}
 		
@@ -13448,7 +13448,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ExcludedTopLevelNames;
+				return _wrapped.ExcludedTopLevelNames;
 			}
 		}
 		
@@ -13456,7 +13456,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.TrustedDomainInformation;
+				return _wrapped.TrustedDomainInformation;
 			}
 		}
 		
@@ -13464,7 +13464,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SourceName;
+				return _wrapped.SourceName;
 			}
 		}
 		
@@ -13472,7 +13472,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.TargetName;
+				return _wrapped.TargetName;
 			}
 		}
 		
@@ -13480,7 +13480,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.TrustType;
+				return _wrapped.TrustType;
 			}
 		}
 		
@@ -13488,7 +13488,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.TrustDirection;
+				return _wrapped.TrustDirection;
 			}
 		}
 		
@@ -13496,28 +13496,28 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void Save()
 		{
-			this._wrapped.Save();
+			_wrapped.Save();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -13528,14 +13528,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public GlobalCatalogWrapper(System.DirectoryServices.ActiveDirectory.GlobalCatalog wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.Forest Forest
 		{
 			get
 			{
-				return this._wrapped.Forest;
+				return _wrapped.Forest;
 			}
 		}
 		
@@ -13543,7 +13543,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.CurrentTime;
+				return _wrapped.CurrentTime;
 			}
 		}
 		
@@ -13551,7 +13551,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.HighestCommittedUsn;
+				return _wrapped.HighestCommittedUsn;
 			}
 		}
 		
@@ -13559,7 +13559,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.OSVersion;
+				return _wrapped.OSVersion;
 			}
 		}
 		
@@ -13567,7 +13567,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Roles;
+				return _wrapped.Roles;
 			}
 		}
 		
@@ -13575,7 +13575,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Domain;
+				return _wrapped.Domain;
 			}
 		}
 		
@@ -13583,7 +13583,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IPAddress;
+				return _wrapped.IPAddress;
 			}
 		}
 		
@@ -13591,7 +13591,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SiteName;
+				return _wrapped.SiteName;
 			}
 		}
 		
@@ -13599,11 +13599,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SyncFromAllServersCallback;
+				return _wrapped.SyncFromAllServersCallback;
 			}
 			set
 			{
-				this._wrapped.SyncFromAllServersCallback = value;
+				_wrapped.SyncFromAllServersCallback = value;
 			}
 		}
 		
@@ -13611,7 +13611,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.InboundConnections;
+				return _wrapped.InboundConnections;
 			}
 		}
 		
@@ -13619,7 +13619,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.OutboundConnections;
+				return _wrapped.OutboundConnections;
 			}
 		}
 		
@@ -13627,7 +13627,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Name;
+				return _wrapped.Name;
 			}
 		}
 		
@@ -13635,7 +13635,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Partitions;
+				return _wrapped.Partitions;
 			}
 		}
 		
@@ -13643,123 +13643,123 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.GlobalCatalog EnableGlobalCatalog()
 		{
-			return this._wrapped.EnableGlobalCatalog();
+			return _wrapped.EnableGlobalCatalog();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.DomainController DisableGlobalCatalog()
 		{
-			return this._wrapped.DisableGlobalCatalog();
+			return _wrapped.DisableGlobalCatalog();
 		}
 		
 		public bool IsGlobalCatalog()
 		{
-			return this._wrapped.IsGlobalCatalog();
+			return _wrapped.IsGlobalCatalog();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaPropertyCollection FindAllProperties()
 		{
-			return this._wrapped.FindAllProperties();
+			return _wrapped.FindAllProperties();
 		}
 		
 		public System.DirectoryServices.DirectorySearcher GetDirectorySearcher()
 		{
-			return this._wrapped.GetDirectorySearcher();
+			return _wrapped.GetDirectorySearcher();
 		}
 		
 		public void TransferRoleOwnership(System.DirectoryServices.ActiveDirectory.ActiveDirectoryRole role)
 		{
-			this._wrapped.TransferRoleOwnership(role);
+			_wrapped.TransferRoleOwnership(role);
 		}
 		
 		public void SeizeRoleOwnership(System.DirectoryServices.ActiveDirectory.ActiveDirectoryRole role)
 		{
-			this._wrapped.SeizeRoleOwnership(role);
+			_wrapped.SeizeRoleOwnership(role);
 		}
 		
 		public void CheckReplicationConsistency()
 		{
-			this._wrapped.CheckReplicationConsistency();
+			_wrapped.CheckReplicationConsistency();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReplicationCursorCollection GetReplicationCursors(string partition)
 		{
-			return this._wrapped.GetReplicationCursors(partition);
+			return _wrapped.GetReplicationCursors(partition);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReplicationOperationInformation GetReplicationOperationInformation()
 		{
-			return this._wrapped.GetReplicationOperationInformation();
+			return _wrapped.GetReplicationOperationInformation();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReplicationNeighborCollection GetReplicationNeighbors(string partition)
 		{
-			return this._wrapped.GetReplicationNeighbors(partition);
+			return _wrapped.GetReplicationNeighbors(partition);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReplicationNeighborCollection GetAllReplicationNeighbors()
 		{
-			return this._wrapped.GetAllReplicationNeighbors();
+			return _wrapped.GetAllReplicationNeighbors();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReplicationFailureCollection GetReplicationConnectionFailures()
 		{
-			return this._wrapped.GetReplicationConnectionFailures();
+			return _wrapped.GetReplicationConnectionFailures();
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata GetReplicationMetadata(string objectPath)
 		{
-			return this._wrapped.GetReplicationMetadata(objectPath);
+			return _wrapped.GetReplicationMetadata(objectPath);
 		}
 		
 		public void SyncReplicaFromServer(string partition, string sourceServer)
 		{
-			this._wrapped.SyncReplicaFromServer(partition, sourceServer);
+			_wrapped.SyncReplicaFromServer(partition, sourceServer);
 		}
 		
 		public void TriggerSyncReplicaFromNeighbors(string partition)
 		{
-			this._wrapped.TriggerSyncReplicaFromNeighbors(partition);
+			_wrapped.TriggerSyncReplicaFromNeighbors(partition);
 		}
 		
 		public void SyncReplicaFromAllServers(string partition, System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions options)
 		{
-			this._wrapped.SyncReplicaFromAllServers(partition, options);
+			_wrapped.SyncReplicaFromAllServers(partition, options);
 		}
 		
 		public void Dispose()
 		{
-			this._wrapped.Dispose();
+			_wrapped.Dispose();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public void MoveToAnotherSite(string siteName)
 		{
-			this._wrapped.MoveToAnotherSite(siteName);
+			_wrapped.MoveToAnotherSite(siteName);
 		}
 		
 		public System.DirectoryServices.DirectoryEntry GetDirectoryEntry()
 		{
-			return this._wrapped.GetDirectoryEntry();
+			return _wrapped.GetDirectoryEntry();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -13770,14 +13770,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public GlobalCatalogCollectionWrapper(System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.GlobalCatalog this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -13785,7 +13785,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -13793,43 +13793,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.GlobalCatalog globalCatalog)
 		{
-			return this._wrapped.Contains(globalCatalog);
+			return _wrapped.Contains(globalCatalog);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.GlobalCatalog globalCatalog)
 		{
-			return this._wrapped.IndexOf(globalCatalog);
+			return _wrapped.IndexOf(globalCatalog);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.GlobalCatalog[] globalCatalogs, int index)
 		{
-			this._wrapped.CopyTo(globalCatalogs, index);
+			_wrapped.CopyTo(globalCatalogs, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -13840,14 +13840,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ReadOnlyActiveDirectorySchemaClassCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaClassCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -13855,7 +13855,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -13863,43 +13863,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass schemaClass)
 		{
-			return this._wrapped.Contains(schemaClass);
+			return _wrapped.Contains(schemaClass);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass schemaClass)
 		{
-			return this._wrapped.IndexOf(schemaClass);
+			return _wrapped.IndexOf(schemaClass);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass[] classes, int index)
 		{
-			this._wrapped.CopyTo(classes, index);
+			_wrapped.CopyTo(classes, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -13910,14 +13910,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ReadOnlyActiveDirectorySchemaPropertyCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaPropertyCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -13925,7 +13925,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -13933,43 +13933,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty schemaProperty)
 		{
-			return this._wrapped.Contains(schemaProperty);
+			return _wrapped.Contains(schemaProperty);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty schemaProperty)
 		{
-			return this._wrapped.IndexOf(schemaProperty);
+			return _wrapped.IndexOf(schemaProperty);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty[] properties, int index)
 		{
-			this._wrapped.CopyTo(properties, index);
+			_wrapped.CopyTo(properties, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -13980,14 +13980,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ReadOnlyDirectoryServerCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReadOnlyDirectoryServerCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.DirectoryServer this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -13995,7 +13995,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -14003,43 +14003,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.DirectoryServer directoryServer)
 		{
-			return this._wrapped.Contains(directoryServer);
+			return _wrapped.Contains(directoryServer);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.DirectoryServer directoryServer)
 		{
-			return this._wrapped.IndexOf(directoryServer);
+			return _wrapped.IndexOf(directoryServer);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.DirectoryServer[] directoryServers, int index)
 		{
-			this._wrapped.CopyTo(directoryServers, index);
+			_wrapped.CopyTo(directoryServers, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -14050,14 +14050,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ReadOnlySiteCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReadOnlySiteCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ActiveDirectorySite this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -14065,7 +14065,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -14073,43 +14073,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.ActiveDirectorySite site)
 		{
-			return this._wrapped.Contains(site);
+			return _wrapped.Contains(site);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.ActiveDirectorySite site)
 		{
-			return this._wrapped.IndexOf(site);
+			return _wrapped.IndexOf(site);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectorySite[] sites, int index)
 		{
-			this._wrapped.CopyTo(sites, index);
+			_wrapped.CopyTo(sites, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -14120,14 +14120,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ReadOnlySiteLinkBridgeCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkBridgeCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -14135,7 +14135,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -14143,43 +14143,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge bridge)
 		{
-			return this._wrapped.Contains(bridge);
+			return _wrapped.Contains(bridge);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge bridge)
 		{
-			return this._wrapped.IndexOf(bridge);
+			return _wrapped.IndexOf(bridge);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge[] bridges, int index)
 		{
-			this._wrapped.CopyTo(bridges, index);
+			_wrapped.CopyTo(bridges, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -14190,14 +14190,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ReadOnlySiteLinkCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -14205,7 +14205,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -14213,43 +14213,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink link)
 		{
-			return this._wrapped.Contains(link);
+			return _wrapped.Contains(link);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink link)
 		{
-			return this._wrapped.IndexOf(link);
+			return _wrapped.IndexOf(link);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink[] links, int index)
 		{
-			this._wrapped.CopyTo(links, index);
+			_wrapped.CopyTo(links, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -14260,14 +14260,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ReadOnlyStringCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReadOnlyStringCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -14275,7 +14275,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -14283,43 +14283,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(string value)
 		{
-			return this._wrapped.Contains(value);
+			return _wrapped.Contains(value);
 		}
 		
 		public int IndexOf(string value)
 		{
-			return this._wrapped.IndexOf(value);
+			return _wrapped.IndexOf(value);
 		}
 		
 		public void CopyTo(string[] values, int index)
 		{
-			this._wrapped.CopyTo(values, index);
+			_wrapped.CopyTo(values, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -14330,14 +14330,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ReplicationConnectionWrapper(System.DirectoryServices.ActiveDirectory.ReplicationConnection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string Name
 		{
 			get
 			{
-				return this._wrapped.Name;
+				return _wrapped.Name;
 			}
 		}
 		
@@ -14345,7 +14345,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SourceServer;
+				return _wrapped.SourceServer;
 			}
 		}
 		
@@ -14353,7 +14353,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.DestinationServer;
+				return _wrapped.DestinationServer;
 			}
 		}
 		
@@ -14361,11 +14361,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Enabled;
+				return _wrapped.Enabled;
 			}
 			set
 			{
-				this._wrapped.Enabled = value;
+				_wrapped.Enabled = value;
 			}
 		}
 		
@@ -14373,7 +14373,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.TransportType;
+				return _wrapped.TransportType;
 			}
 		}
 		
@@ -14381,11 +14381,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.GeneratedByKcc;
+				return _wrapped.GeneratedByKcc;
 			}
 			set
 			{
-				this._wrapped.GeneratedByKcc = value;
+				_wrapped.GeneratedByKcc = value;
 			}
 		}
 		
@@ -14393,11 +14393,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ReciprocalReplicationEnabled;
+				return _wrapped.ReciprocalReplicationEnabled;
 			}
 			set
 			{
-				this._wrapped.ReciprocalReplicationEnabled = value;
+				_wrapped.ReciprocalReplicationEnabled = value;
 			}
 		}
 		
@@ -14405,11 +14405,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ChangeNotificationStatus;
+				return _wrapped.ChangeNotificationStatus;
 			}
 			set
 			{
-				this._wrapped.ChangeNotificationStatus = value;
+				_wrapped.ChangeNotificationStatus = value;
 			}
 		}
 		
@@ -14417,11 +14417,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.DataCompressionEnabled;
+				return _wrapped.DataCompressionEnabled;
 			}
 			set
 			{
-				this._wrapped.DataCompressionEnabled = value;
+				_wrapped.DataCompressionEnabled = value;
 			}
 		}
 		
@@ -14429,11 +14429,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ReplicationScheduleOwnedByUser;
+				return _wrapped.ReplicationScheduleOwnedByUser;
 			}
 			set
 			{
-				this._wrapped.ReplicationScheduleOwnedByUser = value;
+				_wrapped.ReplicationScheduleOwnedByUser = value;
 			}
 		}
 		
@@ -14441,7 +14441,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ReplicationSpan;
+				return _wrapped.ReplicationSpan;
 			}
 		}
 		
@@ -14449,11 +14449,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ReplicationSchedule;
+				return _wrapped.ReplicationSchedule;
 			}
 			set
 			{
-				this._wrapped.ReplicationSchedule = value;
+				_wrapped.ReplicationSchedule = value;
 			}
 		}
 		
@@ -14461,43 +14461,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void Dispose()
 		{
-			this._wrapped.Dispose();
+			_wrapped.Dispose();
 		}
 		
 		public void Delete()
 		{
-			this._wrapped.Delete();
+			_wrapped.Delete();
 		}
 		
 		public void Save()
 		{
-			this._wrapped.Save();
+			_wrapped.Save();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public System.DirectoryServices.DirectoryEntry GetDirectoryEntry()
 		{
-			return this._wrapped.GetDirectoryEntry();
+			return _wrapped.GetDirectoryEntry();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -14508,14 +14508,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ReplicationConnectionCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReplicationConnectionCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReplicationConnection this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -14523,7 +14523,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -14531,43 +14531,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.ReplicationConnection connection)
 		{
-			return this._wrapped.Contains(connection);
+			return _wrapped.Contains(connection);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.ReplicationConnection connection)
 		{
-			return this._wrapped.IndexOf(connection);
+			return _wrapped.IndexOf(connection);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.ReplicationConnection[] connections, int index)
 		{
-			this._wrapped.CopyTo(connections, index);
+			_wrapped.CopyTo(connections, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -14578,14 +14578,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ReplicationCursorWrapper(System.DirectoryServices.ActiveDirectory.ReplicationCursor wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string PartitionName
 		{
 			get
 			{
-				return this._wrapped.PartitionName;
+				return _wrapped.PartitionName;
 			}
 		}
 		
@@ -14593,7 +14593,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SourceInvocationId;
+				return _wrapped.SourceInvocationId;
 			}
 		}
 		
@@ -14601,7 +14601,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.UpToDatenessUsn;
+				return _wrapped.UpToDatenessUsn;
 			}
 		}
 		
@@ -14609,7 +14609,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SourceServer;
+				return _wrapped.SourceServer;
 			}
 		}
 		
@@ -14617,7 +14617,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.LastSuccessfulSyncTime;
+				return _wrapped.LastSuccessfulSyncTime;
 			}
 		}
 		
@@ -14625,23 +14625,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -14652,14 +14652,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ReplicationCursorCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReplicationCursorCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReplicationCursor this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -14667,7 +14667,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -14675,43 +14675,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.ReplicationCursor cursor)
 		{
-			return this._wrapped.Contains(cursor);
+			return _wrapped.Contains(cursor);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.ReplicationCursor cursor)
 		{
-			return this._wrapped.IndexOf(cursor);
+			return _wrapped.IndexOf(cursor);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.ReplicationCursor[] values, int index)
 		{
-			this._wrapped.CopyTo(values, index);
+			_wrapped.CopyTo(values, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -14722,14 +14722,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ReplicationFailureWrapper(System.DirectoryServices.ActiveDirectory.ReplicationFailure wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string SourceServer
 		{
 			get
 			{
-				return this._wrapped.SourceServer;
+				return _wrapped.SourceServer;
 			}
 		}
 		
@@ -14737,7 +14737,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.FirstFailureTime;
+				return _wrapped.FirstFailureTime;
 			}
 		}
 		
@@ -14745,7 +14745,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ConsecutiveFailureCount;
+				return _wrapped.ConsecutiveFailureCount;
 			}
 		}
 		
@@ -14753,7 +14753,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.LastErrorCode;
+				return _wrapped.LastErrorCode;
 			}
 		}
 		
@@ -14761,7 +14761,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.LastErrorMessage;
+				return _wrapped.LastErrorMessage;
 			}
 		}
 		
@@ -14769,23 +14769,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -14796,14 +14796,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ReplicationFailureCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReplicationFailureCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReplicationFailure this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -14811,7 +14811,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -14819,43 +14819,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.ReplicationFailure failure)
 		{
-			return this._wrapped.Contains(failure);
+			return _wrapped.Contains(failure);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.ReplicationFailure failure)
 		{
-			return this._wrapped.IndexOf(failure);
+			return _wrapped.IndexOf(failure);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.ReplicationFailure[] failures, int index)
 		{
-			this._wrapped.CopyTo(failures, index);
+			_wrapped.CopyTo(failures, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -14866,14 +14866,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ReplicationNeighborWrapper(System.DirectoryServices.ActiveDirectory.ReplicationNeighbor wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string PartitionName
 		{
 			get
 			{
-				return this._wrapped.PartitionName;
+				return _wrapped.PartitionName;
 			}
 		}
 		
@@ -14881,7 +14881,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SourceServer;
+				return _wrapped.SourceServer;
 			}
 		}
 		
@@ -14889,7 +14889,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.TransportType;
+				return _wrapped.TransportType;
 			}
 		}
 		
@@ -14897,7 +14897,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ReplicationNeighborOption;
+				return _wrapped.ReplicationNeighborOption;
 			}
 		}
 		
@@ -14905,7 +14905,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SourceInvocationId;
+				return _wrapped.SourceInvocationId;
 			}
 		}
 		
@@ -14913,7 +14913,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.UsnLastObjectChangeSynced;
+				return _wrapped.UsnLastObjectChangeSynced;
 			}
 		}
 		
@@ -14921,7 +14921,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.UsnAttributeFilter;
+				return _wrapped.UsnAttributeFilter;
 			}
 		}
 		
@@ -14929,7 +14929,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.LastSuccessfulSync;
+				return _wrapped.LastSuccessfulSync;
 			}
 		}
 		
@@ -14937,7 +14937,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.LastAttemptedSync;
+				return _wrapped.LastAttemptedSync;
 			}
 		}
 		
@@ -14945,7 +14945,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.LastSyncResult;
+				return _wrapped.LastSyncResult;
 			}
 		}
 		
@@ -14953,7 +14953,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.LastSyncMessage;
+				return _wrapped.LastSyncMessage;
 			}
 		}
 		
@@ -14961,7 +14961,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.ConsecutiveFailureCount;
+				return _wrapped.ConsecutiveFailureCount;
 			}
 		}
 		
@@ -14969,23 +14969,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -14996,14 +14996,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ReplicationNeighborCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReplicationNeighborCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReplicationNeighbor this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -15011,7 +15011,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -15019,43 +15019,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.ReplicationNeighbor neighbor)
 		{
-			return this._wrapped.Contains(neighbor);
+			return _wrapped.Contains(neighbor);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.ReplicationNeighbor neighbor)
 		{
-			return this._wrapped.IndexOf(neighbor);
+			return _wrapped.IndexOf(neighbor);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.ReplicationNeighbor[] neighbors, int index)
 		{
-			this._wrapped.CopyTo(neighbors, index);
+			_wrapped.CopyTo(neighbors, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -15066,14 +15066,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ReplicationOperationWrapper(System.DirectoryServices.ActiveDirectory.ReplicationOperation wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DateTime TimeEnqueued
 		{
 			get
 			{
-				return this._wrapped.TimeEnqueued;
+				return _wrapped.TimeEnqueued;
 			}
 		}
 		
@@ -15081,7 +15081,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.OperationNumber;
+				return _wrapped.OperationNumber;
 			}
 		}
 		
@@ -15089,7 +15089,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Priority;
+				return _wrapped.Priority;
 			}
 		}
 		
@@ -15097,7 +15097,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.OperationType;
+				return _wrapped.OperationType;
 			}
 		}
 		
@@ -15105,7 +15105,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PartitionName;
+				return _wrapped.PartitionName;
 			}
 		}
 		
@@ -15113,7 +15113,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SourceServer;
+				return _wrapped.SourceServer;
 			}
 		}
 		
@@ -15121,23 +15121,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -15148,14 +15148,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ReplicationOperationCollectionWrapper(System.DirectoryServices.ActiveDirectory.ReplicationOperationCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ReplicationOperation this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -15163,7 +15163,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -15171,43 +15171,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.ReplicationOperation operation)
 		{
-			return this._wrapped.Contains(operation);
+			return _wrapped.Contains(operation);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.ReplicationOperation operation)
 		{
-			return this._wrapped.IndexOf(operation);
+			return _wrapped.IndexOf(operation);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.ReplicationOperation[] operations, int index)
 		{
-			this._wrapped.CopyTo(operations, index);
+			_wrapped.CopyTo(operations, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -15218,14 +15218,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ReplicationOperationInformationWrapper(System.DirectoryServices.ActiveDirectory.ReplicationOperationInformation wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DateTime OperationStartTime
 		{
 			get
 			{
-				return this._wrapped.OperationStartTime;
+				return _wrapped.OperationStartTime;
 			}
 		}
 		
@@ -15233,7 +15233,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.CurrentOperation;
+				return _wrapped.CurrentOperation;
 			}
 		}
 		
@@ -15241,7 +15241,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.PendingOperations;
+				return _wrapped.PendingOperations;
 			}
 		}
 		
@@ -15249,23 +15249,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -15276,14 +15276,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ActiveDirectoryInterSiteTransportWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectoryInterSiteTransport wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType TransportType
 		{
 			get
 			{
-				return this._wrapped.TransportType;
+				return _wrapped.TransportType;
 			}
 		}
 		
@@ -15291,11 +15291,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.IgnoreReplicationSchedule;
+				return _wrapped.IgnoreReplicationSchedule;
 			}
 			set
 			{
-				this._wrapped.IgnoreReplicationSchedule = value;
+				_wrapped.IgnoreReplicationSchedule = value;
 			}
 		}
 		
@@ -15303,11 +15303,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.BridgeAllSiteLinks;
+				return _wrapped.BridgeAllSiteLinks;
 			}
 			set
 			{
-				this._wrapped.BridgeAllSiteLinks = value;
+				_wrapped.BridgeAllSiteLinks = value;
 			}
 		}
 		
@@ -15315,7 +15315,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SiteLinks;
+				return _wrapped.SiteLinks;
 			}
 		}
 		
@@ -15323,7 +15323,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.SiteLinkBridges;
+				return _wrapped.SiteLinkBridges;
 			}
 		}
 		
@@ -15331,38 +15331,38 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public void Save()
 		{
-			this._wrapped.Save();
+			_wrapped.Save();
 		}
 		
 		public System.DirectoryServices.DirectoryEntry GetDirectoryEntry()
 		{
-			return this._wrapped.GetDirectoryEntry();
+			return _wrapped.GetDirectoryEntry();
 		}
 		
 		public void Dispose()
 		{
-			this._wrapped.Dispose();
+			_wrapped.Dispose();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -15373,14 +15373,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public ActiveDirectoryRoleCollectionWrapper(System.DirectoryServices.ActiveDirectory.ActiveDirectoryRoleCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ActiveDirectoryRole this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -15388,7 +15388,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -15396,43 +15396,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.ActiveDirectoryRole role)
 		{
-			return this._wrapped.Contains(role);
+			return _wrapped.Contains(role);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.ActiveDirectoryRole role)
 		{
-			return this._wrapped.IndexOf(role);
+			return _wrapped.IndexOf(role);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectoryRole[] roles, int index)
 		{
-			this._wrapped.CopyTo(roles, index);
+			_wrapped.CopyTo(roles, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -15443,14 +15443,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public AdamRoleCollectionWrapper(System.DirectoryServices.ActiveDirectory.AdamRoleCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.AdamRole this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -15458,7 +15458,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -15466,43 +15466,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.AdamRole role)
 		{
-			return this._wrapped.Contains(role);
+			return _wrapped.Contains(role);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.AdamRole role)
 		{
-			return this._wrapped.IndexOf(role);
+			return _wrapped.IndexOf(role);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.AdamRole[] roles, int index)
 		{
-			this._wrapped.CopyTo(roles, index);
+			_wrapped.CopyTo(roles, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -15513,14 +15513,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public TopLevelNameWrapper(System.DirectoryServices.ActiveDirectory.TopLevelName wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string Name
 		{
 			get
 			{
-				return this._wrapped.Name;
+				return _wrapped.Name;
 			}
 		}
 		
@@ -15528,11 +15528,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Status;
+				return _wrapped.Status;
 			}
 			set
 			{
-				this._wrapped.Status = value;
+				_wrapped.Status = value;
 			}
 		}
 		
@@ -15540,23 +15540,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -15567,14 +15567,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public TopLevelNameCollectionWrapper(System.DirectoryServices.ActiveDirectory.TopLevelNameCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.TopLevelName this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -15582,7 +15582,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -15590,43 +15590,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.TopLevelName name)
 		{
-			return this._wrapped.Contains(name);
+			return _wrapped.Contains(name);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.TopLevelName name)
 		{
-			return this._wrapped.IndexOf(name);
+			return _wrapped.IndexOf(name);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.TopLevelName[] names, int index)
 		{
-			this._wrapped.CopyTo(names, index);
+			_wrapped.CopyTo(names, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -15637,14 +15637,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public TrustRelationshipInformationWrapper(System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public string SourceName
 		{
 			get
 			{
-				return this._wrapped.SourceName;
+				return _wrapped.SourceName;
 			}
 		}
 		
@@ -15652,7 +15652,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.TargetName;
+				return _wrapped.TargetName;
 			}
 		}
 		
@@ -15660,7 +15660,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.TrustType;
+				return _wrapped.TrustType;
 			}
 		}
 		
@@ -15668,7 +15668,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.TrustDirection;
+				return _wrapped.TrustDirection;
 			}
 		}
 		
@@ -15676,23 +15676,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 	
@@ -15703,14 +15703,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		public TrustRelationshipInformationCollectionWrapper(System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection wrapped)
 		{
-			this._wrapped = wrapped;
+			_wrapped = wrapped;
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation this[int index]
 		{
 			get
 			{
-				return this._wrapped[index];
+				return _wrapped[index];
 			}
 		}
 		
@@ -15718,7 +15718,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped.Count;
+				return _wrapped.Count;
 			}
 		}
 		
@@ -15726,43 +15726,43 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get
 			{
-				return this._wrapped;
+				return _wrapped;
 			}
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation information)
 		{
-			return this._wrapped.Contains(information);
+			return _wrapped.Contains(information);
 		}
 		
 		public int IndexOf(System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation information)
 		{
-			return this._wrapped.IndexOf(information);
+			return _wrapped.IndexOf(information);
 		}
 		
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation[] array, int index)
 		{
-			this._wrapped.CopyTo(array, index);
+			_wrapped.CopyTo(array, index);
 		}
 		
 		public System.Collections.IEnumerator GetEnumerator()
 		{
-			return this._wrapped.GetEnumerator();
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
 		{
-			return this._wrapped.ToString();
+			return _wrapped.ToString();
 		}
 		
 		public override bool Equals(object obj)
 		{
-			return this._wrapped.Equals(obj);
+			return _wrapped.Equals(obj);
 		}
 		
 		public override int GetHashCode()
 		{
-			return this._wrapped.GetHashCode();
+			return _wrapped.GetHashCode();
 		}
 	}
 }
