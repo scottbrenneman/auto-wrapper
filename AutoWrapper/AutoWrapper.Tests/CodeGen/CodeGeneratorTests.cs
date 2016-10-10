@@ -88,13 +88,22 @@ namespace AutoWrapper.Tests.CodeGen
 			Then.Container.Register<SomeType>();
 
 			Then.TypeGenerator = new TypeGenerator(options, Then.Container);
+			Then.ContractGenerator = new ContractGenerator(Then.Container);
+
 			Then.Target = new AutoWrapper.CodeGen.CodeGenerator();
 		}
 
 		private void Generating()
 		{
-			Then.CodeTypeDeclaration = Then.TypeGenerator.GenerateDeclaration(typeof(SomeType));
-			Then.Code = Then.Target.GenerateCode(Then.CodeTypeDeclaration);
+			var codeCompileUnit = new CodeCompileUnit();
+			var ns = new CodeNamespace("AutoWrapper.Tests.CodeGen");
+
+			ns.Types.Add(Then.ContractGenerator.GenerateDeclaration(typeof(SomeType)));
+			ns.Types.Add(Then.TypeGenerator.GenerateDeclaration(typeof(SomeType)));
+			
+			codeCompileUnit.Namespaces.Add(ns);
+
+			Then.Code = Then.Target.GenerateCode(codeCompileUnit);
 		}
 
 		private void Compiling()
@@ -109,16 +118,14 @@ namespace AutoWrapper.Tests.CodeGen
 
 			var parameters = new CompilerParameters(referencedAssemblies) { GenerateInMemory = true };
 
-			var code = $"namespace AutoWrapper.Tests.CodeGen {{ {Then.Code} }}";
+			Then.CompilerResults = provider.CompileAssemblyFromSource(parameters, Then.Code);
 
-			Then.CompilerResults = provider.CompileAssemblyFromSource(parameters, code);
+			if (Then.CompilerResults.Errors.HasErrors)
+				return;
 
-			if (Then.CompilerResults.Errors.HasErrors == false)
-			{
-				Then.GeneratedType = Then.CompilerResults.CompiledAssembly.Types().First(t => t.IsClass);
-				Then.WrappedField = Then.GeneratedType.GetField("_wrapped", BindingFlags.NonPublic | BindingFlags.Instance);
-				Then.Constructor = Then.GeneratedType.GetConstructor(new[] { typeof(SomeType) });
-			}
+			Then.GeneratedType = Then.CompilerResults.CompiledAssembly.Types().First(t => t.IsClass);
+			Then.WrappedField = Then.GeneratedType.GetField("_wrapped", BindingFlags.NonPublic | BindingFlags.Instance);
+			Then.Constructor = Then.GeneratedType.GetConstructor(new[] { typeof(SomeType) });
 		}
 
 		private static ITypeNamingStrategy CustomNamingStrategy()
@@ -141,8 +148,8 @@ namespace AutoWrapper.Tests.CodeGen
 			public FieldInfo WrappedField;
 			public ConstructorInfo Constructor;
 			public TypeGenerator TypeGenerator;
-			public CodeTypeDeclaration CodeTypeDeclaration;
 			public WrappedTypeContainer Container;
+			public ContractGenerator ContractGenerator;
 		}
 	}
 }
