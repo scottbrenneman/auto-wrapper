@@ -6,26 +6,31 @@ using System.Reflection;
 
 namespace AutoWrapper.CodeGen
 {
-	public class TypeGenerator : IGenerator
+	public class TypeGenerator : GeneratorBase, IGenerator
 	{
 		private readonly ITypeGeneratorOptions _typeGeneratorOptions;
+		
+		public TypeGenerator(IWrappedTypeContainer wrapperTypeContainer) : this(null, wrapperTypeContainer) { }
 
-		public TypeGenerator(ITypeGeneratorOptions typeGeneratorOptions)
+		public TypeGenerator(ITypeGeneratorOptions typeGeneratorOptions, IWrappedTypeContainer wrappedTypeContainer)
+			: base(wrappedTypeContainer)
 		{
-			_typeGeneratorOptions = typeGeneratorOptions;
+			_typeGeneratorOptions = typeGeneratorOptions ?? new TypeGeneratorOptions();
 		}
 		
-		public CodeTypeDeclaration GenerateDeclaration(Type type)
+		public override CodeTypeDeclaration GenerateDeclaration(Type type)
 		{
-			var name = _typeGeneratorOptions.GetNameFor(type);
+			ValidateTypeBeforeGeneration(type);
 
-			var generatedType = new CodeTypeDeclaration(name)
+			var generatedType = new CodeTypeDeclaration(WrappedTypeContainer.GetTypeNameFor(type))
 			{
 				IsClass = true,
 				TypeAttributes = _typeGeneratorOptions.GetTypeAttributes(),
 				IsPartial = _typeGeneratorOptions.UsePartial
 			};
-			
+
+			generatedType.BaseTypes.Add(WrappedTypeContainer.GetContractNameFor(type));
+
 			generatedType.Members.AddRange(CompositionMembersFor(type));
 
 			GenerateMethods(type, generatedType);

@@ -22,7 +22,6 @@ namespace AutoWrapper.CodeGen
 
 		public IContractGeneratorOptionsBuilder AsBuilder => this;
 
-
 		public IContractGeneratorOptionsBuilder WithPublic()
 		{
 			_typeAttributes |= TypeAttributes.Public;
@@ -30,16 +29,6 @@ namespace AutoWrapper.CodeGen
 			return this;
 		}
 		
-		public IContractGeneratorOptionsBuilder WithNamingStrategy(IContractNamingStrategy strategy)
-		{
-			if (strategy == null)
-				throw new ArgumentNullException(nameof(strategy));
-
-			_contractNamingStrategy = strategy;
-
-			return this;
-		}
-
 		public IContractGeneratorOptionsBuilder ExcludeMembersDeclaredOn<TType>()
 		{
 			return ExcludeMembersDeclaredOn(typeof(TType));
@@ -56,11 +45,6 @@ namespace AutoWrapper.CodeGen
 		public TypeAttributes GetTypeAttributes()
 		{
 			return _typeAttributes;
-		}
-
-		public string GetNameFor(Type type)
-		{
-			return _contractNamingStrategy.ContractNameFor(type);
 		}
 
 		public bool IsExcluded(MemberInfo member)

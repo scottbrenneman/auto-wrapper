@@ -12,14 +12,22 @@ namespace AutoWrapper
 
 		void RegisterAssemblyWithType(Type type);
 
-		void Register(Type type);
+		void Register(Type type, string typeName = null, string contractName = null);
 
-		void Register<TType>()
+		void Register<TType>(string typeName = null, string contractName = null)
 			where TType : class;
 
 		void Unregister<TType>()
 			where TType : class;
 
 		void Unregister(Type type);
+
+		bool Registered(Type type);
+
+		bool Registered<TType>() where TType : class;
+
+		string GetTypeNameFor(Type type);
+
+		string GetContractNameFor(Type type);
 	}
 }

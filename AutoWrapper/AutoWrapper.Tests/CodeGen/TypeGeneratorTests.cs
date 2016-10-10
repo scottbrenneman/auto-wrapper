@@ -33,11 +33,14 @@ namespace AutoWrapper.Tests.CodeGen
 				TypeAttributes = TypeAttributes.AnsiClass
 			}, options => options.ExcludingMissingMembers());
 
-			Then.CodeTypeDeclaration.BaseTypes.Should().HaveCount(0);
+			Then.CodeTypeDeclaration.BaseTypes.Should().HaveCount(1);
+			Then.CodeTypeDeclaration.BaseTypes[0].BaseType.Should().Be("ISomeTypeWrapper");
+
+			Then.CodeTypeDeclaration.Members.Should().HaveCount(13);
+			
 			Then.CodeTypeDeclaration.Comments.Should().HaveCount(0);
 			Then.CodeTypeDeclaration.CustomAttributes.Should().HaveCount(0);
 			Then.CodeTypeDeclaration.EndDirectives.Should().HaveCount(0);
-			Then.CodeTypeDeclaration.Members.Should().HaveCount(13);
 			Then.CodeTypeDeclaration.StartDirectives.Should().HaveCount(0);
 			Then.CodeTypeDeclaration.TypeParameters.Should().HaveCount(0);
 			Then.CodeTypeDeclaration.UserData.Should().HaveCount(0);
@@ -138,10 +141,9 @@ namespace AutoWrapper.Tests.CodeGen
 			if (GivensDefined("AsPublicWasCalled"))
 				options.WithPublic();
 
-			if (GivensDefined("CustomNamingStrategy"))
-				options.WithNamingStrategy(Given.CustomNamingStrategy);
-
-			Then.Target = new TypeGenerator(options.AsOptions);
+			Then.Container = new WrappedTypeContainer(Given.CustomNamingStrategy);
+			Then.Container.Register<SomeType>();
+			Then.Target = new TypeGenerator(options.AsOptions, Then.Container);
 		}
 
 		private void Generating()
@@ -187,6 +189,7 @@ namespace AutoWrapper.Tests.CodeGen
 			public List<CodeMemberMethod> Methods;
 			public List<CodeMemberProperty> Properties;
 			public List<CodeMemberField> Fields;
+			public WrappedTypeContainer Container;
 		}
 	}
 }

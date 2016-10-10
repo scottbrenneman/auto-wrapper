@@ -2,7 +2,6 @@
 using System;
 using System.CodeDom;
 using System.Reflection;
-using System.Text;
 
 namespace AutoWrapper
 {
@@ -32,9 +31,9 @@ namespace AutoWrapper
 				.ExcludeMembersDeclaredOn<object>()
 				.AsOptions;
 
-			var typeGenerator = new TypeGenerator(typeOptions);
+			var typeGenerator = new TypeGenerator(typeOptions, container);
 
-			var contractGenerator = new ContractGenerator(contractOptions);
+			var contractGenerator = new ContractGenerator(contractOptions, container);
 
 			var codeGenerator = new CodeGenerator();
 

@@ -1,36 +1,34 @@
 ﻿using AutoWrapper.CodeGen.Contracts;
 using System;
 using System.CodeDom;
-using System.CodeDom.Compiler;
-using System.IO;
 using System.Linq;
 using System.Reflection;
 
 namespace AutoWrapper.CodeGen
 {
-    public class ContractGenerator : IGenerator
+	public class ContractGenerator : GeneratorBase, IGenerator
     {
 	    private readonly IContractGeneratorOptions _contractGeneratorOptions;
 
-	    public ContractGenerator() : this(null) { }
+	    public ContractGenerator(IWrappedTypeContainer wrapperTypeContainer) : this(null, wrapperTypeContainer) { }
 
-		public ContractGenerator(IContractGeneratorOptions contractGeneratorOptions)
+		public ContractGenerator(IContractGeneratorOptions contractGeneratorOptions, IWrappedTypeContainer wrappedTypeContainer)
+			: base(wrappedTypeContainer)
 		{
 			_contractGeneratorOptions = contractGeneratorOptions ?? new ContractGeneratorOptions();
 		}
 
-		public CodeTypeDeclaration GenerateDeclaration(Type type)
+		public override CodeTypeDeclaration GenerateDeclaration(Type type)
 		{
-			if (type == null)
-				throw new ArgumentNullException(nameof(type));
+			ValidateTypeBeforeGeneration(type);
 
-			var name = _contractGeneratorOptions.GetNameFor(type);
-
-			var contract = new CodeTypeDeclaration(name)
+			var contract = new CodeTypeDeclaration(WrappedTypeContainer.GetContractNameFor(type))
 			{
 				TypeAttributes = _contractGeneratorOptions.GetTypeAttributes(),
 				IsInterface = true
 			};
+
+			contract.Comments.Add(new CodeCommentStatement($"Interface for {WrappedTypeContainer.GetTypeNameFor(type)}"));
 
 			var methods = type
 				.GetMethods(BindingFlags.Public | BindingFlags.Instance)
@@ -58,19 +56,6 @@ namespace AutoWrapper.CodeGen
 			);
 
 			return contract;
-		}
-
-		public string GenerateCode(Type type)
-		{
-			var contract = GenerateDeclaration(type);
-
-			using (var provider = CodeDomProvider.CreateProvider("CSharp"))
-			using (var writer = new StringWriter())
-			{
-				provider.GenerateCodeFromType(contract, writer, new CodeGeneratorOptions());
-
-				return writer.ToString();
-			}
 		}
 	}
 }

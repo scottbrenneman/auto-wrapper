@@ -83,11 +83,11 @@ namespace AutoWrapper.Tests.CodeGen
 
 			if (GivensDefined("AsPublicWasCalled"))
 				options.WithPublic();
+			
+			Then.Container = new WrappedTypeContainer(Given.CustomNamingStrategy);
+			Then.Container.Register<SomeType>();
 
-			if (GivensDefined("CustomNamingStrategy"))
-				options.WithNamingStrategy(Given.CustomNamingStrategy);
-
-			Then.TypeGenerator = new TypeGenerator(options);
+			Then.TypeGenerator = new TypeGenerator(options, Then.Container);
 			Then.Target = new AutoWrapper.CodeGen.CodeGenerator();
 		}
 
@@ -142,6 +142,7 @@ namespace AutoWrapper.Tests.CodeGen
 			public ConstructorInfo Constructor;
 			public TypeGenerator TypeGenerator;
 			public CodeTypeDeclaration CodeTypeDeclaration;
+			public WrappedTypeContainer Container;
 		}
 	}
 }

@@ -7,14 +7,12 @@ namespace AutoWrapper.CodeGen.Contracts
 	{
 		ITypeGeneratorOptionsBuilder WithPublic();
 		ITypeGeneratorOptionsBuilder WithPartial();
-		ITypeGeneratorOptionsBuilder WithNamingStrategy(ITypeNamingStrategy strategy);
 		ITypeGeneratorOptionsBuilder WithNoImplementation();
 		ITypeGeneratorOptions AsOptions { get; }
 	}
 
 	public interface ITypeGeneratorOptions
 	{
-		string GetNameFor(Type type);
 		TypeAttributes GetTypeAttributes();
 		bool UsePartial { get; }
 		ITypeGeneratorOptionsBuilder AsBuilder { get; }

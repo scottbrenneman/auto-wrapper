@@ -30,24 +30,9 @@ namespace AutoWrapper.CodeGen
 			return this;
 		}
 
-		public ITypeGeneratorOptionsBuilder WithNamingStrategy(ITypeNamingStrategy strategy)
-		{
-			if (strategy == null)
-				throw new ArgumentNullException(nameof(strategy));
-
-			_typeNamingStrategy = strategy;
-
-			return this;
-		}
-
 		public ITypeGeneratorOptionsBuilder WithNoImplementation()
 		{
 			throw new NotImplementedException();
-		}
-
-		public string GetNameFor(Type type)
-		{
-			return _typeNamingStrategy.TypeNameFor(type);
 		}
 		
 		public TypeAttributes GetTypeAttributes()

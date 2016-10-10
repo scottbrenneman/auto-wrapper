@@ -6,7 +6,6 @@ namespace AutoWrapper.CodeGen.Contracts
 	public interface IContractGeneratorOptionsBuilder
 	{
 		IContractGeneratorOptionsBuilder WithPublic();
-		IContractGeneratorOptionsBuilder WithNamingStrategy(IContractNamingStrategy strategy);
 		IContractGeneratorOptionsBuilder ExcludeMembersDeclaredOn<TType>();
 		IContractGeneratorOptionsBuilder ExcludeMembersDeclaredOn(Type type);
 		IContractGeneratorOptions AsOptions { get; }
@@ -15,7 +14,6 @@ namespace AutoWrapper.CodeGen.Contracts
 	public interface IContractGeneratorOptions
     {
 		TypeAttributes GetTypeAttributes();
-		string GetNameFor(Type type);
 		bool IsExcluded(MemberInfo member);
 		IContractGeneratorOptionsBuilder AsBuilder { get; }
 	}
