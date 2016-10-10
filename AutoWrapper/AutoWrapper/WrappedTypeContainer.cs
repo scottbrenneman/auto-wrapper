@@ -19,7 +19,7 @@ namespace AutoWrapper
 
 		public IEnumerable<Type> RegisteredTypes => _typesToWrap.Values.Select(td => td.RegisteredType).ToArray();
 
-		public void RegisterAssembly(Assembly assembly)
+		public IWrappedTypeContainer RegisterAssembly(Assembly assembly)
 		{
 			var typeDefs = assembly.GetTypes()
 				.Where(t => t.IsClass && t.IsPublic && t.IsAbstract == false)
@@ -30,14 +30,17 @@ namespace AutoWrapper
 			{
 				_typesToWrap[td.RegisteredType] = td;
 			}
+
+			return this;
 		}
 
-		public void RegisterAssemblyWithType(Type type)
+		public IWrappedTypeContainer RegisterAssemblyWithType(Type type)
 		{
 			RegisterAssembly(Assembly.GetAssembly(type));
+			return this;
 		}
 
-		public void Register(Type type, string typeName = null, string contractName = null)
+		public IWrappedTypeContainer Register(Type type, string typeName = null, string contractName = null)
 		{
 			if(string.IsNullOrWhiteSpace(typeName))
 				typeName = _typeNamingStrategy.TypeNameFor(type);
@@ -46,23 +49,27 @@ namespace AutoWrapper
 				contractName = _contractNamingStrategy.ContractNameFor(type);
 
 			_typesToWrap[type] = new TypeDefinition(type, typeName, contractName);
+			return this;
 		}
 
-		public void Register<TType>(string typeName = null, string contractName = null)
+		public IWrappedTypeContainer Register<TType>(string typeName = null, string contractName = null)
 			where TType : class
 		{
 			Register(typeof(TType), typeName, contractName);
+			return this;
 		}
 
-		public void Unregister<TType>()
+		public IWrappedTypeContainer Unregister<TType>()
 			where TType : class
 		{
 			_typesToWrap.Remove(typeof(TType));
+			return this;
 		}
 
-		public void Unregister(Type type)
+		public IWrappedTypeContainer Unregister(Type type)
 		{
 			_typesToWrap.Remove(type);
+			return this;
 		}
 
 		public bool Registered(Type type)

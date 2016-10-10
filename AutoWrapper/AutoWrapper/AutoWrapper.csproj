@@ -48,7 +48,6 @@
     <Compile Include="CodeGen\GeneratorBase.cs" />
     <Compile Include="IWrappedTypeContainer.cs" />
     <Compile Include="CodeGen\TypeGeneratorOptions.cs" />
-    <Compile Include="TypeDefinition.cs" />
     <Compile Include="WrappedTypeContainer.cs" />
     <Compile Include="CodeGen\DefaultNamingStrategy.cs" />
     <Compile Include="CodeGen\TypeExtensions.cs" />

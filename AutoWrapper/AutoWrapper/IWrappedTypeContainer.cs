@@ -8,19 +8,19 @@ namespace AutoWrapper
 	{
 		IEnumerable<Type> RegisteredTypes { get; }
 
-		void RegisterAssembly(Assembly assembly);
+		IWrappedTypeContainer RegisterAssembly(Assembly assembly);
 
-		void RegisterAssemblyWithType(Type type);
+		IWrappedTypeContainer RegisterAssemblyWithType(Type type);
 
-		void Register(Type type, string typeName = null, string contractName = null);
+		IWrappedTypeContainer Register(Type type, string typeName = null, string contractName = null);
 
-		void Register<TType>(string typeName = null, string contractName = null)
+		IWrappedTypeContainer Register<TType>(string typeName = null, string contractName = null)
 			where TType : class;
 
-		void Unregister<TType>()
+		IWrappedTypeContainer Unregister<TType>()
 			where TType : class;
 
-		void Unregister(Type type);
+		IWrappedTypeContainer Unregister(Type type);
 
 		bool Registered(Type type);
 
