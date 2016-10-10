@@ -46,7 +46,7 @@ namespace AutoWrapper.Tests.CodeGen
 			Then.CodeTypeDeclaration.UserData.Should().HaveCount(0);
 		}
 
-		[Fact(Skip = "needs fixing")]
+		[Fact]
 		public void ShouldGenerateAsPublic_WhenGenerating_GivenAsPublic()
 		{
 			Given.Type = typeof(SomeType);
@@ -54,10 +54,10 @@ namespace AutoWrapper.Tests.CodeGen
 
 			When(Generating);
 
-			//Then.CodeTypeDeclaration.IsPublic.Should().BeTrue();
+			Then.CodeTypeDeclaration.TypeAttributes.Should().HaveFlag(TypeAttributes.Public);
 		}
 
-		[Fact(Skip = "needs fixing")]
+		[Fact]
 		public void ShouldUseNamingStrategy_WhenGenerating_GivenNamingStrategy()
 		{
 			Given.Type = typeof(SomeType);
@@ -65,55 +65,87 @@ namespace AutoWrapper.Tests.CodeGen
 
 			When(Generating);
 
-			//Then.CodeTypeDeclaration.Name.Should().Be("CustomContractName");
+			Then.CodeTypeDeclaration.Name.Should().Be("CustomContractName");
 		}
 
-		private static IContractNamingStrategy CustomNamingStrategy()
-		{
-			var customNamingStrategy = new Mock<IContractNamingStrategy>();
 
-			customNamingStrategy
-				.Setup(s => s.ContractNameFor(It.IsAny<Type>()))
-				.Returns("CustomContractName");
-
-			return customNamingStrategy.Object;
-		}
-
-		[Fact(Skip = "needs fixing")]
-		public void ShouldDeclareFunctions_WhenGenerating_GivenTypeWithFunctions()
+		[Theory,
+		InlineData(0, "Equals", new[] { "System.Object" }),
+		InlineData(1, "Function1", new[] { "System.Int32" }),
+		InlineData(2, "Function2", new[] { "System.Boolean", "System.Object" }),
+		InlineData(3, "Function3", new[] { "System.Int32", "System.String" }),
+		InlineData(4, "Function4", new[] { "System.Int32", "System.String", "System.Object" }),
+		InlineData(5, "GetHashCode", new string[0]),
+		InlineData(6, "GetType", new string[0]),
+		InlineData(7, "InheritedFunction", new string[0]),
+		InlineData(8, "ToString", new string[0])
+		]
+		public void ShouldDeclareFunctions_WhenGenerating_GivenTypeWithFunctions(int index, string name, string[] paramterTypes)
 		{
 			Given.Type = typeof(SomeType);
 
 			When(Generating);
 
-			//Then.Contract.Should().HaveMethod("Function1", new[] { typeof(int) });
-			//Then.Contract.Should().HaveMethod("Function2", new[] { typeof(bool), typeof(object) });
-			//Then.Contract.Should().HaveMethod("Function3", new[] { typeof(int), typeof(string) });
+			Then.Methods.Should().HaveCount(9);
+
+			Then.Methods[index].Name.Should().Be(name);
+			Then.Methods[index].Parameters.Should().HaveCount(paramterTypes.Length);
+
+			for (var n = 0; n < paramterTypes.Length; n++)
+			{
+				Then.Methods[index].Parameters[n].Type.BaseType.Should().Be(paramterTypes[n]);
+			}
 		}
 
-		[Fact(Skip = "needs fixing")]
+		[Theory,
+		InlineData("Function1", 0, FieldDirection.In),
+		InlineData("Function2", 0, FieldDirection.In),
+		InlineData("Function3", 0, FieldDirection.In),
+		InlineData("Function4", 0, FieldDirection.Out),
+		InlineData("Function4", 1, FieldDirection.Ref),
+		InlineData("Function4", 2, FieldDirection.In)]
+		public void ShouldHaveDirectionalParameters_WhenGenerating_GivenMethod(string method, int parameter, FieldDirection direction)
+		{
+			Given.Type = typeof(SomeType);
+
+			When(Generating);
+
+			var memberMethod = Then.Methods.First(x => x.Name == method);
+			memberMethod.Should().NotBeNull();
+
+			memberMethod.Parameters[parameter].Direction.Should().Be(direction);
+		}
+
+		[Fact]
 		public void ShouldDeclareProperties_WhenGenerating_GivenTypeWithProperties()
 		{
 			Given.Type = typeof(SomeType);
 
 			When(Generating);
 
-			//Then.Contract.Should().HaveProperty<bool>("Property1");
-			//Then.Contract.Should().HaveProperty<object>("Property2");
+			Then.Properties[0].Name.Should().Be("Property1");
+			Then.Properties[0].Type.BaseType.Should().Be("System.Boolean");
+			Then.Properties[1].Name.Should().Be("Property2");
+			Then.Properties[1].Type.BaseType.Should().Be("System.Object");
 		}
 
-		[Fact(Skip = "needs fixing")]
-		public void ShouldExcludeMembers_WhenGenerating_GivenExcludedType()
+		[Theory,
+		InlineData(0, "Function1"),
+		InlineData(1, "Function2"),
+		InlineData(2, "Function3"),
+		InlineData(3, "Function4"),
+		InlineData(4, "InheritedFunction")
+		]
+		public void ShouldExcludeMembers_WhenGenerating_GivenExcludedType(int index, string name)
 		{
 			Given.Type = typeof(SomeType);
 			Given.Exclude = typeof(object);
 
 			When(Generating);
 
-			//Then.Contract.Should().NotHaveMethod("ToString", new Type[0]);
-			//Then.Contract.Should().NotHaveMethod("Equals", new[] { typeof(object) });
-			//Then.Contract.Should().NotHaveMethod("GetType", new Type[0]);
-			//Then.Contract.Should().NotHaveMethod("GetHashCode", new Type[0]);
+			Then.Methods.Should().HaveCount(5);
+
+			Then.Methods[index].Name.Should().Be(name);
 		}
 
 		protected override void Creating()
@@ -153,6 +185,17 @@ namespace AutoWrapper.Tests.CodeGen
 				.Select(m => m as CodeMemberField)
 				.Where(f => f != null)
 				.ToList();
+		}
+
+		private static IContractNamingStrategy CustomNamingStrategy()
+		{
+			var customNamingStrategy = new Mock<IContractNamingStrategy>();
+
+			customNamingStrategy
+				.Setup(s => s.ContractNameFor(It.IsAny<Type>()))
+				.Returns("CustomContractName");
+
+			return customNamingStrategy.Object;
 		}
 
 		public sealed class Thens

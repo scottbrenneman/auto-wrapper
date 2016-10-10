@@ -78,7 +78,7 @@ namespace AutoWrapper.Tests.CodeGen
 		InlineData(8, "InheritedFunction", new string[0]),
 		InlineData(9, "ToString", new string[0])
 		]
-		public void ShouldDeclareFunctions_WhenGenerating_GivenTypeWithFunctions(int index, string name, params string[] paramterTypes)
+		public void ShouldDeclareFunctions_WhenGenerating_GivenTypeWithFunctions(int index, string name, string[] paramterTypes)
 		{
 			When(Generating);
 
