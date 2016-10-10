@@ -92,7 +92,7 @@ namespace AutoWrapper.CodeGen
 						new CodeFieldReferenceExpression(This, WrappedFieldName),
 						memberMethod.Name,
 						memberMethod.Parameters.OfType<CodeParameterDeclarationExpression>()
-							.Select(p => (CodeExpression) new CodeVariableReferenceExpression(p.Name))
+							.Select(p => (CodeExpression) new CodeDirectionExpression(p.Direction, new CodeVariableReferenceExpression(p.Name)))
 							.ToArray()
 					);
 
