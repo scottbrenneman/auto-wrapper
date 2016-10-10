@@ -35,9 +35,10 @@ namespace AutoWrapper.Tests.CodeGen
 				TypeAttributes = TypeAttributes.Interface
 			}, options => options.ExcludingMissingMembers());
 
-			Then.CodeTypeDeclaration.Members.Should().HaveCount(13);
-
-			Then.CodeTypeDeclaration.BaseTypes.Should().HaveCount(0);
+			Then.CodeTypeDeclaration.Members.Should().HaveCount(14);
+			Then.CodeTypeDeclaration.BaseTypes.Should().HaveCount(1);
+			Then.CodeTypeDeclaration.BaseTypes[0].BaseType.Should().Be("System.IDisposable");
+			
 			Then.CodeTypeDeclaration.Comments.Should().HaveCount(1);
 			Then.CodeTypeDeclaration.CustomAttributes.Should().HaveCount(0);
 			Then.CodeTypeDeclaration.EndDirectives.Should().HaveCount(0);
@@ -70,15 +71,16 @@ namespace AutoWrapper.Tests.CodeGen
 
 
 		[Theory,
-		InlineData(0, "Equals", new[] { "System.Object" }),
-		InlineData(1, "Function1", new[] { "System.Int32" }),
-		InlineData(2, "Function2", new[] { "System.Boolean", "System.Object" }),
-		InlineData(3, "Function3", new[] { "System.Int32", "System.String" }),
-		InlineData(4, "Function4", new[] { "System.Int32", "System.String", "System.Object" }),
-		InlineData(5, "GetHashCode", new string[0]),
-		InlineData(6, "GetType", new string[0]),
-		InlineData(7, "InheritedFunction", new string[0]),
-		InlineData(8, "ToString", new string[0])
+		InlineData(0, "Dispose", new string[0]),
+		InlineData(1, "Equals", new[] { "System.Object" }),
+		InlineData(2, "Function1", new[] { "System.Int32" }),
+		InlineData(3, "Function2", new[] { "System.Boolean", "System.Object" }),
+		InlineData(4, "Function3", new[] { "System.Int32", "System.String" }),
+		InlineData(5, "Function4", new[] { "System.Int32", "System.String", "System.Object" }),
+		InlineData(6, "GetHashCode", new string[0]),
+		InlineData(7, "GetType", new string[0]),
+		InlineData(8, "InheritedFunction", new string[0]),
+		InlineData(9, "ToString", new string[0])
 		]
 		public void ShouldDeclareFunctions_WhenGenerating_GivenTypeWithFunctions(int index, string name, string[] paramterTypes)
 		{
@@ -86,7 +88,7 @@ namespace AutoWrapper.Tests.CodeGen
 
 			When(Generating);
 
-			Then.Methods.Should().HaveCount(9);
+			Then.Methods.Should().HaveCount(10);
 
 			Then.Methods[index].Name.Should().Be(name);
 			Then.Methods[index].Parameters.Should().HaveCount(paramterTypes.Length);
@@ -130,11 +132,12 @@ namespace AutoWrapper.Tests.CodeGen
 		}
 
 		[Theory,
-		InlineData(0, "Function1"),
-		InlineData(1, "Function2"),
-		InlineData(2, "Function3"),
-		InlineData(3, "Function4"),
-		InlineData(4, "InheritedFunction")
+		InlineData(0, "Dispose"),
+		InlineData(1, "Function1"),
+		InlineData(2, "Function2"),
+		InlineData(3, "Function3"),
+		InlineData(4, "Function4"),
+		InlineData(5, "InheritedFunction")
 		]
 		public void ShouldExcludeMembers_WhenGenerating_GivenExcludedType(int index, string name)
 		{
@@ -143,7 +146,7 @@ namespace AutoWrapper.Tests.CodeGen
 
 			When(Generating);
 
-			Then.Methods.Should().HaveCount(5);
+			Then.Methods.Should().HaveCount(6);
 
 			Then.Methods[index].Name.Should().Be(name);
 		}

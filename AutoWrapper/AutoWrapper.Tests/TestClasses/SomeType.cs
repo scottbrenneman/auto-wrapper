@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 namespace AutoWrapper.Tests.TestClasses
 {
 	[ExcludeFromCodeCoverage]
-	public sealed class SomeType : SomeTypeBase
+	public sealed class SomeType : SomeTypeBase, IDisposable
 	{
 		public void Function1(int x) { throw new NotImplementedException(); }
 
@@ -26,6 +26,8 @@ namespace AutoWrapper.Tests.TestClasses
 		private void NotSupportedFunction()
 		{
 		}
+
+		public void Dispose() { throw new NotImplementedException(); }
 	}
 
 	[ExcludeFromCodeCoverage]

@@ -163,9 +163,5 @@ namespace AutoWrapper.CodeGen
 
 			return members;
 		}
-
-		
-
-		
 	}
 }

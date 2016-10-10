@@ -30,6 +30,9 @@ namespace AutoWrapper.CodeGen
 
 			contract.Comments.Add(new CodeCommentStatement($"Interface for {WrappedTypeContainer.GetTypeNameFor(type)}"));
 
+			foreach (var interfaceType in type.GetInterfaces())
+				contract.BaseTypes.Add(interfaceType.FullName);
+
 			var methods = type
 				.GetMethods(BindingFlags.Public | BindingFlags.Instance)
 				.Where(m => m.IsSpecialName == false)

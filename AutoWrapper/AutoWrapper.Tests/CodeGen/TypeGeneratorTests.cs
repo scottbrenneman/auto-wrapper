@@ -36,7 +36,7 @@ namespace AutoWrapper.Tests.CodeGen
 			Then.CodeTypeDeclaration.BaseTypes.Should().HaveCount(1);
 			Then.CodeTypeDeclaration.BaseTypes[0].BaseType.Should().Be("ISomeTypeWrapper");
 
-			Then.CodeTypeDeclaration.Members.Should().HaveCount(14);
+			Then.CodeTypeDeclaration.Members.Should().HaveCount(15);
 			
 			Then.CodeTypeDeclaration.Comments.Should().HaveCount(0);
 			Then.CodeTypeDeclaration.CustomAttributes.Should().HaveCount(0);
@@ -68,20 +68,21 @@ namespace AutoWrapper.Tests.CodeGen
 
 		[Theory,
 		InlineData(0, ".ctor", new[] { "AutoWrapper.Tests.TestClasses.SomeType" }),
-		InlineData(1, "Equals", new[] { "System.Object" }),
-		InlineData(2, "Function1", new [] { "System.Int32" }),
-		InlineData(3, "Function2", new[] { "System.Boolean", "System.Object" }),
-		InlineData(4, "Function3", new[] { "System.Int32", "System.String" }),
-		InlineData(5, "Function4", new[] { "System.Int32", "System.String", "System.Object" }),
-		InlineData(6, "GetHashCode", new string[0]),
-		InlineData(7, "InheritedFunction", new string[0]),
-		InlineData(8, "ToString", new string[0])
+		InlineData(1, "Dispose", new string[0]),
+		InlineData(2, "Equals", new[] { "System.Object" }),
+		InlineData(3, "Function1", new [] { "System.Int32" }),
+		InlineData(4, "Function2", new[] { "System.Boolean", "System.Object" }),
+		InlineData(5, "Function3", new[] { "System.Int32", "System.String" }),
+		InlineData(6, "Function4", new[] { "System.Int32", "System.String", "System.Object" }),
+		InlineData(7, "GetHashCode", new string[0]),
+		InlineData(8, "InheritedFunction", new string[0]),
+		InlineData(9, "ToString", new string[0])
 		]
 		public void ShouldDeclareFunctions_WhenGenerating_GivenTypeWithFunctions(int index, string name, string[] paramterTypes)
 		{
 			When(Generating);
 
-			Then.Methods.Should().HaveCount(9);
+			Then.Methods.Should().HaveCount(10);
 
 			Then.Methods[index].Name.Should().Be(name);
 			Then.Methods[index].Parameters.Should().HaveCount(paramterTypes.Length);
