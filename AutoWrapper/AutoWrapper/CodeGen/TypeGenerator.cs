@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace AutoWrapper.CodeGen
 {
-	public class TypeGenerator : GeneratorBase, IGenerator
+	public class TypeGenerator : GeneratorBase
 	{
 		private readonly ITypeGeneratorOptions _typeGeneratorOptions;
 		
@@ -37,6 +37,8 @@ namespace AutoWrapper.CodeGen
 
 			GenerateProperties(type, generatedType);
 
+			generatedType.Members.Add(CreateWrappedProperty(type, true));
+
 			return generatedType;
 		}
 
@@ -45,7 +47,7 @@ namespace AutoWrapper.CodeGen
 			var properties = type
 				.GetProperties(BindingFlags.Public | BindingFlags.Instance);
 
-			var wrappedField = new CodeFieldReferenceExpression(This, WrappedFieldName);
+			
 
 			foreach (var property in properties)
 			{
@@ -56,7 +58,7 @@ namespace AutoWrapper.CodeGen
 					memberProperty.GetStatements.Add(
 						new CodeMethodReturnStatement(
 							new CodePropertyReferenceExpression(
-								wrappedField,
+								WrappedField,
 								memberProperty.Name))
 					);
 				}
@@ -66,7 +68,7 @@ namespace AutoWrapper.CodeGen
 					memberProperty.SetStatements.Add(
 						new CodeAssignStatement(
 							new CodePropertyReferenceExpression(
-								wrappedField, memberProperty.Name),
+								WrappedField, memberProperty.Name),
 							new CodePropertySetValueReferenceExpression())
 					);
 				}
@@ -124,8 +126,8 @@ namespace AutoWrapper.CodeGen
 			return members;
 		}
 
-		private static readonly CodeThisReferenceExpression This = new CodeThisReferenceExpression();
+		
 
-		private const string WrappedVariableName = "wrapped", WrappedFieldName = "_wrapped";
+		
 	}
 }

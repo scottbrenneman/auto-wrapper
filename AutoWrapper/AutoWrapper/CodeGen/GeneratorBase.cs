@@ -22,6 +22,30 @@ namespace AutoWrapper.CodeGen
 
 		public abstract CodeTypeDeclaration GenerateDeclaration(Type type);
 
+		protected CodeMemberProperty CreateWrappedProperty(Type type, bool withBody)
+		{
+			var property = new CodeMemberProperty()
+			{
+				Name = WrappedPropertyName,
+				HasGet = true,
+				Type = new CodeTypeReference(type),
+				Attributes = MemberAttributes.Public | MemberAttributes.Final
+			};
+
+			if (withBody)
+			{
+				property.GetStatements.Add(new CodeMethodReturnStatement(WrappedField));
+			}
+
+			return property;
+		}
+
 		protected readonly IWrappedTypeContainer WrappedTypeContainer;
+
+		protected const string WrappedVariableName = "wrapped", WrappedFieldName = "_wrapped", WrappedPropertyName = "Wrapped";
+
+
+		protected static readonly CodeThisReferenceExpression This = new CodeThisReferenceExpression();
+		protected static readonly CodeFieldReferenceExpression WrappedField = new CodeFieldReferenceExpression(This, WrappedFieldName);
 	}
 }

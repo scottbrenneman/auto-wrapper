@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace AutoWrapper.CodeGen
 {
-	public class ContractGenerator : GeneratorBase, IGenerator
+	public class ContractGenerator : GeneratorBase
     {
 	    private readonly IContractGeneratorOptions _contractGeneratorOptions;
 
@@ -45,15 +45,7 @@ namespace AutoWrapper.CodeGen
 			foreach (var property in properties)
 				contract.Members.Add(property.ToMemberProperty());
 
-			contract.Members.Add(
-				new CodeMemberProperty()
-				{
-					Name = "Wrapped",
-					HasGet = true,
-					Type = new CodeTypeReference(type),
-					Attributes = MemberAttributes.Public | MemberAttributes.Final
-				}
-			);
+			contract.Members.Add(CreateWrappedProperty(type, false));
 
 			return contract;
 		}
