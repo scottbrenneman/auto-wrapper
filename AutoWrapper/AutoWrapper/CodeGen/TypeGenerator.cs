@@ -25,7 +25,7 @@ namespace AutoWrapper.CodeGen
 			var generatedType = new CodeTypeDeclaration(WrappedTypeContainer.GetTypeNameFor(type))
 			{
 				IsClass = true,
-				TypeAttributes = _typeGeneratorOptions.GetTypeAttributes(),
+				TypeAttributes = _typeGeneratorOptions.GetTypeAttributes() | TypeAttributes.Sealed,
 				IsPartial = _typeGeneratorOptions.UsePartial
 			};
 
@@ -46,8 +46,6 @@ namespace AutoWrapper.CodeGen
 		{
 			var properties = type
 				.GetProperties(BindingFlags.Public | BindingFlags.Instance);
-
-			
 
 			foreach (var property in properties)
 			{
@@ -83,7 +81,7 @@ namespace AutoWrapper.CodeGen
 				.GetMethods(BindingFlags.Public | BindingFlags.Instance)
 				.Where(m => m.IsSpecialName == false);
 
-			foreach (var method in methods)
+			foreach (var method in methods.Where(m => m.Name != "GetType"))
 			{
 				var memberMethod = method.ToMemberMethod();
 

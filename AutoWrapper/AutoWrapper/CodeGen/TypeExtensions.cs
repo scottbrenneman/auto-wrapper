@@ -1,5 +1,6 @@
 ﻿using System;
 using System.CodeDom;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
@@ -12,9 +13,12 @@ namespace AutoWrapper.CodeGen
 			if (methodInfo == null) throw new ArgumentNullException(nameof(methodInfo));
 			if (methodInfo.IsPublic == false) throw new NotSupportedException("Non-public methods are not supported.");
 
+			var attributes = MemberAttributes.Public;
+			attributes |= MethodsToOverride.Contains(methodInfo.Name) ? MemberAttributes.Override : MemberAttributes.Final;
+
 			var memberMethod = new CodeMemberMethod
 			{
-				Attributes = MemberAttributes.Public,
+				Attributes = attributes,
 				Name = methodInfo.Name,
 				ReturnType = new CodeTypeReference(methodInfo.ReturnType)
 			};
@@ -37,7 +41,6 @@ namespace AutoWrapper.CodeGen
 				? (parameter.IsOut ? FieldDirection.Out : FieldDirection.Ref)
 				: FieldDirection.In;
 
-
 			return new CodeParameterDeclarationExpression(type.FullName, parameter.Name)
 			{
 				Direction = direction
@@ -51,12 +54,14 @@ namespace AutoWrapper.CodeGen
 
 			return new CodeMemberProperty
 			{
-				Attributes = MemberAttributes.Public,
+				Attributes = MemberAttributes.Final | MemberAttributes.Public,
 				Name = propertyInfo.Name,
 				Type = new CodeTypeReference(propertyInfo.PropertyType),
 				HasGet = propertyInfo.CanRead,
 				HasSet = propertyInfo.CanWrite
 			};
 		}
+
+		public static readonly List<string> MethodsToOverride = new List<string> { "ToString", "GetHashCode", "Equals" };
 	}
 }

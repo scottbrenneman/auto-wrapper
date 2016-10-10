@@ -30,13 +30,13 @@ namespace AutoWrapper.Tests.CodeGen
 				IsStruct = false,
 				LinePragma = (CodeLinePragma)null,
 				Name = "SomeTypeWrapper", 
-				TypeAttributes = TypeAttributes.AnsiClass
+				TypeAttributes = TypeAttributes.AnsiClass | TypeAttributes.Sealed
 			}, options => options.ExcludingMissingMembers());
 
 			Then.CodeTypeDeclaration.BaseTypes.Should().HaveCount(1);
 			Then.CodeTypeDeclaration.BaseTypes[0].BaseType.Should().Be("ISomeTypeWrapper");
 
-			Then.CodeTypeDeclaration.Members.Should().HaveCount(14);
+			Then.CodeTypeDeclaration.Members.Should().HaveCount(13);
 			
 			Then.CodeTypeDeclaration.Comments.Should().HaveCount(0);
 			Then.CodeTypeDeclaration.CustomAttributes.Should().HaveCount(0);
@@ -74,15 +74,14 @@ namespace AutoWrapper.Tests.CodeGen
 		InlineData(4, "Function3", new[] { "System.Int32", "System.String" }),
 		InlineData(5, "Function4", new[] { "System.Int32", "System.String", "System.Object" }),
 		InlineData(6, "GetHashCode", new string[0]),
-		InlineData(7, "GetType", new string[0]),
-		InlineData(8, "InheritedFunction", new string[0]),
-		InlineData(9, "ToString", new string[0])
+		InlineData(7, "InheritedFunction", new string[0]),
+		InlineData(8, "ToString", new string[0])
 		]
 		public void ShouldDeclareFunctions_WhenGenerating_GivenTypeWithFunctions(int index, string name, string[] paramterTypes)
 		{
 			When(Generating);
 
-			Then.Methods.Should().HaveCount(10);
+			Then.Methods.Should().HaveCount(9);
 
 			Then.Methods[index].Name.Should().Be(name);
 			Then.Methods[index].Parameters.Should().HaveCount(paramterTypes.Length);
