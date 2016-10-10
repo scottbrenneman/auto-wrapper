@@ -1670,7 +1670,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int HResult
 		{
 			get;
-			set;
 		}
 		
 		System.DirectoryServices.DirectoryServicesCOMException Wrapped
@@ -3348,7 +3347,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int HResult
 		{
 			get;
-			set;
 		}
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException Wrapped
@@ -3414,7 +3412,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int HResult
 		{
 			get;
-			set;
 		}
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException Wrapped
@@ -3485,7 +3482,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int HResult
 		{
 			get;
-			set;
 		}
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException Wrapped
@@ -3546,7 +3542,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int HResult
 		{
 			get;
-			set;
 		}
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException Wrapped
@@ -3617,7 +3612,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int HResult
 		{
 			get;
-			set;
 		}
 		
 		System.DirectoryServices.ActiveDirectory.SyncFromAllServersOperationException Wrapped
@@ -3688,7 +3682,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int HResult
 		{
 			get;
-			set;
 		}
 		
 		System.DirectoryServices.ActiveDirectory.ForestTrustCollisionException Wrapped
@@ -8519,10 +8512,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return this._wrapped.HResult;
 			}
-			set
-			{
-				this._wrapped.HResult = value;
-			}
 		}
 		
 		public System.DirectoryServices.DirectoryServicesCOMException Wrapped
@@ -12232,10 +12221,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return this._wrapped.HResult;
 			}
-			set
-			{
-				this._wrapped.HResult = value;
-			}
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException Wrapped
@@ -12359,10 +12344,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			get
 			{
 				return this._wrapped.HResult;
-			}
-			set
-			{
-				this._wrapped.HResult = value;
 			}
 		}
 		
@@ -12496,10 +12477,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return this._wrapped.HResult;
 			}
-			set
-			{
-				this._wrapped.HResult = value;
-			}
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException Wrapped
@@ -12615,10 +12592,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			get
 			{
 				return this._wrapped.HResult;
-			}
-			set
-			{
-				this._wrapped.HResult = value;
 			}
 		}
 		
@@ -12752,10 +12725,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return this._wrapped.HResult;
 			}
-			set
-			{
-				this._wrapped.HResult = value;
-			}
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.SyncFromAllServersOperationException Wrapped
@@ -12887,10 +12856,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			get
 			{
 				return this._wrapped.HResult;
-			}
-			set
-			{
-				this._wrapped.HResult = value;
 			}
 		}
 		

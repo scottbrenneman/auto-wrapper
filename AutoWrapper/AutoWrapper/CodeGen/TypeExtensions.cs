@@ -60,8 +60,8 @@ namespace AutoWrapper.CodeGen
 				Attributes = MemberAttributes.Final | MemberAttributes.Public,
 				Name = propertyInfo.Name,
 				Type = new CodeTypeReference(propertyInfo.PropertyType),
-				HasGet = propertyInfo.CanRead,
-				HasSet = propertyInfo.CanWrite
+				HasGet = propertyInfo.CanRead && propertyInfo.GetMethod.IsPublic,
+				HasSet = propertyInfo.CanWrite && propertyInfo.SetMethod.IsPublic
 			};
 
 			if (propertyInfo.IsIndexer())

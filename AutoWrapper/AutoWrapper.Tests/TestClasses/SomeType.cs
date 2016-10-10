@@ -17,7 +17,7 @@ namespace AutoWrapper.Tests.TestClasses
 
 		public bool Property1 { get; set; }
 
-		public object Property2 { get; }
+		public object Property2 { get; internal set; }
 
 		public string this[int x] => string.Empty;
 
