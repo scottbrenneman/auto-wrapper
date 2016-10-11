@@ -38,7 +38,7 @@ namespace AutoWrapper.Tests.CodeGen
 
 			Then.CodeTypeDeclaration.Members.Should().HaveCount(15);
 			
-			Then.CodeTypeDeclaration.Comments.Should().HaveCount(0);
+			Then.CodeTypeDeclaration.Comments.Should().HaveCount(1);
 			Then.CodeTypeDeclaration.CustomAttributes.Should().HaveCount(0);
 			Then.CodeTypeDeclaration.EndDirectives.Should().HaveCount(0);
 			Then.CodeTypeDeclaration.StartDirectives.Should().HaveCount(0);

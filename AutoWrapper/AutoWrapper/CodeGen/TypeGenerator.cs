@@ -29,6 +29,8 @@ namespace AutoWrapper.CodeGen
 				IsPartial = _typeGeneratorOptions.UsePartial
 			};
 
+			generatedType.Comments.Add(new CodeCommentStatement($"wrapper for {type.FullName} in {type.Assembly.FullName}"));
+
 			generatedType.BaseTypes.Add(WrappedTypeContainer.GetContractNameFor(type));
 
 			generatedType.Members.AddRange(CompositionMembersFor(type));
