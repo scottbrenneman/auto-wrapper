@@ -46,8 +46,6 @@ namespace AutoWrapper.Samples.WrapperForSomeType
 		
 		string Function4(out int x, ref string s, object o);
 		
-		void Dispose();
-		
 		void InheritedFunction();
 	}
 	
@@ -97,6 +95,11 @@ namespace AutoWrapper.Samples.WrapperForSomeType
 			}
 		}
 		
+		public void Dispose()
+		{
+			_wrapped.Dispose();
+		}
+		
 		public void Function1(int x)
 		{
 			_wrapped.Function1(x);
@@ -115,11 +118,6 @@ namespace AutoWrapper.Samples.WrapperForSomeType
 		public string Function4(out int x, ref string s, object o)
 		{
 			return _wrapped.Function4(out x, ref s, o);
-		}
-		
-		public void Dispose()
-		{
-			_wrapped.Dispose();
 		}
 		
 		public void InheritedFunction()
