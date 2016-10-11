@@ -35,7 +35,7 @@ namespace AutoWrapper.Tests.CodeGen
 				TypeAttributes = TypeAttributes.Interface
 			}, options => options.ExcludingMissingMembers());
 
-			Then.CodeTypeDeclaration.Members.Should().HaveCount(13);
+			Then.CodeTypeDeclaration.Members.Should().HaveCount(14);
 			Then.CodeTypeDeclaration.BaseTypes.Should().HaveCount(1);
 			Then.CodeTypeDeclaration.BaseTypes[0].BaseType.Should().Be("System.IDisposable");
 			
@@ -75,10 +75,11 @@ namespace AutoWrapper.Tests.CodeGen
 		InlineData(2, "Function2", "System.Int32", new[] { "System.Boolean?", "System.Tuple<System.String, System.Int32>" }),
 		InlineData(3, "Function3", "System.Threading.Tasks.Task<System.String>", new[] { "System.Int32", "System.String" }),
 		InlineData(4, "Function4", "System.String", new[] { "System.Int32", "System.String", "System.Object" }),
-		InlineData(5, "GetHashCode", "System.Int32", new string[0]),
-		InlineData(6, "GetType", "System.Type", new string[0]),
-		InlineData(7, "InheritedFunction", "System.Void", new string[0]),
-		InlineData(8, "ToString", "System.String", new string[0])
+		InlineData(5, "Function5", "AutoWrapper.Tests.TestClasses.SomeOtherType", new[] { "AutoWrapper.Tests.TestClasses.SomeOtherType" }),
+		InlineData(6, "GetHashCode", "System.Int32", new string[0]),
+		InlineData(7, "GetType", "System.Type", new string[0]),
+		InlineData(8, "InheritedFunction", "System.Void", new string[0]),
+		InlineData(9, "ToString", "System.String", new string[0])
 		]
 		public void ShouldDeclareFunctions_WhenGenerating_GivenTypeWithFunctions(int index, string name, string returnType, string[] parameterTypes)
 		{
@@ -86,7 +87,7 @@ namespace AutoWrapper.Tests.CodeGen
 
 			When(Generating);
 
-			Then.Methods.Should().HaveCount(9);
+			Then.Methods.Should().HaveCount(10);
 
 			Then.Methods[index].Name.Should().Be(name);
 			Then.Methods[index].ReturnType.BaseType.Should().Be(returnType);
@@ -135,7 +136,8 @@ namespace AutoWrapper.Tests.CodeGen
 		InlineData(1, "Function2"),
 		InlineData(2, "Function3"),
 		InlineData(3, "Function4"),
-		InlineData(4, "InheritedFunction")
+		InlineData(4, "Function5"),
+		InlineData(5, "InheritedFunction")
 		]
 		public void ShouldExcludeMembers_WhenGenerating_GivenExcludedType(int index, string name)
 		{
@@ -144,7 +146,7 @@ namespace AutoWrapper.Tests.CodeGen
 
 			When(Generating);
 
-			Then.Methods.Should().HaveCount(5);
+			Then.Methods.Should().HaveCount(6);
 
 			Then.Methods[index].Name.Should().Be(name);
 		}

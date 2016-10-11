@@ -117,7 +117,7 @@ namespace AutoWrapper.CodeGen
 			);
 		}
 
-		private static void GenerateMethods(IReflect type, CodeTypeDeclaration generatedType)
+		private void GenerateMethods(IReflect type, CodeTypeDeclaration generatedType)
 		{
 			var methods = type
 				.GetMethods(BindingFlags.Public | BindingFlags.Instance)
@@ -125,28 +125,45 @@ namespace AutoWrapper.CodeGen
 
 			foreach (var method in methods.Where(m => m.Name != "GetType"))
 			{
-				var memberMethod = method.ToMemberMethod(GenerateAs.Type);
-
-				var targetVariable = method.IsAsync()
-					? new CodeVariableReferenceExpression("await " + WrappedFieldName)
-					: new CodeVariableReferenceExpression(WrappedFieldName);
-
-				var invokeExpression =
-					new CodeMethodInvokeExpression(
-						targetVariable,
-						memberMethod.Name,
-						memberMethod.Parameters.OfType<CodeParameterDeclarationExpression>()
-							.Select(p => (CodeExpression) new CodeDirectionExpression(p.Direction, new CodeVariableReferenceExpression(p.Name)))
-							.ToArray()
-					);
-
-				if (memberMethod.ReturnType.BaseType == "System.Void")
-					memberMethod.Statements.Add(invokeExpression);
-				else
-					memberMethod.Statements.Add(new CodeMethodReturnStatement(invokeExpression));
+				var memberMethod = GenerateMethod(method);
 
 				generatedType.Members.Add(memberMethod);
 			}
+		}
+
+		private CodeMemberMethod GenerateMethod(MethodInfo method)
+		{
+			var memberMethod = method.ToMemberMethod(GenerateAs.Type);
+
+			var targetVariable = method.IsAsync()
+				? new CodeVariableReferenceExpression("await " + WrappedFieldName)
+				: new CodeVariableReferenceExpression(WrappedFieldName);
+
+			CodeExpression invokeExpression =
+				new CodeMethodInvokeExpression(
+					targetVariable,
+					memberMethod.Name,
+					memberMethod.Parameters.OfType<CodeParameterDeclarationExpression>()
+						.Select(p => (CodeExpression) new CodeDirectionExpression(p.Direction, new CodeVariableReferenceExpression(p.Name)))
+						.ToArray()
+				);
+
+			if (memberMethod.ReturnType.BaseType == "System.Void")
+				memberMethod.Statements.Add(invokeExpression);
+			else
+			{
+				if (WrappedTypeContainer.Registered(method.ReturnType))
+				{
+					invokeExpression = new CodeObjectCreateExpression(
+						WrappedTypeContainer.GetTypeNameFor(method.ReturnType),
+						invokeExpression
+					);
+				}
+
+				memberMethod.Statements.Add(new CodeMethodReturnStatement(invokeExpression));
+			}
+
+			return memberMethod;
 		}
 
 		private static CodeTypeMember[] CompositionMembersFor(Type type)

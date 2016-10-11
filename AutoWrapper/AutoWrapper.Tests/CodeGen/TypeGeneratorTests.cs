@@ -36,7 +36,7 @@ namespace AutoWrapper.Tests.CodeGen
 			Then.CodeTypeDeclaration.BaseTypes.Should().HaveCount(1);
 			Then.CodeTypeDeclaration.BaseTypes[0].BaseType.Should().Be("ISomeTypeWrapper");
 
-			Then.CodeTypeDeclaration.Members.Should().HaveCount(15);
+			Then.CodeTypeDeclaration.Members.Should().HaveCount(16);
 			
 			Then.CodeTypeDeclaration.Comments.Should().HaveCount(1);
 			Then.CodeTypeDeclaration.CustomAttributes.Should().HaveCount(0);
@@ -67,24 +67,26 @@ namespace AutoWrapper.Tests.CodeGen
 		}
 
 		[Theory,
-		InlineData(0, ".ctor", new[] { "AutoWrapper.Tests.TestClasses.SomeType" }),
-		InlineData(1, "Dispose", new string[0]),
-		InlineData(2, "Equals", new[] { "System.Object" }),
-		InlineData(3, "Function1", new [] { "System.Int32" }),
-		InlineData(4, "Function2", new[] { "System.Boolean?", "System.Tuple<System.String, System.Int32>" }),
-		InlineData(5, "Function3", new[] { "System.Int32", "System.String" }),
-		InlineData(6, "Function4", new[] { "System.Int32", "System.String", "System.Object" }),
-		InlineData(7, "GetHashCode", new string[0]),
-		InlineData(8, "InheritedFunction", new string[0]),
-		InlineData(9, "ToString", new string[0])
+		InlineData(0, ".ctor", "System.Void", new[] { "AutoWrapper.Tests.TestClasses.SomeType" }),
+		InlineData(1, "Dispose", "System.Void", new string[0]),
+		InlineData(2, "Equals", "System.Boolean", new[] { "System.Object" }),
+		InlineData(3, "Function1", "System.Void", new [] { "System.Int32" }),
+		InlineData(4, "Function2", "System.Int32", new[] { "System.Boolean?", "System.Tuple<System.String, System.Int32>" }),
+		InlineData(5, "Function3", "async System.Threading.Tasks.Task<System.String>", new[] { "System.Int32", "System.String" }),
+		InlineData(6, "Function4", "System.String", new[] { "System.Int32", "System.String", "System.Object" }),
+		InlineData(7, "Function5", "AutoWrapper.Tests.TestClasses.SomeOtherType", new[] { "AutoWrapper.Tests.TestClasses.SomeOtherType" }),
+		InlineData(8, "GetHashCode", "System.Int32", new string[0]),
+		InlineData(9, "InheritedFunction", "System.Void", new string[0]),
+		InlineData(10, "ToString", "System.String", new string[0])
 		]
-		public void ShouldDeclareFunctions_WhenGenerating_GivenTypeWithFunctions(int index, string name, string[] paramterTypes)
+		public void ShouldDeclareFunctions_WhenGenerating_GivenTypeWithFunctions(int index, string name, string returnType, string[] paramterTypes)
 		{
 			When(Generating);
 
-			Then.Methods.Should().HaveCount(10);
+			Then.Methods.Should().HaveCount(11);
 
 			Then.Methods[index].Name.Should().Be(name);
+			Then.Methods[index].ReturnType.BaseType.Should().Be(returnType);
 			Then.Methods[index].Parameters.Should().HaveCount(paramterTypes.Length);
 
 			for (var n = 0; n < paramterTypes.Length; n++)

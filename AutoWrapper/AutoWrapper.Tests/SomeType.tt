@@ -8,6 +8,6 @@
 <#@ import namespace="AutoWrapper.Tests.TestClasses" #>
 <#@ import namespace="System.DirectoryServices" #>
 <# 
-	var container = new WrappedTypeContainer().Register<SomeType>();
+	var container = new WrappedTypeContainer().Register<SomeType>().Register<SomeOtherType>();
 #>
 <#= AutoWrap.GenerateCode("AutoWrapper.Samples.WrapperForSomeType", container) #>

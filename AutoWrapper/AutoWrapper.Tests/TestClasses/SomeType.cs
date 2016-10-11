@@ -15,6 +15,8 @@ namespace AutoWrapper.Tests.TestClasses
 
 		public string Function4(out int x, ref string s, object o) { throw new NotImplementedException(); }
 
+		public SomeOtherType Function5(SomeOtherType sot) { throw new NotImplementedException(); }
+
 		public bool Property1 { get; set; }
 
 		public object Property2 { get; internal set; }
@@ -35,4 +37,8 @@ namespace AutoWrapper.Tests.TestClasses
 	{
 		public void InheritedFunction() { throw new NotImplementedException(); }
 	}
+
+	[ExcludeFromCodeCoverage]
+	public sealed class SomeOtherType
+	{ }
 }
