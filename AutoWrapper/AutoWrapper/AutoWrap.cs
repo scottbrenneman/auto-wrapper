@@ -15,6 +15,7 @@ namespace AutoWrapper
 				.AsOptions;
 
 			var contractOptions = new ContractGeneratorOptions()
+				.WithPublic()
 				.ExcludeMembersDeclaredOn<object>()
 				.AsOptions;
 

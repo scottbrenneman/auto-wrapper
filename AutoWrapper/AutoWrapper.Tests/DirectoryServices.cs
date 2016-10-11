@@ -13,7 +13,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	
 	
 	// Interface for ActiveDirectorySecurityWrapper
-	internal interface IActiveDirectorySecurityWrapper
+	public interface IActiveDirectorySecurityWrapper
 	{
 		
 		System.Type AccessRightType
@@ -124,7 +124,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryAccessRuleWrapper
-	internal interface IActiveDirectoryAccessRuleWrapper
+	public interface IActiveDirectoryAccessRuleWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
@@ -184,7 +184,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ListChildrenAccessRuleWrapper
-	internal interface IListChildrenAccessRuleWrapper
+	public interface IListChildrenAccessRuleWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
@@ -244,7 +244,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for CreateChildAccessRuleWrapper
-	internal interface ICreateChildAccessRuleWrapper
+	public interface ICreateChildAccessRuleWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
@@ -304,7 +304,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DeleteChildAccessRuleWrapper
-	internal interface IDeleteChildAccessRuleWrapper
+	public interface IDeleteChildAccessRuleWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
@@ -364,7 +364,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for PropertyAccessRuleWrapper
-	internal interface IPropertyAccessRuleWrapper
+	public interface IPropertyAccessRuleWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
@@ -424,7 +424,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for PropertySetAccessRuleWrapper
-	internal interface IPropertySetAccessRuleWrapper
+	public interface IPropertySetAccessRuleWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
@@ -484,7 +484,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ExtendedRightAccessRuleWrapper
-	internal interface IExtendedRightAccessRuleWrapper
+	public interface IExtendedRightAccessRuleWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
@@ -544,7 +544,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DeleteTreeAccessRuleWrapper
-	internal interface IDeleteTreeAccessRuleWrapper
+	public interface IDeleteTreeAccessRuleWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
@@ -604,7 +604,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryAuditRuleWrapper
-	internal interface IActiveDirectoryAuditRuleWrapper
+	public interface IActiveDirectoryAuditRuleWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
@@ -664,7 +664,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryEntriesWrapper
-	internal interface IDirectoryEntriesWrapper
+	public interface IDirectoryEntriesWrapper
 	{
 		
 		System.DirectoryServices.SchemaNameCollection SchemaFilter
@@ -689,7 +689,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryEntryWrapper
-	internal interface IDirectoryEntryWrapper : System.IDisposable
+	public interface IDirectoryEntryWrapper : System.IDisposable
 	{
 		
 		System.DirectoryServices.AuthenticationTypes AuthenticationType
@@ -829,7 +829,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryEntryConfigurationWrapper
-	internal interface IDirectoryEntryConfigurationWrapper
+	public interface IDirectoryEntryConfigurationWrapper
 	{
 		
 		System.DirectoryServices.ReferralChasingOption Referral
@@ -875,7 +875,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectorySearcherWrapper
-	internal interface IDirectorySearcherWrapper : System.IDisposable
+	public interface IDirectorySearcherWrapper : System.IDisposable
 	{
 		
 		bool CacheResults
@@ -1033,7 +1033,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryServicesPermissionWrapper
-	internal interface IDirectoryServicesPermissionWrapper
+	public interface IDirectoryServicesPermissionWrapper
 	{
 		
 		System.DirectoryServices.DirectoryServicesPermissionEntryCollection PermissionEntries
@@ -1076,7 +1076,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryServicesPermissionEntryWrapper
-	internal interface IDirectoryServicesPermissionEntryWrapper
+	public interface IDirectoryServicesPermissionEntryWrapper
 	{
 		
 		string Path
@@ -1096,7 +1096,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryServicesPermissionEntryCollectionWrapper
-	internal interface IDirectoryServicesPermissionEntryCollectionWrapper
+	public interface IDirectoryServicesPermissionEntryCollectionWrapper
 	{
 		
 		System.DirectoryServices.DirectoryServicesPermissionEntry this[int index]
@@ -1145,7 +1145,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectorySynchronizationWrapper
-	internal interface IDirectorySynchronizationWrapper
+	public interface IDirectorySynchronizationWrapper
 	{
 		
 		System.DirectoryServices.DirectorySynchronizationOptions Option
@@ -1169,7 +1169,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryVirtualListViewWrapper
-	internal interface IDirectoryVirtualListViewWrapper
+	public interface IDirectoryVirtualListViewWrapper
 	{
 		
 		int BeforeCount
@@ -1221,7 +1221,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryVirtualListViewContextWrapper
-	internal interface IDirectoryVirtualListViewContextWrapper
+	public interface IDirectoryVirtualListViewContextWrapper
 	{
 		
 		System.DirectoryServices.DirectoryVirtualListViewContext Wrapped
@@ -1233,7 +1233,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for PropertyCollectionWrapper
-	internal interface IPropertyCollectionWrapper
+	public interface IPropertyCollectionWrapper
 	{
 		
 		System.DirectoryServices.PropertyValueCollection this[string propertyName]
@@ -1269,7 +1269,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for PropertyValueCollectionWrapper
-	internal interface IPropertyValueCollectionWrapper
+	public interface IPropertyValueCollectionWrapper
 	{
 		
 		object this[int index]
@@ -1329,7 +1329,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ResultPropertyCollectionWrapper
-	internal interface IResultPropertyCollectionWrapper
+	public interface IResultPropertyCollectionWrapper
 	{
 		
 		System.DirectoryServices.ResultPropertyValueCollection this[string name]
@@ -1369,7 +1369,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ResultPropertyValueCollectionWrapper
-	internal interface IResultPropertyValueCollectionWrapper
+	public interface IResultPropertyValueCollectionWrapper
 	{
 		
 		object this[int index]
@@ -1397,7 +1397,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for SchemaNameCollectionWrapper
-	internal interface ISchemaNameCollectionWrapper
+	public interface ISchemaNameCollectionWrapper
 	{
 		
 		string this[int index]
@@ -1440,7 +1440,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for SearchResultWrapper
-	internal interface ISearchResultWrapper
+	public interface ISearchResultWrapper
 	{
 		
 		string Path
@@ -1462,7 +1462,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for SearchResultCollectionWrapper
-	internal interface ISearchResultCollectionWrapper : System.IDisposable
+	public interface ISearchResultCollectionWrapper : System.IDisposable
 	{
 		
 		System.DirectoryServices.SearchResult this[int index]
@@ -1506,7 +1506,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for SortOptionWrapper
-	internal interface ISortOptionWrapper
+	public interface ISortOptionWrapper
 	{
 		
 		string PropertyName
@@ -1528,7 +1528,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryServicesCOMExceptionWrapper
-	internal interface IDirectoryServicesCOMExceptionWrapper
+	public interface IDirectoryServicesCOMExceptionWrapper
 	{
 		
 		int ExtendedError
@@ -1603,7 +1603,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryReplicationMetadataWrapper
-	internal interface IActiveDirectoryReplicationMetadataWrapper
+	public interface IActiveDirectoryReplicationMetadataWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.AttributeMetadata this[string name]
@@ -1643,7 +1643,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryScheduleWrapper
-	internal interface IActiveDirectoryScheduleWrapper
+	public interface IActiveDirectoryScheduleWrapper
 	{
 		
 		bool[,,] RawSchedule
@@ -1667,7 +1667,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySchemaWrapper
-	internal interface IActiveDirectorySchemaWrapper : System.IDisposable
+	public interface IActiveDirectorySchemaWrapper : System.IDisposable
 	{
 		
 		System.DirectoryServices.ActiveDirectory.DirectoryServer SchemaRoleOwner
@@ -1713,7 +1713,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySchemaClassWrapper
-	internal interface IActiveDirectorySchemaClassWrapper : System.IDisposable
+	public interface IActiveDirectorySchemaClassWrapper : System.IDisposable
 	{
 		
 		string Name
@@ -1809,7 +1809,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySchemaClassCollectionWrapper
-	internal interface IActiveDirectorySchemaClassCollectionWrapper
+	public interface IActiveDirectorySchemaClassCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass this[int index]
@@ -1860,7 +1860,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySchemaPropertyWrapper
-	internal interface IActiveDirectorySchemaPropertyWrapper : System.IDisposable
+	public interface IActiveDirectorySchemaPropertyWrapper : System.IDisposable
 	{
 		
 		string Name
@@ -1982,7 +1982,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySchemaPropertyCollectionWrapper
-	internal interface IActiveDirectorySchemaPropertyCollectionWrapper
+	public interface IActiveDirectorySchemaPropertyCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty this[int index]
@@ -2033,7 +2033,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySiteWrapper
-	internal interface IActiveDirectorySiteWrapper : System.IDisposable
+	public interface IActiveDirectorySiteWrapper : System.IDisposable
 	{
 		
 		string Name
@@ -2120,7 +2120,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySiteCollectionWrapper
-	internal interface IActiveDirectorySiteCollectionWrapper
+	public interface IActiveDirectorySiteCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySite this[int index]
@@ -2169,7 +2169,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySiteLinkWrapper
-	internal interface IActiveDirectorySiteLinkWrapper : System.IDisposable
+	public interface IActiveDirectorySiteLinkWrapper : System.IDisposable
 	{
 		
 		string Name
@@ -2238,7 +2238,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySiteLinkBridgeWrapper
-	internal interface IActiveDirectorySiteLinkBridgeWrapper : System.IDisposable
+	public interface IActiveDirectorySiteLinkBridgeWrapper : System.IDisposable
 	{
 		
 		string Name
@@ -2271,7 +2271,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySiteLinkCollectionWrapper
-	internal interface IActiveDirectorySiteLinkCollectionWrapper
+	public interface IActiveDirectorySiteLinkCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink this[int index]
@@ -2320,7 +2320,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySubnetWrapper
-	internal interface IActiveDirectorySubnetWrapper : System.IDisposable
+	public interface IActiveDirectorySubnetWrapper : System.IDisposable
 	{
 		
 		string Name
@@ -2355,7 +2355,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySubnetCollectionWrapper
-	internal interface IActiveDirectorySubnetCollectionWrapper
+	public interface IActiveDirectorySubnetCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet this[int index]
@@ -2404,7 +2404,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for AdamInstanceWrapper
-	internal interface IAdamInstanceWrapper : System.IDisposable
+	public interface IAdamInstanceWrapper : System.IDisposable
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ConfigurationSet ConfigurationSet
@@ -2513,7 +2513,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for AdamInstanceCollectionWrapper
-	internal interface IAdamInstanceCollectionWrapper
+	public interface IAdamInstanceCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.AdamInstance this[int index]
@@ -2541,7 +2541,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ApplicationPartitionWrapper
-	internal interface IApplicationPartitionWrapper : System.IDisposable
+	public interface IApplicationPartitionWrapper : System.IDisposable
 	{
 		
 		System.DirectoryServices.ActiveDirectory.DirectoryServerCollection DirectoryServers
@@ -2591,7 +2591,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ApplicationPartitionCollectionWrapper
-	internal interface IApplicationPartitionCollectionWrapper
+	public interface IApplicationPartitionCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ApplicationPartition this[int index]
@@ -2619,7 +2619,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for AttributeMetadataWrapper
-	internal interface IAttributeMetadataWrapper
+	public interface IAttributeMetadataWrapper
 	{
 		
 		string Name
@@ -2664,7 +2664,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for AttributeMetadataCollectionWrapper
-	internal interface IAttributeMetadataCollectionWrapper
+	public interface IAttributeMetadataCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.AttributeMetadata this[int index]
@@ -2692,7 +2692,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ConfigurationSetWrapper
-	internal interface IConfigurationSetWrapper
+	public interface IConfigurationSetWrapper
 	{
 		
 		string Name
@@ -2757,7 +2757,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryContextWrapper
-	internal interface IDirectoryContextWrapper
+	public interface IDirectoryContextWrapper
 	{
 		
 		string Name
@@ -2782,7 +2782,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryServerCollectionWrapper
-	internal interface IDirectoryServerCollectionWrapper
+	public interface IDirectoryServerCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.DirectoryServer this[int index]
@@ -2829,7 +2829,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DomainWrapper
-	internal interface IDomainWrapper : System.IDisposable
+	public interface IDomainWrapper : System.IDisposable
 	{
 		
 		System.DirectoryServices.ActiveDirectory.Forest Forest
@@ -2945,7 +2945,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DomainCollectionWrapper
-	internal interface IDomainCollectionWrapper
+	public interface IDomainCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.Domain this[int index]
@@ -2973,7 +2973,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for SyncUpdateCallbackWrapper
-	internal interface ISyncUpdateCallbackWrapper
+	public interface ISyncUpdateCallbackWrapper
 	{
 		
 		System.Reflection.MethodInfo Method
@@ -3011,7 +3011,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DomainControllerWrapper
-	internal interface IDomainControllerWrapper : System.IDisposable
+	public interface IDomainControllerWrapper : System.IDisposable
 	{
 		
 		System.DirectoryServices.ActiveDirectory.Forest Forest
@@ -3123,7 +3123,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DomainControllerCollectionWrapper
-	internal interface IDomainControllerCollectionWrapper
+	public interface IDomainControllerCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.DomainController this[int index]
@@ -3151,7 +3151,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for SyncFromAllServersErrorInformationWrapper
-	internal interface ISyncFromAllServersErrorInformationWrapper
+	public interface ISyncFromAllServersErrorInformationWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.SyncFromAllServersErrorCategory ErrorCategory
@@ -3186,7 +3186,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryObjectNotFoundExceptionWrapper
-	internal interface IActiveDirectoryObjectNotFoundExceptionWrapper
+	public interface IActiveDirectoryObjectNotFoundExceptionWrapper
 	{
 		
 		System.Type Type
@@ -3256,7 +3256,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryOperationExceptionWrapper
-	internal interface IActiveDirectoryOperationExceptionWrapper
+	public interface IActiveDirectoryOperationExceptionWrapper
 	{
 		
 		int ErrorCode
@@ -3321,7 +3321,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryServerDownExceptionWrapper
-	internal interface IActiveDirectoryServerDownExceptionWrapper
+	public interface IActiveDirectoryServerDownExceptionWrapper
 	{
 		
 		int ErrorCode
@@ -3391,7 +3391,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryObjectExistsExceptionWrapper
-	internal interface IActiveDirectoryObjectExistsExceptionWrapper
+	public interface IActiveDirectoryObjectExistsExceptionWrapper
 	{
 		
 		string Message
@@ -3451,7 +3451,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for SyncFromAllServersOperationExceptionWrapper
-	internal interface ISyncFromAllServersOperationExceptionWrapper
+	public interface ISyncFromAllServersOperationExceptionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.SyncFromAllServersErrorInformation[] ErrorInformation
@@ -3521,7 +3521,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ForestTrustCollisionExceptionWrapper
-	internal interface IForestTrustCollisionExceptionWrapper
+	public interface IForestTrustCollisionExceptionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollisionCollection Collisions
@@ -3591,7 +3591,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ForestWrapper
-	internal interface IForestWrapper : System.IDisposable
+	public interface IForestWrapper : System.IDisposable
 	{
 		
 		string Name
@@ -3710,7 +3710,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ForestTrustRelationshipCollisionWrapper
-	internal interface IForestTrustRelationshipCollisionWrapper
+	public interface IForestTrustRelationshipCollisionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ForestTrustCollisionType CollisionType
@@ -3740,7 +3740,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ForestTrustRelationshipCollisionCollectionWrapper
-	internal interface IForestTrustRelationshipCollisionCollectionWrapper
+	public interface IForestTrustRelationshipCollisionCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollision this[int index]
@@ -3768,7 +3768,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ForestTrustDomainInfoCollectionWrapper
-	internal interface IForestTrustDomainInfoCollectionWrapper
+	public interface IForestTrustDomainInfoCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ForestTrustDomainInformation this[int index]
@@ -3796,7 +3796,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ForestTrustDomainInformationWrapper
-	internal interface IForestTrustDomainInformationWrapper
+	public interface IForestTrustDomainInformationWrapper
 	{
 		
 		string DnsName
@@ -3827,7 +3827,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ForestTrustRelationshipInformationWrapper
-	internal interface IForestTrustRelationshipInformationWrapper
+	public interface IForestTrustRelationshipInformationWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.TopLevelNameCollection TopLevelNames
@@ -3874,7 +3874,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for GlobalCatalogWrapper
-	internal interface IGlobalCatalogWrapper : System.IDisposable
+	public interface IGlobalCatalogWrapper : System.IDisposable
 	{
 		
 		System.DirectoryServices.ActiveDirectory.Forest Forest
@@ -3990,7 +3990,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for GlobalCatalogCollectionWrapper
-	internal interface IGlobalCatalogCollectionWrapper
+	public interface IGlobalCatalogCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.GlobalCatalog this[int index]
@@ -4018,7 +4018,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReadOnlyActiveDirectorySchemaClassCollectionWrapper
-	internal interface IReadOnlyActiveDirectorySchemaClassCollectionWrapper
+	public interface IReadOnlyActiveDirectorySchemaClassCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass this[int index]
@@ -4046,7 +4046,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReadOnlyActiveDirectorySchemaPropertyCollectionWrapper
-	internal interface IReadOnlyActiveDirectorySchemaPropertyCollectionWrapper
+	public interface IReadOnlyActiveDirectorySchemaPropertyCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty this[int index]
@@ -4074,7 +4074,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReadOnlyDirectoryServerCollectionWrapper
-	internal interface IReadOnlyDirectoryServerCollectionWrapper
+	public interface IReadOnlyDirectoryServerCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.DirectoryServer this[int index]
@@ -4102,7 +4102,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReadOnlySiteCollectionWrapper
-	internal interface IReadOnlySiteCollectionWrapper
+	public interface IReadOnlySiteCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySite this[int index]
@@ -4130,7 +4130,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReadOnlySiteLinkBridgeCollectionWrapper
-	internal interface IReadOnlySiteLinkBridgeCollectionWrapper
+	public interface IReadOnlySiteLinkBridgeCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge this[int index]
@@ -4158,7 +4158,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReadOnlySiteLinkCollectionWrapper
-	internal interface IReadOnlySiteLinkCollectionWrapper
+	public interface IReadOnlySiteLinkCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink this[int index]
@@ -4186,7 +4186,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReadOnlyStringCollectionWrapper
-	internal interface IReadOnlyStringCollectionWrapper
+	public interface IReadOnlyStringCollectionWrapper
 	{
 		
 		string this[int index]
@@ -4214,7 +4214,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationConnectionWrapper
-	internal interface IReplicationConnectionWrapper : System.IDisposable
+	public interface IReplicationConnectionWrapper : System.IDisposable
 	{
 		
 		string Name
@@ -4299,7 +4299,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationConnectionCollectionWrapper
-	internal interface IReplicationConnectionCollectionWrapper
+	public interface IReplicationConnectionCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ReplicationConnection this[int index]
@@ -4327,7 +4327,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationCursorWrapper
-	internal interface IReplicationCursorWrapper
+	public interface IReplicationCursorWrapper
 	{
 		
 		string PartitionName
@@ -4362,7 +4362,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationCursorCollectionWrapper
-	internal interface IReplicationCursorCollectionWrapper
+	public interface IReplicationCursorCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ReplicationCursor this[int index]
@@ -4390,7 +4390,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationFailureWrapper
-	internal interface IReplicationFailureWrapper
+	public interface IReplicationFailureWrapper
 	{
 		
 		string SourceServer
@@ -4425,7 +4425,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationFailureCollectionWrapper
-	internal interface IReplicationFailureCollectionWrapper
+	public interface IReplicationFailureCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ReplicationFailure this[int index]
@@ -4453,7 +4453,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationNeighborWrapper
-	internal interface IReplicationNeighborWrapper
+	public interface IReplicationNeighborWrapper
 	{
 		
 		string PartitionName
@@ -4523,7 +4523,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationNeighborCollectionWrapper
-	internal interface IReplicationNeighborCollectionWrapper
+	public interface IReplicationNeighborCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ReplicationNeighbor this[int index]
@@ -4551,7 +4551,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationOperationWrapper
-	internal interface IReplicationOperationWrapper
+	public interface IReplicationOperationWrapper
 	{
 		
 		System.DateTime TimeEnqueued
@@ -4591,7 +4591,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationOperationCollectionWrapper
-	internal interface IReplicationOperationCollectionWrapper
+	public interface IReplicationOperationCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ReplicationOperation this[int index]
@@ -4619,7 +4619,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationOperationInformationWrapper
-	internal interface IReplicationOperationInformationWrapper
+	public interface IReplicationOperationInformationWrapper
 	{
 		
 		System.DateTime OperationStartTime
@@ -4644,7 +4644,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryInterSiteTransportWrapper
-	internal interface IActiveDirectoryInterSiteTransportWrapper : System.IDisposable
+	public interface IActiveDirectoryInterSiteTransportWrapper : System.IDisposable
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType TransportType
@@ -4687,7 +4687,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryRoleCollectionWrapper
-	internal interface IActiveDirectoryRoleCollectionWrapper
+	public interface IActiveDirectoryRoleCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectoryRole this[int index]
@@ -4715,7 +4715,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for AdamRoleCollectionWrapper
-	internal interface IAdamRoleCollectionWrapper
+	public interface IAdamRoleCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.AdamRole this[int index]
@@ -4743,7 +4743,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for TopLevelNameWrapper
-	internal interface ITopLevelNameWrapper
+	public interface ITopLevelNameWrapper
 	{
 		
 		string Name
@@ -4764,7 +4764,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for TopLevelNameCollectionWrapper
-	internal interface ITopLevelNameCollectionWrapper
+	public interface ITopLevelNameCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.TopLevelName this[int index]
@@ -4792,7 +4792,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for TrustRelationshipInformationWrapper
-	internal interface ITrustRelationshipInformationWrapper
+	public interface ITrustRelationshipInformationWrapper
 	{
 		
 		string SourceName
@@ -4822,7 +4822,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for TrustRelationshipInformationCollectionWrapper
-	internal interface ITrustRelationshipInformationCollectionWrapper
+	public interface ITrustRelationshipInformationCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation this[int index]
