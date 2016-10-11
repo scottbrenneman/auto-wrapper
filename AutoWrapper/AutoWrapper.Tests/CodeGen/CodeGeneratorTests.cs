@@ -52,7 +52,7 @@ namespace AutoWrapper.Tests.CodeGen
 			When(Generating, Compiling);
 
 			Then.GeneratedType.Should().HaveMethod("Function1", new[] { typeof(int) });
-			Then.GeneratedType.Should().HaveMethod("Function2", new[] { typeof(bool), typeof(object) });
+			Then.GeneratedType.Should().HaveMethod("Function2", new[] { typeof(bool?), typeof(Tuple<string, int>) });
 			Then.GeneratedType.Should().HaveMethod("Function3", new[] { typeof(int), typeof(string) });
 		}
 

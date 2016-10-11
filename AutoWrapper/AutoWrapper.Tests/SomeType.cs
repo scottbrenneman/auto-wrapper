@@ -13,7 +13,7 @@ namespace AutoWrapper.Samples.WrapperForSomeType
 	
 	
 	// Interface for SomeTypeWrapper
-	internal interface ISomeTypeWrapper : System.IDisposable
+	public interface ISomeTypeWrapper : System.IDisposable
 	{
 		
 		bool Property1
@@ -39,9 +39,9 @@ namespace AutoWrapper.Samples.WrapperForSomeType
 		
 		void Function1(int x);
 		
-		int Function2(bool b, object o);
+		int Function2(System.Boolean? b, System.Tuple<System.String, System.Int32> o);
 		
-		System.Threading.Tasks.Task<string> Function3(int x, string s);
+		System.Threading.Tasks.Task<System.String> Function3(int x, string s);
 		
 		string Function4(out int x, ref string s, object o);
 		
@@ -95,29 +95,29 @@ namespace AutoWrapper.Samples.WrapperForSomeType
 			}
 		}
 		
-		public void Dispose()
-		{
-			_wrapped.Dispose();
-		}
-		
 		public void Function1(int x)
 		{
 			_wrapped.Function1(x);
 		}
 		
-		public int Function2(bool b, object o)
+		public int Function2(System.Boolean? b, System.Tuple<System.String, System.Int32> o)
 		{
 			return _wrapped.Function2(b, o);
 		}
 		
-		public System.Threading.Tasks.Task<string> Function3(int x, string s)
+		public async System.Threading.Tasks.Task<System.String> Function3(int x, string s)
 		{
-			return _wrapped.Function3(x, s);
+			return await _wrapped.Function3(x, s);
 		}
 		
 		public string Function4(out int x, ref string s, object o)
 		{
 			return _wrapped.Function4(out x, ref s, o);
+		}
+		
+		public void Dispose()
+		{
+			_wrapped.Dispose();
 		}
 		
 		public void InheritedFunction()

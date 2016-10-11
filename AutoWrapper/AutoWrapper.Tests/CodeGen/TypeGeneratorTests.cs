@@ -71,7 +71,7 @@ namespace AutoWrapper.Tests.CodeGen
 		InlineData(1, "Dispose", new string[0]),
 		InlineData(2, "Equals", new[] { "System.Object" }),
 		InlineData(3, "Function1", new [] { "System.Int32" }),
-		InlineData(4, "Function2", new[] { "System.Boolean", "System.Object" }),
+		InlineData(4, "Function2", new[] { "System.Boolean?", "System.Tuple<System.String, System.Int32>" }),
 		InlineData(5, "Function3", new[] { "System.Int32", "System.String" }),
 		InlineData(6, "Function4", new[] { "System.Int32", "System.String", "System.Object" }),
 		InlineData(7, "GetHashCode", new string[0]),

@@ -29,7 +29,7 @@ namespace AutoWrapper.CodeGen
 				IsPartial = _typeGeneratorOptions.UsePartial
 			};
 
-			generatedType.Comments.Add(new CodeCommentStatement($"wrapper for {type.FullName} in {type.Assembly.FullName}"));
+			generatedType.Comments.Add(new CodeCommentStatement($"wrapper for {type.GetName()} in {type.Assembly.FullName}"));
 
 			generatedType.BaseTypes.Add(WrappedTypeContainer.GetContractNameFor(type));
 
@@ -39,7 +39,7 @@ namespace AutoWrapper.CodeGen
 
 			GenerateProperties(type, generatedType);
 
-			generatedType.Members.Add(CreateWrappedProperty(type, true));
+			generatedType.Members.Add(CreateWrappedProperty(type, GenerateAs.Type));
 
 			return generatedType;
 		}
@@ -125,11 +125,15 @@ namespace AutoWrapper.CodeGen
 
 			foreach (var method in methods.Where(m => m.Name != "GetType"))
 			{
-				var memberMethod = method.ToMemberMethod();
+				var memberMethod = method.ToMemberMethod(GenerateAs.Type);
+
+				var targetVariable = method.IsAsync()
+					? new CodeVariableReferenceExpression("await " + WrappedFieldName)
+					: new CodeVariableReferenceExpression(WrappedFieldName);
 
 				var invokeExpression =
 					new CodeMethodInvokeExpression(
-						new CodeFieldReferenceExpression(This, WrappedFieldName),
+						targetVariable,
 						memberMethod.Name,
 						memberMethod.Parameters.OfType<CodeParameterDeclarationExpression>()
 							.Select(p => (CodeExpression) new CodeDirectionExpression(p.Direction, new CodeVariableReferenceExpression(p.Name)))
@@ -157,7 +161,7 @@ namespace AutoWrapper.CodeGen
 
 			constructor.Statements.Add(
 				new CodeAssignStatement(
-					new CodeFieldReferenceExpression(This, WrappedFieldName),
+					WrappedField,
 					new CodeArgumentReferenceExpression(WrappedVariableName))
 			);
 

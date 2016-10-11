@@ -30,7 +30,7 @@ namespace AutoWrapper.CodeGen
 			{
 				_provider.GenerateCodeFromCompileUnit(codeCompileUnit, writer, _options);
 
-				return writer.ToString().Replace("this.", string.Empty);
+				return writer.ToString();
 			}
 		}
 

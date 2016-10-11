@@ -17,12 +17,12 @@ namespace AutoWrapper.CodeGen
 				throw new ArgumentNullException(nameof(type));
 
 			if (WrappedTypeContainer.Registered(type) == false)
-				throw new InvalidOperationException($"Type '{type.FullName}' must be registered with an IWrappedTypeContainer before a declaration can be generated.");
+				throw new InvalidOperationException($"Type '{type.GetName()}' must be registered with an IWrappedTypeContainer before a declaration can be generated.");
 		}
 
 		public abstract CodeTypeDeclaration GenerateDeclaration(Type type);
 
-		protected CodeMemberProperty CreateWrappedProperty(Type type, bool withBody)
+		protected CodeMemberProperty CreateWrappedProperty(Type type, GenerateAs generateAs)
 		{
 			var property = new CodeMemberProperty()
 			{
@@ -32,7 +32,7 @@ namespace AutoWrapper.CodeGen
 				Attributes = MemberAttributes.Public | MemberAttributes.Final
 			};
 
-			if (withBody)
+			if (generateAs == GenerateAs.Type)
 			{
 				property.GetStatements.Add(new CodeMethodReturnStatement(WrappedField));
 			}
@@ -45,7 +45,8 @@ namespace AutoWrapper.CodeGen
 		protected const string WrappedVariableName = "wrapped", WrappedFieldName = "_wrapped", WrappedPropertyName = "Wrapped";
 
 
-		protected static readonly CodeThisReferenceExpression This = new CodeThisReferenceExpression();
-		protected static readonly CodeFieldReferenceExpression WrappedField = new CodeFieldReferenceExpression(This, WrappedFieldName);
+		protected static readonly CodeVariableReferenceExpression WrappedField = new CodeVariableReferenceExpression(WrappedFieldName);
+
+		//protected static readonly CodeFieldReferenceExpression WrappedField = new CodeFieldReferenceExpression(WrappedVariable, WrappedFieldName);
 	}
 }

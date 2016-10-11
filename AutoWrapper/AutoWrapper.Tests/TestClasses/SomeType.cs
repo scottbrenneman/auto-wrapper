@@ -9,7 +9,7 @@ namespace AutoWrapper.Tests.TestClasses
 	{
 		public void Function1(int x) { throw new NotImplementedException(); }
 
-		public int Function2(bool b, object o) { throw new NotImplementedException(); }
+		public int Function2(bool? b, Tuple<string, int> o) { throw new NotImplementedException(); }
 
 		public async Task<string> Function3(int x, string s) { throw new NotImplementedException(); }
 

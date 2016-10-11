@@ -3,6 +3,7 @@ using FluentAssertions;
 using GwtUnit.XUnit;
 using System;
 using System.CodeDom;
+using System.Collections.Generic;
 using System.Reflection;
 using AutoWrapper.Tests.TestClasses;
 using Xunit;
@@ -44,9 +45,9 @@ namespace AutoWrapper.Tests.CodeGen
 			
 			When(CreatingMemberMethod);
 
-			Then.MemberMethod.Parameters[0].Type.BaseType.Should().Be("System.Boolean");
+			Then.MemberMethod.Parameters[0].Type.BaseType.Should().Be("System.Boolean?");
 			Then.MemberMethod.Parameters[0].Name.Should().Be("b");
-			Then.MemberMethod.Parameters[1].Type.BaseType.Should().Be("System.Object");
+			Then.MemberMethod.Parameters[1].Type.BaseType.Should().Be("System.Tuple<System.String, System.Int32>");
 			Then.MemberMethod.Parameters[1].Name.Should().Be("o");
 		}
 
@@ -88,7 +89,7 @@ namespace AutoWrapper.Tests.CodeGen
 
 		private void CreatingMemberMethod()
 		{
-			Func<MethodInfo, CodeMemberMethod> func = m => m.ToMemberMethod();
+			Func<MethodInfo, CodeMemberMethod> func = m => m.ToMemberMethod(GenerateAs.Type);
 
 			Then.MemberMethod = func(Given.MethodInfo);
 		}
@@ -156,6 +157,24 @@ namespace AutoWrapper.Tests.CodeGen
 			Then.MemberProperty2.HasSet.Should().BeFalse();
 		}
 
+		[Theory,
+		InlineData(typeof(object), "System.Object"),
+		InlineData(typeof(void), "System.Void"),
+		InlineData(typeof(int), "System.Int32"),
+		InlineData(typeof(bool), "System.Boolean"),
+		InlineData(typeof(string), "System.String"),
+		InlineData(typeof(int?), "System.Int32?"),
+		InlineData(typeof(IEnumerable<Tuple<int?, Tuple<string, bool?>>>), "System.Collections.Generic.IEnumerable<System.Tuple<System.Int32?, System.Tuple<System.String, System.Boolean?>>>")
+		]
+		public void ShouldHaveName_WhenGettingName_GivenType(Type givenType, string expectedName)
+		{
+			Given.Type = givenType;
+
+			When(GettingTypeName);
+
+			Then.ActualName.Should().Be(expectedName);
+		}
+
 		private void CreatingMemberProperty()
 		{
 			Func<PropertyInfo, CodeMemberProperty> func = p => p.ToMemberProperty();
@@ -164,6 +183,11 @@ namespace AutoWrapper.Tests.CodeGen
 			Then.MemberProperty2 = func(Given.PropertyInfo2);
 		}
 		#endregion
+
+		private void GettingTypeName()
+		{
+			Then.ActualName = ((Type)Given.Type).GetName();
+		}
 
 		protected override void Creating() { }
 
@@ -174,6 +198,7 @@ namespace AutoWrapper.Tests.CodeGen
 
 			public CodeMemberProperty MemberProperty1;
 			public CodeMemberProperty MemberProperty2;
+			public string ActualName;
 		}
 	}
 }

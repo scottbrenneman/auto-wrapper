@@ -69,19 +69,18 @@ namespace AutoWrapper.Tests.CodeGen
 			Then.CodeTypeDeclaration.Name.Should().Be("CustomContractName");
 		}
 
-
 		[Theory,
-		InlineData(0, "Equals", new[] { "System.Object" }),
-		InlineData(1, "Function1", new[] { "System.Int32" }),
-		InlineData(2, "Function2", new[] { "System.Boolean", "System.Object" }),
-		InlineData(3, "Function3", new[] { "System.Int32", "System.String" }),
-		InlineData(4, "Function4", new[] { "System.Int32", "System.String", "System.Object" }),
-		InlineData(5, "GetHashCode", new string[0]),
-		InlineData(6, "GetType", new string[0]),
-		InlineData(7, "InheritedFunction", new string[0]),
-		InlineData(8, "ToString", new string[0])
+		InlineData(0, "Equals", "System.Boolean", new[] { "System.Object" }),
+		InlineData(1, "Function1", "System.Void", new[] { "System.Int32" }),
+		InlineData(2, "Function2", "System.Int32", new[] { "System.Boolean?", "System.Tuple<System.String, System.Int32>" }),
+		InlineData(3, "Function3", "System.Threading.Tasks.Task<System.String>", new[] { "System.Int32", "System.String" }),
+		InlineData(4, "Function4", "System.String", new[] { "System.Int32", "System.String", "System.Object" }),
+		InlineData(5, "GetHashCode", "System.Int32", new string[0]),
+		InlineData(6, "GetType", "System.Type", new string[0]),
+		InlineData(7, "InheritedFunction", "System.Void", new string[0]),
+		InlineData(8, "ToString", "System.String", new string[0])
 		]
-		public void ShouldDeclareFunctions_WhenGenerating_GivenTypeWithFunctions(int index, string name, string[] parameterTypes)
+		public void ShouldDeclareFunctions_WhenGenerating_GivenTypeWithFunctions(int index, string name, string returnType, string[] parameterTypes)
 		{
 			Given.Type = typeof(SomeType);
 
@@ -90,6 +89,7 @@ namespace AutoWrapper.Tests.CodeGen
 			Then.Methods.Should().HaveCount(9);
 
 			Then.Methods[index].Name.Should().Be(name);
+			Then.Methods[index].ReturnType.BaseType.Should().Be(returnType);
 			Then.Methods[index].Parameters.Should().HaveCount(parameterTypes.Length);
 
 			for (var n = 0; n < parameterTypes.Length; n++)

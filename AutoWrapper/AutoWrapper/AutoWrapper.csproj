@@ -45,6 +45,7 @@
     <Compile Include="CodeGen\Contracts\ITypeGeneratorOptions.cs" />
     <Compile Include="CodeGen\Contracts\ITypeNamingStrategy.cs" />
     <Compile Include="CodeGen\Contracts\ICodeGenerator.cs" />
+    <Compile Include="CodeGen\GenerateAs.cs" />
     <Compile Include="CodeGen\GeneratorBase.cs" />
     <Compile Include="IWrappedTypeContainer.cs" />
     <Compile Include="CodeGen\TypeGeneratorOptions.cs" />

@@ -37,7 +37,7 @@ namespace AutoWrapper.CodeGen
 
 			GenerateProperties(type, contract);
 
-			contract.Members.Add(CreateWrappedProperty(type, false));
+			contract.Members.Add(CreateWrappedProperty(type, GenerateAs.Contract));
 
 			return contract;
 		}
@@ -60,7 +60,7 @@ namespace AutoWrapper.CodeGen
 			    .Where(m => _contractGeneratorOptions.IsExcluded(m) == false && m.Name != "Dispose");
 
 		    foreach (var method in methods)
-			    contract.Members.Add(method.ToMemberMethod());
+			    contract.Members.Add(method.ToMemberMethod(GenerateAs.Contract));
 	    }
     }
 }
