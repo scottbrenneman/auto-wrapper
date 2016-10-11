@@ -25,7 +25,7 @@ namespace AutoWrapper.Tests
 
 			When(RegisteringAssembly);
 
-			Then.Target.RegisteredTypes.Should().HaveCount(99);
+			Then.Target.RegisteredTypes.Should().HaveCount(97);
 		}
 
 		[Fact]
@@ -36,7 +36,7 @@ namespace AutoWrapper.Tests
 
 			When(RegisteringAssembly, Unregistering);
 
-			Then.Target.RegisteredTypes.Should().HaveCount(98);
+			Then.Target.RegisteredTypes.Should().HaveCount(96);
 		}
 
 		[Fact]

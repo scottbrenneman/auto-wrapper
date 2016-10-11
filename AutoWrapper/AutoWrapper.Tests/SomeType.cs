@@ -10,7 +10,6 @@
 
 namespace AutoWrapper.Samples.WrapperForSomeType
 {
-	using System;
 	
 	
 	// Interface for SomeTypeWrapper
@@ -49,6 +48,7 @@ namespace AutoWrapper.Samples.WrapperForSomeType
 		void InheritedFunction();
 	}
 	
+	// wrapper for AutoWrapper.Tests.TestClasses.SomeType in AutoWrapper.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 	public sealed partial class SomeTypeWrapper : ISomeTypeWrapper
 	{
 		

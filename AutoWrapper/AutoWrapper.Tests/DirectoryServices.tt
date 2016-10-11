@@ -5,4 +5,7 @@
 <#@ assembly name="System.DirectoryServices" #>
 <#@ import namespace="AutoWrapper" #>
 <#@ import namespace="System.DirectoryServices" #>
-<#= AutoWrap.TypesInAssemblyWith(typeof(DirectoryEntry), "AutoWrapper.Samples.WrappersForDirectoryServices") #>
+<# 
+	var container = new WrappedTypeContainer().RegisterAssemblyWithType(typeof(DirectoryEntry));
+#>
+<#= AutoWrap.GenerateCode("AutoWrapper.Samples.WrappersForDirectoryServices", container) #>

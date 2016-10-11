@@ -36,12 +36,12 @@ namespace AutoWrapper.CodeGen
 				contract.BaseTypes.Add(interfaceType.FullName);
 
 			var methodsDeclaredByInterfaces = interfaces
-				.Select(i => type.GetInterfaceMap(i))
+				.Select(type.GetInterfaceMap)
 				.SelectMany(m => m.TargetMethods)
 				.ToList();
 
 			var methods = type
-				.GetMethods(BindingFlags.Public | BindingFlags.Instance)
+				.GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly)
 				.Where(m => m.IsSpecialName == false)
 				.Where(m => _contractGeneratorOptions.IsExcluded(m) == false)
 				.Where(m => methodsDeclaredByInterfaces.Contains(m) == false);
@@ -49,9 +49,15 @@ namespace AutoWrapper.CodeGen
 			foreach (var method in methods)
 				contract.Members.Add(method.ToMemberMethod());
 
+			var propertiesDeclaredByInterfaces = interfaces
+				.Select(type.GetInterfaceMap)
+				.SelectMany(m => m.InterfaceType.GetProperties())
+				.ToList();
+
 			var properties = type
-				.GetProperties(BindingFlags.Public | BindingFlags.Instance)
-				.Where(p => _contractGeneratorOptions.IsExcluded(p) == false);
+				.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly)
+				.Where(p => _contractGeneratorOptions.IsExcluded(p) == false)
+				.Where(p => propertiesDeclaredByInterfaces.Contains(p) == false);
 
 			foreach (var property in properties)
 				contract.Members.Add(property.ToMemberProperty());

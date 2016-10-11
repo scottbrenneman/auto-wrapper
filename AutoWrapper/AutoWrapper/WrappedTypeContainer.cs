@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using AutoWrapper.CodeGen;
 using AutoWrapper.CodeGen.Contracts;
 
 namespace AutoWrapper
 {
+	
 	public sealed class WrappedTypeContainer : IWrappedTypeContainer
 	{
 		public WrappedTypeContainer(ITypeNamingStrategy typeNamingStrategy = null, IContractNamingStrategy contractNamingStrategy = null)
@@ -22,7 +24,7 @@ namespace AutoWrapper
 		public IWrappedTypeContainer RegisterAssembly(Assembly assembly)
 		{
 			var typeDefs = assembly.GetTypes()
-				.Where(t => t.IsClass && t.IsPublic && t.IsAbstract == false)
+				.Where(t => t.IsClass && t.IsPublic && t.IsAbstract == false && NotForbiddenBaseType(t))
 				.Select(t => new TypeDefinition(t, _typeNamingStrategy.TypeNameFor(t), _contractNamingStrategy.ContractNameFor(t)))
 				.ToArray();
 
@@ -32,6 +34,14 @@ namespace AutoWrapper
 			}
 
 			return this;
+		}
+
+		private static bool NotForbiddenBaseType(Type type)
+		{
+			if (type.IsGenericType)
+				type = type.GetGenericTypeDefinition();
+
+			return ! ForbiddenBaseTypes.Any(bt => bt.IsAssignableFrom(type));
 		}
 
 		public IWrappedTypeContainer RegisterAssemblyWithType(Type type)
@@ -105,6 +115,12 @@ namespace AutoWrapper
 		private readonly ITypeNamingStrategy _typeNamingStrategy;
 		private readonly IContractNamingStrategy _contractNamingStrategy;
 		private readonly Dictionary<Type, TypeDefinition> _typesToWrap;
+
+
+		public static readonly List<Type> ForbiddenBaseTypes = new List<Type>
+			{
+				typeof(_Attribute)
+			};
 
 		internal struct TypeDefinition
 		{

@@ -7,4 +7,7 @@
 <#@ import namespace="AutoWrapper" #>
 <#@ import namespace="AutoWrapper.Tests.TestClasses" #>
 <#@ import namespace="System.DirectoryServices" #>
-<#= AutoWrap.Type<SomeType>("AutoWrapper.Samples.WrapperForSomeType") #>
+<# 
+	var container = new WrappedTypeContainer().Register<SomeType>();
+#>
+<#= AutoWrap.GenerateCode("AutoWrapper.Samples.WrapperForSomeType", container) #>

@@ -43,7 +43,7 @@ namespace AutoWrapper.CodeGen
 
 			return generatedType;
 		}
-
+		
 		private static void GenerateProperties(IReflect type, CodeTypeDeclaration generatedType)
 		{
 			var properties = type.GetProperties(BindingFlags.Public | BindingFlags.Instance);

@@ -7,29 +7,7 @@ namespace AutoWrapper
 {
 	public static class AutoWrap
 	{
-		public static string Type<T>(string namespaceForWrappers)
-			where T: class
-		{
-			var container = new WrappedTypeContainer()
-				.Register<T>();
-
-			return GenerateCode(namespaceForWrappers, container);
-		}
-
-		public static string TypesInAssemblyWith(Type type, string namespaceForWrappers)
-		{
-			return TypesInAssembly(Assembly.GetAssembly(type), namespaceForWrappers);
-		}
-
-		public static string TypesInAssembly(Assembly assembly, string namespaceForWrappers)
-		{
-			var container = new WrappedTypeContainer()
-				.RegisterAssembly(assembly);
-
-			return GenerateCode(namespaceForWrappers, container);
-		}
-
-		private static string GenerateCode(string namespaceForWrappers, IWrappedTypeContainer container)
+		public static string GenerateCode(string namespaceForWrappers, IWrappedTypeContainer container)
 		{
 			var typeOptions = new TypeGeneratorOptions()
 				.WithPartial()
@@ -47,7 +25,6 @@ namespace AutoWrapper
 			var codeGenerator = new CodeGenerator();
 
 			var ns = new CodeNamespace(namespaceForWrappers);
-			ns.Imports.Add(new CodeNamespaceImport("System"));
 
 			foreach (var type in container.RegisteredTypes)
 			{
