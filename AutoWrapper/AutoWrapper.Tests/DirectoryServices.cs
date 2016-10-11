@@ -31,6 +31,26 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			get;
 		}
 		
+		bool AreAccessRulesProtected
+		{
+			get;
+		}
+		
+		bool AreAuditRulesProtected
+		{
+			get;
+		}
+		
+		bool AreAccessRulesCanonical
+		{
+			get;
+		}
+		
+		bool AreAuditRulesCanonical
+		{
+			get;
+		}
+		
 		System.DirectoryServices.ActiveDirectorySecurity Wrapped
 		{
 			get;
@@ -73,6 +93,34 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		System.Security.AccessControl.AuditRule AuditRuleFactory(System.Security.Principal.IdentityReference identityReference, int accessMask, bool isInherited, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags, System.Security.AccessControl.AuditFlags flags);
 		
 		System.Security.AccessControl.AuditRule AuditRuleFactory(System.Security.Principal.IdentityReference identityReference, int accessMask, bool isInherited, System.Security.AccessControl.InheritanceFlags inheritanceFlags, System.Security.AccessControl.PropagationFlags propagationFlags, System.Security.AccessControl.AuditFlags flags, System.Guid objectGuid, System.Guid inheritedObjectGuid);
+		
+		System.Security.AccessControl.AuthorizationRuleCollection GetAccessRules(bool includeExplicit, bool includeInherited, System.Type targetType);
+		
+		System.Security.AccessControl.AuthorizationRuleCollection GetAuditRules(bool includeExplicit, bool includeInherited, System.Type targetType);
+		
+		byte[] GetSecurityDescriptorBinaryForm();
+		
+		System.Security.Principal.IdentityReference GetOwner(System.Type targetType);
+		
+		void SetOwner(System.Security.Principal.IdentityReference identity);
+		
+		System.Security.Principal.IdentityReference GetGroup(System.Type targetType);
+		
+		void SetGroup(System.Security.Principal.IdentityReference identity);
+		
+		void SetAccessRuleProtection(bool isProtected, bool preserveInheritance);
+		
+		void SetAuditRuleProtection(bool isProtected, bool preserveInheritance);
+		
+		string GetSecurityDescriptorSddlForm(System.Security.AccessControl.AccessControlSections includeSections);
+		
+		void SetSecurityDescriptorSddlForm(string sddlForm);
+		
+		void SetSecurityDescriptorSddlForm(string sddlForm, System.Security.AccessControl.AccessControlSections includeSections);
+		
+		void SetSecurityDescriptorBinaryForm(byte[] binaryForm);
+		
+		void SetSecurityDescriptorBinaryForm(byte[] binaryForm, System.Security.AccessControl.AccessControlSections includeSections);
 	}
 	
 	// Interface for ActiveDirectoryAccessRuleWrapper
@@ -89,6 +137,46 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			get;
 		}
 		
+		System.Guid ObjectType
+		{
+			get;
+		}
+		
+		System.Guid InheritedObjectType
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.ObjectAceFlags ObjectFlags
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.AccessControlType AccessControlType
+		{
+			get;
+		}
+		
+		System.Security.Principal.IdentityReference IdentityReference
+		{
+			get;
+		}
+		
+		bool IsInherited
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.InheritanceFlags InheritanceFlags
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.PropagationFlags PropagationFlags
+		{
+			get;
+		}
+		
 		System.DirectoryServices.ActiveDirectoryAccessRule Wrapped
 		{
 			get;
@@ -98,6 +186,56 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	// Interface for ListChildrenAccessRuleWrapper
 	internal interface IListChildrenAccessRuleWrapper
 	{
+		
+		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
+		{
+			get;
+		}
+		
+		System.DirectoryServices.ActiveDirectorySecurityInheritance InheritanceType
+		{
+			get;
+		}
+		
+		System.Guid ObjectType
+		{
+			get;
+		}
+		
+		System.Guid InheritedObjectType
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.ObjectAceFlags ObjectFlags
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.AccessControlType AccessControlType
+		{
+			get;
+		}
+		
+		System.Security.Principal.IdentityReference IdentityReference
+		{
+			get;
+		}
+		
+		bool IsInherited
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.InheritanceFlags InheritanceFlags
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.PropagationFlags PropagationFlags
+		{
+			get;
+		}
 		
 		System.DirectoryServices.ListChildrenAccessRule Wrapped
 		{
@@ -109,6 +247,56 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	internal interface ICreateChildAccessRuleWrapper
 	{
 		
+		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
+		{
+			get;
+		}
+		
+		System.DirectoryServices.ActiveDirectorySecurityInheritance InheritanceType
+		{
+			get;
+		}
+		
+		System.Guid ObjectType
+		{
+			get;
+		}
+		
+		System.Guid InheritedObjectType
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.ObjectAceFlags ObjectFlags
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.AccessControlType AccessControlType
+		{
+			get;
+		}
+		
+		System.Security.Principal.IdentityReference IdentityReference
+		{
+			get;
+		}
+		
+		bool IsInherited
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.InheritanceFlags InheritanceFlags
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.PropagationFlags PropagationFlags
+		{
+			get;
+		}
+		
 		System.DirectoryServices.CreateChildAccessRule Wrapped
 		{
 			get;
@@ -118,6 +306,56 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	// Interface for DeleteChildAccessRuleWrapper
 	internal interface IDeleteChildAccessRuleWrapper
 	{
+		
+		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
+		{
+			get;
+		}
+		
+		System.DirectoryServices.ActiveDirectorySecurityInheritance InheritanceType
+		{
+			get;
+		}
+		
+		System.Guid ObjectType
+		{
+			get;
+		}
+		
+		System.Guid InheritedObjectType
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.ObjectAceFlags ObjectFlags
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.AccessControlType AccessControlType
+		{
+			get;
+		}
+		
+		System.Security.Principal.IdentityReference IdentityReference
+		{
+			get;
+		}
+		
+		bool IsInherited
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.InheritanceFlags InheritanceFlags
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.PropagationFlags PropagationFlags
+		{
+			get;
+		}
 		
 		System.DirectoryServices.DeleteChildAccessRule Wrapped
 		{
@@ -129,6 +367,56 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	internal interface IPropertyAccessRuleWrapper
 	{
 		
+		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
+		{
+			get;
+		}
+		
+		System.DirectoryServices.ActiveDirectorySecurityInheritance InheritanceType
+		{
+			get;
+		}
+		
+		System.Guid ObjectType
+		{
+			get;
+		}
+		
+		System.Guid InheritedObjectType
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.ObjectAceFlags ObjectFlags
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.AccessControlType AccessControlType
+		{
+			get;
+		}
+		
+		System.Security.Principal.IdentityReference IdentityReference
+		{
+			get;
+		}
+		
+		bool IsInherited
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.InheritanceFlags InheritanceFlags
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.PropagationFlags PropagationFlags
+		{
+			get;
+		}
+		
 		System.DirectoryServices.PropertyAccessRule Wrapped
 		{
 			get;
@@ -138,6 +426,56 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	// Interface for PropertySetAccessRuleWrapper
 	internal interface IPropertySetAccessRuleWrapper
 	{
+		
+		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
+		{
+			get;
+		}
+		
+		System.DirectoryServices.ActiveDirectorySecurityInheritance InheritanceType
+		{
+			get;
+		}
+		
+		System.Guid ObjectType
+		{
+			get;
+		}
+		
+		System.Guid InheritedObjectType
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.ObjectAceFlags ObjectFlags
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.AccessControlType AccessControlType
+		{
+			get;
+		}
+		
+		System.Security.Principal.IdentityReference IdentityReference
+		{
+			get;
+		}
+		
+		bool IsInherited
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.InheritanceFlags InheritanceFlags
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.PropagationFlags PropagationFlags
+		{
+			get;
+		}
 		
 		System.DirectoryServices.PropertySetAccessRule Wrapped
 		{
@@ -149,6 +487,56 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	internal interface IExtendedRightAccessRuleWrapper
 	{
 		
+		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
+		{
+			get;
+		}
+		
+		System.DirectoryServices.ActiveDirectorySecurityInheritance InheritanceType
+		{
+			get;
+		}
+		
+		System.Guid ObjectType
+		{
+			get;
+		}
+		
+		System.Guid InheritedObjectType
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.ObjectAceFlags ObjectFlags
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.AccessControlType AccessControlType
+		{
+			get;
+		}
+		
+		System.Security.Principal.IdentityReference IdentityReference
+		{
+			get;
+		}
+		
+		bool IsInherited
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.InheritanceFlags InheritanceFlags
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.PropagationFlags PropagationFlags
+		{
+			get;
+		}
+		
 		System.DirectoryServices.ExtendedRightAccessRule Wrapped
 		{
 			get;
@@ -158,6 +546,56 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	// Interface for DeleteTreeAccessRuleWrapper
 	internal interface IDeleteTreeAccessRuleWrapper
 	{
+		
+		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
+		{
+			get;
+		}
+		
+		System.DirectoryServices.ActiveDirectorySecurityInheritance InheritanceType
+		{
+			get;
+		}
+		
+		System.Guid ObjectType
+		{
+			get;
+		}
+		
+		System.Guid InheritedObjectType
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.ObjectAceFlags ObjectFlags
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.AccessControlType AccessControlType
+		{
+			get;
+		}
+		
+		System.Security.Principal.IdentityReference IdentityReference
+		{
+			get;
+		}
+		
+		bool IsInherited
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.InheritanceFlags InheritanceFlags
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.PropagationFlags PropagationFlags
+		{
+			get;
+		}
 		
 		System.DirectoryServices.DeleteTreeAccessRule Wrapped
 		{
@@ -179,6 +617,46 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			get;
 		}
 		
+		System.Guid ObjectType
+		{
+			get;
+		}
+		
+		System.Guid InheritedObjectType
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.ObjectAceFlags ObjectFlags
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.AuditFlags AuditFlags
+		{
+			get;
+		}
+		
+		System.Security.Principal.IdentityReference IdentityReference
+		{
+			get;
+		}
+		
+		bool IsInherited
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.InheritanceFlags InheritanceFlags
+		{
+			get;
+		}
+		
+		System.Security.AccessControl.PropagationFlags PropagationFlags
+		{
+			get;
+		}
+		
 		System.DirectoryServices.ActiveDirectoryAuditRule Wrapped
 		{
 			get;
@@ -186,7 +664,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryEntriesWrapper
-	internal interface IDirectoryEntriesWrapper : System.Collections.IEnumerable
+	internal interface IDirectoryEntriesWrapper
 	{
 		
 		System.DirectoryServices.SchemaNameCollection SchemaFilter
@@ -206,10 +684,12 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		System.DirectoryServices.DirectoryEntry Find(string name, string schemaClassName);
 		
 		void Remove(System.DirectoryServices.DirectoryEntry entry);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for DirectoryEntryWrapper
-	internal interface IDirectoryEntryWrapper : System.ComponentModel.IComponent, System.IDisposable
+	internal interface IDirectoryEntryWrapper : System.IDisposable
 	{
 		
 		System.DirectoryServices.AuthenticationTypes AuthenticationType
@@ -297,6 +777,17 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			get;
 		}
 		
+		System.ComponentModel.ISite Site
+		{
+			get;
+			set;
+		}
+		
+		System.ComponentModel.IContainer Container
+		{
+			get;
+		}
+		
 		System.DirectoryServices.DirectoryEntry Wrapped
 		{
 			get;
@@ -327,6 +818,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		void RefreshCache(string[] propertyNames);
 		
 		void Rename(string newName);
+		
+		string ToString();
+		
+		object GetLifetimeService();
+		
+		object InitializeLifetimeService();
+		
+		System.Runtime.Remoting.ObjRef CreateObjRef(System.Type requestedType);
 	}
 	
 	// Interface for DirectoryEntryConfigurationWrapper
@@ -376,7 +875,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectorySearcherWrapper
-	internal interface IDirectorySearcherWrapper : System.ComponentModel.IComponent, System.IDisposable
+	internal interface IDirectorySearcherWrapper : System.IDisposable
 	{
 		
 		bool CacheResults
@@ -504,6 +1003,17 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			set;
 		}
 		
+		System.ComponentModel.ISite Site
+		{
+			get;
+			set;
+		}
+		
+		System.ComponentModel.IContainer Container
+		{
+			get;
+		}
+		
 		System.DirectoryServices.DirectorySearcher Wrapped
 		{
 			get;
@@ -512,10 +1022,18 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		System.DirectoryServices.SearchResult FindOne();
 		
 		System.DirectoryServices.SearchResultCollection FindAll();
+		
+		string ToString();
+		
+		object GetLifetimeService();
+		
+		object InitializeLifetimeService();
+		
+		System.Runtime.Remoting.ObjRef CreateObjRef(System.Type requestedType);
 	}
 	
 	// Interface for DirectoryServicesPermissionWrapper
-	internal interface IDirectoryServicesPermissionWrapper : System.Security.IPermission, System.Security.ISecurityEncodable, System.Security.IStackWalk, System.Security.Permissions.IUnrestrictedPermission
+	internal interface IDirectoryServicesPermissionWrapper
 	{
 		
 		System.DirectoryServices.DirectoryServicesPermissionEntryCollection PermissionEntries
@@ -527,6 +1045,34 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get;
 		}
+		
+		System.Security.IPermission Copy();
+		
+		void FromXml(System.Security.SecurityElement securityElement);
+		
+		System.Security.IPermission Intersect(System.Security.IPermission target);
+		
+		bool IsSubsetOf(System.Security.IPermission target);
+		
+		bool IsUnrestricted();
+		
+		System.Security.SecurityElement ToXml();
+		
+		System.Security.IPermission Union(System.Security.IPermission target);
+		
+		void Demand();
+		
+		void Assert();
+		
+		void Deny();
+		
+		void PermitOnly();
+		
+		string ToString();
+		
+		bool Equals(object obj);
+		
+		int GetHashCode();
 	}
 	
 	// Interface for DirectoryServicesPermissionEntryWrapper
@@ -550,13 +1096,24 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryServicesPermissionEntryCollectionWrapper
-	internal interface IDirectoryServicesPermissionEntryCollectionWrapper : System.Collections.IList, System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IDirectoryServicesPermissionEntryCollectionWrapper
 	{
 		
 		System.DirectoryServices.DirectoryServicesPermissionEntry this[int index]
 		{
 			get;
 			set;
+		}
+		
+		int Capacity
+		{
+			get;
+			set;
+		}
+		
+		int Count
+		{
+			get;
 		}
 		
 		System.DirectoryServices.DirectoryServicesPermissionEntryCollection Wrapped
@@ -579,6 +1136,12 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		void Insert(int index, System.DirectoryServices.DirectoryServicesPermissionEntry value);
 		
 		void Remove(System.DirectoryServices.DirectoryServicesPermissionEntry value);
+		
+		void Clear();
+		
+		void RemoveAt(int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for DirectorySynchronizationWrapper
@@ -670,7 +1233,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for PropertyCollectionWrapper
-	internal interface IPropertyCollectionWrapper : System.Collections.IDictionary, System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IPropertyCollectionWrapper
 	{
 		
 		System.DirectoryServices.PropertyValueCollection this[string propertyName]
@@ -701,10 +1264,12 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		bool Contains(string propertyName);
 		
 		void CopyTo(System.DirectoryServices.PropertyValueCollection[] array, int index);
+		
+		System.Collections.IDictionaryEnumerator GetEnumerator();
 	}
 	
 	// Interface for PropertyValueCollectionWrapper
-	internal interface IPropertyValueCollectionWrapper : System.Collections.IList, System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IPropertyValueCollectionWrapper
 	{
 		
 		object this[int index]
@@ -722,6 +1287,17 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get;
 			set;
+		}
+		
+		int Capacity
+		{
+			get;
+			set;
+		}
+		
+		int Count
+		{
+			get;
 		}
 		
 		System.DirectoryServices.PropertyValueCollection Wrapped
@@ -744,10 +1320,16 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		void Insert(int index, object value);
 		
 		void Remove(object value);
+		
+		void Clear();
+		
+		void RemoveAt(int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for ResultPropertyCollectionWrapper
-	internal interface IResultPropertyCollectionWrapper : System.Collections.IDictionary, System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IResultPropertyCollectionWrapper
 	{
 		
 		System.DirectoryServices.ResultPropertyValueCollection this[string name]
@@ -765,6 +1347,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			get;
 		}
 		
+		int Count
+		{
+			get;
+		}
+		
 		System.DirectoryServices.ResultPropertyCollection Wrapped
 		{
 			get;
@@ -773,13 +1360,24 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		bool Contains(string propertyName);
 		
 		void CopyTo(System.DirectoryServices.ResultPropertyValueCollection[] array, int index);
+		
+		void CopyTo(System.Array array, int index);
+		
+		void Clear();
+		
+		System.Collections.IDictionaryEnumerator GetEnumerator();
 	}
 	
 	// Interface for ResultPropertyValueCollectionWrapper
-	internal interface IResultPropertyValueCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IResultPropertyValueCollectionWrapper
 	{
 		
 		object this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -794,10 +1392,12 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(object value);
 		
 		void CopyTo(object[] values, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for SchemaNameCollectionWrapper
-	internal interface ISchemaNameCollectionWrapper : System.Collections.IList, System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface ISchemaNameCollectionWrapper
 	{
 		
 		string this[int index]
@@ -822,15 +1422,21 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		
 		void AddRange(System.DirectoryServices.SchemaNameCollection value);
 		
+		void Clear();
+		
 		bool Contains(string value);
 		
 		void CopyTo(string[] stringArray, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 		
 		int IndexOf(string value);
 		
 		void Insert(int index, string value);
 		
 		void Remove(string value);
+		
+		void RemoveAt(int index);
 	}
 	
 	// Interface for SearchResultWrapper
@@ -856,7 +1462,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for SearchResultCollectionWrapper
-	internal interface ISearchResultCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable, System.IDisposable
+	internal interface ISearchResultCollectionWrapper : System.IDisposable
 	{
 		
 		System.DirectoryServices.SearchResult this[int index]
@@ -884,11 +1490,19 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			get;
 		}
 		
+		System.Collections.IEnumerator GetEnumerator();
+		
 		bool Contains(System.DirectoryServices.SearchResult result);
 		
 		void CopyTo(System.DirectoryServices.SearchResult[] results, int index);
 		
 		int IndexOf(System.DirectoryServices.SearchResult result);
+		
+		object GetLifetimeService();
+		
+		object InitializeLifetimeService();
+		
+		System.Runtime.Remoting.ObjRef CreateObjRef(System.Type requestedType);
 	}
 	
 	// Interface for SortOptionWrapper
@@ -914,7 +1528,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryServicesCOMExceptionWrapper
-	internal interface IDirectoryServicesCOMExceptionWrapper : System.Runtime.Serialization.ISerializable, System.Runtime.InteropServices._Exception
+	internal interface IDirectoryServicesCOMExceptionWrapper
 	{
 		
 		int ExtendedError
@@ -927,14 +1541,69 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			get;
 		}
 		
+		int ErrorCode
+		{
+			get;
+		}
+		
+		string Message
+		{
+			get;
+		}
+		
+		System.Collections.IDictionary Data
+		{
+			get;
+		}
+		
+		System.Exception InnerException
+		{
+			get;
+		}
+		
+		System.Reflection.MethodBase TargetSite
+		{
+			get;
+		}
+		
+		string StackTrace
+		{
+			get;
+		}
+		
+		string HelpLink
+		{
+			get;
+			set;
+		}
+		
+		string Source
+		{
+			get;
+			set;
+		}
+		
+		int HResult
+		{
+			get;
+		}
+		
 		System.DirectoryServices.DirectoryServicesCOMException Wrapped
 		{
 			get;
 		}
+		
+		void GetObjectData(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);
+		
+		string ToString();
+		
+		System.Exception GetBaseException();
+		
+		System.Type GetType();
 	}
 	
 	// Interface for ActiveDirectoryReplicationMetadataWrapper
-	internal interface IActiveDirectoryReplicationMetadataWrapper : System.Collections.IDictionary, System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IActiveDirectoryReplicationMetadataWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.AttributeMetadata this[string name]
@@ -952,6 +1621,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			get;
 		}
 		
+		int Count
+		{
+			get;
+		}
+		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata Wrapped
 		{
 			get;
@@ -960,6 +1634,12 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		bool Contains(string attributeName);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.AttributeMetadata[] array, int index);
+		
+		void CopyTo(System.Array array, int index);
+		
+		void Clear();
+		
+		System.Collections.IDictionaryEnumerator GetEnumerator();
 	}
 	
 	// Interface for ActiveDirectoryScheduleWrapper
@@ -995,6 +1675,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			get;
 		}
 		
+		string Name
+		{
+			get;
+		}
+		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySchema Wrapped
 		{
 			get;
@@ -1023,6 +1708,8 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaPropertyCollection FindAllDefunctProperties();
 		
 		System.DirectoryServices.DirectoryEntry GetDirectoryEntry();
+		
+		string ToString();
 	}
 	
 	// Interface for ActiveDirectorySchemaClassWrapper
@@ -1122,13 +1809,24 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySchemaClassCollectionWrapper
-	internal interface IActiveDirectorySchemaClassCollectionWrapper : System.Collections.IList, System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IActiveDirectorySchemaClassCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass this[int index]
 		{
 			get;
 			set;
+		}
+		
+		int Capacity
+		{
+			get;
+			set;
+		}
+		
+		int Count
+		{
+			get;
 		}
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClassCollection Wrapped
@@ -1153,6 +1851,12 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass[] schemaClasses, int index);
 		
 		int IndexOf(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass schemaClass);
+		
+		void Clear();
+		
+		void RemoveAt(int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for ActiveDirectorySchemaPropertyWrapper
@@ -1278,13 +1982,24 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySchemaPropertyCollectionWrapper
-	internal interface IActiveDirectorySchemaPropertyCollectionWrapper : System.Collections.IList, System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IActiveDirectorySchemaPropertyCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty this[int index]
 		{
 			get;
 			set;
+		}
+		
+		int Capacity
+		{
+			get;
+			set;
+		}
+		
+		int Count
+		{
+			get;
 		}
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaPropertyCollection Wrapped
@@ -1309,6 +2024,12 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty[] properties, int index);
 		
 		int IndexOf(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty schemaProperty);
+		
+		void Clear();
+		
+		void RemoveAt(int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for ActiveDirectorySiteWrapper
@@ -1399,13 +2120,24 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySiteCollectionWrapper
-	internal interface IActiveDirectorySiteCollectionWrapper : System.Collections.IList, System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IActiveDirectorySiteCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySite this[int index]
 		{
 			get;
 			set;
+		}
+		
+		int Capacity
+		{
+			get;
+			set;
+		}
+		
+		int Count
+		{
+			get;
 		}
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteCollection Wrapped
@@ -1428,6 +2160,12 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		void Insert(int index, System.DirectoryServices.ActiveDirectory.ActiveDirectorySite site);
 		
 		void Remove(System.DirectoryServices.ActiveDirectory.ActiveDirectorySite site);
+		
+		void Clear();
+		
+		void RemoveAt(int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for ActiveDirectorySiteLinkWrapper
@@ -1533,13 +2271,24 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySiteLinkCollectionWrapper
-	internal interface IActiveDirectorySiteLinkCollectionWrapper : System.Collections.IList, System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IActiveDirectorySiteLinkCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink this[int index]
 		{
 			get;
 			set;
+		}
+		
+		int Capacity
+		{
+			get;
+			set;
+		}
+		
+		int Count
+		{
+			get;
 		}
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkCollection Wrapped
@@ -1562,6 +2311,12 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		void Insert(int index, System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink link);
 		
 		void Remove(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink link);
+		
+		void Clear();
+		
+		void RemoveAt(int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for ActiveDirectorySubnetWrapper
@@ -1600,13 +2355,24 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySubnetCollectionWrapper
-	internal interface IActiveDirectorySubnetCollectionWrapper : System.Collections.IList, System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IActiveDirectorySubnetCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet this[int index]
 		{
 			get;
 			set;
+		}
+		
+		int Capacity
+		{
+			get;
+			set;
+		}
+		
+		int Count
+		{
+			get;
 		}
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnetCollection Wrapped
@@ -1629,6 +2395,12 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		void Insert(int index, System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet subnet);
 		
 		void Remove(System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet subnet);
+		
+		void Clear();
+		
+		void RemoveAt(int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for AdamInstanceWrapper
@@ -1692,6 +2464,16 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			get;
 		}
 		
+		string Name
+		{
+			get;
+		}
+		
+		System.DirectoryServices.ActiveDirectory.ReadOnlyStringCollection Partitions
+		{
+			get;
+		}
+		
 		System.DirectoryServices.ActiveDirectory.AdamInstance Wrapped
 		{
 			get;
@@ -1722,13 +2504,24 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		void SyncReplicaFromAllServers(string partition, System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions options);
 		
 		void Save();
+		
+		string ToString();
+		
+		void MoveToAnotherSite(string siteName);
+		
+		System.DirectoryServices.DirectoryEntry GetDirectoryEntry();
 	}
 	
 	// Interface for AdamInstanceCollectionWrapper
-	internal interface IAdamInstanceCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IAdamInstanceCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.AdamInstance this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -1743,6 +2536,8 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(System.DirectoryServices.ActiveDirectory.AdamInstance adamInstance);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.AdamInstance[] adamInstances, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for ApplicationPartitionWrapper
@@ -1758,6 +2553,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get;
 			set;
+		}
+		
+		string Name
+		{
+			get;
 		}
 		
 		System.DirectoryServices.ActiveDirectory.ApplicationPartition Wrapped
@@ -1786,13 +2586,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		void Save();
 		
 		System.DirectoryServices.DirectoryEntry GetDirectoryEntry();
+		
+		string ToString();
 	}
 	
 	// Interface for ApplicationPartitionCollectionWrapper
-	internal interface IApplicationPartitionCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IApplicationPartitionCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ApplicationPartition this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -1807,6 +2614,8 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(System.DirectoryServices.ActiveDirectory.ApplicationPartition applicationPartition);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.ApplicationPartition[] applicationPartitions, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for AttributeMetadataWrapper
@@ -1855,10 +2664,15 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for AttributeMetadataCollectionWrapper
-	internal interface IAttributeMetadataCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IAttributeMetadataCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.AttributeMetadata this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -1873,6 +2687,8 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(System.DirectoryServices.ActiveDirectory.AttributeMetadata metadata);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.AttributeMetadata[] metadata, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for ConfigurationSetWrapper
@@ -1918,8 +2734,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get;
 		}
-		
-		void Dispose();
 		
 		System.DirectoryServices.ActiveDirectory.AdamInstance FindAdamInstance();
 		
@@ -1968,13 +2782,24 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryServerCollectionWrapper
-	internal interface IDirectoryServerCollectionWrapper : System.Collections.IList, System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IDirectoryServerCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.DirectoryServer this[int index]
 		{
 			get;
 			set;
+		}
+		
+		int Capacity
+		{
+			get;
+			set;
+		}
+		
+		int Count
+		{
+			get;
 		}
 		
 		System.DirectoryServices.ActiveDirectory.DirectoryServerCollection Wrapped
@@ -1995,6 +2820,12 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		void Insert(int index, System.DirectoryServices.ActiveDirectory.DirectoryServer server);
 		
 		void Remove(System.DirectoryServices.ActiveDirectory.DirectoryServer server);
+		
+		void Clear();
+		
+		void RemoveAt(int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for DomainWrapper
@@ -2042,6 +2873,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 		
 		System.DirectoryServices.ActiveDirectory.DomainController InfrastructureRoleOwner
+		{
+			get;
+		}
+		
+		string Name
 		{
 			get;
 		}
@@ -2104,13 +2940,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		void UpdateTrustRelationship(System.DirectoryServices.ActiveDirectory.Domain targetDomain, System.DirectoryServices.ActiveDirectory.TrustDirection newTrustDirection);
 		
 		void RepairTrustRelationship(System.DirectoryServices.ActiveDirectory.Domain targetDomain);
+		
+		string ToString();
 	}
 	
 	// Interface for DomainCollectionWrapper
-	internal interface IDomainCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IDomainCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.Domain this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -2125,11 +2968,23 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(System.DirectoryServices.ActiveDirectory.Domain domain);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.Domain[] domains, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for SyncUpdateCallbackWrapper
-	internal interface ISyncUpdateCallbackWrapper : System.ICloneable, System.Runtime.Serialization.ISerializable
+	internal interface ISyncUpdateCallbackWrapper
 	{
+		
+		System.Reflection.MethodInfo Method
+		{
+			get;
+		}
+		
+		object Target
+		{
+			get;
+		}
 		
 		System.DirectoryServices.ActiveDirectory.SyncUpdateCallback Wrapped
 		{
@@ -2141,6 +2996,18 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		System.IAsyncResult BeginInvoke(System.DirectoryServices.ActiveDirectory.SyncFromAllServersEvent eventType, string targetServer, string sourceServer, System.DirectoryServices.ActiveDirectory.SyncFromAllServersOperationException exception, System.AsyncCallback callback, object @object);
 		
 		bool EndInvoke(System.IAsyncResult result);
+		
+		void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);
+		
+		bool Equals(object obj);
+		
+		System.Delegate[] GetInvocationList();
+		
+		int GetHashCode();
+		
+		object DynamicInvoke(object[] args);
+		
+		object Clone();
 	}
 	
 	// Interface for DomainControllerWrapper
@@ -2203,6 +3070,16 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			get;
 		}
 		
+		string Name
+		{
+			get;
+		}
+		
+		System.DirectoryServices.ActiveDirectory.ReadOnlyStringCollection Partitions
+		{
+			get;
+		}
+		
 		System.DirectoryServices.ActiveDirectory.DomainController Wrapped
 		{
 			get;
@@ -2237,13 +3114,24 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		void TriggerSyncReplicaFromNeighbors(string partition);
 		
 		void SyncReplicaFromAllServers(string partition, System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions options);
+		
+		string ToString();
+		
+		void MoveToAnotherSite(string siteName);
+		
+		System.DirectoryServices.DirectoryEntry GetDirectoryEntry();
 	}
 	
 	// Interface for DomainControllerCollectionWrapper
-	internal interface IDomainControllerCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IDomainControllerCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.DomainController this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -2258,6 +3146,8 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(System.DirectoryServices.ActiveDirectory.DomainController domainController);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.DomainController[] domainControllers, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for SyncFromAllServersErrorInformationWrapper
@@ -2296,7 +3186,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryObjectNotFoundExceptionWrapper
-	internal interface IActiveDirectoryObjectNotFoundExceptionWrapper : System.Runtime.Serialization.ISerializable, System.Runtime.InteropServices._Exception
+	internal interface IActiveDirectoryObjectNotFoundExceptionWrapper
 	{
 		
 		System.Type Type
@@ -2309,17 +3199,109 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			get;
 		}
 		
+		string Message
+		{
+			get;
+		}
+		
+		System.Collections.IDictionary Data
+		{
+			get;
+		}
+		
+		System.Exception InnerException
+		{
+			get;
+		}
+		
+		System.Reflection.MethodBase TargetSite
+		{
+			get;
+		}
+		
+		string StackTrace
+		{
+			get;
+		}
+		
+		string HelpLink
+		{
+			get;
+			set;
+		}
+		
+		string Source
+		{
+			get;
+			set;
+		}
+		
+		int HResult
+		{
+			get;
+		}
+		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException Wrapped
 		{
 			get;
 		}
+		
+		void GetObjectData(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);
+		
+		System.Exception GetBaseException();
+		
+		string ToString();
+		
+		System.Type GetType();
 	}
 	
 	// Interface for ActiveDirectoryOperationExceptionWrapper
-	internal interface IActiveDirectoryOperationExceptionWrapper : System.Runtime.Serialization.ISerializable, System.Runtime.InteropServices._Exception
+	internal interface IActiveDirectoryOperationExceptionWrapper
 	{
 		
 		int ErrorCode
+		{
+			get;
+		}
+		
+		string Message
+		{
+			get;
+		}
+		
+		System.Collections.IDictionary Data
+		{
+			get;
+		}
+		
+		System.Exception InnerException
+		{
+			get;
+		}
+		
+		System.Reflection.MethodBase TargetSite
+		{
+			get;
+		}
+		
+		string StackTrace
+		{
+			get;
+		}
+		
+		string HelpLink
+		{
+			get;
+			set;
+		}
+		
+		string Source
+		{
+			get;
+			set;
+		}
+		
+		int HResult
 		{
 			get;
 		}
@@ -2328,10 +3310,18 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get;
 		}
+		
+		void GetObjectData(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);
+		
+		System.Exception GetBaseException();
+		
+		string ToString();
+		
+		System.Type GetType();
 	}
 	
 	// Interface for ActiveDirectoryServerDownExceptionWrapper
-	internal interface IActiveDirectoryServerDownExceptionWrapper : System.Runtime.Serialization.ISerializable, System.Runtime.InteropServices._Exception
+	internal interface IActiveDirectoryServerDownExceptionWrapper
 	{
 		
 		int ErrorCode
@@ -2349,27 +3339,169 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			get;
 		}
 		
+		System.Collections.IDictionary Data
+		{
+			get;
+		}
+		
+		System.Exception InnerException
+		{
+			get;
+		}
+		
+		System.Reflection.MethodBase TargetSite
+		{
+			get;
+		}
+		
+		string StackTrace
+		{
+			get;
+		}
+		
+		string HelpLink
+		{
+			get;
+			set;
+		}
+		
+		string Source
+		{
+			get;
+			set;
+		}
+		
+		int HResult
+		{
+			get;
+		}
+		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException Wrapped
 		{
 			get;
 		}
+		
+		void GetObjectData(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);
+		
+		System.Exception GetBaseException();
+		
+		string ToString();
+		
+		System.Type GetType();
 	}
 	
 	// Interface for ActiveDirectoryObjectExistsExceptionWrapper
-	internal interface IActiveDirectoryObjectExistsExceptionWrapper : System.Runtime.Serialization.ISerializable, System.Runtime.InteropServices._Exception
+	internal interface IActiveDirectoryObjectExistsExceptionWrapper
 	{
+		
+		string Message
+		{
+			get;
+		}
+		
+		System.Collections.IDictionary Data
+		{
+			get;
+		}
+		
+		System.Exception InnerException
+		{
+			get;
+		}
+		
+		System.Reflection.MethodBase TargetSite
+		{
+			get;
+		}
+		
+		string StackTrace
+		{
+			get;
+		}
+		
+		string HelpLink
+		{
+			get;
+			set;
+		}
+		
+		string Source
+		{
+			get;
+			set;
+		}
+		
+		int HResult
+		{
+			get;
+		}
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException Wrapped
 		{
 			get;
 		}
+		
+		System.Exception GetBaseException();
+		
+		string ToString();
+		
+		void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context);
+		
+		System.Type GetType();
 	}
 	
 	// Interface for SyncFromAllServersOperationExceptionWrapper
-	internal interface ISyncFromAllServersOperationExceptionWrapper : System.Runtime.Serialization.ISerializable, System.Runtime.InteropServices._Exception
+	internal interface ISyncFromAllServersOperationExceptionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.SyncFromAllServersErrorInformation[] ErrorInformation
+		{
+			get;
+		}
+		
+		int ErrorCode
+		{
+			get;
+		}
+		
+		string Message
+		{
+			get;
+		}
+		
+		System.Collections.IDictionary Data
+		{
+			get;
+		}
+		
+		System.Exception InnerException
+		{
+			get;
+		}
+		
+		System.Reflection.MethodBase TargetSite
+		{
+			get;
+		}
+		
+		string StackTrace
+		{
+			get;
+		}
+		
+		string HelpLink
+		{
+			get;
+			set;
+		}
+		
+		string Source
+		{
+			get;
+			set;
+		}
+		
+		int HResult
 		{
 			get;
 		}
@@ -2378,13 +3510,68 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get;
 		}
+		
+		void GetObjectData(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);
+		
+		System.Exception GetBaseException();
+		
+		string ToString();
+		
+		System.Type GetType();
 	}
 	
 	// Interface for ForestTrustCollisionExceptionWrapper
-	internal interface IForestTrustCollisionExceptionWrapper : System.Runtime.Serialization.ISerializable, System.Runtime.InteropServices._Exception
+	internal interface IForestTrustCollisionExceptionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollisionCollection Collisions
+		{
+			get;
+		}
+		
+		int ErrorCode
+		{
+			get;
+		}
+		
+		string Message
+		{
+			get;
+		}
+		
+		System.Collections.IDictionary Data
+		{
+			get;
+		}
+		
+		System.Exception InnerException
+		{
+			get;
+		}
+		
+		System.Reflection.MethodBase TargetSite
+		{
+			get;
+		}
+		
+		string StackTrace
+		{
+			get;
+		}
+		
+		string HelpLink
+		{
+			get;
+			set;
+		}
+		
+		string Source
+		{
+			get;
+			set;
+		}
+		
+		int HResult
 		{
 			get;
 		}
@@ -2393,6 +3580,14 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			get;
 		}
+		
+		void GetObjectData(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext);
+		
+		System.Exception GetBaseException();
+		
+		string ToString();
+		
+		System.Type GetType();
 	}
 	
 	// Interface for ForestWrapper
@@ -2545,10 +3740,15 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ForestTrustRelationshipCollisionCollectionWrapper
-	internal interface IForestTrustRelationshipCollisionCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IForestTrustRelationshipCollisionCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollision this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -2563,13 +3763,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollision collision);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollision[] array, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for ForestTrustDomainInfoCollectionWrapper
-	internal interface IForestTrustDomainInfoCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IForestTrustDomainInfoCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ForestTrustDomainInformation this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -2584,6 +3791,8 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(System.DirectoryServices.ActiveDirectory.ForestTrustDomainInformation information);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.ForestTrustDomainInformation[] array, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for ForestTrustDomainInformationWrapper
@@ -2636,6 +3845,26 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			get;
 		}
 		
+		string SourceName
+		{
+			get;
+		}
+		
+		string TargetName
+		{
+			get;
+		}
+		
+		System.DirectoryServices.ActiveDirectory.TrustType TrustType
+		{
+			get;
+		}
+		
+		System.DirectoryServices.ActiveDirectory.TrustDirection TrustDirection
+		{
+			get;
+		}
+		
 		System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipInformation Wrapped
 		{
 			get;
@@ -2647,6 +3876,72 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	// Interface for GlobalCatalogWrapper
 	internal interface IGlobalCatalogWrapper : System.IDisposable
 	{
+		
+		System.DirectoryServices.ActiveDirectory.Forest Forest
+		{
+			get;
+		}
+		
+		System.DateTime CurrentTime
+		{
+			get;
+		}
+		
+		long HighestCommittedUsn
+		{
+			get;
+		}
+		
+		string OSVersion
+		{
+			get;
+		}
+		
+		System.DirectoryServices.ActiveDirectory.ActiveDirectoryRoleCollection Roles
+		{
+			get;
+		}
+		
+		System.DirectoryServices.ActiveDirectory.Domain Domain
+		{
+			get;
+		}
+		
+		string IPAddress
+		{
+			get;
+		}
+		
+		string SiteName
+		{
+			get;
+		}
+		
+		System.DirectoryServices.ActiveDirectory.SyncUpdateCallback SyncFromAllServersCallback
+		{
+			get;
+			set;
+		}
+		
+		System.DirectoryServices.ActiveDirectory.ReplicationConnectionCollection InboundConnections
+		{
+			get;
+		}
+		
+		System.DirectoryServices.ActiveDirectory.ReplicationConnectionCollection OutboundConnections
+		{
+			get;
+		}
+		
+		string Name
+		{
+			get;
+		}
+		
+		System.DirectoryServices.ActiveDirectory.ReadOnlyStringCollection Partitions
+		{
+			get;
+		}
 		
 		System.DirectoryServices.ActiveDirectory.GlobalCatalog Wrapped
 		{
@@ -2662,13 +3957,48 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaPropertyCollection FindAllProperties();
 		
 		System.DirectoryServices.DirectorySearcher GetDirectorySearcher();
+		
+		void TransferRoleOwnership(System.DirectoryServices.ActiveDirectory.ActiveDirectoryRole role);
+		
+		void SeizeRoleOwnership(System.DirectoryServices.ActiveDirectory.ActiveDirectoryRole role);
+		
+		void CheckReplicationConsistency();
+		
+		System.DirectoryServices.ActiveDirectory.ReplicationCursorCollection GetReplicationCursors(string partition);
+		
+		System.DirectoryServices.ActiveDirectory.ReplicationOperationInformation GetReplicationOperationInformation();
+		
+		System.DirectoryServices.ActiveDirectory.ReplicationNeighborCollection GetReplicationNeighbors(string partition);
+		
+		System.DirectoryServices.ActiveDirectory.ReplicationNeighborCollection GetAllReplicationNeighbors();
+		
+		System.DirectoryServices.ActiveDirectory.ReplicationFailureCollection GetReplicationConnectionFailures();
+		
+		System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata GetReplicationMetadata(string objectPath);
+		
+		void SyncReplicaFromServer(string partition, string sourceServer);
+		
+		void TriggerSyncReplicaFromNeighbors(string partition);
+		
+		void SyncReplicaFromAllServers(string partition, System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions options);
+		
+		string ToString();
+		
+		void MoveToAnotherSite(string siteName);
+		
+		System.DirectoryServices.DirectoryEntry GetDirectoryEntry();
 	}
 	
 	// Interface for GlobalCatalogCollectionWrapper
-	internal interface IGlobalCatalogCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IGlobalCatalogCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.GlobalCatalog this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -2683,13 +4013,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(System.DirectoryServices.ActiveDirectory.GlobalCatalog globalCatalog);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.GlobalCatalog[] globalCatalogs, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for ReadOnlyActiveDirectorySchemaClassCollectionWrapper
-	internal interface IReadOnlyActiveDirectorySchemaClassCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IReadOnlyActiveDirectorySchemaClassCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -2704,13 +4041,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass schemaClass);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass[] classes, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for ReadOnlyActiveDirectorySchemaPropertyCollectionWrapper
-	internal interface IReadOnlyActiveDirectorySchemaPropertyCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IReadOnlyActiveDirectorySchemaPropertyCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -2725,13 +4069,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty schemaProperty);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty[] properties, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for ReadOnlyDirectoryServerCollectionWrapper
-	internal interface IReadOnlyDirectoryServerCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IReadOnlyDirectoryServerCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.DirectoryServer this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -2746,13 +4097,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(System.DirectoryServices.ActiveDirectory.DirectoryServer directoryServer);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.DirectoryServer[] directoryServers, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for ReadOnlySiteCollectionWrapper
-	internal interface IReadOnlySiteCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IReadOnlySiteCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySite this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -2767,13 +4125,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(System.DirectoryServices.ActiveDirectory.ActiveDirectorySite site);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectorySite[] sites, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for ReadOnlySiteLinkBridgeCollectionWrapper
-	internal interface IReadOnlySiteLinkBridgeCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IReadOnlySiteLinkBridgeCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -2788,13 +4153,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge bridge);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge[] bridges, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for ReadOnlySiteLinkCollectionWrapper
-	internal interface IReadOnlySiteLinkCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IReadOnlySiteLinkCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -2809,13 +4181,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink link);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink[] links, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for ReadOnlyStringCollectionWrapper
-	internal interface IReadOnlyStringCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IReadOnlyStringCollectionWrapper
 	{
 		
 		string this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -2830,6 +4209,8 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(string value);
 		
 		void CopyTo(string[] values, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for ReplicationConnectionWrapper
@@ -2918,10 +4299,15 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationConnectionCollectionWrapper
-	internal interface IReplicationConnectionCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IReplicationConnectionCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ReplicationConnection this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -2936,6 +4322,8 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(System.DirectoryServices.ActiveDirectory.ReplicationConnection connection);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.ReplicationConnection[] connections, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for ReplicationCursorWrapper
@@ -2974,10 +4362,15 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationCursorCollectionWrapper
-	internal interface IReplicationCursorCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IReplicationCursorCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ReplicationCursor this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -2992,6 +4385,8 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(System.DirectoryServices.ActiveDirectory.ReplicationCursor cursor);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.ReplicationCursor[] values, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for ReplicationFailureWrapper
@@ -3030,10 +4425,15 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationFailureCollectionWrapper
-	internal interface IReplicationFailureCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IReplicationFailureCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ReplicationFailure this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -3048,6 +4448,8 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(System.DirectoryServices.ActiveDirectory.ReplicationFailure failure);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.ReplicationFailure[] failures, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for ReplicationNeighborWrapper
@@ -3121,10 +4523,15 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationNeighborCollectionWrapper
-	internal interface IReplicationNeighborCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IReplicationNeighborCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ReplicationNeighbor this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -3139,6 +4546,8 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(System.DirectoryServices.ActiveDirectory.ReplicationNeighbor neighbor);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.ReplicationNeighbor[] neighbors, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for ReplicationOperationWrapper
@@ -3182,10 +4591,15 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationOperationCollectionWrapper
-	internal interface IReplicationOperationCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IReplicationOperationCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ReplicationOperation this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -3200,6 +4614,8 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(System.DirectoryServices.ActiveDirectory.ReplicationOperation operation);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.ReplicationOperation[] operations, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for ReplicationOperationInformationWrapper
@@ -3271,10 +4687,15 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryRoleCollectionWrapper
-	internal interface IActiveDirectoryRoleCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IActiveDirectoryRoleCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectoryRole this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -3289,13 +4710,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(System.DirectoryServices.ActiveDirectory.ActiveDirectoryRole role);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.ActiveDirectoryRole[] roles, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for AdamRoleCollectionWrapper
-	internal interface IAdamRoleCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface IAdamRoleCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.AdamRole this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -3310,6 +4738,8 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(System.DirectoryServices.ActiveDirectory.AdamRole role);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.AdamRole[] roles, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for TopLevelNameWrapper
@@ -3334,10 +4764,15 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for TopLevelNameCollectionWrapper
-	internal interface ITopLevelNameCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface ITopLevelNameCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.TopLevelName this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -3352,6 +4787,8 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(System.DirectoryServices.ActiveDirectory.TopLevelName name);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.TopLevelName[] names, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// Interface for TrustRelationshipInformationWrapper
@@ -3385,10 +4822,15 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for TrustRelationshipInformationCollectionWrapper
-	internal interface ITrustRelationshipInformationCollectionWrapper : System.Collections.ICollection, System.Collections.IEnumerable
+	internal interface ITrustRelationshipInformationCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation this[int index]
+		{
+			get;
+		}
+		
+		int Count
 		{
 			get;
 		}
@@ -3403,6 +4845,8 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		int IndexOf(System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation information);
 		
 		void CopyTo(System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation[] array, int index);
+		
+		System.Collections.IEnumerator GetEnumerator();
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectorySecurity in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
@@ -8827,11 +10271,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public void Dispose()
-		{
-			_wrapped.Dispose();
-		}
-		
 		public void TransferRoleOwnership(System.DirectoryServices.ActiveDirectory.AdamRole role)
 		{
 			_wrapped.TransferRoleOwnership(role);
@@ -8897,6 +10336,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			_wrapped.Save();
 		}
 		
+		public void Dispose()
+		{
+			_wrapped.Dispose();
+		}
+		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -8958,11 +10402,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public System.Collections.IEnumerator GetEnumerator()
-		{
-			return _wrapped.GetEnumerator();
-		}
-		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.AdamInstance adamInstance)
 		{
 			return _wrapped.Contains(adamInstance);
@@ -8976,6 +10415,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.AdamInstance[] adamInstances, int index)
 		{
 			_wrapped.CopyTo(adamInstances, index);
+		}
+		
+		public System.Collections.IEnumerator GetEnumerator()
+		{
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
@@ -9041,11 +10485,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public void Dispose()
-		{
-			_wrapped.Dispose();
-		}
-		
 		public System.DirectoryServices.ActiveDirectory.DirectoryServer FindDirectoryServer()
 		{
 			return _wrapped.FindDirectoryServer();
@@ -9101,6 +10540,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			return _wrapped.GetDirectoryEntry();
 		}
 		
+		public void Dispose()
+		{
+			_wrapped.Dispose();
+		}
+		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -9152,11 +10596,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public System.Collections.IEnumerator GetEnumerator()
-		{
-			return _wrapped.GetEnumerator();
-		}
-		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.ApplicationPartition applicationPartition)
 		{
 			return _wrapped.Contains(applicationPartition);
@@ -9170,6 +10609,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.ApplicationPartition[] applicationPartitions, int index)
 		{
 			_wrapped.CopyTo(applicationPartitions, index);
+		}
+		
+		public System.Collections.IEnumerator GetEnumerator()
+		{
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
@@ -9314,11 +10758,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public System.Collections.IEnumerator GetEnumerator()
-		{
-			return _wrapped.GetEnumerator();
-		}
-		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.AttributeMetadata metadata)
 		{
 			return _wrapped.Contains(metadata);
@@ -9332,6 +10771,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.AttributeMetadata[] metadata, int index)
 		{
 			_wrapped.CopyTo(metadata, index);
+		}
+		
+		public System.Collections.IEnumerator GetEnumerator()
+		{
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
@@ -9601,21 +11045,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public void Clear()
-		{
-			_wrapped.Clear();
-		}
-		
-		public void RemoveAt(int index)
-		{
-			_wrapped.RemoveAt(index);
-		}
-		
-		public System.Collections.IEnumerator GetEnumerator()
-		{
-			return _wrapped.GetEnumerator();
-		}
-		
 		public int Add(System.DirectoryServices.ActiveDirectory.DirectoryServer server)
 		{
 			return _wrapped.Add(server);
@@ -9649,6 +11078,21 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		public void Remove(System.DirectoryServices.ActiveDirectory.DirectoryServer server)
 		{
 			_wrapped.Remove(server);
+		}
+		
+		public void Clear()
+		{
+			_wrapped.Clear();
+		}
+		
+		public void RemoveAt(int index)
+		{
+			_wrapped.RemoveAt(index);
+		}
+		
+		public System.Collections.IEnumerator GetEnumerator()
+		{
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
@@ -9764,11 +11208,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public void Dispose()
-		{
-			_wrapped.Dispose();
 		}
 		
 		public void RaiseDomainFunctionalityLevel(int domainMode)
@@ -9906,6 +11345,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			_wrapped.RepairTrustRelationship(targetDomain);
 		}
 		
+		public void Dispose()
+		{
+			_wrapped.Dispose();
+		}
+		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -9957,11 +11401,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public System.Collections.IEnumerator GetEnumerator()
-		{
-			return _wrapped.GetEnumerator();
-		}
-		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.Domain domain)
 		{
 			return _wrapped.Contains(domain);
@@ -9975,6 +11414,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		public void CopyTo(System.DirectoryServices.ActiveDirectory.Domain[] domains, int index)
 		{
 			_wrapped.CopyTo(domains, index);
+		}
+		
+		public System.Collections.IEnumerator GetEnumerator()
+		{
+			return _wrapped.GetEnumerator();
 		}
 		
 		public override string ToString()
@@ -10028,16 +11472,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public object Clone()
-		{
-			return _wrapped.Clone();
-		}
-		
-		public void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
-		{
-			_wrapped.GetObjectData(info, context);
-		}
-		
 		public bool Invoke(System.DirectoryServices.ActiveDirectory.SyncFromAllServersEvent eventType, string targetServer, string sourceServer, System.DirectoryServices.ActiveDirectory.SyncFromAllServersOperationException exception)
 		{
 			return _wrapped.Invoke(eventType, targetServer, sourceServer, exception);
@@ -10051,6 +11485,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		public bool EndInvoke(System.IAsyncResult result)
 		{
 			return _wrapped.EndInvoke(result);
+		}
+		
+		public void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+		{
+			_wrapped.GetObjectData(info, context);
 		}
 		
 		public override bool Equals(object obj)
@@ -10071,6 +11510,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		public object DynamicInvoke(object[] args)
 		{
 			return _wrapped.DynamicInvoke(args);
+		}
+		
+		public object Clone()
+		{
+			return _wrapped.Clone();
 		}
 		
 		public override string ToString()
@@ -10206,11 +11650,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public void Dispose()
-		{
-			_wrapped.Dispose();
-		}
-		
 		public System.DirectoryServices.ActiveDirectory.GlobalCatalog EnableGlobalCatalog()
 		{
 			return _wrapped.EnableGlobalCatalog();
@@ -10284,6 +11723,11 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		public void SyncReplicaFromAllServers(string partition, System.DirectoryServices.ActiveDirectory.SyncFromAllServersOptions options)
 		{
 			_wrapped.SyncReplicaFromAllServers(partition, options);
+		}
+		
+		public void Dispose()
+		{
+			_wrapped.Dispose();
 		}
 		
 		public override string ToString()

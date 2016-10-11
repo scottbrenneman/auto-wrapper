@@ -30,41 +30,37 @@ namespace AutoWrapper.CodeGen
 
 			contract.Comments.Add(new CodeCommentStatement($"Interface for {WrappedTypeContainer.GetTypeNameFor(type)}"));
 
-			var interfaces = type.GetInterfaces();
+			if(type.GetInterfaces().Contains(typeof(IDisposable)))
+				contract.BaseTypes.Add("System.IDisposable");
 
-			foreach (var interfaceType in interfaces)
-				contract.BaseTypes.Add(interfaceType.FullName);
+			GenerateMethods(type, contract);
 
-			var methodsDeclaredByInterfaces = interfaces
-				.Select(type.GetInterfaceMap)
-				.SelectMany(m => m.TargetMethods)
-				.ToList();
-
-			var methods = type
-				.GetMethods(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly)
-				.Where(m => m.IsSpecialName == false)
-				.Where(m => _contractGeneratorOptions.IsExcluded(m) == false)
-				.Where(m => methodsDeclaredByInterfaces.Contains(m) == false);
-
-			foreach (var method in methods)
-				contract.Members.Add(method.ToMemberMethod());
-
-			var propertiesDeclaredByInterfaces = interfaces
-				.Select(type.GetInterfaceMap)
-				.SelectMany(m => m.InterfaceType.GetProperties())
-				.ToList();
-
-			var properties = type
-				.GetProperties(BindingFlags.Public | BindingFlags.Instance | BindingFlags.DeclaredOnly)
-				.Where(p => _contractGeneratorOptions.IsExcluded(p) == false)
-				.Where(p => propertiesDeclaredByInterfaces.Contains(p) == false);
-
-			foreach (var property in properties)
-				contract.Members.Add(property.ToMemberProperty());
+			GenerateProperties(type, contract);
 
 			contract.Members.Add(CreateWrappedProperty(type, false));
 
 			return contract;
 		}
-	}
+
+	    private void GenerateProperties(IReflect type, CodeTypeDeclaration contract)
+	    {
+		    var properties = type
+			    .GetProperties(BindingFlags.Public | BindingFlags.Instance)
+			    .Where(p => _contractGeneratorOptions.IsExcluded(p) == false);
+
+		    foreach (var property in properties)
+			    contract.Members.Add(property.ToMemberProperty());
+	    }
+
+	    private void GenerateMethods(IReflect type, CodeTypeDeclaration contract)
+	    {
+		    var methods = type
+			    .GetMethods(BindingFlags.Public | BindingFlags.Instance)
+			    .Where(m => m.IsSpecialName == false)
+			    .Where(m => _contractGeneratorOptions.IsExcluded(m) == false && m.Name != "Dispose");
+
+		    foreach (var method in methods)
+			    contract.Members.Add(method.ToMemberMethod());
+	    }
+    }
 }
