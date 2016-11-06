@@ -28,7 +28,7 @@ namespace AutoWrapper.CodeGen
 			{
 				Attributes = attributes,
 				Name = methodInfo.Name,
-				ReturnType = new CodeTypeReference(isAsync ? $"async {GetName(methodInfo.ReturnType)}" : GetName(methodInfo.ReturnType))
+				ReturnType = new CodeTypeReference(isAsync ? $"async {methodInfo.ReturnType.GetName()}" : methodInfo.ReturnType.GetName())
 			};
 
 			foreach (var parameter in methodInfo.GetParameters())
@@ -51,7 +51,7 @@ namespace AutoWrapper.CodeGen
 			{
 				Attributes = MemberAttributes.Final | MemberAttributes.Public,
 				Name = propertyInfo.Name,
-				Type = new CodeTypeReference(new CodeTypeParameter(GetName(propertyInfo.PropertyType))),
+				Type = new CodeTypeReference(new CodeTypeParameter(propertyInfo.PropertyType.GetName())),
 				HasGet = propertyInfo.CanRead && propertyInfo.GetMethod.IsPublic,
 				HasSet = propertyInfo.CanWrite && propertyInfo.SetMethod.IsPublic
 			};
@@ -77,28 +77,10 @@ namespace AutoWrapper.CodeGen
 				? (parameter.IsOut ? FieldDirection.Out : FieldDirection.Ref)
 				: FieldDirection.In;
 
-			return new CodeParameterDeclarationExpression(GetName(type), parameter.Name)
+			return new CodeParameterDeclarationExpression(type.GetName(), parameter.Name)
 			{
 				Direction = direction
 			};
-		}
-
-		private static string GetName(Type type)
-		{
-			if (type.IsGenericType == false)
-				return type.FullName;
-
-			var argTypes = type.GetGenericArguments()
-				.Select(arg => GetName(arg))
-				.ToArray();
-
-			var genericType = type.GetGenericTypeDefinition();
-			if (genericType == typeof(Nullable<>))
-				return $"{argTypes[0]}?";
-
-			var fn = genericType.FullName;
-
-			return $"{fn.Substring(0, fn.IndexOf('`'))}<{string.Join(", ", argTypes)}>";
 		}
 
 		private readonly IWrappedTypeDictionary _wrappedTypeDictionary;

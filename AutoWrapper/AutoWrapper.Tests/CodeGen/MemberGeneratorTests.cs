@@ -155,35 +155,12 @@ namespace AutoWrapper.Tests.CodeGen
 			Then.MemberProperty2.HasSet.Should().BeFalse();
 		}
 
-		[Theory(Skip = "Functionality made private"),
-		InlineData(typeof(object), "System.Object"),
-		InlineData(typeof(void), "System.Void"),
-		InlineData(typeof(int), "System.Int32"),
-		InlineData(typeof(bool), "System.Boolean"),
-		InlineData(typeof(string), "System.String"),
-		InlineData(typeof(int?), "System.Int32?"),
-		InlineData(typeof(IEnumerable<Tuple<int?, Tuple<string, bool?>>>), "System.Collections.Generic.IEnumerable<System.Tuple<System.Int32?, System.Tuple<System.String, System.Boolean?>>>")
-		]
-		public void ShouldHaveName_WhenGettingName_GivenType(Type givenType, string expectedName)
-		{
-			Given.Type = givenType;
-
-			When(GettingTypeName);
-
-			Then.ActualName.Should().Be(expectedName);
-		}
-
 		private void CreatingMemberProperty()
 		{
 			Then.MemberProperty1 = Then.Target.GeneratePropertyDeclaration(Given.PropertyInfo1);
 			Then.MemberProperty2 = Then.Target.GeneratePropertyDeclaration(Given.PropertyInfo2);
 		}
 		#endregion
-
-		private void GettingTypeName()
-		{
-			//Then.ActualName = ((Type)Given.Type).GetName();
-		}
 
 		protected override void Creating()
 		{

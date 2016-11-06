@@ -96,6 +96,7 @@
     <Compile Include="CodeGen\CodeGeneratorTests.cs" />
     <Compile Include="CodeGen\DefaultNamingStrategyTests.cs" />
     <Compile Include="CodeGen\MemberGeneratorTests.cs" />
+    <Compile Include="CodeGen\TypeExtensionsTests.cs" />
     <Compile Include="CodeGen\TypeGeneratorTests.cs" />
     <Compile Include="SomeType.cs">
       <DependentUpon>SomeType.tt</DependentUpon>
