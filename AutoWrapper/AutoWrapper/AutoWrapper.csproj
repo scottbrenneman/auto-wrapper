@@ -42,11 +42,13 @@
     <Compile Include="CodeGen\Contracts\IContractGeneratorOptions.cs" />
     <Compile Include="CodeGen\Contracts\IContractNamingStrategy.cs" />
     <Compile Include="CodeGen\Contracts\IGenerator.cs" />
+    <Compile Include="CodeGen\Contracts\IMemberGenerator.cs" />
     <Compile Include="CodeGen\Contracts\ITypeGeneratorOptions.cs" />
     <Compile Include="CodeGen\Contracts\ITypeNamingStrategy.cs" />
     <Compile Include="CodeGen\Contracts\ICodeGenerator.cs" />
     <Compile Include="CodeGen\GenerateAs.cs" />
     <Compile Include="CodeGen\GeneratorBase.cs" />
+    <Compile Include="CodeGen\MemberGenerator.cs" />
     <Compile Include="IWrappedTypeContainer.cs" />
     <Compile Include="CodeGen\TypeGeneratorOptions.cs" />
     <Compile Include="IWrappedTypeDictionary.cs" />

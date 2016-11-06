@@ -17,7 +17,7 @@ namespace AutoWrapper.CodeGen
 				throw new ArgumentNullException(nameof(type));
 
 			if (WrappedTypeDictionary.Registered(type) == false)
-				throw new InvalidOperationException($"Type '{type.GetName()}' must be registered with an IWrappedTypeContainer before a declaration can be generated.");
+				throw new InvalidOperationException($"Type '{type.FullName}' must be registered with an IWrappedTypeContainer before a declaration can be generated.");
 		}
 
 		public abstract CodeTypeDeclaration GenerateDeclaration(Type type);

@@ -9,6 +9,7 @@ namespace AutoWrapper.CodeGen
 	public class TypeGenerator : GeneratorBase
 	{
 		private readonly ITypeGeneratorOptions _typeGeneratorOptions;
+		private readonly IMemberGenerator _memberGenerator;
 		
 		public TypeGenerator(IWrappedTypeDictionary wrappedTypeDictionary) : this(null, wrappedTypeDictionary) { }
 
@@ -16,6 +17,7 @@ namespace AutoWrapper.CodeGen
 			: base(wrappedTypeDictionary)
 		{
 			_typeGeneratorOptions = typeGeneratorOptions ?? new TypeGeneratorOptions();
+			_memberGenerator = new MemberGenerator(wrappedTypeDictionary);
 		}
 		
 		public override CodeTypeDeclaration GenerateDeclaration(Type type)
@@ -29,7 +31,7 @@ namespace AutoWrapper.CodeGen
 				IsPartial = _typeGeneratorOptions.UsePartial
 			};
 
-			generatedType.Comments.Add(new CodeCommentStatement($"wrapper for {type.GetName()} in {type.Assembly.FullName}"));
+			generatedType.Comments.Add(new CodeCommentStatement($"wrapper for {type.FullName} in {type.Assembly.FullName}"));
 
 			generatedType.BaseTypes.Add(WrappedTypeDictionary.GetContractNameFor(type));
 
@@ -44,13 +46,13 @@ namespace AutoWrapper.CodeGen
 			return generatedType;
 		}
 		
-		private static void GenerateProperties(IReflect type, CodeTypeDeclaration generatedType)
+		private void GenerateProperties(IReflect type, CodeTypeDeclaration generatedType)
 		{
 			var properties = type.GetProperties(BindingFlags.Public | BindingFlags.Instance);
 
 			foreach (var property in properties)
 			{
-				var memberProperty = property.ToMemberProperty();
+				var memberProperty = _memberGenerator.GeneratePropertyDeclaration(property);
 
 				if (memberProperty.HasGet)
 				{
@@ -133,7 +135,7 @@ namespace AutoWrapper.CodeGen
 
 		private CodeMemberMethod GenerateMethod(MethodInfo method)
 		{
-			var memberMethod = method.ToMemberMethod(GenerateAs.Type);
+			var memberMethod = _memberGenerator.GenerateMethodDeclaration(method, GenerateAs.Type);
 
 			var targetVariable = method.IsAsync()
 				? new CodeVariableReferenceExpression("await " + WrappedFieldName)

@@ -9,13 +9,15 @@ namespace AutoWrapper.CodeGen
 	public class ContractGenerator : GeneratorBase
     {
 	    private readonly IContractGeneratorOptions _contractGeneratorOptions;
+		private readonly IMemberGenerator _memberGenerator;
 
-	    public ContractGenerator(IWrappedTypeContainer wrapperTypeContainer) : this(null, wrapperTypeContainer) { }
+	    public ContractGenerator(IWrappedTypeDictionary wrappedTypeDictionary) : this(null, wrappedTypeDictionary) { }
 
-		public ContractGenerator(IContractGeneratorOptions contractGeneratorOptions, IWrappedTypeContainer wrappedTypeContainer)
-			: base(wrappedTypeContainer)
+		public ContractGenerator(IContractGeneratorOptions contractGeneratorOptions, IWrappedTypeDictionary wrappedTypeDictionary)
+			: base(wrappedTypeDictionary)
 		{
 			_contractGeneratorOptions = contractGeneratorOptions ?? new ContractGeneratorOptions();
+			_memberGenerator = new MemberGenerator(wrappedTypeDictionary);
 		}
 
 		public override CodeTypeDeclaration GenerateDeclaration(Type type)
@@ -49,7 +51,7 @@ namespace AutoWrapper.CodeGen
 			    .Where(p => _contractGeneratorOptions.IsExcluded(p) == false);
 
 		    foreach (var property in properties)
-			    contract.Members.Add(property.ToMemberProperty());
+			    contract.Members.Add(_memberGenerator.GeneratePropertyDeclaration(property));
 	    }
 
 	    private void GenerateMethods(IReflect type, CodeTypeDeclaration contract)
@@ -60,7 +62,7 @@ namespace AutoWrapper.CodeGen
 			    .Where(m => _contractGeneratorOptions.IsExcluded(m) == false && m.Name != "Dispose");
 
 		    foreach (var method in methods)
-			    contract.Members.Add(method.ToMemberMethod(GenerateAs.Contract));
+			    contract.Members.Add(_memberGenerator.GenerateMethodDeclaration(method, GenerateAs.Contract));
 	    }
     }
 }

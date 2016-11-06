@@ -10,7 +10,7 @@ using Xunit;
 
 namespace AutoWrapper.Tests.CodeGen
 {
-	public class TypeExtensionsTests : XUnitTestBase<TypeExtensionsTests.Thens>
+	public sealed class MemberGeneratorTests : XUnitTestBase<MemberGeneratorTests.Thens>
 	{
 		#region MemberMethod
 		[Theory,
@@ -89,9 +89,7 @@ namespace AutoWrapper.Tests.CodeGen
 
 		private void CreatingMemberMethod()
 		{
-			Func<MethodInfo, CodeMemberMethod> func = m => m.ToMemberMethod(GenerateAs.Type);
-
-			Then.MemberMethod = func(Given.MethodInfo);
+			Then.MemberMethod = Then.Target.GenerateMethodDeclaration(Given.MethodInfo, GenerateAs.Type);
 		}
 		#endregion
 
@@ -157,7 +155,7 @@ namespace AutoWrapper.Tests.CodeGen
 			Then.MemberProperty2.HasSet.Should().BeFalse();
 		}
 
-		[Theory,
+		[Theory(Skip = "Functionality made private"),
 		InlineData(typeof(object), "System.Object"),
 		InlineData(typeof(void), "System.Void"),
 		InlineData(typeof(int), "System.Int32"),
@@ -177,25 +175,27 @@ namespace AutoWrapper.Tests.CodeGen
 
 		private void CreatingMemberProperty()
 		{
-			Func<PropertyInfo, CodeMemberProperty> func = p => p.ToMemberProperty();
-
-			Then.MemberProperty1 = func(Given.PropertyInfo1);
-			Then.MemberProperty2 = func(Given.PropertyInfo2);
+			Then.MemberProperty1 = Then.Target.GeneratePropertyDeclaration(Given.PropertyInfo1);
+			Then.MemberProperty2 = Then.Target.GeneratePropertyDeclaration(Given.PropertyInfo2);
 		}
 		#endregion
 
 		private void GettingTypeName()
 		{
-			Then.ActualName = ((Type)Given.Type).GetName();
+			//Then.ActualName = ((Type)Given.Type).GetName();
 		}
 
-		protected override void Creating() { }
+		protected override void Creating()
+		{
+			Then.Target = new MemberGenerator(new WrappedTypeContainer());
+		}
 
 		public class Thens
 		{
-			public CodeMemberMethod MemberMethod;
-			//public CodeMemberMethod MemberMethod2;
+			public MemberGenerator Target;
 
+			public CodeMemberMethod MemberMethod;
+			
 			public CodeMemberProperty MemberProperty1;
 			public CodeMemberProperty MemberProperty2;
 			public string ActualName;
