@@ -22,13 +22,13 @@ namespace AutoWrapper.CodeGen
 		{
 			ValidateTypeBeforeGeneration(type);
 
-			var contract = new CodeTypeDeclaration(WrappedTypeContainer.GetContractNameFor(type))
+			var contract = new CodeTypeDeclaration(WrappedTypeDictionary.GetContractNameFor(type))
 			{
 				TypeAttributes = _contractGeneratorOptions.GetTypeAttributes(),
 				IsInterface = true
 			};
 
-			contract.Comments.Add(new CodeCommentStatement($"Interface for {WrappedTypeContainer.GetTypeNameFor(type)}"));
+			contract.Comments.Add(new CodeCommentStatement($"Interface for {WrappedTypeDictionary.GetTypeNameFor(type)}"));
 
 			if(type.GetInterfaces().Contains(typeof(IDisposable)))
 				contract.BaseTypes.Add("System.IDisposable");

@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace AutoWrapper
 {
-	public interface IWrappedTypeContainer : IEnumerable<Type>
+	public interface IWrappedTypeContainer : IWrappedTypeDictionary
 	{
 		IEnumerable<Type> RegisteredTypes { get; }
 
@@ -21,13 +21,5 @@ namespace AutoWrapper
 			where TType : class;
 
 		IWrappedTypeContainer Unregister(Type type);
-
-		bool Registered(Type type);
-
-		bool Registered<TType>() where TType : class;
-
-		string GetTypeNameFor(Type type);
-
-		string GetContractNameFor(Type type);
 	}
 }

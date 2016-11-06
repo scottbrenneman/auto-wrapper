@@ -10,10 +10,10 @@ namespace AutoWrapper.CodeGen
 	{
 		private readonly ITypeGeneratorOptions _typeGeneratorOptions;
 		
-		public TypeGenerator(IWrappedTypeContainer wrapperTypeContainer) : this(null, wrapperTypeContainer) { }
+		public TypeGenerator(IWrappedTypeDictionary wrappedTypeDictionary) : this(null, wrappedTypeDictionary) { }
 
-		public TypeGenerator(ITypeGeneratorOptions typeGeneratorOptions, IWrappedTypeContainer wrappedTypeContainer)
-			: base(wrappedTypeContainer)
+		public TypeGenerator(ITypeGeneratorOptions typeGeneratorOptions, IWrappedTypeDictionary wrappedTypeDictionary)
+			: base(wrappedTypeDictionary)
 		{
 			_typeGeneratorOptions = typeGeneratorOptions ?? new TypeGeneratorOptions();
 		}
@@ -22,7 +22,7 @@ namespace AutoWrapper.CodeGen
 		{
 			ValidateTypeBeforeGeneration(type);
 
-			var generatedType = new CodeTypeDeclaration(WrappedTypeContainer.GetTypeNameFor(type))
+			var generatedType = new CodeTypeDeclaration(WrappedTypeDictionary.GetTypeNameFor(type))
 			{
 				IsClass = true,
 				TypeAttributes = _typeGeneratorOptions.GetTypeAttributes() | TypeAttributes.Sealed,
@@ -31,7 +31,7 @@ namespace AutoWrapper.CodeGen
 
 			generatedType.Comments.Add(new CodeCommentStatement($"wrapper for {type.GetName()} in {type.Assembly.FullName}"));
 
-			generatedType.BaseTypes.Add(WrappedTypeContainer.GetContractNameFor(type));
+			generatedType.BaseTypes.Add(WrappedTypeDictionary.GetContractNameFor(type));
 
 			generatedType.Members.AddRange(CompositionMembersFor(type));
 
@@ -152,10 +152,10 @@ namespace AutoWrapper.CodeGen
 				memberMethod.Statements.Add(invokeExpression);
 			else
 			{
-				if (WrappedTypeContainer.Registered(method.ReturnType))
+				if (WrappedTypeDictionary.Registered(method.ReturnType))
 				{
 					invokeExpression = new CodeObjectCreateExpression(
-						WrappedTypeContainer.GetTypeNameFor(method.ReturnType),
+						WrappedTypeDictionary.GetTypeNameFor(method.ReturnType),
 						invokeExpression
 					);
 				}

@@ -6,9 +6,9 @@ namespace AutoWrapper.CodeGen
 {
 	public abstract class GeneratorBase : IGenerator
 	{
-		protected GeneratorBase(IWrappedTypeContainer wrappedTypeContainer)
+		protected GeneratorBase(IWrappedTypeDictionary wrappedTypeDictionary)
 		{
-			WrappedTypeContainer = wrappedTypeContainer;
+			WrappedTypeDictionary = wrappedTypeDictionary;
 		}
 
 		protected void ValidateTypeBeforeGeneration(Type type)
@@ -16,7 +16,7 @@ namespace AutoWrapper.CodeGen
 			if (type == null)
 				throw new ArgumentNullException(nameof(type));
 
-			if (WrappedTypeContainer.Registered(type) == false)
+			if (WrappedTypeDictionary.Registered(type) == false)
 				throw new InvalidOperationException($"Type '{type.GetName()}' must be registered with an IWrappedTypeContainer before a declaration can be generated.");
 		}
 
@@ -40,13 +40,10 @@ namespace AutoWrapper.CodeGen
 			return property;
 		}
 
-		protected readonly IWrappedTypeContainer WrappedTypeContainer;
+		protected readonly IWrappedTypeDictionary WrappedTypeDictionary;
 
 		protected const string WrappedVariableName = "wrapped", WrappedFieldName = "_wrapped", WrappedPropertyName = "Wrapped";
 
-
 		protected static readonly CodeVariableReferenceExpression WrappedField = new CodeVariableReferenceExpression(WrappedFieldName);
-
-		//protected static readonly CodeFieldReferenceExpression WrappedField = new CodeFieldReferenceExpression(WrappedVariable, WrappedFieldName);
 	}
 }
