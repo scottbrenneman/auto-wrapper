@@ -9,7 +9,11 @@ namespace AutoWrapper
 
 		bool Registered<TType>() where TType : class;
 
+		bool Registered(string typeName);
+
 		string GetTypeNameFor(Type type);
+
+		string GetTypeNameFor(string contractName);
 
 		string GetContractNameFor(Type type);
 	}

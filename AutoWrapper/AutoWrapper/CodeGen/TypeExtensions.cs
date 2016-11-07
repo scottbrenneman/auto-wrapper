@@ -23,7 +23,7 @@ namespace AutoWrapper.CodeGen
 				return type.FullName;
 
 			var argTypes = type.GetGenericArguments()
-				.Select(arg => GetName(arg))
+				.Select(arg => arg.GetName())
 				.ToArray();
 
 			var genericType = type.GetGenericTypeDefinition();

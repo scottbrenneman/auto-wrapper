@@ -92,9 +92,19 @@ namespace AutoWrapper
 			return Registered(typeof(TType));
 		}
 
+		public bool Registered(string typeName)
+		{
+			return _typesToWrap.Values.Any(td => td.ContractName == typeName || td.TypeName == typeName);
+		}
+
 		public string GetTypeNameFor(Type type)
 		{
 			return _typesToWrap[type].TypeName;
+		}
+
+		public string GetTypeNameFor(string contractName)
+		{
+			return _typesToWrap.Values.FirstOrDefault(td => td.ContractName == contractName).TypeName;
 		}
 
 		public string GetContractNameFor(Type type)
