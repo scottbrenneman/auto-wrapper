@@ -35,7 +35,7 @@ namespace AutoWrapper.Tests.CodeGen
 				TypeAttributes = TypeAttributes.Interface
 			}, options => options.ExcludingMissingMembers());
 
-			Then.CodeTypeDeclaration.Members.Should().HaveCount(14);
+			Then.CodeTypeDeclaration.Members.Should().HaveCount(15);
 			Then.CodeTypeDeclaration.BaseTypes.Should().HaveCount(1);
 			Then.CodeTypeDeclaration.BaseTypes[0].BaseType.Should().Be("System.IDisposable");
 			

@@ -1,11 +1,11 @@
 ﻿using AutoWrapper.CodeGen;
+using AutoWrapper.Tests.TestClasses;
 using FluentAssertions;
 using GwtUnit.XUnit;
+using Moq;
 using System;
 using System.CodeDom;
-using System.Collections.Generic;
 using System.Reflection;
-using AutoWrapper.Tests.TestClasses;
 using Xunit;
 
 namespace AutoWrapper.Tests.CodeGen
@@ -64,6 +64,17 @@ namespace AutoWrapper.Tests.CodeGen
 			Then.MemberMethod.Parameters[1].Name.Should().Be("s");
 		}
 
+		[Fact]
+		public void ShouldReplaceTypes_WhenCreatingMemberMethod_GivenMethodInfoForFunction5()
+		{
+			Given.MethodInfo = typeof(SomeType).GetMethod("Function5");
+
+			When(CreatingMemberMethod);
+
+			Then.MemberMethod.ReturnType.BaseType.Should().Be("ISomeOtherTypeWrapper");
+			Then.MemberMethod.Parameters[0].Type.BaseType.Should().Be("ISomeOtherTypeWrapper");
+		}
+
 		[Theory,
 		InlineData("Function1", MemberAttributes.Public),
 		InlineData("Function2", MemberAttributes.Public),
@@ -99,11 +110,13 @@ namespace AutoWrapper.Tests.CodeGen
 		{
 			Given.PropertyInfo1 = typeof(SomeType).GetProperty("Property1");
 			Given.PropertyInfo2 = typeof(SomeType).GetProperty("Property2");
+			Given.PropertyInfo3 = typeof(SomeType).GetProperty("Property3");
 
 			When(CreatingMemberProperty);
 
 			Then.MemberProperty1.Name.Should().Be("Property1");
 			Then.MemberProperty2.Name.Should().Be("Property2");
+			Then.MemberProperty3.Name.Should().Be("Property3");
 		}
 
 		[Fact]
@@ -111,11 +124,13 @@ namespace AutoWrapper.Tests.CodeGen
 		{
 			Given.PropertyInfo1 = typeof(SomeType).GetProperty("Property1");
 			Given.PropertyInfo2 = typeof(SomeType).GetProperty("Property2");
+			Given.PropertyInfo3 = typeof(SomeType).GetProperty("Property3");
 
 			When(CreatingMemberProperty);
 
 			Then.MemberProperty1.Type.BaseType.Should().Be("System.Boolean");
 			Then.MemberProperty2.Type.BaseType.Should().Be("System.Object");
+			Then.MemberProperty3.Type.BaseType.Should().Be("ISomeOtherTypeWrapper");
 		}
 
 		[Fact]
@@ -123,11 +138,13 @@ namespace AutoWrapper.Tests.CodeGen
 		{
 			Given.PropertyInfo1 = typeof(SomeType).GetProperty("Property1");
 			Given.PropertyInfo2 = typeof(SomeType).GetProperty("Property2");
+			Given.PropertyInfo3 = typeof(SomeType).GetProperty("Property3");
 
 			When(CreatingMemberProperty);
 
 			Then.MemberProperty1.Attributes.Should().HaveFlag(MemberAttributes.Public);
 			Then.MemberProperty2.Attributes.Should().HaveFlag(MemberAttributes.Public);
+			Then.MemberProperty3.Attributes.Should().HaveFlag(MemberAttributes.Public);
 		}
 
 		[Fact]
@@ -145,6 +162,7 @@ namespace AutoWrapper.Tests.CodeGen
 		{
 			Given.PropertyInfo1 = typeof(SomeType).GetProperty("Property1");
 			Given.PropertyInfo2 = typeof(SomeType).GetProperty("Property2");
+			Given.PropertyInfo3 = typeof(SomeType).GetProperty("Property3");
 
 			When(CreatingMemberProperty);
 
@@ -153,18 +171,32 @@ namespace AutoWrapper.Tests.CodeGen
 
 			Then.MemberProperty2.HasGet.Should().BeTrue();
 			Then.MemberProperty2.HasSet.Should().BeFalse();
+
+			Then.MemberProperty3.HasGet.Should().BeTrue();
+			Then.MemberProperty3.HasSet.Should().BeFalse();
 		}
 
 		private void CreatingMemberProperty()
 		{
 			Then.MemberProperty1 = Then.Target.GeneratePropertyDeclaration(Given.PropertyInfo1);
 			Then.MemberProperty2 = Then.Target.GeneratePropertyDeclaration(Given.PropertyInfo2);
+			Then.MemberProperty3 = Then.Target.GeneratePropertyDeclaration(Given.PropertyInfo3);
 		}
 		#endregion
 
 		protected override void Creating()
 		{
-			Then.Target = new MemberGenerator(new WrappedTypeContainer());
+			var wrappedTypeDictionary = new Mock<IWrappedTypeDictionary>();
+
+			wrappedTypeDictionary
+				.Setup(x => x.Registered(It.IsIn(typeof(SomeType), typeof(SomeOtherType))))
+				.Returns(true);
+
+			wrappedTypeDictionary
+				.Setup(x => x.GetContractNameFor(It.IsAny<Type>()))
+				.Returns<Type>(t => $"I{t.Name}Wrapper");
+
+			Then.Target = new MemberGenerator(wrappedTypeDictionary.Object);
 		}
 
 		public class Thens
@@ -175,7 +207,7 @@ namespace AutoWrapper.Tests.CodeGen
 			
 			public CodeMemberProperty MemberProperty1;
 			public CodeMemberProperty MemberProperty2;
-			public string ActualName;
+			public CodeMemberProperty MemberProperty3;
 		}
 	}
 }

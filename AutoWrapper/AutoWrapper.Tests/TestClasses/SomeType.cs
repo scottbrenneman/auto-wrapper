@@ -2,6 +2,8 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 
+#pragma warning disable
+
 namespace AutoWrapper.Tests.TestClasses
 {
 	[ExcludeFromCodeCoverage]
@@ -21,13 +23,13 @@ namespace AutoWrapper.Tests.TestClasses
 
 		public object Property2 { get; internal set; }
 
+		public SomeOtherType Property3 { get; }
+
 		public string this[int x] => string.Empty;
 
 		private string NotSupportedProperty { get; }
 
-		private void NotSupportedFunction()
-		{
-		}
+		private void NotSupportedFunction() { }
 
 		public void Dispose() { throw new NotImplementedException(); }
 	}
@@ -39,6 +41,5 @@ namespace AutoWrapper.Tests.TestClasses
 	}
 
 	[ExcludeFromCodeCoverage]
-	public sealed class SomeOtherType
-	{ }
+	public sealed class SomeOtherType { }
 }

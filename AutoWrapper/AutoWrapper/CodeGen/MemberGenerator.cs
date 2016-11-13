@@ -22,73 +22,39 @@ namespace AutoWrapper.CodeGen
 			if (methodInfo.IsPublic == false) throw new NotSupportedException("Non-public methods are not supported.");
 
 			var attributes = MemberAttributes.Public;
+
 			attributes |= MethodsToOverride.Contains(methodInfo.Name) ? MemberAttributes.Override : MemberAttributes.Final;
 
 			var isAsync = generateAs == GenerateAs.Type && methodInfo.IsAsync();
 
-			var returnType = ReplaceRegisteredTypes(methodInfo.ReturnType);
+			var returnType = GenerateTypeReference(methodInfo.ReturnType);
+
+			if (isAsync)
+				returnType.BaseType = $"async {returnType.BaseType}";
 
 			var memberMethod = new CodeMemberMethod
 			{
 				Attributes = attributes,
 				Name = methodInfo.Name,
-				ReturnType = new CodeTypeReference(isAsync ? $"async {returnType}" : returnType)
+				ReturnType = returnType
 			};
 
 			foreach (var parameter in methodInfo.GetParameters())
-			{
 				memberMethod.Parameters.Add(GenerateParameterDeclaration(parameter));
-			}
 
 			return memberMethod;
 		}
 
-		private string ReplaceRegisteredTypes(Type type)
-		{
-			if (type.IsArray)
-			{
-				var elementType = type.GetElementType();
-				
-				return _wrappedTypeDictionary.Registered(elementType)
-					? $"{_wrappedTypeDictionary.GetContractNameFor(elementType)}[]"
-					: type.GetName();
-			}
-
-			if (type.IsGenericType == false)
-			{
-				return _wrappedTypeDictionary.Registered(type)
-					? _wrappedTypeDictionary.GetContractNameFor(type)
-					: type.GetName();
-			}
-
-			var argTypes = type.GetGenericArguments()
-				.Select(t => ReplaceRegisteredTypes(t))
-				.ToArray();
-
-			var genericType = type.GetGenericTypeDefinition();
-			if (genericType == typeof(Nullable<>))
-				return $"{argTypes[0]}?";
-
-			var fn = genericType.FullName;
-
-			return $"{fn.Substring(0, fn.IndexOf('`'))}<{string.Join(", ", argTypes)}>";
-		}
-
 		public CodeMemberProperty GeneratePropertyDeclaration(PropertyInfo propertyInfo)
 		{
-			if (propertyInfo == null)
-				throw new ArgumentNullException(nameof(propertyInfo));
-
-			if (propertyInfo.GetAccessors().Any() == false)
-				throw new NotSupportedException("Non-public properties are not supported.");
-
-			var propertyType = ReplaceRegisteredTypes(propertyInfo.PropertyType);
+			if (propertyInfo == null) throw new ArgumentNullException(nameof(propertyInfo));
+			if (propertyInfo.GetAccessors().Any() == false) throw new NotSupportedException("Non-public properties are not supported.");
 
 			var property = new CodeMemberProperty
 			{
 				Attributes = MemberAttributes.Final | MemberAttributes.Public,
 				Name = propertyInfo.Name,
-				Type = new CodeTypeReference(new CodeTypeParameter(propertyType)),
+				Type = GenerateTypeReference(propertyInfo.PropertyType),
 				HasGet = propertyInfo.CanRead && propertyInfo.GetMethod.IsPublic,
 				HasSet = propertyInfo.CanWrite && propertyInfo.SetMethod.IsPublic
 			};
@@ -96,9 +62,7 @@ namespace AutoWrapper.CodeGen
 			if (propertyInfo.IsIndexer())
 			{
 				foreach (var parameter in propertyInfo.GetIndexParameters())
-				{
 					property.Parameters.Add(GenerateParameterDeclaration(parameter));
-				}
 			}
 
 			return property;
@@ -114,12 +78,34 @@ namespace AutoWrapper.CodeGen
 				? (parameter.IsOut ? FieldDirection.Out : FieldDirection.Ref)
 				: FieldDirection.In;
 
-			var paramType = ReplaceRegisteredTypes(type);
+			var paramType = GenerateTypeReference(type);
 
-			return new CodeParameterDeclarationExpression(paramType, parameter.Name)
+			return new CodeParameterDeclarationExpression(paramType, parameter.Name) { Direction = direction };
+		}
+
+		private CodeTypeReference GenerateTypeReference(Type type)
+		{
+			if (type.IsArray)
 			{
-				Direction = direction
-			};
+				var elementType = type.GetElementType();
+
+				var elementTypeReference = _wrappedTypeDictionary.Registered(elementType)
+					? new CodeTypeReference(_wrappedTypeDictionary.GetContractNameFor(elementType))
+					: new CodeTypeReference(elementType.GetName());
+
+				return new CodeTypeReference(elementTypeReference, type.GetArrayRank());
+			}
+
+			if (type.IsGenericType == false)
+			{
+				var typeName = _wrappedTypeDictionary.Registered(type)
+					? _wrappedTypeDictionary.GetContractNameFor(type)
+					: type.GetName();
+
+				return new CodeTypeReference(typeName);
+			}
+
+			return new CodeTypeReference(type.GetName());
 		}
 
 		private static readonly List<string> MethodsToOverride = new List<string> { "ToString", "GetHashCode", "Equals" };

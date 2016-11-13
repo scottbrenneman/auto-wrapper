@@ -1934,13 +1934,13 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			set;
 		}
 		
-		System.Nullable<System.Int32> RangeLower
+		System.Int32? RangeLower
 		{
 			get;
 			set;
 		}
 		
-		System.Nullable<System.Int32> RangeUpper
+		System.Int32? RangeUpper
 		{
 			get;
 			set;
@@ -1957,7 +1957,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			get;
 		}
 		
-		System.Nullable<System.Int32> LinkId
+		System.Int32? LinkId
 		{
 			get;
 			set;
@@ -9388,7 +9388,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public System.Nullable<System.Int32> RangeLower
+		public System.Int32? RangeLower
 		{
 			get
 			{
@@ -9400,7 +9400,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public System.Nullable<System.Int32> RangeUpper
+		public System.Int32? RangeUpper
 		{
 			get
 			{
@@ -9432,7 +9432,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public System.Nullable<System.Int32> LinkId
+		public System.Int32? LinkId
 		{
 			get
 			{
