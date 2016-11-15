@@ -27,7 +27,8 @@ namespace AutoWrapper.CodeGen
 			var contract = new CodeTypeDeclaration(WrappedTypeDictionary.GetContractNameFor(type))
 			{
 				TypeAttributes = _contractGeneratorOptions.GetTypeAttributes(),
-				IsInterface = true
+				IsInterface = true,
+				IsPartial = _contractGeneratorOptions.UsePartial
 			};
 
 			contract.Comments.Add(new CodeCommentStatement($"Interface for {WrappedTypeDictionary.GetTypeNameFor(type)}"));

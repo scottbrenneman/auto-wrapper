@@ -18,6 +18,8 @@ namespace AutoWrapper.CodeGen
 			_contractNamingStrategy = contractNamingStrategy ?? new DefaultNamingStrategy();
 		}
 
+		public bool UsePartial { get; private set; }
+
 		public IContractGeneratorOptions AsOptions => this;
 
 		public IContractGeneratorOptionsBuilder AsBuilder => this;
@@ -28,7 +30,13 @@ namespace AutoWrapper.CodeGen
 
 			return this;
 		}
-		
+
+		public IContractGeneratorOptionsBuilder WithPartial()
+		{
+			UsePartial = true;
+			return this;
+		}
+
 		public IContractGeneratorOptionsBuilder ExcludeMembersDeclaredOn<TType>()
 		{
 			return ExcludeMembersDeclaredOn(typeof(TType));
