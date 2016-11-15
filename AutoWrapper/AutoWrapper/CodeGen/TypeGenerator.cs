@@ -31,6 +31,10 @@ namespace AutoWrapper.CodeGen
 				IsPartial = _typeGeneratorOptions.UsePartial
 			};
 
+			generatedType.CustomAttributes.Add(
+				new CodeAttributeDeclaration("System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage")
+			);
+
 			generatedType.Comments.Add(new CodeCommentStatement($"wrapper for {type.GetName()} in {type.Assembly.FullName}"));
 
 			generatedType.BaseTypes.Add(WrappedTypeDictionary.GetContractNameFor(type));
