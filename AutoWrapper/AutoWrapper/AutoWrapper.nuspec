@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>AutoWrapper</id>
+    <version>$version$</version>
+    <authors>scottbrenneman,nick.randal.or</authors>
+    <licenseUrl>https://github.com/scottbrenneman/auto-wrapper/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/scottbrenneman/auto-wrapper</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A library for generating testable proxy classes.</description>
+    <releaseNotes>Prerelease version</releaseNotes>
+    <tags>Wrapper Proxy Testable</tags>
+  </metadata>
+</package>
