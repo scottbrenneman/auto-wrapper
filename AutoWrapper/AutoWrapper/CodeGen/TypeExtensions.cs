@@ -7,15 +7,11 @@ namespace AutoWrapper.CodeGen
 {
 	internal static class TypeExtensions
 	{
-		public static bool IsAsync(this MethodInfo methodInfo)
-		{
-			return methodInfo.GetCustomAttribute<AsyncStateMachineAttribute>() != null;
-		}
+		public static bool IsAsync(this MethodInfo methodInfo) => methodInfo.GetCustomAttribute<AsyncStateMachineAttribute>() != null;
 
-		public static bool IsIndexer(this PropertyInfo propertyInfo)
-		{
-			return propertyInfo.GetIndexParameters().Length > 0;
-		}
+		public static bool IsIndexer(this PropertyInfo propertyInfo) => propertyInfo.GetIndexParameters().Length > 0;
+
+		public static bool IsByRef(this ParameterInfo parameter) => parameter.ParameterType.IsByRef;
 
 		public static string GetName(this Type type)
 		{

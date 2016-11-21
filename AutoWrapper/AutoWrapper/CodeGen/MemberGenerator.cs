@@ -65,11 +65,11 @@ namespace AutoWrapper.CodeGen
 
 		private CodeParameterDeclarationExpression GenerateParameterDeclaration(ParameterInfo parameter)
 		{
-			var type = parameter.ParameterType.IsByRef
+			var type = parameter.IsByRef()
 				? parameter.ParameterType.GetElementType()
 				: parameter.ParameterType;
 
-			var direction = parameter.ParameterType.IsByRef
+			var direction = parameter.IsByRef()
 				? (parameter.IsOut ? FieldDirection.Out : FieldDirection.Ref)
 				: FieldDirection.In;
 
