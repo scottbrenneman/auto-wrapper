@@ -59,11 +59,18 @@ namespace AutoWrapper.CodeGen
 	    {
 		    var methods = type
 			    .GetMethods(BindingFlags.Public | BindingFlags.Instance)
-			    .Where(m => m.IsSpecialName == false)
-			    .Where(m => _contractGeneratorOptions.IsExcluded(m) == false && m.Name != "Dispose");
+			    .Where(m => IsExcluded(m) == false);
 
 		    foreach (var method in methods)
 			    contract.Members.Add(_memberGenerator.GenerateMethodDeclaration(method));
 	    }
+
+		private bool IsExcluded(MethodInfo method)
+		{
+			return
+				_contractGeneratorOptions.IsExcluded(method) ||
+				method.IsSpecialName ||
+				method.Name == "Dispose";
+		}
     }
 }
