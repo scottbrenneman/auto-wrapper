@@ -9,7 +9,7 @@ namespace AutoWrapper
 
 		bool Registered<TType>() where TType : class;
 
-		bool Registered(string typeName);
+		bool Registered(string name);
 
 		string GetTypeNameFor(Type type);
 

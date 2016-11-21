@@ -9,14 +9,12 @@ using AutoWrapper.CodeGen.Contracts;
 
 namespace AutoWrapper
 {
-	
 	public sealed class WrappedTypeContainer : IWrappedTypeContainer
 	{
 		public WrappedTypeContainer(ITypeNamingStrategy typeNamingStrategy = null, IContractNamingStrategy contractNamingStrategy = null)
 		{
 			_typeNamingStrategy = typeNamingStrategy ?? new DefaultNamingStrategy();
 			_contractNamingStrategy = contractNamingStrategy ?? new DefaultNamingStrategy();
-			_typesToWrap = new Dictionary<Type, TypeDefinition>();
 		}
 
 		public IEnumerable<Type> RegisteredTypes => _typesToWrap.Values.Select(td => td.RegisteredType).ToArray();
@@ -29,9 +27,7 @@ namespace AutoWrapper
 				.ToArray();
 
 			foreach(var td in typeDefs)
-			{
 				_typesToWrap[td.RegisteredType] = td;
-			}
 
 			return this;
 		}
@@ -52,7 +48,7 @@ namespace AutoWrapper
 
 		public IWrappedTypeContainer Register(Type type, string typeName = null, string contractName = null)
 		{
-			if(string.IsNullOrWhiteSpace(typeName))
+			if (string.IsNullOrWhiteSpace(typeName))
 				typeName = _typeNamingStrategy.TypeNameFor(type);
 
 			if (string.IsNullOrWhiteSpace(contractName))
@@ -82,55 +78,33 @@ namespace AutoWrapper
 			return this;
 		}
 
-		public bool Registered(Type type)
+		public bool Registered(Type type) => _typesToWrap.ContainsKey(type);
+		public bool Registered<TType>() where TType : class => Registered(typeof(TType));
+
+		public bool Registered(string name)
 		{
-			return _typesToWrap.ContainsKey(type);
+			return _typesToWrap.Values.Any(td => td.ContractName == name || td.TypeName == name);
 		}
 
-		public bool Registered<TType>() where TType : class
-		{
-			return Registered(typeof(TType));
-		}
-
-		public bool Registered(string typeName)
-		{
-			return _typesToWrap.Values.Any(td => td.ContractName == typeName || td.TypeName == typeName);
-		}
-
-		public string GetTypeNameFor(Type type)
-		{
-			return _typesToWrap[type].TypeName;
-		}
+		public string GetTypeNameFor(Type type) => _typesToWrap[type].TypeName;
+		public string GetContractNameFor(Type type) => _typesToWrap[type].ContractName;
 
 		public string GetTypeNameFor(string contractName)
 		{
 			return _typesToWrap.Values.FirstOrDefault(td => td.ContractName == contractName).TypeName;
 		}
 
-		public string GetContractNameFor(Type type)
-		{
-			return _typesToWrap[type].ContractName;
-		}
-
-		public IEnumerator<Type> GetEnumerator()
-		{
-			return RegisteredTypes.GetEnumerator();
-		}
-
-		IEnumerator IEnumerable.GetEnumerator()
-		{
-			return RegisteredTypes.GetEnumerator();
-		}
+		public IEnumerator<Type> GetEnumerator() => RegisteredTypes.GetEnumerator();
+		IEnumerator IEnumerable.GetEnumerator() => RegisteredTypes.GetEnumerator();
 
 		private readonly ITypeNamingStrategy _typeNamingStrategy;
 		private readonly IContractNamingStrategy _contractNamingStrategy;
-		private readonly Dictionary<Type, TypeDefinition> _typesToWrap;
-
+		private readonly Dictionary<Type, TypeDefinition> _typesToWrap = new Dictionary<Type, TypeDefinition>();
 
 		public static readonly List<Type> ForbiddenBaseTypes = new List<Type>
-			{
-				typeof(_Attribute)
-			};
+		{
+			typeof(_Attribute)
+		};
 
 		internal struct TypeDefinition
 		{
