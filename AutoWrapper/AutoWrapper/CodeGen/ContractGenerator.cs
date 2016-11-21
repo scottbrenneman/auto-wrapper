@@ -63,7 +63,7 @@ namespace AutoWrapper.CodeGen
 			    .Where(m => _contractGeneratorOptions.IsExcluded(m) == false && m.Name != "Dispose");
 
 		    foreach (var method in methods)
-			    contract.Members.Add(_memberGenerator.GenerateMethodDeclaration(method, GenerateAs.Contract));
+			    contract.Members.Add(_memberGenerator.GenerateMethodDeclaration(method));
 	    }
     }
 }

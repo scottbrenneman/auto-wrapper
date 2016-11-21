@@ -100,7 +100,7 @@ namespace AutoWrapper.Tests.CodeGen
 
 		private void CreatingMemberMethod()
 		{
-			Then.MemberMethod = Then.Target.GenerateMethodDeclaration(Given.MethodInfo, GenerateAs.Type);
+			Then.MemberMethod = Then.Target.GenerateMethodDeclaration(Given.MethodInfo);
 		}
 		#endregion
 

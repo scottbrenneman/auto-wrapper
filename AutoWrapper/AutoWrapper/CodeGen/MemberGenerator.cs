@@ -16,7 +16,7 @@ namespace AutoWrapper.CodeGen
 			_wrappedTypeDictionary = wrappedTypeDictionary;
 		}
 
-		public CodeMemberMethod GenerateMethodDeclaration(MethodInfo methodInfo, GenerateAs generateAs)
+		public CodeMemberMethod GenerateMethodDeclaration(MethodInfo methodInfo)
 		{
 			if (methodInfo == null) throw new ArgumentNullException(nameof(methodInfo));
 			if (methodInfo.IsPublic == false) throw new NotSupportedException("Non-public methods are not supported.");
@@ -25,12 +25,7 @@ namespace AutoWrapper.CodeGen
 
 			attributes |= MethodsToOverride.Contains(methodInfo.Name) ? MemberAttributes.Override : MemberAttributes.Final;
 
-			var isAsync = generateAs == GenerateAs.Type && methodInfo.IsAsync();
-
 			var returnType = GenerateTypeReference(methodInfo.ReturnType);
-
-			if (isAsync)
-				returnType.BaseType = $"async {returnType.BaseType}";
 
 			var memberMethod = new CodeMemberMethod
 			{

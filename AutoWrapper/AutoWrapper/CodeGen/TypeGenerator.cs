@@ -160,7 +160,10 @@ namespace AutoWrapper.CodeGen
 
 		private CodeMemberMethod GenerateMethod(MethodInfo method)
 		{
-			var memberMethod = _memberGenerator.GenerateMethodDeclaration(method, GenerateAs.Type);
+			var memberMethod = _memberGenerator.GenerateMethodDeclaration(method);
+
+			if (method.IsAsync())
+				memberMethod.ReturnType.BaseType = "async " + memberMethod.ReturnType.BaseType;
 
 			var targetVariable = method.IsAsync()
 				? new CodeVariableReferenceExpression("await " + WrappedFieldName)
