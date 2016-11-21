@@ -9,7 +9,7 @@ namespace AutoWrapper.CodeGen
 	public class ContractGenerator : GeneratorBase
     {
 	    private readonly IContractGeneratorOptions _contractGeneratorOptions;
-		private readonly IMemberGenerator _memberGenerator;
+		private readonly MemberGenerator _memberGenerator;
 
 	    public ContractGenerator(IWrappedTypeDictionary wrappedTypeDictionary) : this(null, wrappedTypeDictionary) { }
 

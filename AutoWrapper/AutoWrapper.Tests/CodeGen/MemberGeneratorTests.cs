@@ -199,9 +199,9 @@ namespace AutoWrapper.Tests.CodeGen
 			Then.Target = new MemberGenerator(wrappedTypeDictionary.Object);
 		}
 
-		public class Thens
+		public sealed class Thens
 		{
-			public MemberGenerator Target;
+			internal MemberGenerator Target;
 
 			public CodeMemberMethod MemberMethod;
 			

@@ -9,7 +9,7 @@ namespace AutoWrapper.CodeGen
 	public class TypeGenerator : GeneratorBase
 	{
 		private readonly ITypeGeneratorOptions _typeGeneratorOptions;
-		private readonly IMemberGenerator _memberGenerator;
+		private readonly MemberGenerator _memberGenerator;
 		
 		public TypeGenerator(IWrappedTypeDictionary wrappedTypeDictionary) : this(null, wrappedTypeDictionary) { }
 

@@ -1,5 +1,4 @@
-﻿using AutoWrapper.CodeGen.Contracts;
-using System;
+﻿using System;
 using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +6,7 @@ using System.Reflection;
 
 namespace AutoWrapper.CodeGen
 {
-	public sealed class MemberGenerator : IMemberGenerator
+	internal sealed class MemberGenerator
 	{
 		private readonly IWrappedTypeDictionary _wrappedTypeDictionary;
 
