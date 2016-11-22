@@ -153,7 +153,7 @@ namespace AutoWrapper.Tests.CodeGen
 
 		protected override void Creating()
 		{
-			var options = new ContractGeneratorOptions();
+			var options = new ContractGeneratorOptionsBuilder();
 
 			if (GivensDefined("AsPublicWasCalled"))
 				options.WithPublic();
@@ -163,7 +163,7 @@ namespace AutoWrapper.Tests.CodeGen
 
 			Then.Container = new WrappedTypeContainer(null, Given.CustomNamingStrategy);
 			Then.Container.Register(Given.Type);
-			Then.Target = new ContractGenerator(options, Then.Container);
+			Then.Target = new ContractGenerator(options.Build(), Then.Container);
 		}
 
 		private void Generating()

@@ -38,7 +38,7 @@
     <Compile Include="AutoWrap.cs" />
     <Compile Include="CodeGen\CodeGenerator.cs" />
     <Compile Include="CodeGen\ContractGenerator.cs" />
-    <Compile Include="CodeGen\ContractGeneratorOptions.cs" />
+    <Compile Include="CodeGen\ContractGeneratorOptionsBuilder.cs" />
     <Compile Include="CodeGen\Contracts\IContractGeneratorOptions.cs" />
     <Compile Include="CodeGen\Contracts\IContractNamingStrategy.cs" />
     <Compile Include="CodeGen\Contracts\IGenerator.cs" />
@@ -50,7 +50,7 @@
     <Compile Include="CodeGen\MemberGenerator.cs" />
     <Compile Include="CodeGen\TypeGenerator.Members.cs" />
     <Compile Include="IWrappedTypeContainer.cs" />
-    <Compile Include="CodeGen\TypeGeneratorOptions.cs" />
+    <Compile Include="CodeGen\TypeGeneratorOptionsBuilder.cs" />
     <Compile Include="IWrappedTypeDictionary.cs" />
     <Compile Include="WrappedTypeContainer.cs" />
     <Compile Include="CodeGen\DefaultNamingStrategy.cs" />

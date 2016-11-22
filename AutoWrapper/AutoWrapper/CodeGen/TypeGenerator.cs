@@ -16,7 +16,7 @@ namespace AutoWrapper.CodeGen
 		public TypeGenerator(ITypeGeneratorOptions typeGeneratorOptions, IWrappedTypeDictionary wrappedTypeDictionary)
 			: base(wrappedTypeDictionary)
 		{
-			_typeGeneratorOptions = typeGeneratorOptions ?? new TypeGeneratorOptions();
+			_typeGeneratorOptions = typeGeneratorOptions ?? new TypeGeneratorOptionsBuilder().Build();
 			_memberGenerator = new MemberGenerator(wrappedTypeDictionary);
 		}
 		

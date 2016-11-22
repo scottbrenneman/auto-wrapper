@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 
 namespace AutoWrapper.CodeGen.Contracts
 {
@@ -7,14 +6,12 @@ namespace AutoWrapper.CodeGen.Contracts
 	{
 		ITypeGeneratorOptionsBuilder WithPublic();
 		ITypeGeneratorOptionsBuilder WithPartial();
-		ITypeGeneratorOptionsBuilder WithNoImplementation();
-		ITypeGeneratorOptions AsOptions { get; }
+		ITypeGeneratorOptions Build();
 	}
 
 	public interface ITypeGeneratorOptions
 	{
 		TypeAttributes GetTypeAttributes();
 		bool UsePartial { get; }
-		ITypeGeneratorOptionsBuilder AsBuilder { get; }
 	}
 }

@@ -79,8 +79,8 @@ namespace AutoWrapper.Tests.CodeGen
 
 		protected override void Creating()
 		{
-			var contractOptions = new ContractGeneratorOptions();
-			var typeOptions = new TypeGeneratorOptions();
+			var contractOptions = new ContractGeneratorOptionsBuilder();
+			var typeOptions = new TypeGeneratorOptionsBuilder();
 
 			if (GivensDefined("AsPublicWasCalled"))
 			{
@@ -91,8 +91,8 @@ namespace AutoWrapper.Tests.CodeGen
 			Then.Container = new WrappedTypeContainer(Given.CustomNamingStrategy);
 			Then.Container.Register<SomeType>();
 
-			Then.TypeGenerator = new TypeGenerator(typeOptions, Then.Container);
-			Then.ContractGenerator = new ContractGenerator(contractOptions, Then.Container);
+			Then.TypeGenerator = new TypeGenerator(typeOptions.Build(), Then.Container);
+			Then.ContractGenerator = new ContractGenerator(contractOptions.Build(), Then.Container);
 
 			Then.Target = new AutoWrapper.CodeGen.CodeGenerator();
 		}

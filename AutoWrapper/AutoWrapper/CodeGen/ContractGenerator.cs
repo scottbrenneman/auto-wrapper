@@ -16,7 +16,7 @@ namespace AutoWrapper.CodeGen
 		public ContractGenerator(IContractGeneratorOptions contractGeneratorOptions, IWrappedTypeDictionary wrappedTypeDictionary)
 			: base(wrappedTypeDictionary)
 		{
-			_contractGeneratorOptions = contractGeneratorOptions ?? new ContractGeneratorOptions();
+			_contractGeneratorOptions = contractGeneratorOptions ?? new ContractGeneratorOptionsBuilder().Build();
 			_memberGenerator = new MemberGenerator(wrappedTypeDictionary);
 		}
 

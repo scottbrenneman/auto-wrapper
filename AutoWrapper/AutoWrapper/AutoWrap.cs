@@ -1,7 +1,5 @@
 ﻿using AutoWrapper.CodeGen;
-using System;
 using System.CodeDom;
-using System.Reflection;
 
 namespace AutoWrapper
 {
@@ -9,16 +7,16 @@ namespace AutoWrapper
 	{
 		public static string GenerateCode(string namespaceForWrappers, IWrappedTypeContainer container)
 		{
-			var typeOptions = new TypeGeneratorOptions()
+			var typeOptions = new TypeGeneratorOptionsBuilder()
 				.WithPartial()
 				.WithPublic()
-				.AsOptions;
+				.Build();
 
-			var contractOptions = new ContractGeneratorOptions()
+			var contractOptions = new ContractGeneratorOptionsBuilder()
 				.WithPartial()
 				.WithPublic()
 				.ExcludeMembersDeclaredOn<object>()
-				.AsOptions;
+				.Build();
 
 			var typeGenerator = new TypeGenerator(typeOptions, container);
 

@@ -9,7 +9,7 @@ namespace AutoWrapper.CodeGen.Contracts
 		IContractGeneratorOptionsBuilder WithPartial();
 		IContractGeneratorOptionsBuilder ExcludeMembersDeclaredOn<TType>();
 		IContractGeneratorOptionsBuilder ExcludeMembersDeclaredOn(Type type);
-		IContractGeneratorOptions AsOptions { get; }
+		IContractGeneratorOptions Build();
 	}
 
 	public interface IContractGeneratorOptions
@@ -17,6 +17,5 @@ namespace AutoWrapper.CodeGen.Contracts
 		TypeAttributes GetTypeAttributes();
 		bool IsExcluded(MemberInfo member);
 		bool UsePartial { get; }
-		IContractGeneratorOptionsBuilder AsBuilder { get; }
 	}
 }

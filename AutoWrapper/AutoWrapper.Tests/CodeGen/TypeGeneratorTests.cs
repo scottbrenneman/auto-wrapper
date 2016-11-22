@@ -144,14 +144,14 @@ namespace AutoWrapper.Tests.CodeGen
 		
 		protected override void Creating()
 		{
-			var options = new TypeGeneratorOptions();
+			var options = new TypeGeneratorOptionsBuilder();
 
 			if (GivensDefined("AsPublicWasCalled"))
 				options.WithPublic();
 
 			Then.Container = new WrappedTypeContainer(Given.CustomNamingStrategy);
 			Then.Container.Register<SomeType>();
-			Then.Target = new TypeGenerator(options.AsOptions, Then.Container);
+			Then.Target = new TypeGenerator(options.Build(), Then.Container);
 		}
 
 		private void Generating()
