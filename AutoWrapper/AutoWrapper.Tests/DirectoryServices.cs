@@ -13,7 +13,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	
 	
 	// Interface for ActiveDirectorySecurityWrapper
-	public interface IActiveDirectorySecurityWrapper
+	public partial interface IActiveDirectorySecurityWrapper
 	{
 		
 		System.Type AccessRightType
@@ -124,7 +124,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryAccessRuleWrapper
-	public interface IActiveDirectoryAccessRuleWrapper
+	public partial interface IActiveDirectoryAccessRuleWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
@@ -184,7 +184,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ListChildrenAccessRuleWrapper
-	public interface IListChildrenAccessRuleWrapper
+	public partial interface IListChildrenAccessRuleWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
@@ -244,7 +244,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for CreateChildAccessRuleWrapper
-	public interface ICreateChildAccessRuleWrapper
+	public partial interface ICreateChildAccessRuleWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
@@ -304,7 +304,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DeleteChildAccessRuleWrapper
-	public interface IDeleteChildAccessRuleWrapper
+	public partial interface IDeleteChildAccessRuleWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
@@ -364,7 +364,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for PropertyAccessRuleWrapper
-	public interface IPropertyAccessRuleWrapper
+	public partial interface IPropertyAccessRuleWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
@@ -424,7 +424,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for PropertySetAccessRuleWrapper
-	public interface IPropertySetAccessRuleWrapper
+	public partial interface IPropertySetAccessRuleWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
@@ -484,7 +484,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ExtendedRightAccessRuleWrapper
-	public interface IExtendedRightAccessRuleWrapper
+	public partial interface IExtendedRightAccessRuleWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
@@ -544,7 +544,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DeleteTreeAccessRuleWrapper
-	public interface IDeleteTreeAccessRuleWrapper
+	public partial interface IDeleteTreeAccessRuleWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
@@ -604,7 +604,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryAuditRuleWrapper
-	public interface IActiveDirectoryAuditRuleWrapper
+	public partial interface IActiveDirectoryAuditRuleWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectoryRights ActiveDirectoryRights
@@ -664,7 +664,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryEntriesWrapper
-	public interface IDirectoryEntriesWrapper
+	public partial interface IDirectoryEntriesWrapper
 	{
 		
 		ISchemaNameCollectionWrapper SchemaFilter
@@ -689,7 +689,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryEntryWrapper
-	public interface IDirectoryEntryWrapper : System.IDisposable
+	public partial interface IDirectoryEntryWrapper : System.IDisposable
 	{
 		
 		System.DirectoryServices.AuthenticationTypes AuthenticationType
@@ -829,7 +829,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryEntryConfigurationWrapper
-	public interface IDirectoryEntryConfigurationWrapper
+	public partial interface IDirectoryEntryConfigurationWrapper
 	{
 		
 		System.DirectoryServices.ReferralChasingOption Referral
@@ -875,7 +875,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectorySearcherWrapper
-	public interface IDirectorySearcherWrapper : System.IDisposable
+	public partial interface IDirectorySearcherWrapper : System.IDisposable
 	{
 		
 		bool CacheResults
@@ -1033,7 +1033,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryServicesPermissionWrapper
-	public interface IDirectoryServicesPermissionWrapper
+	public partial interface IDirectoryServicesPermissionWrapper
 	{
 		
 		IDirectoryServicesPermissionEntryCollectionWrapper PermissionEntries
@@ -1076,7 +1076,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryServicesPermissionEntryWrapper
-	public interface IDirectoryServicesPermissionEntryWrapper
+	public partial interface IDirectoryServicesPermissionEntryWrapper
 	{
 		
 		string Path
@@ -1096,7 +1096,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryServicesPermissionEntryCollectionWrapper
-	public interface IDirectoryServicesPermissionEntryCollectionWrapper
+	public partial interface IDirectoryServicesPermissionEntryCollectionWrapper
 	{
 		
 		IDirectoryServicesPermissionEntryWrapper this[int index]
@@ -1145,7 +1145,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectorySynchronizationWrapper
-	public interface IDirectorySynchronizationWrapper
+	public partial interface IDirectorySynchronizationWrapper
 	{
 		
 		System.DirectoryServices.DirectorySynchronizationOptions Option
@@ -1169,7 +1169,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryVirtualListViewWrapper
-	public interface IDirectoryVirtualListViewWrapper
+	public partial interface IDirectoryVirtualListViewWrapper
 	{
 		
 		int BeforeCount
@@ -1221,7 +1221,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryVirtualListViewContextWrapper
-	public interface IDirectoryVirtualListViewContextWrapper
+	public partial interface IDirectoryVirtualListViewContextWrapper
 	{
 		
 		System.DirectoryServices.DirectoryVirtualListViewContext Wrapped
@@ -1233,7 +1233,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for PropertyCollectionWrapper
-	public interface IPropertyCollectionWrapper
+	public partial interface IPropertyCollectionWrapper
 	{
 		
 		IPropertyValueCollectionWrapper this[string propertyName]
@@ -1269,7 +1269,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for PropertyValueCollectionWrapper
-	public interface IPropertyValueCollectionWrapper
+	public partial interface IPropertyValueCollectionWrapper
 	{
 		
 		object this[int index]
@@ -1329,7 +1329,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ResultPropertyCollectionWrapper
-	public interface IResultPropertyCollectionWrapper
+	public partial interface IResultPropertyCollectionWrapper
 	{
 		
 		IResultPropertyValueCollectionWrapper this[string name]
@@ -1369,7 +1369,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ResultPropertyValueCollectionWrapper
-	public interface IResultPropertyValueCollectionWrapper
+	public partial interface IResultPropertyValueCollectionWrapper
 	{
 		
 		object this[int index]
@@ -1397,7 +1397,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for SchemaNameCollectionWrapper
-	public interface ISchemaNameCollectionWrapper
+	public partial interface ISchemaNameCollectionWrapper
 	{
 		
 		string this[int index]
@@ -1440,7 +1440,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for SearchResultWrapper
-	public interface ISearchResultWrapper
+	public partial interface ISearchResultWrapper
 	{
 		
 		string Path
@@ -1462,7 +1462,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for SearchResultCollectionWrapper
-	public interface ISearchResultCollectionWrapper : System.IDisposable
+	public partial interface ISearchResultCollectionWrapper : System.IDisposable
 	{
 		
 		ISearchResultWrapper this[int index]
@@ -1506,7 +1506,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for SortOptionWrapper
-	public interface ISortOptionWrapper
+	public partial interface ISortOptionWrapper
 	{
 		
 		string PropertyName
@@ -1528,7 +1528,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryServicesCOMExceptionWrapper
-	public interface IDirectoryServicesCOMExceptionWrapper
+	public partial interface IDirectoryServicesCOMExceptionWrapper
 	{
 		
 		int ExtendedError
@@ -1603,7 +1603,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryReplicationMetadataWrapper
-	public interface IActiveDirectoryReplicationMetadataWrapper
+	public partial interface IActiveDirectoryReplicationMetadataWrapper
 	{
 		
 		IAttributeMetadataWrapper this[string name]
@@ -1643,7 +1643,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryScheduleWrapper
-	public interface IActiveDirectoryScheduleWrapper
+	public partial interface IActiveDirectoryScheduleWrapper
 	{
 		
 		bool[,,] RawSchedule
@@ -1667,7 +1667,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySchemaWrapper
-	public interface IActiveDirectorySchemaWrapper : System.IDisposable
+	public partial interface IActiveDirectorySchemaWrapper : System.IDisposable
 	{
 		
 		System.DirectoryServices.ActiveDirectory.DirectoryServer SchemaRoleOwner
@@ -1713,7 +1713,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySchemaClassWrapper
-	public interface IActiveDirectorySchemaClassWrapper : System.IDisposable
+	public partial interface IActiveDirectorySchemaClassWrapper : System.IDisposable
 	{
 		
 		string Name
@@ -1809,7 +1809,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySchemaClassCollectionWrapper
-	public interface IActiveDirectorySchemaClassCollectionWrapper
+	public partial interface IActiveDirectorySchemaClassCollectionWrapper
 	{
 		
 		IActiveDirectorySchemaClassWrapper this[int index]
@@ -1860,7 +1860,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySchemaPropertyWrapper
-	public interface IActiveDirectorySchemaPropertyWrapper : System.IDisposable
+	public partial interface IActiveDirectorySchemaPropertyWrapper : System.IDisposable
 	{
 		
 		string Name
@@ -1982,7 +1982,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySchemaPropertyCollectionWrapper
-	public interface IActiveDirectorySchemaPropertyCollectionWrapper
+	public partial interface IActiveDirectorySchemaPropertyCollectionWrapper
 	{
 		
 		IActiveDirectorySchemaPropertyWrapper this[int index]
@@ -2033,7 +2033,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySiteWrapper
-	public interface IActiveDirectorySiteWrapper : System.IDisposable
+	public partial interface IActiveDirectorySiteWrapper : System.IDisposable
 	{
 		
 		string Name
@@ -2120,7 +2120,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySiteCollectionWrapper
-	public interface IActiveDirectorySiteCollectionWrapper
+	public partial interface IActiveDirectorySiteCollectionWrapper
 	{
 		
 		IActiveDirectorySiteWrapper this[int index]
@@ -2169,7 +2169,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySiteLinkWrapper
-	public interface IActiveDirectorySiteLinkWrapper : System.IDisposable
+	public partial interface IActiveDirectorySiteLinkWrapper : System.IDisposable
 	{
 		
 		string Name
@@ -2238,7 +2238,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySiteLinkBridgeWrapper
-	public interface IActiveDirectorySiteLinkBridgeWrapper : System.IDisposable
+	public partial interface IActiveDirectorySiteLinkBridgeWrapper : System.IDisposable
 	{
 		
 		string Name
@@ -2271,7 +2271,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySiteLinkCollectionWrapper
-	public interface IActiveDirectorySiteLinkCollectionWrapper
+	public partial interface IActiveDirectorySiteLinkCollectionWrapper
 	{
 		
 		IActiveDirectorySiteLinkWrapper this[int index]
@@ -2320,7 +2320,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySubnetWrapper
-	public interface IActiveDirectorySubnetWrapper : System.IDisposable
+	public partial interface IActiveDirectorySubnetWrapper : System.IDisposable
 	{
 		
 		string Name
@@ -2355,7 +2355,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySubnetCollectionWrapper
-	public interface IActiveDirectorySubnetCollectionWrapper
+	public partial interface IActiveDirectorySubnetCollectionWrapper
 	{
 		
 		IActiveDirectorySubnetWrapper this[int index]
@@ -2404,7 +2404,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for AdamInstanceWrapper
-	public interface IAdamInstanceWrapper : System.IDisposable
+	public partial interface IAdamInstanceWrapper : System.IDisposable
 	{
 		
 		IConfigurationSetWrapper ConfigurationSet
@@ -2513,7 +2513,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for AdamInstanceCollectionWrapper
-	public interface IAdamInstanceCollectionWrapper
+	public partial interface IAdamInstanceCollectionWrapper
 	{
 		
 		IAdamInstanceWrapper this[int index]
@@ -2541,7 +2541,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ApplicationPartitionWrapper
-	public interface IApplicationPartitionWrapper : System.IDisposable
+	public partial interface IApplicationPartitionWrapper : System.IDisposable
 	{
 		
 		IDirectoryServerCollectionWrapper DirectoryServers
@@ -2591,7 +2591,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ApplicationPartitionCollectionWrapper
-	public interface IApplicationPartitionCollectionWrapper
+	public partial interface IApplicationPartitionCollectionWrapper
 	{
 		
 		IApplicationPartitionWrapper this[int index]
@@ -2619,7 +2619,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for AttributeMetadataWrapper
-	public interface IAttributeMetadataWrapper
+	public partial interface IAttributeMetadataWrapper
 	{
 		
 		string Name
@@ -2664,7 +2664,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for AttributeMetadataCollectionWrapper
-	public interface IAttributeMetadataCollectionWrapper
+	public partial interface IAttributeMetadataCollectionWrapper
 	{
 		
 		IAttributeMetadataWrapper this[int index]
@@ -2692,7 +2692,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ConfigurationSetWrapper
-	public interface IConfigurationSetWrapper
+	public partial interface IConfigurationSetWrapper
 	{
 		
 		string Name
@@ -2757,7 +2757,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryContextWrapper
-	public interface IDirectoryContextWrapper
+	public partial interface IDirectoryContextWrapper
 	{
 		
 		string Name
@@ -2782,7 +2782,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryServerCollectionWrapper
-	public interface IDirectoryServerCollectionWrapper
+	public partial interface IDirectoryServerCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.DirectoryServer this[int index]
@@ -2829,7 +2829,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DomainWrapper
-	public interface IDomainWrapper : System.IDisposable
+	public partial interface IDomainWrapper : System.IDisposable
 	{
 		
 		IForestWrapper Forest
@@ -2945,7 +2945,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DomainCollectionWrapper
-	public interface IDomainCollectionWrapper
+	public partial interface IDomainCollectionWrapper
 	{
 		
 		IDomainWrapper this[int index]
@@ -2973,7 +2973,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for SyncUpdateCallbackWrapper
-	public interface ISyncUpdateCallbackWrapper
+	public partial interface ISyncUpdateCallbackWrapper
 	{
 		
 		System.Reflection.MethodInfo Method
@@ -3011,7 +3011,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DomainControllerWrapper
-	public interface IDomainControllerWrapper : System.IDisposable
+	public partial interface IDomainControllerWrapper : System.IDisposable
 	{
 		
 		IForestWrapper Forest
@@ -3123,7 +3123,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DomainControllerCollectionWrapper
-	public interface IDomainControllerCollectionWrapper
+	public partial interface IDomainControllerCollectionWrapper
 	{
 		
 		IDomainControllerWrapper this[int index]
@@ -3151,7 +3151,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for SyncFromAllServersErrorInformationWrapper
-	public interface ISyncFromAllServersErrorInformationWrapper
+	public partial interface ISyncFromAllServersErrorInformationWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.SyncFromAllServersErrorCategory ErrorCategory
@@ -3186,7 +3186,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryObjectNotFoundExceptionWrapper
-	public interface IActiveDirectoryObjectNotFoundExceptionWrapper
+	public partial interface IActiveDirectoryObjectNotFoundExceptionWrapper
 	{
 		
 		System.Type Type
@@ -3256,7 +3256,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryOperationExceptionWrapper
-	public interface IActiveDirectoryOperationExceptionWrapper
+	public partial interface IActiveDirectoryOperationExceptionWrapper
 	{
 		
 		int ErrorCode
@@ -3321,7 +3321,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryServerDownExceptionWrapper
-	public interface IActiveDirectoryServerDownExceptionWrapper
+	public partial interface IActiveDirectoryServerDownExceptionWrapper
 	{
 		
 		int ErrorCode
@@ -3391,7 +3391,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryObjectExistsExceptionWrapper
-	public interface IActiveDirectoryObjectExistsExceptionWrapper
+	public partial interface IActiveDirectoryObjectExistsExceptionWrapper
 	{
 		
 		string Message
@@ -3451,7 +3451,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for SyncFromAllServersOperationExceptionWrapper
-	public interface ISyncFromAllServersOperationExceptionWrapper
+	public partial interface ISyncFromAllServersOperationExceptionWrapper
 	{
 		
 		ISyncFromAllServersErrorInformationWrapper[] ErrorInformation
@@ -3521,7 +3521,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ForestTrustCollisionExceptionWrapper
-	public interface IForestTrustCollisionExceptionWrapper
+	public partial interface IForestTrustCollisionExceptionWrapper
 	{
 		
 		IForestTrustRelationshipCollisionCollectionWrapper Collisions
@@ -3591,7 +3591,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ForestWrapper
-	public interface IForestWrapper : System.IDisposable
+	public partial interface IForestWrapper : System.IDisposable
 	{
 		
 		string Name
@@ -3710,7 +3710,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ForestTrustRelationshipCollisionWrapper
-	public interface IForestTrustRelationshipCollisionWrapper
+	public partial interface IForestTrustRelationshipCollisionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ForestTrustCollisionType CollisionType
@@ -3740,7 +3740,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ForestTrustRelationshipCollisionCollectionWrapper
-	public interface IForestTrustRelationshipCollisionCollectionWrapper
+	public partial interface IForestTrustRelationshipCollisionCollectionWrapper
 	{
 		
 		IForestTrustRelationshipCollisionWrapper this[int index]
@@ -3768,7 +3768,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ForestTrustDomainInfoCollectionWrapper
-	public interface IForestTrustDomainInfoCollectionWrapper
+	public partial interface IForestTrustDomainInfoCollectionWrapper
 	{
 		
 		IForestTrustDomainInformationWrapper this[int index]
@@ -3796,7 +3796,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ForestTrustDomainInformationWrapper
-	public interface IForestTrustDomainInformationWrapper
+	public partial interface IForestTrustDomainInformationWrapper
 	{
 		
 		string DnsName
@@ -3827,7 +3827,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ForestTrustRelationshipInformationWrapper
-	public interface IForestTrustRelationshipInformationWrapper
+	public partial interface IForestTrustRelationshipInformationWrapper
 	{
 		
 		ITopLevelNameCollectionWrapper TopLevelNames
@@ -3874,7 +3874,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for GlobalCatalogWrapper
-	public interface IGlobalCatalogWrapper : System.IDisposable
+	public partial interface IGlobalCatalogWrapper : System.IDisposable
 	{
 		
 		IForestWrapper Forest
@@ -3990,7 +3990,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for GlobalCatalogCollectionWrapper
-	public interface IGlobalCatalogCollectionWrapper
+	public partial interface IGlobalCatalogCollectionWrapper
 	{
 		
 		IGlobalCatalogWrapper this[int index]
@@ -4018,7 +4018,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReadOnlyActiveDirectorySchemaClassCollectionWrapper
-	public interface IReadOnlyActiveDirectorySchemaClassCollectionWrapper
+	public partial interface IReadOnlyActiveDirectorySchemaClassCollectionWrapper
 	{
 		
 		IActiveDirectorySchemaClassWrapper this[int index]
@@ -4046,7 +4046,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReadOnlyActiveDirectorySchemaPropertyCollectionWrapper
-	public interface IReadOnlyActiveDirectorySchemaPropertyCollectionWrapper
+	public partial interface IReadOnlyActiveDirectorySchemaPropertyCollectionWrapper
 	{
 		
 		IActiveDirectorySchemaPropertyWrapper this[int index]
@@ -4074,7 +4074,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReadOnlyDirectoryServerCollectionWrapper
-	public interface IReadOnlyDirectoryServerCollectionWrapper
+	public partial interface IReadOnlyDirectoryServerCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.DirectoryServer this[int index]
@@ -4102,7 +4102,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReadOnlySiteCollectionWrapper
-	public interface IReadOnlySiteCollectionWrapper
+	public partial interface IReadOnlySiteCollectionWrapper
 	{
 		
 		IActiveDirectorySiteWrapper this[int index]
@@ -4130,7 +4130,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReadOnlySiteLinkBridgeCollectionWrapper
-	public interface IReadOnlySiteLinkBridgeCollectionWrapper
+	public partial interface IReadOnlySiteLinkBridgeCollectionWrapper
 	{
 		
 		IActiveDirectorySiteLinkBridgeWrapper this[int index]
@@ -4158,7 +4158,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReadOnlySiteLinkCollectionWrapper
-	public interface IReadOnlySiteLinkCollectionWrapper
+	public partial interface IReadOnlySiteLinkCollectionWrapper
 	{
 		
 		IActiveDirectorySiteLinkWrapper this[int index]
@@ -4186,7 +4186,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReadOnlyStringCollectionWrapper
-	public interface IReadOnlyStringCollectionWrapper
+	public partial interface IReadOnlyStringCollectionWrapper
 	{
 		
 		string this[int index]
@@ -4214,7 +4214,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationConnectionWrapper
-	public interface IReplicationConnectionWrapper : System.IDisposable
+	public partial interface IReplicationConnectionWrapper : System.IDisposable
 	{
 		
 		string Name
@@ -4299,7 +4299,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationConnectionCollectionWrapper
-	public interface IReplicationConnectionCollectionWrapper
+	public partial interface IReplicationConnectionCollectionWrapper
 	{
 		
 		IReplicationConnectionWrapper this[int index]
@@ -4327,7 +4327,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationCursorWrapper
-	public interface IReplicationCursorWrapper
+	public partial interface IReplicationCursorWrapper
 	{
 		
 		string PartitionName
@@ -4362,7 +4362,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationCursorCollectionWrapper
-	public interface IReplicationCursorCollectionWrapper
+	public partial interface IReplicationCursorCollectionWrapper
 	{
 		
 		IReplicationCursorWrapper this[int index]
@@ -4390,7 +4390,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationFailureWrapper
-	public interface IReplicationFailureWrapper
+	public partial interface IReplicationFailureWrapper
 	{
 		
 		string SourceServer
@@ -4425,7 +4425,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationFailureCollectionWrapper
-	public interface IReplicationFailureCollectionWrapper
+	public partial interface IReplicationFailureCollectionWrapper
 	{
 		
 		IReplicationFailureWrapper this[int index]
@@ -4453,7 +4453,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationNeighborWrapper
-	public interface IReplicationNeighborWrapper
+	public partial interface IReplicationNeighborWrapper
 	{
 		
 		string PartitionName
@@ -4523,7 +4523,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationNeighborCollectionWrapper
-	public interface IReplicationNeighborCollectionWrapper
+	public partial interface IReplicationNeighborCollectionWrapper
 	{
 		
 		IReplicationNeighborWrapper this[int index]
@@ -4551,7 +4551,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationOperationWrapper
-	public interface IReplicationOperationWrapper
+	public partial interface IReplicationOperationWrapper
 	{
 		
 		System.DateTime TimeEnqueued
@@ -4591,7 +4591,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationOperationCollectionWrapper
-	public interface IReplicationOperationCollectionWrapper
+	public partial interface IReplicationOperationCollectionWrapper
 	{
 		
 		IReplicationOperationWrapper this[int index]
@@ -4619,7 +4619,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationOperationInformationWrapper
-	public interface IReplicationOperationInformationWrapper
+	public partial interface IReplicationOperationInformationWrapper
 	{
 		
 		System.DateTime OperationStartTime
@@ -4644,7 +4644,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryInterSiteTransportWrapper
-	public interface IActiveDirectoryInterSiteTransportWrapper : System.IDisposable
+	public partial interface IActiveDirectoryInterSiteTransportWrapper : System.IDisposable
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectoryTransportType TransportType
@@ -4687,7 +4687,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryRoleCollectionWrapper
-	public interface IActiveDirectoryRoleCollectionWrapper
+	public partial interface IActiveDirectoryRoleCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.ActiveDirectoryRole this[int index]
@@ -4715,7 +4715,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for AdamRoleCollectionWrapper
-	public interface IAdamRoleCollectionWrapper
+	public partial interface IAdamRoleCollectionWrapper
 	{
 		
 		System.DirectoryServices.ActiveDirectory.AdamRole this[int index]
@@ -4743,7 +4743,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for TopLevelNameWrapper
-	public interface ITopLevelNameWrapper
+	public partial interface ITopLevelNameWrapper
 	{
 		
 		string Name
@@ -4764,7 +4764,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for TopLevelNameCollectionWrapper
-	public interface ITopLevelNameCollectionWrapper
+	public partial interface ITopLevelNameCollectionWrapper
 	{
 		
 		ITopLevelNameWrapper this[int index]
@@ -4792,7 +4792,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for TrustRelationshipInformationWrapper
-	public interface ITrustRelationshipInformationWrapper
+	public partial interface ITrustRelationshipInformationWrapper
 	{
 		
 		string SourceName
@@ -4822,7 +4822,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for TrustRelationshipInformationCollectionWrapper
-	public interface ITrustRelationshipInformationCollectionWrapper
+	public partial interface ITrustRelationshipInformationCollectionWrapper
 	{
 		
 		ITrustRelationshipInformationWrapper this[int index]
@@ -4850,6 +4850,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectorySecurity in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ActiveDirectorySecurityWrapper : IActiveDirectorySecurityWrapper
 	{
 		
@@ -4922,16 +4923,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectorySecurity ConvertWrapper(IActiveDirectorySecurityWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IActiveDirectorySecurityWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectorySecurity wrapped)
-		{
-			return new ActiveDirectorySecurityWrapper(wrapped);
 		}
 		
 		public void AddAccessRule(IActiveDirectoryAccessRuleWrapper rule)
@@ -5113,9 +5104,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectorySecurity ConvertWrapper(IActiveDirectorySecurityWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IActiveDirectorySecurityWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectorySecurity wrapped)
+		{
+			return new ActiveDirectorySecurityWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectoryAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ActiveDirectoryAccessRuleWrapper : IActiveDirectoryAccessRuleWrapper
 	{
 		
@@ -5214,16 +5216,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectoryAccessRule ConvertWrapper(IActiveDirectoryAccessRuleWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IActiveDirectoryAccessRuleWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectoryAccessRule wrapped)
-		{
-			return new ActiveDirectoryAccessRuleWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -5238,9 +5230,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectoryAccessRule ConvertWrapper(IActiveDirectoryAccessRuleWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IActiveDirectoryAccessRuleWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectoryAccessRule wrapped)
+		{
+			return new ActiveDirectoryAccessRuleWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ListChildrenAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ListChildrenAccessRuleWrapper : IListChildrenAccessRuleWrapper
 	{
 		
@@ -5339,16 +5342,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ListChildrenAccessRule ConvertWrapper(IListChildrenAccessRuleWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IListChildrenAccessRuleWrapper ConvertWrapped(System.DirectoryServices.ListChildrenAccessRule wrapped)
-		{
-			return new ListChildrenAccessRuleWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -5363,9 +5356,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ListChildrenAccessRule ConvertWrapper(IListChildrenAccessRuleWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IListChildrenAccessRuleWrapper ConvertWrapped(System.DirectoryServices.ListChildrenAccessRule wrapped)
+		{
+			return new ListChildrenAccessRuleWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.CreateChildAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class CreateChildAccessRuleWrapper : ICreateChildAccessRuleWrapper
 	{
 		
@@ -5464,16 +5468,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.CreateChildAccessRule ConvertWrapper(ICreateChildAccessRuleWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static ICreateChildAccessRuleWrapper ConvertWrapped(System.DirectoryServices.CreateChildAccessRule wrapped)
-		{
-			return new CreateChildAccessRuleWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -5488,9 +5482,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.CreateChildAccessRule ConvertWrapper(ICreateChildAccessRuleWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static ICreateChildAccessRuleWrapper ConvertWrapped(System.DirectoryServices.CreateChildAccessRule wrapped)
+		{
+			return new CreateChildAccessRuleWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.DeleteChildAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class DeleteChildAccessRuleWrapper : IDeleteChildAccessRuleWrapper
 	{
 		
@@ -5589,16 +5594,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.DeleteChildAccessRule ConvertWrapper(IDeleteChildAccessRuleWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IDeleteChildAccessRuleWrapper ConvertWrapped(System.DirectoryServices.DeleteChildAccessRule wrapped)
-		{
-			return new DeleteChildAccessRuleWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -5613,9 +5608,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.DeleteChildAccessRule ConvertWrapper(IDeleteChildAccessRuleWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IDeleteChildAccessRuleWrapper ConvertWrapped(System.DirectoryServices.DeleteChildAccessRule wrapped)
+		{
+			return new DeleteChildAccessRuleWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.PropertyAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class PropertyAccessRuleWrapper : IPropertyAccessRuleWrapper
 	{
 		
@@ -5714,16 +5720,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.PropertyAccessRule ConvertWrapper(IPropertyAccessRuleWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IPropertyAccessRuleWrapper ConvertWrapped(System.DirectoryServices.PropertyAccessRule wrapped)
-		{
-			return new PropertyAccessRuleWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -5738,9 +5734,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.PropertyAccessRule ConvertWrapper(IPropertyAccessRuleWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IPropertyAccessRuleWrapper ConvertWrapped(System.DirectoryServices.PropertyAccessRule wrapped)
+		{
+			return new PropertyAccessRuleWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.PropertySetAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class PropertySetAccessRuleWrapper : IPropertySetAccessRuleWrapper
 	{
 		
@@ -5839,16 +5846,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.PropertySetAccessRule ConvertWrapper(IPropertySetAccessRuleWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IPropertySetAccessRuleWrapper ConvertWrapped(System.DirectoryServices.PropertySetAccessRule wrapped)
-		{
-			return new PropertySetAccessRuleWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -5863,9 +5860,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.PropertySetAccessRule ConvertWrapper(IPropertySetAccessRuleWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IPropertySetAccessRuleWrapper ConvertWrapped(System.DirectoryServices.PropertySetAccessRule wrapped)
+		{
+			return new PropertySetAccessRuleWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ExtendedRightAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ExtendedRightAccessRuleWrapper : IExtendedRightAccessRuleWrapper
 	{
 		
@@ -5964,16 +5972,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ExtendedRightAccessRule ConvertWrapper(IExtendedRightAccessRuleWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IExtendedRightAccessRuleWrapper ConvertWrapped(System.DirectoryServices.ExtendedRightAccessRule wrapped)
-		{
-			return new ExtendedRightAccessRuleWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -5988,9 +5986,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ExtendedRightAccessRule ConvertWrapper(IExtendedRightAccessRuleWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IExtendedRightAccessRuleWrapper ConvertWrapped(System.DirectoryServices.ExtendedRightAccessRule wrapped)
+		{
+			return new ExtendedRightAccessRuleWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.DeleteTreeAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class DeleteTreeAccessRuleWrapper : IDeleteTreeAccessRuleWrapper
 	{
 		
@@ -6089,16 +6098,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.DeleteTreeAccessRule ConvertWrapper(IDeleteTreeAccessRuleWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IDeleteTreeAccessRuleWrapper ConvertWrapped(System.DirectoryServices.DeleteTreeAccessRule wrapped)
-		{
-			return new DeleteTreeAccessRuleWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -6113,9 +6112,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.DeleteTreeAccessRule ConvertWrapper(IDeleteTreeAccessRuleWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IDeleteTreeAccessRuleWrapper ConvertWrapped(System.DirectoryServices.DeleteTreeAccessRule wrapped)
+		{
+			return new DeleteTreeAccessRuleWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectoryAuditRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ActiveDirectoryAuditRuleWrapper : IActiveDirectoryAuditRuleWrapper
 	{
 		
@@ -6214,16 +6224,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectoryAuditRule ConvertWrapper(IActiveDirectoryAuditRuleWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IActiveDirectoryAuditRuleWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectoryAuditRule wrapped)
-		{
-			return new ActiveDirectoryAuditRuleWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -6238,9 +6238,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectoryAuditRule ConvertWrapper(IActiveDirectoryAuditRuleWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IActiveDirectoryAuditRuleWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectoryAuditRule wrapped)
+		{
+			return new ActiveDirectoryAuditRuleWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.DirectoryEntries in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class DirectoryEntriesWrapper : IDirectoryEntriesWrapper
 	{
 		
@@ -6265,16 +6276,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.DirectoryEntries ConvertWrapper(IDirectoryEntriesWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IDirectoryEntriesWrapper ConvertWrapped(System.DirectoryServices.DirectoryEntries wrapped)
-		{
-			return new DirectoryEntriesWrapper(wrapped);
 		}
 		
 		public IDirectoryEntryWrapper Add(string name, string schemaClassName)
@@ -6316,9 +6317,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.DirectoryEntries ConvertWrapper(IDirectoryEntriesWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IDirectoryEntriesWrapper ConvertWrapped(System.DirectoryServices.DirectoryEntries wrapped)
+		{
+			return new DirectoryEntriesWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.DirectoryEntry in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class DirectoryEntryWrapper : IDirectoryEntryWrapper
 	{
 		
@@ -6505,16 +6517,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.DirectoryEntry ConvertWrapper(IDirectoryEntryWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IDirectoryEntryWrapper ConvertWrapped(System.DirectoryServices.DirectoryEntry wrapped)
-		{
-			return new DirectoryEntryWrapper(wrapped);
-		}
-		
 		public void Close()
 		{
 			_wrapped.Close();
@@ -6614,9 +6616,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.DirectoryEntry ConvertWrapper(IDirectoryEntryWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IDirectoryEntryWrapper ConvertWrapped(System.DirectoryServices.DirectoryEntry wrapped)
+		{
+			return new DirectoryEntryWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.DirectoryEntryConfiguration in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class DirectoryEntryConfigurationWrapper : IDirectoryEntryConfigurationWrapper
 	{
 		
@@ -6695,16 +6708,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.DirectoryEntryConfiguration ConvertWrapper(IDirectoryEntryConfigurationWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IDirectoryEntryConfigurationWrapper ConvertWrapped(System.DirectoryServices.DirectoryEntryConfiguration wrapped)
-		{
-			return new DirectoryEntryConfigurationWrapper(wrapped);
-		}
-		
 		public string GetCurrentServerName()
 		{
 			return _wrapped.GetCurrentServerName();
@@ -6734,9 +6737,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.DirectoryEntryConfiguration ConvertWrapper(IDirectoryEntryConfigurationWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IDirectoryEntryConfigurationWrapper ConvertWrapped(System.DirectoryServices.DirectoryEntryConfiguration wrapped)
+		{
+			return new DirectoryEntryConfigurationWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.DirectorySearcher in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class DirectorySearcherWrapper : IDirectorySearcherWrapper
 	{
 		
@@ -7023,16 +7037,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.DirectorySearcher ConvertWrapper(IDirectorySearcherWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IDirectorySearcherWrapper ConvertWrapped(System.DirectoryServices.DirectorySearcher wrapped)
-		{
-			return new DirectorySearcherWrapper(wrapped);
-		}
-		
 		public ISearchResultWrapper FindOne()
 		{
 			return new SearchResultWrapper(_wrapped.FindOne());
@@ -7077,9 +7081,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.DirectorySearcher ConvertWrapper(IDirectorySearcherWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IDirectorySearcherWrapper ConvertWrapped(System.DirectoryServices.DirectorySearcher wrapped)
+		{
+			return new DirectorySearcherWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.DirectoryServicesPermission in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class DirectoryServicesPermissionWrapper : IDirectoryServicesPermissionWrapper
 	{
 		
@@ -7104,16 +7119,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.DirectoryServicesPermission ConvertWrapper(IDirectoryServicesPermissionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IDirectoryServicesPermissionWrapper ConvertWrapped(System.DirectoryServices.DirectoryServicesPermission wrapped)
-		{
-			return new DirectoryServicesPermissionWrapper(wrapped);
 		}
 		
 		public System.Security.IPermission Copy()
@@ -7185,9 +7190,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.DirectoryServicesPermission ConvertWrapper(IDirectoryServicesPermissionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IDirectoryServicesPermissionWrapper ConvertWrapped(System.DirectoryServices.DirectoryServicesPermission wrapped)
+		{
+			return new DirectoryServicesPermissionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.DirectoryServicesPermissionEntry in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class DirectoryServicesPermissionEntryWrapper : IDirectoryServicesPermissionEntryWrapper
 	{
 		
@@ -7222,16 +7238,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.DirectoryServicesPermissionEntry ConvertWrapper(IDirectoryServicesPermissionEntryWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IDirectoryServicesPermissionEntryWrapper ConvertWrapped(System.DirectoryServices.DirectoryServicesPermissionEntry wrapped)
-		{
-			return new DirectoryServicesPermissionEntryWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -7246,9 +7252,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.DirectoryServicesPermissionEntry ConvertWrapper(IDirectoryServicesPermissionEntryWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IDirectoryServicesPermissionEntryWrapper ConvertWrapped(System.DirectoryServices.DirectoryServicesPermissionEntry wrapped)
+		{
+			return new DirectoryServicesPermissionEntryWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.DirectoryServicesPermissionEntryCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class DirectoryServicesPermissionEntryCollectionWrapper : IDirectoryServicesPermissionEntryCollectionWrapper
 	{
 		
@@ -7297,16 +7314,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.DirectoryServicesPermissionEntryCollection ConvertWrapper(IDirectoryServicesPermissionEntryCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IDirectoryServicesPermissionEntryCollectionWrapper ConvertWrapped(System.DirectoryServices.DirectoryServicesPermissionEntryCollection wrapped)
-		{
-			return new DirectoryServicesPermissionEntryCollectionWrapper(wrapped);
 		}
 		
 		public int Add(IDirectoryServicesPermissionEntryWrapper value)
@@ -7378,9 +7385,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.DirectoryServicesPermissionEntryCollection ConvertWrapper(IDirectoryServicesPermissionEntryCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IDirectoryServicesPermissionEntryCollectionWrapper ConvertWrapped(System.DirectoryServices.DirectoryServicesPermissionEntryCollection wrapped)
+		{
+			return new DirectoryServicesPermissionEntryCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.DirectorySynchronization in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class DirectorySynchronizationWrapper : IDirectorySynchronizationWrapper
 	{
 		
@@ -7409,16 +7427,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.DirectorySynchronization ConvertWrapper(IDirectorySynchronizationWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IDirectorySynchronizationWrapper ConvertWrapped(System.DirectoryServices.DirectorySynchronization wrapped)
-		{
-			return new DirectorySynchronizationWrapper(wrapped);
 		}
 		
 		public byte[] GetDirectorySynchronizationCookie()
@@ -7455,9 +7463,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.DirectorySynchronization ConvertWrapper(IDirectorySynchronizationWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IDirectorySynchronizationWrapper ConvertWrapped(System.DirectoryServices.DirectorySynchronization wrapped)
+		{
+			return new DirectorySynchronizationWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.DirectoryVirtualListView in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class DirectoryVirtualListViewWrapper : IDirectoryVirtualListViewWrapper
 	{
 		
@@ -7560,16 +7579,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.DirectoryVirtualListView ConvertWrapper(IDirectoryVirtualListViewWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IDirectoryVirtualListViewWrapper ConvertWrapped(System.DirectoryServices.DirectoryVirtualListView wrapped)
-		{
-			return new DirectoryVirtualListViewWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -7584,9 +7593,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.DirectoryVirtualListView ConvertWrapper(IDirectoryVirtualListViewWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IDirectoryVirtualListViewWrapper ConvertWrapped(System.DirectoryServices.DirectoryVirtualListView wrapped)
+		{
+			return new DirectoryVirtualListViewWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.DirectoryVirtualListViewContext in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class DirectoryVirtualListViewContextWrapper : IDirectoryVirtualListViewContextWrapper
 	{
 		
@@ -7603,16 +7623,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.DirectoryVirtualListViewContext ConvertWrapper(IDirectoryVirtualListViewContextWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IDirectoryVirtualListViewContextWrapper ConvertWrapped(System.DirectoryServices.DirectoryVirtualListViewContext wrapped)
-		{
-			return new DirectoryVirtualListViewContextWrapper(wrapped);
 		}
 		
 		public IDirectoryVirtualListViewContextWrapper Copy()
@@ -7634,9 +7644,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.DirectoryVirtualListViewContext ConvertWrapper(IDirectoryVirtualListViewContextWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IDirectoryVirtualListViewContextWrapper ConvertWrapped(System.DirectoryServices.DirectoryVirtualListViewContext wrapped)
+		{
+			return new DirectoryVirtualListViewContextWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.PropertyCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class PropertyCollectionWrapper : IPropertyCollectionWrapper
 	{
 		
@@ -7687,16 +7708,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.PropertyCollection ConvertWrapper(IPropertyCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IPropertyCollectionWrapper ConvertWrapped(System.DirectoryServices.PropertyCollection wrapped)
-		{
-			return new PropertyCollectionWrapper(wrapped);
-		}
-		
 		public bool Contains(string propertyName)
 		{
 			return _wrapped.Contains(propertyName);
@@ -7726,9 +7737,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.PropertyCollection ConvertWrapper(IPropertyCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IPropertyCollectionWrapper ConvertWrapped(System.DirectoryServices.PropertyCollection wrapped)
+		{
+			return new PropertyCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.PropertyValueCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class PropertyValueCollectionWrapper : IPropertyValueCollectionWrapper
 	{
 		
@@ -7797,16 +7819,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.PropertyValueCollection ConvertWrapper(IPropertyValueCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IPropertyValueCollectionWrapper ConvertWrapped(System.DirectoryServices.PropertyValueCollection wrapped)
-		{
-			return new PropertyValueCollectionWrapper(wrapped);
 		}
 		
 		public int Add(object value)
@@ -7878,9 +7890,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.PropertyValueCollection ConvertWrapper(IPropertyValueCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IPropertyValueCollectionWrapper ConvertWrapped(System.DirectoryServices.PropertyValueCollection wrapped)
+		{
+			return new PropertyValueCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ResultPropertyCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ResultPropertyCollectionWrapper : IResultPropertyCollectionWrapper
 	{
 		
@@ -7931,16 +7954,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ResultPropertyCollection ConvertWrapper(IResultPropertyCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IResultPropertyCollectionWrapper ConvertWrapped(System.DirectoryServices.ResultPropertyCollection wrapped)
-		{
-			return new ResultPropertyCollectionWrapper(wrapped);
-		}
-		
 		public bool Contains(string propertyName)
 		{
 			return _wrapped.Contains(propertyName);
@@ -7980,9 +7993,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ResultPropertyCollection ConvertWrapper(IResultPropertyCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IResultPropertyCollectionWrapper ConvertWrapped(System.DirectoryServices.ResultPropertyCollection wrapped)
+		{
+			return new ResultPropertyCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ResultPropertyValueCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ResultPropertyValueCollectionWrapper : IResultPropertyValueCollectionWrapper
 	{
 		
@@ -8015,16 +8039,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ResultPropertyValueCollection ConvertWrapper(IResultPropertyValueCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IResultPropertyValueCollectionWrapper ConvertWrapped(System.DirectoryServices.ResultPropertyValueCollection wrapped)
-		{
-			return new ResultPropertyValueCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(object value)
@@ -8061,9 +8075,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ResultPropertyValueCollection ConvertWrapper(IResultPropertyValueCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IResultPropertyValueCollectionWrapper ConvertWrapped(System.DirectoryServices.ResultPropertyValueCollection wrapped)
+		{
+			return new ResultPropertyValueCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.SchemaNameCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class SchemaNameCollectionWrapper : ISchemaNameCollectionWrapper
 	{
 		
@@ -8100,16 +8125,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.SchemaNameCollection ConvertWrapper(ISchemaNameCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static ISchemaNameCollectionWrapper ConvertWrapped(System.DirectoryServices.SchemaNameCollection wrapped)
-		{
-			return new SchemaNameCollectionWrapper(wrapped);
 		}
 		
 		public int Add(string value)
@@ -8181,9 +8196,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.SchemaNameCollection ConvertWrapper(ISchemaNameCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static ISchemaNameCollectionWrapper ConvertWrapped(System.DirectoryServices.SchemaNameCollection wrapped)
+		{
+			return new SchemaNameCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.SearchResult in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class SearchResultWrapper : ISearchResultWrapper
 	{
 		
@@ -8218,16 +8244,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.SearchResult ConvertWrapper(ISearchResultWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static ISearchResultWrapper ConvertWrapped(System.DirectoryServices.SearchResult wrapped)
-		{
-			return new SearchResultWrapper(wrapped);
-		}
-		
 		public IDirectoryEntryWrapper GetDirectoryEntry()
 		{
 			return new DirectoryEntryWrapper(_wrapped.GetDirectoryEntry());
@@ -8247,9 +8263,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.SearchResult ConvertWrapper(ISearchResultWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static ISearchResultWrapper ConvertWrapped(System.DirectoryServices.SearchResult wrapped)
+		{
+			return new SearchResultWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.SearchResultCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class SearchResultCollectionWrapper : ISearchResultCollectionWrapper
 	{
 		
@@ -8298,16 +8325,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.SearchResultCollection ConvertWrapper(ISearchResultCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static ISearchResultCollectionWrapper ConvertWrapped(System.DirectoryServices.SearchResultCollection wrapped)
-		{
-			return new SearchResultCollectionWrapper(wrapped);
 		}
 		
 		public void Dispose()
@@ -8364,9 +8381,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.SearchResultCollection ConvertWrapper(ISearchResultCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static ISearchResultCollectionWrapper ConvertWrapped(System.DirectoryServices.SearchResultCollection wrapped)
+		{
+			return new SearchResultCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.SortOption in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class SortOptionWrapper : ISortOptionWrapper
 	{
 		
@@ -8409,16 +8437,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.SortOption ConvertWrapper(ISortOptionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static ISortOptionWrapper ConvertWrapped(System.DirectoryServices.SortOption wrapped)
-		{
-			return new SortOptionWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -8433,9 +8451,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.SortOption ConvertWrapper(ISortOptionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static ISortOptionWrapper ConvertWrapped(System.DirectoryServices.SortOption wrapped)
+		{
+			return new SortOptionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.DirectoryServicesCOMException in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class DirectoryServicesCOMExceptionWrapper : IDirectoryServicesCOMExceptionWrapper
 	{
 		
@@ -8550,16 +8579,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.DirectoryServicesCOMException ConvertWrapper(IDirectoryServicesCOMExceptionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IDirectoryServicesCOMExceptionWrapper ConvertWrapped(System.DirectoryServices.DirectoryServicesCOMException wrapped)
-		{
-			return new DirectoryServicesCOMExceptionWrapper(wrapped);
-		}
-		
 		public void GetObjectData(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext)
 		{
 			_wrapped.GetObjectData(serializationInfo, streamingContext);
@@ -8584,9 +8603,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.DirectoryServicesCOMException ConvertWrapper(IDirectoryServicesCOMExceptionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IDirectoryServicesCOMExceptionWrapper ConvertWrapped(System.DirectoryServices.DirectoryServicesCOMException wrapped)
+		{
+			return new DirectoryServicesCOMExceptionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ActiveDirectoryReplicationMetadataWrapper : IActiveDirectoryReplicationMetadataWrapper
 	{
 		
@@ -8637,16 +8667,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata ConvertWrapper(IActiveDirectoryReplicationMetadataWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IActiveDirectoryReplicationMetadataWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata wrapped)
-		{
-			return new ActiveDirectoryReplicationMetadataWrapper(wrapped);
-		}
-		
 		public bool Contains(string attributeName)
 		{
 			return _wrapped.Contains(attributeName);
@@ -8686,9 +8706,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata ConvertWrapper(IActiveDirectoryReplicationMetadataWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IActiveDirectoryReplicationMetadataWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata wrapped)
+		{
+			return new ActiveDirectoryReplicationMetadataWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ActiveDirectoryScheduleWrapper : IActiveDirectoryScheduleWrapper
 	{
 		
@@ -8717,16 +8748,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule ConvertWrapper(IActiveDirectoryScheduleWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IActiveDirectoryScheduleWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule wrapped)
-		{
-			return new ActiveDirectoryScheduleWrapper(wrapped);
 		}
 		
 		public void SetSchedule(System.DayOfWeek day, System.DirectoryServices.ActiveDirectory.HourOfDay fromHour, System.DirectoryServices.ActiveDirectory.MinuteOfHour fromMinute, System.DirectoryServices.ActiveDirectory.HourOfDay toHour, System.DirectoryServices.ActiveDirectory.MinuteOfHour toMinute)
@@ -8763,9 +8784,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule ConvertWrapper(IActiveDirectoryScheduleWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IActiveDirectoryScheduleWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule wrapped)
+		{
+			return new ActiveDirectoryScheduleWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySchema in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ActiveDirectorySchemaWrapper : IActiveDirectorySchemaWrapper
 	{
 		
@@ -8798,16 +8830,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySchema ConvertWrapper(IActiveDirectorySchemaWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IActiveDirectorySchemaWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchema wrapped)
-		{
-			return new ActiveDirectorySchemaWrapper(wrapped);
 		}
 		
 		public void RefreshSchema()
@@ -8889,9 +8911,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySchema ConvertWrapper(IActiveDirectorySchemaWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IActiveDirectorySchemaWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchema wrapped)
+		{
+			return new ActiveDirectorySchemaWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ActiveDirectorySchemaClassWrapper : IActiveDirectorySchemaClassWrapper
 	{
 		
@@ -9054,16 +9087,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass ConvertWrapper(IActiveDirectorySchemaClassWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IActiveDirectorySchemaClassWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass wrapped)
-		{
-			return new ActiveDirectorySchemaClassWrapper(wrapped);
-		}
-		
 		public void Dispose()
 		{
 			_wrapped.Dispose();
@@ -9098,9 +9121,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass ConvertWrapper(IActiveDirectorySchemaClassWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IActiveDirectorySchemaClassWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass wrapped)
+		{
+			return new ActiveDirectorySchemaClassWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClassCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ActiveDirectorySchemaClassCollectionWrapper : IActiveDirectorySchemaClassCollectionWrapper
 	{
 		
@@ -9149,16 +9183,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClassCollection ConvertWrapper(IActiveDirectorySchemaClassCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IActiveDirectorySchemaClassCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClassCollection wrapped)
-		{
-			return new ActiveDirectorySchemaClassCollectionWrapper(wrapped);
 		}
 		
 		public int Add(IActiveDirectorySchemaClassWrapper schemaClass)
@@ -9235,9 +9259,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClassCollection ConvertWrapper(IActiveDirectorySchemaClassCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IActiveDirectorySchemaClassCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClassCollection wrapped)
+		{
+			return new ActiveDirectorySchemaClassCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ActiveDirectorySchemaPropertyWrapper : IActiveDirectorySchemaPropertyWrapper
 	{
 		
@@ -9464,16 +9499,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty ConvertWrapper(IActiveDirectorySchemaPropertyWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IActiveDirectorySchemaPropertyWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty wrapped)
-		{
-			return new ActiveDirectorySchemaPropertyWrapper(wrapped);
-		}
-		
 		public void Dispose()
 		{
 			_wrapped.Dispose();
@@ -9503,9 +9528,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty ConvertWrapper(IActiveDirectorySchemaPropertyWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IActiveDirectorySchemaPropertyWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty wrapped)
+		{
+			return new ActiveDirectorySchemaPropertyWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaPropertyCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ActiveDirectorySchemaPropertyCollectionWrapper : IActiveDirectorySchemaPropertyCollectionWrapper
 	{
 		
@@ -9554,16 +9590,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaPropertyCollection ConvertWrapper(IActiveDirectorySchemaPropertyCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IActiveDirectorySchemaPropertyCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaPropertyCollection wrapped)
-		{
-			return new ActiveDirectorySchemaPropertyCollectionWrapper(wrapped);
 		}
 		
 		public int Add(IActiveDirectorySchemaPropertyWrapper schemaProperty)
@@ -9640,9 +9666,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaPropertyCollection ConvertWrapper(IActiveDirectorySchemaPropertyCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IActiveDirectorySchemaPropertyCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaPropertyCollection wrapped)
+		{
+			return new ActiveDirectorySchemaPropertyCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySite in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ActiveDirectorySiteWrapper : IActiveDirectorySiteWrapper
 	{
 		
@@ -9781,16 +9818,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySite ConvertWrapper(IActiveDirectorySiteWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IActiveDirectorySiteWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySite wrapped)
-		{
-			return new ActiveDirectorySiteWrapper(wrapped);
-		}
-		
 		public void Save()
 		{
 			_wrapped.Save();
@@ -9825,9 +9852,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySite ConvertWrapper(IActiveDirectorySiteWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IActiveDirectorySiteWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySite wrapped)
+		{
+			return new ActiveDirectorySiteWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ActiveDirectorySiteCollectionWrapper : IActiveDirectorySiteCollectionWrapper
 	{
 		
@@ -9876,16 +9914,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteCollection ConvertWrapper(IActiveDirectorySiteCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IActiveDirectorySiteCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteCollection wrapped)
-		{
-			return new ActiveDirectorySiteCollectionWrapper(wrapped);
 		}
 		
 		public int Add(IActiveDirectorySiteWrapper site)
@@ -9957,9 +9985,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteCollection ConvertWrapper(IActiveDirectorySiteCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IActiveDirectorySiteCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteCollection wrapped)
+		{
+			return new ActiveDirectorySiteCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ActiveDirectorySiteLinkWrapper : IActiveDirectorySiteLinkWrapper
 	{
 		
@@ -10074,16 +10113,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink ConvertWrapper(IActiveDirectorySiteLinkWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IActiveDirectorySiteLinkWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink wrapped)
-		{
-			return new ActiveDirectorySiteLinkWrapper(wrapped);
-		}
-		
 		public void Save()
 		{
 			_wrapped.Save();
@@ -10118,9 +10147,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink ConvertWrapper(IActiveDirectorySiteLinkWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IActiveDirectorySiteLinkWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink wrapped)
+		{
+			return new ActiveDirectorySiteLinkWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ActiveDirectorySiteLinkBridgeWrapper : IActiveDirectorySiteLinkBridgeWrapper
 	{
 		
@@ -10163,16 +10203,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge ConvertWrapper(IActiveDirectorySiteLinkBridgeWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IActiveDirectorySiteLinkBridgeWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge wrapped)
-		{
-			return new ActiveDirectorySiteLinkBridgeWrapper(wrapped);
-		}
-		
 		public void Save()
 		{
 			_wrapped.Save();
@@ -10207,9 +10237,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge ConvertWrapper(IActiveDirectorySiteLinkBridgeWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IActiveDirectorySiteLinkBridgeWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge wrapped)
+		{
+			return new ActiveDirectorySiteLinkBridgeWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ActiveDirectorySiteLinkCollectionWrapper : IActiveDirectorySiteLinkCollectionWrapper
 	{
 		
@@ -10258,16 +10299,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkCollection ConvertWrapper(IActiveDirectorySiteLinkCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IActiveDirectorySiteLinkCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkCollection wrapped)
-		{
-			return new ActiveDirectorySiteLinkCollectionWrapper(wrapped);
 		}
 		
 		public int Add(IActiveDirectorySiteLinkWrapper link)
@@ -10339,9 +10370,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkCollection ConvertWrapper(IActiveDirectorySiteLinkCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IActiveDirectorySiteLinkCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkCollection wrapped)
+		{
+			return new ActiveDirectorySiteLinkCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ActiveDirectorySubnetWrapper : IActiveDirectorySubnetWrapper
 	{
 		
@@ -10392,16 +10434,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet ConvertWrapper(IActiveDirectorySubnetWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IActiveDirectorySubnetWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet wrapped)
-		{
-			return new ActiveDirectorySubnetWrapper(wrapped);
-		}
-		
 		public void Save()
 		{
 			_wrapped.Save();
@@ -10436,9 +10468,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet ConvertWrapper(IActiveDirectorySubnetWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IActiveDirectorySubnetWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet wrapped)
+		{
+			return new ActiveDirectorySubnetWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnetCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ActiveDirectorySubnetCollectionWrapper : IActiveDirectorySubnetCollectionWrapper
 	{
 		
@@ -10487,16 +10530,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnetCollection ConvertWrapper(IActiveDirectorySubnetCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IActiveDirectorySubnetCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnetCollection wrapped)
-		{
-			return new ActiveDirectorySubnetCollectionWrapper(wrapped);
 		}
 		
 		public int Add(IActiveDirectorySubnetWrapper subnet)
@@ -10568,9 +10601,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnetCollection ConvertWrapper(IActiveDirectorySubnetCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IActiveDirectorySubnetCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnetCollection wrapped)
+		{
+			return new ActiveDirectorySubnetCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.AdamInstance in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class AdamInstanceWrapper : IAdamInstanceWrapper
 	{
 		
@@ -10701,16 +10745,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.AdamInstance ConvertWrapper(IAdamInstanceWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IAdamInstanceWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.AdamInstance wrapped)
-		{
-			return new AdamInstanceWrapper(wrapped);
-		}
-		
 		public void TransferRoleOwnership(System.DirectoryServices.ActiveDirectory.AdamRole role)
 		{
 			_wrapped.TransferRoleOwnership(role);
@@ -10805,9 +10839,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.AdamInstance ConvertWrapper(IAdamInstanceWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IAdamInstanceWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.AdamInstance wrapped)
+		{
+			return new AdamInstanceWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.AdamInstanceCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class AdamInstanceCollectionWrapper : IAdamInstanceCollectionWrapper
 	{
 		
@@ -10840,16 +10885,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.AdamInstanceCollection ConvertWrapper(IAdamInstanceCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IAdamInstanceCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.AdamInstanceCollection wrapped)
-		{
-			return new AdamInstanceCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(IAdamInstanceWrapper adamInstance)
@@ -10886,9 +10921,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.AdamInstanceCollection ConvertWrapper(IAdamInstanceCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IAdamInstanceCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.AdamInstanceCollection wrapped)
+		{
+			return new AdamInstanceCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ApplicationPartition in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ApplicationPartitionWrapper : IApplicationPartitionWrapper
 	{
 		
@@ -10933,16 +10979,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ApplicationPartition ConvertWrapper(IApplicationPartitionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IApplicationPartitionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ApplicationPartition wrapped)
-		{
-			return new ApplicationPartitionWrapper(wrapped);
 		}
 		
 		public System.DirectoryServices.ActiveDirectory.DirectoryServer FindDirectoryServer()
@@ -11019,9 +11055,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ApplicationPartition ConvertWrapper(IApplicationPartitionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IApplicationPartitionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ApplicationPartition wrapped)
+		{
+			return new ApplicationPartitionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ApplicationPartitionCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ApplicationPartitionCollectionWrapper : IApplicationPartitionCollectionWrapper
 	{
 		
@@ -11054,16 +11101,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ApplicationPartitionCollection ConvertWrapper(IApplicationPartitionCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IApplicationPartitionCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ApplicationPartitionCollection wrapped)
-		{
-			return new ApplicationPartitionCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(IApplicationPartitionWrapper applicationPartition)
@@ -11100,9 +11137,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ApplicationPartitionCollection ConvertWrapper(IApplicationPartitionCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IApplicationPartitionCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ApplicationPartitionCollection wrapped)
+		{
+			return new ApplicationPartitionCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.AttributeMetadata in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class AttributeMetadataWrapper : IAttributeMetadataWrapper
 	{
 		
@@ -11177,16 +11225,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.AttributeMetadata ConvertWrapper(IAttributeMetadataWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IAttributeMetadataWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.AttributeMetadata wrapped)
-		{
-			return new AttributeMetadataWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -11201,9 +11239,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.AttributeMetadata ConvertWrapper(IAttributeMetadataWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IAttributeMetadataWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.AttributeMetadata wrapped)
+		{
+			return new AttributeMetadataWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.AttributeMetadataCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class AttributeMetadataCollectionWrapper : IAttributeMetadataCollectionWrapper
 	{
 		
@@ -11236,16 +11285,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.AttributeMetadataCollection ConvertWrapper(IAttributeMetadataCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IAttributeMetadataCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.AttributeMetadataCollection wrapped)
-		{
-			return new AttributeMetadataCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(IAttributeMetadataWrapper metadata)
@@ -11282,9 +11321,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.AttributeMetadataCollection ConvertWrapper(IAttributeMetadataCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IAttributeMetadataCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.AttributeMetadataCollection wrapped)
+		{
+			return new AttributeMetadataCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ConfigurationSet in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ConfigurationSetWrapper : IConfigurationSetWrapper
 	{
 		
@@ -11359,16 +11409,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.ConfigurationSet ConvertWrapper(IConfigurationSetWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IConfigurationSetWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ConfigurationSet wrapped)
-		{
-			return new ConfigurationSetWrapper(wrapped);
-		}
-		
 		public void Dispose()
 		{
 			_wrapped.Dispose();
@@ -11433,9 +11473,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ConfigurationSet ConvertWrapper(IConfigurationSetWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IConfigurationSetWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ConfigurationSet wrapped)
+		{
+			return new ConfigurationSetWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.DirectoryContext in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class DirectoryContextWrapper : IDirectoryContextWrapper
 	{
 		
@@ -11478,16 +11529,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.DirectoryContext ConvertWrapper(IDirectoryContextWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IDirectoryContextWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.DirectoryContext wrapped)
-		{
-			return new DirectoryContextWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -11502,9 +11543,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.DirectoryContext ConvertWrapper(IDirectoryContextWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IDirectoryContextWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.DirectoryContext wrapped)
+		{
+			return new DirectoryContextWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.DirectoryServerCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class DirectoryServerCollectionWrapper : IDirectoryServerCollectionWrapper
 	{
 		
@@ -11553,16 +11605,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.DirectoryServerCollection ConvertWrapper(IDirectoryServerCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IDirectoryServerCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.DirectoryServerCollection wrapped)
-		{
-			return new DirectoryServerCollectionWrapper(wrapped);
 		}
 		
 		public int Add(System.DirectoryServices.ActiveDirectory.DirectoryServer server)
@@ -11629,9 +11671,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.DirectoryServerCollection ConvertWrapper(IDirectoryServerCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IDirectoryServerCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.DirectoryServerCollection wrapped)
+		{
+			return new DirectoryServerCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.Domain in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class DomainWrapper : IDomainWrapper
 	{
 		
@@ -11728,16 +11781,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.Domain ConvertWrapper(IDomainWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IDomainWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.Domain wrapped)
-		{
-			return new DomainWrapper(wrapped);
 		}
 		
 		public void RaiseDomainFunctionalityLevel(int domainMode)
@@ -11894,9 +11937,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.Domain ConvertWrapper(IDomainWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IDomainWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.Domain wrapped)
+		{
+			return new DomainWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.DomainCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class DomainCollectionWrapper : IDomainCollectionWrapper
 	{
 		
@@ -11929,16 +11983,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.DomainCollection ConvertWrapper(IDomainCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IDomainCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.DomainCollection wrapped)
-		{
-			return new DomainCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(IDomainWrapper domain)
@@ -11975,9 +12019,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.DomainCollection ConvertWrapper(IDomainCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IDomainCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.DomainCollection wrapped)
+		{
+			return new DomainCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.SyncUpdateCallback in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class SyncUpdateCallbackWrapper : ISyncUpdateCallbackWrapper
 	{
 		
@@ -12010,16 +12065,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.SyncUpdateCallback ConvertWrapper(ISyncUpdateCallbackWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static ISyncUpdateCallbackWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.SyncUpdateCallback wrapped)
-		{
-			return new SyncUpdateCallbackWrapper(wrapped);
 		}
 		
 		public bool Invoke(System.DirectoryServices.ActiveDirectory.SyncFromAllServersEvent eventType, string targetServer, string sourceServer, ISyncFromAllServersOperationExceptionWrapper exception)
@@ -12071,9 +12116,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.ToString();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.SyncUpdateCallback ConvertWrapper(ISyncUpdateCallbackWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static ISyncUpdateCallbackWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.SyncUpdateCallback wrapped)
+		{
+			return new SyncUpdateCallbackWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.DomainController in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class DomainControllerWrapper : IDomainControllerWrapper
 	{
 		
@@ -12200,16 +12256,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.DomainController ConvertWrapper(IDomainControllerWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IDomainControllerWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.DomainController wrapped)
-		{
-			return new DomainControllerWrapper(wrapped);
-		}
-		
 		public IGlobalCatalogWrapper EnableGlobalCatalog()
 		{
 			return new GlobalCatalogWrapper(_wrapped.EnableGlobalCatalog());
@@ -12314,9 +12360,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.DomainController ConvertWrapper(IDomainControllerWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IDomainControllerWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.DomainController wrapped)
+		{
+			return new DomainControllerWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.DomainControllerCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class DomainControllerCollectionWrapper : IDomainControllerCollectionWrapper
 	{
 		
@@ -12349,16 +12406,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.DomainControllerCollection ConvertWrapper(IDomainControllerCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IDomainControllerCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.DomainControllerCollection wrapped)
-		{
-			return new DomainControllerCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(IDomainControllerWrapper domainController)
@@ -12395,9 +12442,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.DomainControllerCollection ConvertWrapper(IDomainControllerCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IDomainControllerCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.DomainControllerCollection wrapped)
+		{
+			return new DomainControllerCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.SyncFromAllServersErrorInformation in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class SyncFromAllServersErrorInformationWrapper : ISyncFromAllServersErrorInformationWrapper
 	{
 		
@@ -12456,16 +12514,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.SyncFromAllServersErrorInformation ConvertWrapper(ISyncFromAllServersErrorInformationWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static ISyncFromAllServersErrorInformationWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.SyncFromAllServersErrorInformation wrapped)
-		{
-			return new SyncFromAllServersErrorInformationWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -12480,9 +12528,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.SyncFromAllServersErrorInformation ConvertWrapper(ISyncFromAllServersErrorInformationWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static ISyncFromAllServersErrorInformationWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.SyncFromAllServersErrorInformation wrapped)
+		{
+			return new SyncFromAllServersErrorInformationWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ActiveDirectoryObjectNotFoundExceptionWrapper : IActiveDirectoryObjectNotFoundExceptionWrapper
 	{
 		
@@ -12589,16 +12648,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException ConvertWrapper(IActiveDirectoryObjectNotFoundExceptionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IActiveDirectoryObjectNotFoundExceptionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException wrapped)
-		{
-			return new ActiveDirectoryObjectNotFoundExceptionWrapper(wrapped);
-		}
-		
 		public void GetObjectData(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext)
 		{
 			_wrapped.GetObjectData(serializationInfo, streamingContext);
@@ -12623,9 +12672,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException ConvertWrapper(IActiveDirectoryObjectNotFoundExceptionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IActiveDirectoryObjectNotFoundExceptionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException wrapped)
+		{
+			return new ActiveDirectoryObjectNotFoundExceptionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ActiveDirectoryOperationExceptionWrapper : IActiveDirectoryOperationExceptionWrapper
 	{
 		
@@ -12724,16 +12784,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException ConvertWrapper(IActiveDirectoryOperationExceptionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IActiveDirectoryOperationExceptionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException wrapped)
-		{
-			return new ActiveDirectoryOperationExceptionWrapper(wrapped);
-		}
-		
 		public void GetObjectData(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext)
 		{
 			_wrapped.GetObjectData(serializationInfo, streamingContext);
@@ -12758,9 +12808,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException ConvertWrapper(IActiveDirectoryOperationExceptionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IActiveDirectoryOperationExceptionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException wrapped)
+		{
+			return new ActiveDirectoryOperationExceptionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ActiveDirectoryServerDownExceptionWrapper : IActiveDirectoryServerDownExceptionWrapper
 	{
 		
@@ -12867,16 +12928,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException ConvertWrapper(IActiveDirectoryServerDownExceptionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IActiveDirectoryServerDownExceptionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException wrapped)
-		{
-			return new ActiveDirectoryServerDownExceptionWrapper(wrapped);
-		}
-		
 		public void GetObjectData(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext)
 		{
 			_wrapped.GetObjectData(serializationInfo, streamingContext);
@@ -12901,9 +12952,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException ConvertWrapper(IActiveDirectoryServerDownExceptionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IActiveDirectoryServerDownExceptionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException wrapped)
+		{
+			return new ActiveDirectoryServerDownExceptionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ActiveDirectoryObjectExistsExceptionWrapper : IActiveDirectoryObjectExistsExceptionWrapper
 	{
 		
@@ -12994,16 +13056,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException ConvertWrapper(IActiveDirectoryObjectExistsExceptionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IActiveDirectoryObjectExistsExceptionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException wrapped)
-		{
-			return new ActiveDirectoryObjectExistsExceptionWrapper(wrapped);
-		}
-		
 		public System.Exception GetBaseException()
 		{
 			return _wrapped.GetBaseException();
@@ -13028,9 +13080,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException ConvertWrapper(IActiveDirectoryObjectExistsExceptionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IActiveDirectoryObjectExistsExceptionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException wrapped)
+		{
+			return new ActiveDirectoryObjectExistsExceptionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.SyncFromAllServersOperationException in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class SyncFromAllServersOperationExceptionWrapper : ISyncFromAllServersOperationExceptionWrapper
 	{
 		
@@ -13137,16 +13200,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.SyncFromAllServersOperationException ConvertWrapper(ISyncFromAllServersOperationExceptionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static ISyncFromAllServersOperationExceptionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.SyncFromAllServersOperationException wrapped)
-		{
-			return new SyncFromAllServersOperationExceptionWrapper(wrapped);
-		}
-		
 		public void GetObjectData(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext)
 		{
 			_wrapped.GetObjectData(serializationInfo, streamingContext);
@@ -13171,9 +13224,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.SyncFromAllServersOperationException ConvertWrapper(ISyncFromAllServersOperationExceptionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static ISyncFromAllServersOperationExceptionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.SyncFromAllServersOperationException wrapped)
+		{
+			return new SyncFromAllServersOperationExceptionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ForestTrustCollisionException in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ForestTrustCollisionExceptionWrapper : IForestTrustCollisionExceptionWrapper
 	{
 		
@@ -13280,16 +13344,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.ForestTrustCollisionException ConvertWrapper(IForestTrustCollisionExceptionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IForestTrustCollisionExceptionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ForestTrustCollisionException wrapped)
-		{
-			return new ForestTrustCollisionExceptionWrapper(wrapped);
-		}
-		
 		public void GetObjectData(System.Runtime.Serialization.SerializationInfo serializationInfo, System.Runtime.Serialization.StreamingContext streamingContext)
 		{
 			_wrapped.GetObjectData(serializationInfo, streamingContext);
@@ -13314,9 +13368,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ForestTrustCollisionException ConvertWrapper(IForestTrustCollisionExceptionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IForestTrustCollisionExceptionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ForestTrustCollisionException wrapped)
+		{
+			return new ForestTrustCollisionExceptionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.Forest in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ForestWrapper : IForestWrapper
 	{
 		
@@ -13421,16 +13486,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.Forest ConvertWrapper(IForestWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IForestWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.Forest wrapped)
-		{
-			return new ForestWrapper(wrapped);
 		}
 		
 		public void Dispose()
@@ -13582,9 +13637,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.Forest ConvertWrapper(IForestWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IForestWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.Forest wrapped)
+		{
+			return new ForestWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollision in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ForestTrustRelationshipCollisionWrapper : IForestTrustRelationshipCollisionWrapper
 	{
 		
@@ -13635,16 +13701,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollision ConvertWrapper(IForestTrustRelationshipCollisionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IForestTrustRelationshipCollisionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollision wrapped)
-		{
-			return new ForestTrustRelationshipCollisionWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -13659,9 +13715,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollision ConvertWrapper(IForestTrustRelationshipCollisionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IForestTrustRelationshipCollisionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollision wrapped)
+		{
+			return new ForestTrustRelationshipCollisionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollisionCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ForestTrustRelationshipCollisionCollectionWrapper : IForestTrustRelationshipCollisionCollectionWrapper
 	{
 		
@@ -13694,16 +13761,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollisionCollection ConvertWrapper(IForestTrustRelationshipCollisionCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IForestTrustRelationshipCollisionCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollisionCollection wrapped)
-		{
-			return new ForestTrustRelationshipCollisionCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(IForestTrustRelationshipCollisionWrapper collision)
@@ -13740,9 +13797,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollisionCollection ConvertWrapper(IForestTrustRelationshipCollisionCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IForestTrustRelationshipCollisionCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollisionCollection wrapped)
+		{
+			return new ForestTrustRelationshipCollisionCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ForestTrustDomainInfoCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ForestTrustDomainInfoCollectionWrapper : IForestTrustDomainInfoCollectionWrapper
 	{
 		
@@ -13775,16 +13843,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ForestTrustDomainInfoCollection ConvertWrapper(IForestTrustDomainInfoCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IForestTrustDomainInfoCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ForestTrustDomainInfoCollection wrapped)
-		{
-			return new ForestTrustDomainInfoCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(IForestTrustDomainInformationWrapper information)
@@ -13821,9 +13879,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ForestTrustDomainInfoCollection ConvertWrapper(IForestTrustDomainInfoCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IForestTrustDomainInfoCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ForestTrustDomainInfoCollection wrapped)
+		{
+			return new ForestTrustDomainInfoCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ForestTrustDomainInformation in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ForestTrustDomainInformationWrapper : IForestTrustDomainInformationWrapper
 	{
 		
@@ -13878,16 +13947,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.ForestTrustDomainInformation ConvertWrapper(IForestTrustDomainInformationWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IForestTrustDomainInformationWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ForestTrustDomainInformation wrapped)
-		{
-			return new ForestTrustDomainInformationWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -13902,9 +13961,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ForestTrustDomainInformation ConvertWrapper(IForestTrustDomainInformationWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IForestTrustDomainInformationWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ForestTrustDomainInformation wrapped)
+		{
+			return new ForestTrustDomainInformationWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipInformation in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ForestTrustRelationshipInformationWrapper : IForestTrustRelationshipInformationWrapper
 	{
 		
@@ -13979,16 +14049,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipInformation ConvertWrapper(IForestTrustRelationshipInformationWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IForestTrustRelationshipInformationWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipInformation wrapped)
-		{
-			return new ForestTrustRelationshipInformationWrapper(wrapped);
-		}
-		
 		public void Save()
 		{
 			_wrapped.Save();
@@ -14008,9 +14068,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipInformation ConvertWrapper(IForestTrustRelationshipInformationWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IForestTrustRelationshipInformationWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipInformation wrapped)
+		{
+			return new ForestTrustRelationshipInformationWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.GlobalCatalog in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class GlobalCatalogWrapper : IGlobalCatalogWrapper
 	{
 		
@@ -14137,16 +14208,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.GlobalCatalog ConvertWrapper(IGlobalCatalogWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IGlobalCatalogWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.GlobalCatalog wrapped)
-		{
-			return new GlobalCatalogWrapper(wrapped);
-		}
-		
 		public IGlobalCatalogWrapper EnableGlobalCatalog()
 		{
 			return new GlobalCatalogWrapper(_wrapped.EnableGlobalCatalog());
@@ -14261,9 +14322,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.GlobalCatalog ConvertWrapper(IGlobalCatalogWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IGlobalCatalogWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.GlobalCatalog wrapped)
+		{
+			return new GlobalCatalogWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class GlobalCatalogCollectionWrapper : IGlobalCatalogCollectionWrapper
 	{
 		
@@ -14296,16 +14368,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection ConvertWrapper(IGlobalCatalogCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IGlobalCatalogCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection wrapped)
-		{
-			return new GlobalCatalogCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(IGlobalCatalogWrapper globalCatalog)
@@ -14342,9 +14404,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection ConvertWrapper(IGlobalCatalogCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IGlobalCatalogCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection wrapped)
+		{
+			return new GlobalCatalogCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaClassCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ReadOnlyActiveDirectorySchemaClassCollectionWrapper : IReadOnlyActiveDirectorySchemaClassCollectionWrapper
 	{
 		
@@ -14377,16 +14450,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaClassCollection ConvertWrapper(IReadOnlyActiveDirectorySchemaClassCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IReadOnlyActiveDirectorySchemaClassCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaClassCollection wrapped)
-		{
-			return new ReadOnlyActiveDirectorySchemaClassCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(IActiveDirectorySchemaClassWrapper schemaClass)
@@ -14423,9 +14486,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaClassCollection ConvertWrapper(IReadOnlyActiveDirectorySchemaClassCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IReadOnlyActiveDirectorySchemaClassCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaClassCollection wrapped)
+		{
+			return new ReadOnlyActiveDirectorySchemaClassCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaPropertyCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ReadOnlyActiveDirectorySchemaPropertyCollectionWrapper : IReadOnlyActiveDirectorySchemaPropertyCollectionWrapper
 	{
 		
@@ -14458,16 +14532,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaPropertyCollection ConvertWrapper(IReadOnlyActiveDirectorySchemaPropertyCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IReadOnlyActiveDirectorySchemaPropertyCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaPropertyCollection wrapped)
-		{
-			return new ReadOnlyActiveDirectorySchemaPropertyCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(IActiveDirectorySchemaPropertyWrapper schemaProperty)
@@ -14504,9 +14568,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaPropertyCollection ConvertWrapper(IReadOnlyActiveDirectorySchemaPropertyCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IReadOnlyActiveDirectorySchemaPropertyCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaPropertyCollection wrapped)
+		{
+			return new ReadOnlyActiveDirectorySchemaPropertyCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ReadOnlyDirectoryServerCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ReadOnlyDirectoryServerCollectionWrapper : IReadOnlyDirectoryServerCollectionWrapper
 	{
 		
@@ -14539,16 +14614,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ReadOnlyDirectoryServerCollection ConvertWrapper(IReadOnlyDirectoryServerCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IReadOnlyDirectoryServerCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReadOnlyDirectoryServerCollection wrapped)
-		{
-			return new ReadOnlyDirectoryServerCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.DirectoryServer directoryServer)
@@ -14585,9 +14650,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ReadOnlyDirectoryServerCollection ConvertWrapper(IReadOnlyDirectoryServerCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IReadOnlyDirectoryServerCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReadOnlyDirectoryServerCollection wrapped)
+		{
+			return new ReadOnlyDirectoryServerCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ReadOnlySiteCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ReadOnlySiteCollectionWrapper : IReadOnlySiteCollectionWrapper
 	{
 		
@@ -14620,16 +14696,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ReadOnlySiteCollection ConvertWrapper(IReadOnlySiteCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IReadOnlySiteCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReadOnlySiteCollection wrapped)
-		{
-			return new ReadOnlySiteCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(IActiveDirectorySiteWrapper site)
@@ -14666,9 +14732,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ReadOnlySiteCollection ConvertWrapper(IReadOnlySiteCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IReadOnlySiteCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReadOnlySiteCollection wrapped)
+		{
+			return new ReadOnlySiteCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkBridgeCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ReadOnlySiteLinkBridgeCollectionWrapper : IReadOnlySiteLinkBridgeCollectionWrapper
 	{
 		
@@ -14701,16 +14778,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkBridgeCollection ConvertWrapper(IReadOnlySiteLinkBridgeCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IReadOnlySiteLinkBridgeCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkBridgeCollection wrapped)
-		{
-			return new ReadOnlySiteLinkBridgeCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(IActiveDirectorySiteLinkBridgeWrapper bridge)
@@ -14747,9 +14814,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkBridgeCollection ConvertWrapper(IReadOnlySiteLinkBridgeCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IReadOnlySiteLinkBridgeCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkBridgeCollection wrapped)
+		{
+			return new ReadOnlySiteLinkBridgeCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ReadOnlySiteLinkCollectionWrapper : IReadOnlySiteLinkCollectionWrapper
 	{
 		
@@ -14782,16 +14860,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkCollection ConvertWrapper(IReadOnlySiteLinkCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IReadOnlySiteLinkCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkCollection wrapped)
-		{
-			return new ReadOnlySiteLinkCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(IActiveDirectorySiteLinkWrapper link)
@@ -14828,9 +14896,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkCollection ConvertWrapper(IReadOnlySiteLinkCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IReadOnlySiteLinkCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkCollection wrapped)
+		{
+			return new ReadOnlySiteLinkCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ReadOnlyStringCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ReadOnlyStringCollectionWrapper : IReadOnlyStringCollectionWrapper
 	{
 		
@@ -14863,16 +14942,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ReadOnlyStringCollection ConvertWrapper(IReadOnlyStringCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IReadOnlyStringCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReadOnlyStringCollection wrapped)
-		{
-			return new ReadOnlyStringCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(string value)
@@ -14909,9 +14978,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ReadOnlyStringCollection ConvertWrapper(IReadOnlyStringCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IReadOnlyStringCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReadOnlyStringCollection wrapped)
+		{
+			return new ReadOnlyStringCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ReplicationConnection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ReplicationConnectionWrapper : IReplicationConnectionWrapper
 	{
 		
@@ -15054,16 +15134,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.ReplicationConnection ConvertWrapper(IReplicationConnectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IReplicationConnectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReplicationConnection wrapped)
-		{
-			return new ReplicationConnectionWrapper(wrapped);
-		}
-		
 		public void Dispose()
 		{
 			_wrapped.Dispose();
@@ -15098,9 +15168,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ReplicationConnection ConvertWrapper(IReplicationConnectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IReplicationConnectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReplicationConnection wrapped)
+		{
+			return new ReplicationConnectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ReplicationConnectionCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ReplicationConnectionCollectionWrapper : IReplicationConnectionCollectionWrapper
 	{
 		
@@ -15133,16 +15214,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ReplicationConnectionCollection ConvertWrapper(IReplicationConnectionCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IReplicationConnectionCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReplicationConnectionCollection wrapped)
-		{
-			return new ReplicationConnectionCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(IReplicationConnectionWrapper connection)
@@ -15179,9 +15250,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ReplicationConnectionCollection ConvertWrapper(IReplicationConnectionCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IReplicationConnectionCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReplicationConnectionCollection wrapped)
+		{
+			return new ReplicationConnectionCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ReplicationCursor in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ReplicationCursorWrapper : IReplicationCursorWrapper
 	{
 		
@@ -15240,16 +15322,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.ReplicationCursor ConvertWrapper(IReplicationCursorWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IReplicationCursorWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReplicationCursor wrapped)
-		{
-			return new ReplicationCursorWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -15264,9 +15336,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ReplicationCursor ConvertWrapper(IReplicationCursorWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IReplicationCursorWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReplicationCursor wrapped)
+		{
+			return new ReplicationCursorWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ReplicationCursorCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ReplicationCursorCollectionWrapper : IReplicationCursorCollectionWrapper
 	{
 		
@@ -15299,16 +15382,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ReplicationCursorCollection ConvertWrapper(IReplicationCursorCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IReplicationCursorCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReplicationCursorCollection wrapped)
-		{
-			return new ReplicationCursorCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(IReplicationCursorWrapper cursor)
@@ -15345,9 +15418,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ReplicationCursorCollection ConvertWrapper(IReplicationCursorCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IReplicationCursorCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReplicationCursorCollection wrapped)
+		{
+			return new ReplicationCursorCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ReplicationFailure in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ReplicationFailureWrapper : IReplicationFailureWrapper
 	{
 		
@@ -15406,16 +15490,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.ReplicationFailure ConvertWrapper(IReplicationFailureWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IReplicationFailureWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReplicationFailure wrapped)
-		{
-			return new ReplicationFailureWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -15430,9 +15504,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ReplicationFailure ConvertWrapper(IReplicationFailureWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IReplicationFailureWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReplicationFailure wrapped)
+		{
+			return new ReplicationFailureWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ReplicationFailureCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ReplicationFailureCollectionWrapper : IReplicationFailureCollectionWrapper
 	{
 		
@@ -15465,16 +15550,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ReplicationFailureCollection ConvertWrapper(IReplicationFailureCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IReplicationFailureCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReplicationFailureCollection wrapped)
-		{
-			return new ReplicationFailureCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(IReplicationFailureWrapper failure)
@@ -15511,9 +15586,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ReplicationFailureCollection ConvertWrapper(IReplicationFailureCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IReplicationFailureCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReplicationFailureCollection wrapped)
+		{
+			return new ReplicationFailureCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ReplicationNeighbor in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ReplicationNeighborWrapper : IReplicationNeighborWrapper
 	{
 		
@@ -15628,16 +15714,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.ReplicationNeighbor ConvertWrapper(IReplicationNeighborWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IReplicationNeighborWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReplicationNeighbor wrapped)
-		{
-			return new ReplicationNeighborWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -15652,9 +15728,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ReplicationNeighbor ConvertWrapper(IReplicationNeighborWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IReplicationNeighborWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReplicationNeighbor wrapped)
+		{
+			return new ReplicationNeighborWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ReplicationNeighborCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ReplicationNeighborCollectionWrapper : IReplicationNeighborCollectionWrapper
 	{
 		
@@ -15687,16 +15774,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ReplicationNeighborCollection ConvertWrapper(IReplicationNeighborCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IReplicationNeighborCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReplicationNeighborCollection wrapped)
-		{
-			return new ReplicationNeighborCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(IReplicationNeighborWrapper neighbor)
@@ -15733,9 +15810,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ReplicationNeighborCollection ConvertWrapper(IReplicationNeighborCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IReplicationNeighborCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReplicationNeighborCollection wrapped)
+		{
+			return new ReplicationNeighborCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ReplicationOperation in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ReplicationOperationWrapper : IReplicationOperationWrapper
 	{
 		
@@ -15802,16 +15890,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.ReplicationOperation ConvertWrapper(IReplicationOperationWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IReplicationOperationWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReplicationOperation wrapped)
-		{
-			return new ReplicationOperationWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -15826,9 +15904,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ReplicationOperation ConvertWrapper(IReplicationOperationWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IReplicationOperationWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReplicationOperation wrapped)
+		{
+			return new ReplicationOperationWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ReplicationOperationCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ReplicationOperationCollectionWrapper : IReplicationOperationCollectionWrapper
 	{
 		
@@ -15861,16 +15950,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ReplicationOperationCollection ConvertWrapper(IReplicationOperationCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IReplicationOperationCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReplicationOperationCollection wrapped)
-		{
-			return new ReplicationOperationCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(IReplicationOperationWrapper operation)
@@ -15907,9 +15986,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ReplicationOperationCollection ConvertWrapper(IReplicationOperationCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IReplicationOperationCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReplicationOperationCollection wrapped)
+		{
+			return new ReplicationOperationCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ReplicationOperationInformation in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ReplicationOperationInformationWrapper : IReplicationOperationInformationWrapper
 	{
 		
@@ -15952,16 +16042,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.ReplicationOperationInformation ConvertWrapper(IReplicationOperationInformationWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IReplicationOperationInformationWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReplicationOperationInformation wrapped)
-		{
-			return new ReplicationOperationInformationWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -15976,9 +16056,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ReplicationOperationInformation ConvertWrapper(IReplicationOperationInformationWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IReplicationOperationInformationWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ReplicationOperationInformation wrapped)
+		{
+			return new ReplicationOperationInformationWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectoryInterSiteTransport in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ActiveDirectoryInterSiteTransportWrapper : IActiveDirectoryInterSiteTransportWrapper
 	{
 		
@@ -16045,16 +16136,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.ActiveDirectoryInterSiteTransport ConvertWrapper(IActiveDirectoryInterSiteTransportWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IActiveDirectoryInterSiteTransportWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectoryInterSiteTransport wrapped)
-		{
-			return new ActiveDirectoryInterSiteTransportWrapper(wrapped);
-		}
-		
 		public void Save()
 		{
 			_wrapped.Save();
@@ -16084,9 +16165,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ActiveDirectoryInterSiteTransport ConvertWrapper(IActiveDirectoryInterSiteTransportWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IActiveDirectoryInterSiteTransportWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectoryInterSiteTransport wrapped)
+		{
+			return new ActiveDirectoryInterSiteTransportWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectoryRoleCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class ActiveDirectoryRoleCollectionWrapper : IActiveDirectoryRoleCollectionWrapper
 	{
 		
@@ -16119,16 +16211,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.ActiveDirectoryRoleCollection ConvertWrapper(IActiveDirectoryRoleCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IActiveDirectoryRoleCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectoryRoleCollection wrapped)
-		{
-			return new ActiveDirectoryRoleCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.ActiveDirectoryRole role)
@@ -16165,9 +16247,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.ActiveDirectoryRoleCollection ConvertWrapper(IActiveDirectoryRoleCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IActiveDirectoryRoleCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.ActiveDirectoryRoleCollection wrapped)
+		{
+			return new ActiveDirectoryRoleCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.AdamRoleCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class AdamRoleCollectionWrapper : IAdamRoleCollectionWrapper
 	{
 		
@@ -16200,16 +16293,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.AdamRoleCollection ConvertWrapper(IAdamRoleCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static IAdamRoleCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.AdamRoleCollection wrapped)
-		{
-			return new AdamRoleCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(System.DirectoryServices.ActiveDirectory.AdamRole role)
@@ -16246,9 +16329,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.AdamRoleCollection ConvertWrapper(IAdamRoleCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static IAdamRoleCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.AdamRoleCollection wrapped)
+		{
+			return new AdamRoleCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.TopLevelName in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class TopLevelNameWrapper : ITopLevelNameWrapper
 	{
 		
@@ -16287,16 +16381,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.TopLevelName ConvertWrapper(ITopLevelNameWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static ITopLevelNameWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.TopLevelName wrapped)
-		{
-			return new TopLevelNameWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -16311,9 +16395,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.TopLevelName ConvertWrapper(ITopLevelNameWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static ITopLevelNameWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.TopLevelName wrapped)
+		{
+			return new TopLevelNameWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.TopLevelNameCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class TopLevelNameCollectionWrapper : ITopLevelNameCollectionWrapper
 	{
 		
@@ -16346,16 +16441,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.TopLevelNameCollection ConvertWrapper(ITopLevelNameCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static ITopLevelNameCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.TopLevelNameCollection wrapped)
-		{
-			return new TopLevelNameCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(ITopLevelNameWrapper name)
@@ -16392,9 +16477,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.TopLevelNameCollection ConvertWrapper(ITopLevelNameCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static ITopLevelNameCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.TopLevelNameCollection wrapped)
+		{
+			return new TopLevelNameCollectionWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class TrustRelationshipInformationWrapper : ITrustRelationshipInformationWrapper
 	{
 		
@@ -16445,16 +16541,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			}
 		}
 		
-		public static System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation ConvertWrapper(ITrustRelationshipInformationWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static ITrustRelationshipInformationWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation wrapped)
-		{
-			return new TrustRelationshipInformationWrapper(wrapped);
-		}
-		
 		public override string ToString()
 		{
 			return _wrapped.ToString();
@@ -16469,9 +16555,20 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		{
 			return _wrapped.GetHashCode();
 		}
+		
+		public static System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation ConvertWrapper(ITrustRelationshipInformationWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static ITrustRelationshipInformationWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation wrapped)
+		{
+			return new TrustRelationshipInformationWrapper(wrapped);
+		}
 	}
 	
 	// wrapper for System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
 	public sealed partial class TrustRelationshipInformationCollectionWrapper : ITrustRelationshipInformationCollectionWrapper
 	{
 		
@@ -16504,16 +16601,6 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 			{
 				return _wrapped;
 			}
-		}
-		
-		public static System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection ConvertWrapper(ITrustRelationshipInformationCollectionWrapper wrapper)
-		{
-			return wrapper.Wrapped;
-		}
-		
-		public static ITrustRelationshipInformationCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection wrapped)
-		{
-			return new TrustRelationshipInformationCollectionWrapper(wrapped);
 		}
 		
 		public bool Contains(ITrustRelationshipInformationWrapper information)
@@ -16549,6 +16636,16 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		public override int GetHashCode()
 		{
 			return _wrapped.GetHashCode();
+		}
+		
+		public static System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection ConvertWrapper(ITrustRelationshipInformationCollectionWrapper wrapper)
+		{
+			return wrapper.Wrapped;
+		}
+		
+		public static ITrustRelationshipInformationCollectionWrapper ConvertWrapped(System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection wrapped)
+		{
+			return new TrustRelationshipInformationCollectionWrapper(wrapped);
 		}
 	}
 }
