@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
@@ -30,5 +31,10 @@ namespace AutoWrapper.CodeGen
 
 			return $"{fn.Substring(0, fn.IndexOf('`'))}<{string.Join(", ", argTypes)}>";
 		}
+	}
+
+	internal static class CodeTypeReferenceExtensions
+	{
+		public static bool IsArray(this CodeTypeReference typeReference) => typeReference.ArrayElementType != null;
 	}
 }

@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace AutoWrapper.CodeGen
 {
-	public class TypeGenerator : GeneratorBase
+	public sealed partial class TypeGenerator : GeneratorBase
 	{
 		private readonly ITypeGeneratorOptions _typeGeneratorOptions;
 		private readonly MemberGenerator _memberGenerator;
@@ -31,24 +31,21 @@ namespace AutoWrapper.CodeGen
 				IsPartial = _typeGeneratorOptions.UsePartial
 			};
 
-			generatedType.CustomAttributes.Add(
-				new CodeAttributeDeclaration("System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage")
-			);
+			generatedType.CustomAttributes.Add(new CodeAttributeDeclaration("System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage"));
 
 			generatedType.Comments.Add(new CodeCommentStatement($"wrapper for {type.GetName()} in {type.Assembly.FullName}"));
 
 			generatedType.BaseTypes.Add(WrappedTypeDictionary.GetContractNameFor(type));
 
-			generatedType.Members.AddRange(CompositionMembers(type));
-
-			generatedType.Members.Add(GenerateConvertWrapperMethod(type));
-			generatedType.Members.Add(GenerateConvertWrappedMethod(type));
-
+			generatedType.Members.AddRange(CreateCompositionMembers(type));
+			
 			GenerateMethods(type, generatedType);
 
 			GenerateProperties(type, generatedType);
 
 			generatedType.Members.Add(CreateWrappedProperty(type, GenerateAs.Type));
+			generatedType.Members.Add(CreateConvertWrapperMethod(type));
+			generatedType.Members.Add(CreateConvertWrappedMethod(type));
 
 			return generatedType;
 		}
@@ -62,49 +59,13 @@ namespace AutoWrapper.CodeGen
 				var memberProperty = _memberGenerator.GeneratePropertyDeclaration(property);
 
 				if (memberProperty.HasGet)
-				{
 					BuildPropertyGetter(memberProperty, property);
-				}
 
 				if (memberProperty.HasSet)
-				{
 					BuildPropertySetter(memberProperty, property);
-				}
 
 				generatedType.Members.Add(memberProperty);
 			}
-		}
-
-		private void BuildPropertySetter(CodeMemberProperty memberProperty, PropertyInfo property)
-		{
-			CodeExpression valueExpression = new CodePropertySetValueReferenceExpression();
-
-			if (WrappedTypeDictionary.Registered(property.PropertyType))
-				valueExpression = new CodePropertyReferenceExpression(valueExpression, WrappedPropertyName);
-
-			if (property.IsIndexer())
-			{
-				memberProperty.SetStatements.Add(
-					new CodeAssignStatement(
-						new CodeIndexerExpression(
-							WrappedField,
-							memberProperty.Parameters.Cast<CodeParameterDeclarationExpression>()
-								.Select(p => new CodeVariableReferenceExpression(p.Name))
-								.ToArray<CodeExpression>()),
-
-						valueExpression
-					)
-				);
-
-				return;
-			}
-
-			memberProperty.SetStatements.Add(
-				new CodeAssignStatement(
-					new CodePropertyReferenceExpression(
-						WrappedField, memberProperty.Name),
-					valueExpression)
-			);
 		}
 
 		private void BuildPropertyGetter(CodeMemberProperty memberProperty, PropertyInfo property)
@@ -125,18 +86,19 @@ namespace AutoWrapper.CodeGen
 				return;
 			}
 
-			CodeExpression expression = new CodePropertyReferenceExpression(WrappedField, memberProperty.Name);
-
-			if (memberProperty.Type.ArrayElementType != null && WrappedTypeDictionary.Registered(memberProperty.Type.ArrayElementType.BaseType))
+			if (memberProperty.Type.IsArray() && WrappedTypeDictionary.Registered(memberProperty.Type.ArrayElementType.BaseType))
 			{
-				expression =
-					new CodeMethodInvokeExpression(
-						new CodeTypeReferenceExpression(typeof(Array)),
-						"ConvertAll",
-						expression,
-						new CodeMethodReferenceExpression(
-							new CodeTypeReferenceExpression(WrappedTypeDictionary.GetTypeNameFor(memberProperty.Type.ArrayElementType.BaseType)), "ConvertWrapped"));
+				var array = InvokeConvertAllWrapped(
+					new CodePropertyReferenceExpression(WrappedField, memberProperty.Name),
+					memberProperty.Type.ArrayElementType.BaseType
+				);
+
+				memberProperty.GetStatements.Add(new CodeMethodReturnStatement(array));
+
+				return;
 			}
+
+			CodeExpression expression = new CodePropertyReferenceExpression(WrappedField, memberProperty.Name);
 
 			if (WrappedTypeDictionary.Registered(property.PropertyType))
 				expression = new CodeObjectCreateExpression(WrappedTypeDictionary.GetTypeNameFor(property.PropertyType), expression);
@@ -144,18 +106,46 @@ namespace AutoWrapper.CodeGen
 			memberProperty.GetStatements.Add(new CodeMethodReturnStatement(expression));
 		}
 
+		private void BuildPropertySetter(CodeMemberProperty memberProperty, PropertyInfo property)
+		{
+			CodeExpression valueExpression = new CodePropertySetValueReferenceExpression();
+
+			if (WrappedTypeDictionary.Registered(property.PropertyType))
+				valueExpression = new CodePropertyReferenceExpression(valueExpression, WrappedPropertyName);
+
+			if (property.IsIndexer())
+			{
+				memberProperty.SetStatements.Add(
+					new CodeAssignStatement(
+						new CodeIndexerExpression(
+							WrappedField,
+							memberProperty.Parameters.Cast<CodeParameterDeclarationExpression>()
+								.Select(p => new CodeVariableReferenceExpression(p.Name))
+								.ToArray<CodeExpression>()),
+						valueExpression
+					)
+				);
+
+				return;
+			}
+
+			memberProperty.SetStatements.Add(
+				new CodeAssignStatement(
+					new CodePropertyReferenceExpression(
+						WrappedField, memberProperty.Name),
+					valueExpression)
+			);
+		}
+
 		private void GenerateMethods(IReflect type, CodeTypeDeclaration generatedType)
 		{
 			var methods = type
 				.GetMethods(BindingFlags.Public | BindingFlags.Instance)
-				.Where(m => m.IsSpecialName == false);
+				.Where(m => m.IsSpecialName == false)
+				.Where(m => m.Name != "GetType");
 
-			foreach (var method in methods.Where(m => m.Name != "GetType"))
-			{
-				var memberMethod = GenerateMethod(method);
-
-				generatedType.Members.Add(memberMethod);
-			}
+			foreach (var method in methods)
+				generatedType.Members.Add(GenerateMethod(method));
 		}
 
 		private CodeMemberMethod GenerateMethod(MethodInfo method)
@@ -178,15 +168,8 @@ namespace AutoWrapper.CodeGen
 						{
 							CodeExpression variableExpression = new CodeVariableReferenceExpression(p.Name);
 
-							if (p.Type.ArrayElementType != null && WrappedTypeDictionary.Registered(p.Type.ArrayElementType.BaseType))
-							{
-								return new CodeMethodInvokeExpression(
-									new CodeTypeReferenceExpression(typeof(Array)),
-									"ConvertAll",
-									variableExpression,
-									new CodeMethodReferenceExpression(
-										new CodeTypeReferenceExpression(WrappedTypeDictionary.GetTypeNameFor(p.Type.ArrayElementType.BaseType)), "ConvertWrapper"));
-							}
+							if (p.Type.IsArray() && WrappedTypeDictionary.Registered(p.Type.ArrayElementType.BaseType))
+								return InvokeConvertAllWrapper(variableExpression, p.Type.ArrayElementType.BaseType);
 
 							if (WrappedTypeDictionary.Registered(p.Type.BaseType))
 								variableExpression = new CodePropertyReferenceExpression(variableExpression, WrappedPropertyName);
@@ -197,7 +180,9 @@ namespace AutoWrapper.CodeGen
 				);
 
 			if (memberMethod.ReturnType.BaseType == "System.Void")
+			{
 				memberMethod.Statements.Add(invokeExpression);
+			}
 			else
 			{
 				if (WrappedTypeDictionary.Registered(method.ReturnType))
@@ -210,63 +195,6 @@ namespace AutoWrapper.CodeGen
 
 				memberMethod.Statements.Add(new CodeMethodReturnStatement(invokeExpression));
 			}
-
-			return memberMethod;
-		}
-
-		private static CodeTypeMember[] CompositionMembers(Type type)
-		{
-			var members = new CodeTypeMember[2];
-
-			members[0] = new CodeMemberField($"readonly {type}", WrappedFieldName) { Attributes = MemberAttributes.Private };
-
-			var constructor = new CodeConstructor() { Attributes = MemberAttributes.Public };
-
-			constructor.Parameters.Add(new CodeParameterDeclarationExpression(type, WrappedVariableName));
-
-			constructor.Statements.Add(
-				new CodeAssignStatement(
-					WrappedField,
-					new CodeArgumentReferenceExpression(WrappedVariableName))
-			);
-
-			members[1] = constructor;
-
-			return members;
-		}
-
-		private CodeMemberMethod GenerateConvertWrapperMethod(Type type)
-		{
-			var memberMethod = new CodeMemberMethod
-			{
-				Attributes = MemberAttributes.Public | MemberAttributes.Static,
-				Name = "ConvertWrapper",
-				ReturnType = new CodeTypeReference(type)
-			};
-
-			memberMethod.Parameters.Add(new CodeParameterDeclarationExpression(WrappedTypeDictionary.GetContractNameFor(type), "wrapper"));
-
-			memberMethod.Statements.Add(
-				new CodeMethodReturnStatement(
-					new CodePropertyReferenceExpression(new CodeVariableReferenceExpression("wrapper"), WrappedPropertyName)));
-
-			return memberMethod;
-		}
-
-		private CodeMemberMethod GenerateConvertWrappedMethod(Type type)
-		{
-			var memberMethod = new CodeMemberMethod
-			{
-				Attributes = MemberAttributes.Public | MemberAttributes.Static,
-				Name = "ConvertWrapped",
-				ReturnType = new CodeTypeReference(WrappedTypeDictionary.GetContractNameFor(type))
-			};
-
-			memberMethod.Parameters.Add(new CodeParameterDeclarationExpression(type, "wrapped"));
-
-			memberMethod.Statements.Add(
-				new CodeMethodReturnStatement(
-					new CodeObjectCreateExpression(WrappedTypeDictionary.GetTypeNameFor(type), new CodeVariableReferenceExpression("wrapped"))));
 
 			return memberMethod;
 		}
