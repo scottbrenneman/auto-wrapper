@@ -78,7 +78,7 @@ namespace AutoWrapper.CodeGen
 						.Select(p => new CodeVariableReferenceExpression(p.Name))
 						.ToArray<CodeExpression>());
 
-				if (WrappedTypeDictionary.Registered(property.PropertyType))
+				if (IsRegistered(property.PropertyType))
 					indexerExpression = new CodeObjectCreateExpression(WrappedTypeDictionary.GetTypeNameFor(property.PropertyType), indexerExpression);
 
 				memberProperty.GetStatements.Add(new CodeMethodReturnStatement(indexerExpression));
@@ -86,7 +86,7 @@ namespace AutoWrapper.CodeGen
 				return;
 			}
 
-			if (memberProperty.Type.IsArray() && WrappedTypeDictionary.Registered(memberProperty.Type.ArrayElementType.BaseType))
+			if (memberProperty.Type.IsArray() && IsRegistered(memberProperty.Type.ArrayElementType.BaseType))
 			{
 				var array = InvokeConvertAllWrapped(
 					new CodePropertyReferenceExpression(WrappedField, memberProperty.Name),
@@ -100,7 +100,7 @@ namespace AutoWrapper.CodeGen
 
 			CodeExpression expression = new CodePropertyReferenceExpression(WrappedField, memberProperty.Name);
 
-			if (WrappedTypeDictionary.Registered(property.PropertyType))
+			if (IsRegistered(property.PropertyType))
 				expression = new CodeObjectCreateExpression(WrappedTypeDictionary.GetTypeNameFor(property.PropertyType), expression);
 
 			memberProperty.GetStatements.Add(new CodeMethodReturnStatement(expression));
@@ -110,7 +110,7 @@ namespace AutoWrapper.CodeGen
 		{
 			CodeExpression valueExpression = new CodePropertySetValueReferenceExpression();
 
-			if (WrappedTypeDictionary.Registered(property.PropertyType))
+			if (IsRegistered(property.PropertyType))
 				valueExpression = new CodePropertyReferenceExpression(valueExpression, WrappedPropertyName);
 
 			if (property.IsIndexer())
@@ -168,10 +168,10 @@ namespace AutoWrapper.CodeGen
 						{
 							CodeExpression variableExpression = new CodeVariableReferenceExpression(p.Name);
 
-							if (p.Type.IsArray() && WrappedTypeDictionary.Registered(p.Type.ArrayElementType.BaseType))
+							if (p.Type.IsArray() && IsRegistered(p.Type.ArrayElementType.BaseType))
 								return InvokeConvertAllWrapper(variableExpression, p.Type.ArrayElementType.BaseType);
 
-							if (WrappedTypeDictionary.Registered(p.Type.BaseType))
+							if (IsRegistered(p.Type.BaseType))
 								variableExpression = new CodePropertyReferenceExpression(variableExpression, WrappedPropertyName);
 
 							return (CodeExpression) new CodeDirectionExpression(p.Direction, variableExpression);
@@ -185,7 +185,7 @@ namespace AutoWrapper.CodeGen
 			}
 			else
 			{
-				if (WrappedTypeDictionary.Registered(method.ReturnType))
+				if (IsRegistered(method.ReturnType))
 				{
 					invokeExpression = new CodeObjectCreateExpression(
 						WrappedTypeDictionary.GetTypeNameFor(method.ReturnType),

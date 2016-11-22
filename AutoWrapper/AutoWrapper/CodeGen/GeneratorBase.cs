@@ -20,6 +20,9 @@ namespace AutoWrapper.CodeGen
 				throw new InvalidOperationException($"Type '{type.GetName()}' must be registered with an IWrappedTypeContainer before a declaration can be generated.");
 		}
 
+		protected bool IsRegistered(Type type) => WrappedTypeDictionary.Registered(type);
+		protected bool IsRegistered(string name) => WrappedTypeDictionary.Registered(name);
+
 		public abstract CodeTypeDeclaration GenerateDeclaration(Type type);
 
 		protected CodeMemberProperty CreateWrappedProperty(Type type, GenerateAs generateAs)
@@ -33,9 +36,7 @@ namespace AutoWrapper.CodeGen
 			};
 
 			if (generateAs == GenerateAs.Type)
-			{
 				property.GetStatements.Add(new CodeMethodReturnStatement(WrappedField));
-			}
 
 			return property;
 		}
