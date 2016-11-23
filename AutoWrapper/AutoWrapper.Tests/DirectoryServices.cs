@@ -13,6 +13,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	
 	
 	// Interface for ActiveDirectorySecurityWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IActiveDirectorySecurityWrapper
 	{
 		
@@ -124,6 +125,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryAccessRuleWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IActiveDirectoryAccessRuleWrapper
 	{
 		
@@ -184,6 +186,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ListChildrenAccessRuleWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IListChildrenAccessRuleWrapper
 	{
 		
@@ -244,6 +247,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for CreateChildAccessRuleWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface ICreateChildAccessRuleWrapper
 	{
 		
@@ -304,6 +308,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DeleteChildAccessRuleWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IDeleteChildAccessRuleWrapper
 	{
 		
@@ -364,6 +369,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for PropertyAccessRuleWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IPropertyAccessRuleWrapper
 	{
 		
@@ -424,6 +430,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for PropertySetAccessRuleWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IPropertySetAccessRuleWrapper
 	{
 		
@@ -484,6 +491,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ExtendedRightAccessRuleWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IExtendedRightAccessRuleWrapper
 	{
 		
@@ -544,6 +552,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DeleteTreeAccessRuleWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IDeleteTreeAccessRuleWrapper
 	{
 		
@@ -604,6 +613,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryAuditRuleWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IActiveDirectoryAuditRuleWrapper
 	{
 		
@@ -664,6 +674,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryEntriesWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IDirectoryEntriesWrapper
 	{
 		
@@ -689,6 +700,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryEntryWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IDirectoryEntryWrapper : System.IDisposable
 	{
 		
@@ -829,6 +841,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryEntryConfigurationWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IDirectoryEntryConfigurationWrapper
 	{
 		
@@ -875,6 +888,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectorySearcherWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IDirectorySearcherWrapper : System.IDisposable
 	{
 		
@@ -1033,6 +1047,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryServicesPermissionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IDirectoryServicesPermissionWrapper
 	{
 		
@@ -1076,6 +1091,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryServicesPermissionEntryWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IDirectoryServicesPermissionEntryWrapper
 	{
 		
@@ -1096,6 +1112,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryServicesPermissionEntryCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IDirectoryServicesPermissionEntryCollectionWrapper
 	{
 		
@@ -1145,6 +1162,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectorySynchronizationWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IDirectorySynchronizationWrapper
 	{
 		
@@ -1169,6 +1187,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryVirtualListViewWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IDirectoryVirtualListViewWrapper
 	{
 		
@@ -1221,6 +1240,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryVirtualListViewContextWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IDirectoryVirtualListViewContextWrapper
 	{
 		
@@ -1233,6 +1253,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for PropertyCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IPropertyCollectionWrapper
 	{
 		
@@ -1269,6 +1290,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for PropertyValueCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IPropertyValueCollectionWrapper
 	{
 		
@@ -1329,6 +1351,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ResultPropertyCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IResultPropertyCollectionWrapper
 	{
 		
@@ -1369,6 +1392,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ResultPropertyValueCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IResultPropertyValueCollectionWrapper
 	{
 		
@@ -1397,6 +1421,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for SchemaNameCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface ISchemaNameCollectionWrapper
 	{
 		
@@ -1440,6 +1465,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for SearchResultWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface ISearchResultWrapper
 	{
 		
@@ -1462,6 +1488,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for SearchResultCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface ISearchResultCollectionWrapper : System.IDisposable
 	{
 		
@@ -1506,6 +1533,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for SortOptionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface ISortOptionWrapper
 	{
 		
@@ -1528,6 +1556,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryServicesCOMExceptionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IDirectoryServicesCOMExceptionWrapper
 	{
 		
@@ -1603,6 +1632,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryReplicationMetadataWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IActiveDirectoryReplicationMetadataWrapper
 	{
 		
@@ -1643,6 +1673,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryScheduleWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IActiveDirectoryScheduleWrapper
 	{
 		
@@ -1667,6 +1698,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySchemaWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IActiveDirectorySchemaWrapper : System.IDisposable
 	{
 		
@@ -1713,6 +1745,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySchemaClassWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IActiveDirectorySchemaClassWrapper : System.IDisposable
 	{
 		
@@ -1809,6 +1842,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySchemaClassCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IActiveDirectorySchemaClassCollectionWrapper
 	{
 		
@@ -1860,6 +1894,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySchemaPropertyWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IActiveDirectorySchemaPropertyWrapper : System.IDisposable
 	{
 		
@@ -1982,6 +2017,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySchemaPropertyCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IActiveDirectorySchemaPropertyCollectionWrapper
 	{
 		
@@ -2033,6 +2069,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySiteWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IActiveDirectorySiteWrapper : System.IDisposable
 	{
 		
@@ -2120,6 +2157,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySiteCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IActiveDirectorySiteCollectionWrapper
 	{
 		
@@ -2169,6 +2207,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySiteLinkWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IActiveDirectorySiteLinkWrapper : System.IDisposable
 	{
 		
@@ -2238,6 +2277,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySiteLinkBridgeWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IActiveDirectorySiteLinkBridgeWrapper : System.IDisposable
 	{
 		
@@ -2271,6 +2311,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySiteLinkCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IActiveDirectorySiteLinkCollectionWrapper
 	{
 		
@@ -2320,6 +2361,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySubnetWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IActiveDirectorySubnetWrapper : System.IDisposable
 	{
 		
@@ -2355,6 +2397,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectorySubnetCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IActiveDirectorySubnetCollectionWrapper
 	{
 		
@@ -2404,6 +2447,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for AdamInstanceWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IAdamInstanceWrapper : System.IDisposable
 	{
 		
@@ -2513,6 +2557,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for AdamInstanceCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IAdamInstanceCollectionWrapper
 	{
 		
@@ -2541,6 +2586,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ApplicationPartitionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IApplicationPartitionWrapper : System.IDisposable
 	{
 		
@@ -2591,6 +2637,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ApplicationPartitionCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IApplicationPartitionCollectionWrapper
 	{
 		
@@ -2619,6 +2666,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for AttributeMetadataWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IAttributeMetadataWrapper
 	{
 		
@@ -2664,6 +2712,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for AttributeMetadataCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IAttributeMetadataCollectionWrapper
 	{
 		
@@ -2692,6 +2741,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ConfigurationSetWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IConfigurationSetWrapper
 	{
 		
@@ -2757,6 +2807,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryContextWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IDirectoryContextWrapper
 	{
 		
@@ -2782,6 +2833,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DirectoryServerCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IDirectoryServerCollectionWrapper
 	{
 		
@@ -2829,6 +2881,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DomainWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IDomainWrapper : System.IDisposable
 	{
 		
@@ -2945,6 +2998,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DomainCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IDomainCollectionWrapper
 	{
 		
@@ -2973,6 +3027,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for SyncUpdateCallbackWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface ISyncUpdateCallbackWrapper
 	{
 		
@@ -3011,6 +3066,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DomainControllerWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IDomainControllerWrapper : System.IDisposable
 	{
 		
@@ -3123,6 +3179,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for DomainControllerCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IDomainControllerCollectionWrapper
 	{
 		
@@ -3151,6 +3208,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for SyncFromAllServersErrorInformationWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface ISyncFromAllServersErrorInformationWrapper
 	{
 		
@@ -3186,6 +3244,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryObjectNotFoundExceptionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IActiveDirectoryObjectNotFoundExceptionWrapper
 	{
 		
@@ -3256,6 +3315,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryOperationExceptionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IActiveDirectoryOperationExceptionWrapper
 	{
 		
@@ -3321,6 +3381,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryServerDownExceptionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IActiveDirectoryServerDownExceptionWrapper
 	{
 		
@@ -3391,6 +3452,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryObjectExistsExceptionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IActiveDirectoryObjectExistsExceptionWrapper
 	{
 		
@@ -3451,6 +3513,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for SyncFromAllServersOperationExceptionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface ISyncFromAllServersOperationExceptionWrapper
 	{
 		
@@ -3521,6 +3584,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ForestTrustCollisionExceptionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IForestTrustCollisionExceptionWrapper
 	{
 		
@@ -3591,6 +3655,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ForestWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IForestWrapper : System.IDisposable
 	{
 		
@@ -3710,6 +3775,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ForestTrustRelationshipCollisionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IForestTrustRelationshipCollisionWrapper
 	{
 		
@@ -3740,6 +3806,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ForestTrustRelationshipCollisionCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IForestTrustRelationshipCollisionCollectionWrapper
 	{
 		
@@ -3768,6 +3835,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ForestTrustDomainInfoCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IForestTrustDomainInfoCollectionWrapper
 	{
 		
@@ -3796,6 +3864,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ForestTrustDomainInformationWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IForestTrustDomainInformationWrapper
 	{
 		
@@ -3827,6 +3896,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ForestTrustRelationshipInformationWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IForestTrustRelationshipInformationWrapper
 	{
 		
@@ -3874,6 +3944,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for GlobalCatalogWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IGlobalCatalogWrapper : System.IDisposable
 	{
 		
@@ -3990,6 +4061,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for GlobalCatalogCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IGlobalCatalogCollectionWrapper
 	{
 		
@@ -4018,6 +4090,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReadOnlyActiveDirectorySchemaClassCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IReadOnlyActiveDirectorySchemaClassCollectionWrapper
 	{
 		
@@ -4046,6 +4119,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReadOnlyActiveDirectorySchemaPropertyCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IReadOnlyActiveDirectorySchemaPropertyCollectionWrapper
 	{
 		
@@ -4074,6 +4148,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReadOnlyDirectoryServerCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IReadOnlyDirectoryServerCollectionWrapper
 	{
 		
@@ -4102,6 +4177,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReadOnlySiteCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IReadOnlySiteCollectionWrapper
 	{
 		
@@ -4130,6 +4206,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReadOnlySiteLinkBridgeCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IReadOnlySiteLinkBridgeCollectionWrapper
 	{
 		
@@ -4158,6 +4235,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReadOnlySiteLinkCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IReadOnlySiteLinkCollectionWrapper
 	{
 		
@@ -4186,6 +4264,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReadOnlyStringCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IReadOnlyStringCollectionWrapper
 	{
 		
@@ -4214,6 +4293,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationConnectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IReplicationConnectionWrapper : System.IDisposable
 	{
 		
@@ -4299,6 +4379,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationConnectionCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IReplicationConnectionCollectionWrapper
 	{
 		
@@ -4327,6 +4408,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationCursorWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IReplicationCursorWrapper
 	{
 		
@@ -4362,6 +4444,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationCursorCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IReplicationCursorCollectionWrapper
 	{
 		
@@ -4390,6 +4473,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationFailureWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IReplicationFailureWrapper
 	{
 		
@@ -4425,6 +4509,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationFailureCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IReplicationFailureCollectionWrapper
 	{
 		
@@ -4453,6 +4538,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationNeighborWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IReplicationNeighborWrapper
 	{
 		
@@ -4523,6 +4609,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationNeighborCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IReplicationNeighborCollectionWrapper
 	{
 		
@@ -4551,6 +4638,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationOperationWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IReplicationOperationWrapper
 	{
 		
@@ -4591,6 +4679,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationOperationCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IReplicationOperationCollectionWrapper
 	{
 		
@@ -4619,6 +4708,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ReplicationOperationInformationWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IReplicationOperationInformationWrapper
 	{
 		
@@ -4644,6 +4734,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryInterSiteTransportWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IActiveDirectoryInterSiteTransportWrapper : System.IDisposable
 	{
 		
@@ -4687,6 +4778,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for ActiveDirectoryRoleCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IActiveDirectoryRoleCollectionWrapper
 	{
 		
@@ -4715,6 +4807,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for AdamRoleCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface IAdamRoleCollectionWrapper
 	{
 		
@@ -4743,6 +4836,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for TopLevelNameWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface ITopLevelNameWrapper
 	{
 		
@@ -4764,6 +4858,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for TopLevelNameCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface ITopLevelNameCollectionWrapper
 	{
 		
@@ -4792,6 +4887,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for TrustRelationshipInformationWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface ITrustRelationshipInformationWrapper
 	{
 		
@@ -4822,6 +4918,7 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 	}
 	
 	// Interface for TrustRelationshipInformationCollectionWrapper
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public partial interface ITrustRelationshipInformationCollectionWrapper
 	{
 		
@@ -4849,8 +4946,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		System.Collections.IEnumerator GetEnumerator();
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectorySecurity in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectorySecurity in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ActiveDirectorySecurityWrapper : IActiveDirectorySecurityWrapper
 	{
 		
@@ -5116,8 +5214,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectoryAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectoryAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ActiveDirectoryAccessRuleWrapper : IActiveDirectoryAccessRuleWrapper
 	{
 		
@@ -5242,8 +5341,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ListChildrenAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ListChildrenAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ListChildrenAccessRuleWrapper : IListChildrenAccessRuleWrapper
 	{
 		
@@ -5368,8 +5468,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.CreateChildAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.CreateChildAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class CreateChildAccessRuleWrapper : ICreateChildAccessRuleWrapper
 	{
 		
@@ -5494,8 +5595,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.DeleteChildAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.DeleteChildAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class DeleteChildAccessRuleWrapper : IDeleteChildAccessRuleWrapper
 	{
 		
@@ -5620,8 +5722,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.PropertyAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.PropertyAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class PropertyAccessRuleWrapper : IPropertyAccessRuleWrapper
 	{
 		
@@ -5746,8 +5849,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.PropertySetAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.PropertySetAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class PropertySetAccessRuleWrapper : IPropertySetAccessRuleWrapper
 	{
 		
@@ -5872,8 +5976,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ExtendedRightAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ExtendedRightAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ExtendedRightAccessRuleWrapper : IExtendedRightAccessRuleWrapper
 	{
 		
@@ -5998,8 +6103,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.DeleteTreeAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.DeleteTreeAccessRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class DeleteTreeAccessRuleWrapper : IDeleteTreeAccessRuleWrapper
 	{
 		
@@ -6124,8 +6230,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectoryAuditRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectoryAuditRule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ActiveDirectoryAuditRuleWrapper : IActiveDirectoryAuditRuleWrapper
 	{
 		
@@ -6250,8 +6357,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.DirectoryEntries in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.DirectoryEntries in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class DirectoryEntriesWrapper : IDirectoryEntriesWrapper
 	{
 		
@@ -6329,8 +6437,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.DirectoryEntry in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.DirectoryEntry in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class DirectoryEntryWrapper : IDirectoryEntryWrapper
 	{
 		
@@ -6628,8 +6737,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.DirectoryEntryConfiguration in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.DirectoryEntryConfiguration in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class DirectoryEntryConfigurationWrapper : IDirectoryEntryConfigurationWrapper
 	{
 		
@@ -6749,8 +6859,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.DirectorySearcher in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.DirectorySearcher in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class DirectorySearcherWrapper : IDirectorySearcherWrapper
 	{
 		
@@ -7093,8 +7204,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.DirectoryServicesPermission in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.DirectoryServicesPermission in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class DirectoryServicesPermissionWrapper : IDirectoryServicesPermissionWrapper
 	{
 		
@@ -7202,8 +7314,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.DirectoryServicesPermissionEntry in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.DirectoryServicesPermissionEntry in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class DirectoryServicesPermissionEntryWrapper : IDirectoryServicesPermissionEntryWrapper
 	{
 		
@@ -7264,8 +7377,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.DirectoryServicesPermissionEntryCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.DirectoryServicesPermissionEntryCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class DirectoryServicesPermissionEntryCollectionWrapper : IDirectoryServicesPermissionEntryCollectionWrapper
 	{
 		
@@ -7397,8 +7511,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.DirectorySynchronization in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.DirectorySynchronization in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class DirectorySynchronizationWrapper : IDirectorySynchronizationWrapper
 	{
 		
@@ -7475,8 +7590,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.DirectoryVirtualListView in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.DirectoryVirtualListView in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class DirectoryVirtualListViewWrapper : IDirectoryVirtualListViewWrapper
 	{
 		
@@ -7605,8 +7721,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.DirectoryVirtualListViewContext in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.DirectoryVirtualListViewContext in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class DirectoryVirtualListViewContextWrapper : IDirectoryVirtualListViewContextWrapper
 	{
 		
@@ -7656,8 +7773,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.PropertyCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.PropertyCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class PropertyCollectionWrapper : IPropertyCollectionWrapper
 	{
 		
@@ -7749,8 +7867,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.PropertyValueCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.PropertyValueCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class PropertyValueCollectionWrapper : IPropertyValueCollectionWrapper
 	{
 		
@@ -7902,8 +8021,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ResultPropertyCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ResultPropertyCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ResultPropertyCollectionWrapper : IResultPropertyCollectionWrapper
 	{
 		
@@ -8005,8 +8125,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ResultPropertyValueCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ResultPropertyValueCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ResultPropertyValueCollectionWrapper : IResultPropertyValueCollectionWrapper
 	{
 		
@@ -8087,8 +8208,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.SchemaNameCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.SchemaNameCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class SchemaNameCollectionWrapper : ISchemaNameCollectionWrapper
 	{
 		
@@ -8208,8 +8330,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.SearchResult in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.SearchResult in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class SearchResultWrapper : ISearchResultWrapper
 	{
 		
@@ -8275,8 +8398,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.SearchResultCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.SearchResultCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class SearchResultCollectionWrapper : ISearchResultCollectionWrapper
 	{
 		
@@ -8393,8 +8517,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.SortOption in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.SortOption in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class SortOptionWrapper : ISortOptionWrapper
 	{
 		
@@ -8463,8 +8588,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.DirectoryServicesCOMException in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.DirectoryServicesCOMException in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class DirectoryServicesCOMExceptionWrapper : IDirectoryServicesCOMExceptionWrapper
 	{
 		
@@ -8615,8 +8741,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectoryReplicationMetadata in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ActiveDirectoryReplicationMetadataWrapper : IActiveDirectoryReplicationMetadataWrapper
 	{
 		
@@ -8718,8 +8845,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySchedule in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ActiveDirectoryScheduleWrapper : IActiveDirectoryScheduleWrapper
 	{
 		
@@ -8796,8 +8924,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySchema in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySchema in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ActiveDirectorySchemaWrapper : IActiveDirectorySchemaWrapper
 	{
 		
@@ -8923,8 +9052,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClass in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ActiveDirectorySchemaClassWrapper : IActiveDirectorySchemaClassWrapper
 	{
 		
@@ -9133,8 +9263,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClassCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaClassCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ActiveDirectorySchemaClassCollectionWrapper : IActiveDirectorySchemaClassCollectionWrapper
 	{
 		
@@ -9271,8 +9402,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaProperty in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ActiveDirectorySchemaPropertyWrapper : IActiveDirectorySchemaPropertyWrapper
 	{
 		
@@ -9540,8 +9672,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaPropertyCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySchemaPropertyCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ActiveDirectorySchemaPropertyCollectionWrapper : IActiveDirectorySchemaPropertyCollectionWrapper
 	{
 		
@@ -9678,8 +9811,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySite in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySite in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ActiveDirectorySiteWrapper : IActiveDirectorySiteWrapper
 	{
 		
@@ -9864,8 +9998,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ActiveDirectorySiteCollectionWrapper : IActiveDirectorySiteCollectionWrapper
 	{
 		
@@ -9997,8 +10132,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLink in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ActiveDirectorySiteLinkWrapper : IActiveDirectorySiteLinkWrapper
 	{
 		
@@ -10159,8 +10295,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkBridge in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ActiveDirectorySiteLinkBridgeWrapper : IActiveDirectorySiteLinkBridgeWrapper
 	{
 		
@@ -10249,8 +10386,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySiteLinkCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ActiveDirectorySiteLinkCollectionWrapper : IActiveDirectorySiteLinkCollectionWrapper
 	{
 		
@@ -10382,8 +10520,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnet in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ActiveDirectorySubnetWrapper : IActiveDirectorySubnetWrapper
 	{
 		
@@ -10480,8 +10619,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnetCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectorySubnetCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ActiveDirectorySubnetCollectionWrapper : IActiveDirectorySubnetCollectionWrapper
 	{
 		
@@ -10613,8 +10753,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.AdamInstance in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.AdamInstance in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class AdamInstanceWrapper : IAdamInstanceWrapper
 	{
 		
@@ -10851,8 +10992,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.AdamInstanceCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.AdamInstanceCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class AdamInstanceCollectionWrapper : IAdamInstanceCollectionWrapper
 	{
 		
@@ -10933,8 +11075,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ApplicationPartition in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ApplicationPartition in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ApplicationPartitionWrapper : IApplicationPartitionWrapper
 	{
 		
@@ -11067,8 +11210,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ApplicationPartitionCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ApplicationPartitionCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ApplicationPartitionCollectionWrapper : IApplicationPartitionCollectionWrapper
 	{
 		
@@ -11149,8 +11293,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.AttributeMetadata in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.AttributeMetadata in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class AttributeMetadataWrapper : IAttributeMetadataWrapper
 	{
 		
@@ -11251,8 +11396,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.AttributeMetadataCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.AttributeMetadataCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class AttributeMetadataCollectionWrapper : IAttributeMetadataCollectionWrapper
 	{
 		
@@ -11333,8 +11479,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ConfigurationSet in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ConfigurationSet in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ConfigurationSetWrapper : IConfigurationSetWrapper
 	{
 		
@@ -11485,8 +11632,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.DirectoryContext in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.DirectoryContext in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class DirectoryContextWrapper : IDirectoryContextWrapper
 	{
 		
@@ -11555,8 +11703,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.DirectoryServerCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.DirectoryServerCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class DirectoryServerCollectionWrapper : IDirectoryServerCollectionWrapper
 	{
 		
@@ -11683,8 +11832,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.Domain in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.Domain in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class DomainWrapper : IDomainWrapper
 	{
 		
@@ -11949,8 +12099,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.DomainCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.DomainCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class DomainCollectionWrapper : IDomainCollectionWrapper
 	{
 		
@@ -12031,8 +12182,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.SyncUpdateCallback in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.SyncUpdateCallback in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class SyncUpdateCallbackWrapper : ISyncUpdateCallbackWrapper
 	{
 		
@@ -12128,8 +12280,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.DomainController in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.DomainController in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class DomainControllerWrapper : IDomainControllerWrapper
 	{
 		
@@ -12372,8 +12525,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.DomainControllerCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.DomainControllerCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class DomainControllerCollectionWrapper : IDomainControllerCollectionWrapper
 	{
 		
@@ -12454,8 +12608,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.SyncFromAllServersErrorInformation in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.SyncFromAllServersErrorInformation in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class SyncFromAllServersErrorInformationWrapper : ISyncFromAllServersErrorInformationWrapper
 	{
 		
@@ -12540,8 +12695,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectNotFoundException in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ActiveDirectoryObjectNotFoundExceptionWrapper : IActiveDirectoryObjectNotFoundExceptionWrapper
 	{
 		
@@ -12684,8 +12840,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectoryOperationException in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ActiveDirectoryOperationExceptionWrapper : IActiveDirectoryOperationExceptionWrapper
 	{
 		
@@ -12820,8 +12977,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectoryServerDownException in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ActiveDirectoryServerDownExceptionWrapper : IActiveDirectoryServerDownExceptionWrapper
 	{
 		
@@ -12964,8 +13122,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectoryObjectExistsException in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ActiveDirectoryObjectExistsExceptionWrapper : IActiveDirectoryObjectExistsExceptionWrapper
 	{
 		
@@ -13092,8 +13251,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.SyncFromAllServersOperationException in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.SyncFromAllServersOperationException in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class SyncFromAllServersOperationExceptionWrapper : ISyncFromAllServersOperationExceptionWrapper
 	{
 		
@@ -13236,8 +13396,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ForestTrustCollisionException in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ForestTrustCollisionException in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ForestTrustCollisionExceptionWrapper : IForestTrustCollisionExceptionWrapper
 	{
 		
@@ -13380,8 +13541,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.Forest in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.Forest in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ForestWrapper : IForestWrapper
 	{
 		
@@ -13649,8 +13811,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollision in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollision in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ForestTrustRelationshipCollisionWrapper : IForestTrustRelationshipCollisionWrapper
 	{
 		
@@ -13727,8 +13890,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollisionCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipCollisionCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ForestTrustRelationshipCollisionCollectionWrapper : IForestTrustRelationshipCollisionCollectionWrapper
 	{
 		
@@ -13809,8 +13973,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ForestTrustDomainInfoCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ForestTrustDomainInfoCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ForestTrustDomainInfoCollectionWrapper : IForestTrustDomainInfoCollectionWrapper
 	{
 		
@@ -13891,8 +14056,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ForestTrustDomainInformation in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ForestTrustDomainInformation in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ForestTrustDomainInformationWrapper : IForestTrustDomainInformationWrapper
 	{
 		
@@ -13973,8 +14139,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipInformation in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ForestTrustRelationshipInformation in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ForestTrustRelationshipInformationWrapper : IForestTrustRelationshipInformationWrapper
 	{
 		
@@ -14080,8 +14247,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.GlobalCatalog in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.GlobalCatalog in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class GlobalCatalogWrapper : IGlobalCatalogWrapper
 	{
 		
@@ -14334,8 +14502,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.GlobalCatalogCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class GlobalCatalogCollectionWrapper : IGlobalCatalogCollectionWrapper
 	{
 		
@@ -14416,8 +14585,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaClassCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaClassCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ReadOnlyActiveDirectorySchemaClassCollectionWrapper : IReadOnlyActiveDirectorySchemaClassCollectionWrapper
 	{
 		
@@ -14498,8 +14668,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaPropertyCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ReadOnlyActiveDirectorySchemaPropertyCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ReadOnlyActiveDirectorySchemaPropertyCollectionWrapper : IReadOnlyActiveDirectorySchemaPropertyCollectionWrapper
 	{
 		
@@ -14580,8 +14751,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ReadOnlyDirectoryServerCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ReadOnlyDirectoryServerCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ReadOnlyDirectoryServerCollectionWrapper : IReadOnlyDirectoryServerCollectionWrapper
 	{
 		
@@ -14662,8 +14834,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ReadOnlySiteCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ReadOnlySiteCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ReadOnlySiteCollectionWrapper : IReadOnlySiteCollectionWrapper
 	{
 		
@@ -14744,8 +14917,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkBridgeCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkBridgeCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ReadOnlySiteLinkBridgeCollectionWrapper : IReadOnlySiteLinkBridgeCollectionWrapper
 	{
 		
@@ -14826,8 +15000,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ReadOnlySiteLinkCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ReadOnlySiteLinkCollectionWrapper : IReadOnlySiteLinkCollectionWrapper
 	{
 		
@@ -14908,8 +15083,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ReadOnlyStringCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ReadOnlyStringCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ReadOnlyStringCollectionWrapper : IReadOnlyStringCollectionWrapper
 	{
 		
@@ -14990,8 +15166,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ReplicationConnection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ReplicationConnection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ReplicationConnectionWrapper : IReplicationConnectionWrapper
 	{
 		
@@ -15180,8 +15357,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ReplicationConnectionCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ReplicationConnectionCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ReplicationConnectionCollectionWrapper : IReplicationConnectionCollectionWrapper
 	{
 		
@@ -15262,8 +15440,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ReplicationCursor in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ReplicationCursor in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ReplicationCursorWrapper : IReplicationCursorWrapper
 	{
 		
@@ -15348,8 +15527,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ReplicationCursorCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ReplicationCursorCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ReplicationCursorCollectionWrapper : IReplicationCursorCollectionWrapper
 	{
 		
@@ -15430,8 +15610,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ReplicationFailure in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ReplicationFailure in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ReplicationFailureWrapper : IReplicationFailureWrapper
 	{
 		
@@ -15516,8 +15697,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ReplicationFailureCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ReplicationFailureCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ReplicationFailureCollectionWrapper : IReplicationFailureCollectionWrapper
 	{
 		
@@ -15598,8 +15780,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ReplicationNeighbor in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ReplicationNeighbor in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ReplicationNeighborWrapper : IReplicationNeighborWrapper
 	{
 		
@@ -15740,8 +15923,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ReplicationNeighborCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ReplicationNeighborCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ReplicationNeighborCollectionWrapper : IReplicationNeighborCollectionWrapper
 	{
 		
@@ -15822,8 +16006,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ReplicationOperation in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ReplicationOperation in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ReplicationOperationWrapper : IReplicationOperationWrapper
 	{
 		
@@ -15916,8 +16101,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ReplicationOperationCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ReplicationOperationCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ReplicationOperationCollectionWrapper : IReplicationOperationCollectionWrapper
 	{
 		
@@ -15998,8 +16184,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ReplicationOperationInformation in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ReplicationOperationInformation in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ReplicationOperationInformationWrapper : IReplicationOperationInformationWrapper
 	{
 		
@@ -16068,8 +16255,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectoryInterSiteTransport in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectoryInterSiteTransport in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ActiveDirectoryInterSiteTransportWrapper : IActiveDirectoryInterSiteTransportWrapper
 	{
 		
@@ -16177,8 +16365,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectoryRoleCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.ActiveDirectoryRoleCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class ActiveDirectoryRoleCollectionWrapper : IActiveDirectoryRoleCollectionWrapper
 	{
 		
@@ -16259,8 +16448,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.AdamRoleCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.AdamRoleCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class AdamRoleCollectionWrapper : IAdamRoleCollectionWrapper
 	{
 		
@@ -16341,8 +16531,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.TopLevelName in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.TopLevelName in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class TopLevelNameWrapper : ITopLevelNameWrapper
 	{
 		
@@ -16407,8 +16598,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.TopLevelNameCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.TopLevelNameCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class TopLevelNameCollectionWrapper : ITopLevelNameCollectionWrapper
 	{
 		
@@ -16489,8 +16681,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.TrustRelationshipInformation in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class TrustRelationshipInformationWrapper : ITrustRelationshipInformationWrapper
 	{
 		
@@ -16567,8 +16760,9 @@ namespace AutoWrapper.Samples.WrappersForDirectoryServices
 		}
 	}
 	
-	// wrapper for System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
-	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage()]
+	// Wrapper for System.DirectoryServices.ActiveDirectory.TrustRelationshipInformationCollection in System.DirectoryServices, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+	[System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute()]
+	[System.CodeDom.Compiler.GeneratedCodeAttribute("AutoWrapper", "1.0.0-rc1")]
 	public sealed partial class TrustRelationshipInformationCollectionWrapper : ITrustRelationshipInformationCollectionWrapper
 	{
 		

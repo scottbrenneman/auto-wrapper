@@ -31,9 +31,11 @@ namespace AutoWrapper.CodeGen
 				IsPartial = _contractGeneratorOptions.UsePartial
 			};
 
+			contract.CustomAttributes.AddGeneratedCode();
+
 			contract.Comments.Add(new CodeCommentStatement($"Interface for {WrappedTypeDictionary.GetTypeNameFor(type)}"));
 
-			if(type.GetInterfaces().Contains(typeof(IDisposable)))
+			if (type.GetInterfaces().Contains(typeof(IDisposable)))
 				contract.BaseTypes.Add("System.IDisposable");
 
 			GenerateMethods(type, contract);
