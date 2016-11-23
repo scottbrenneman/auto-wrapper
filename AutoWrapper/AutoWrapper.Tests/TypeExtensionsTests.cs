@@ -1,5 +1,4 @@
-﻿using AutoWrapper.CodeGen;
-using FluentAssertions;
+﻿using FluentAssertions;
 using GwtUnit.XUnit;
 using System;
 using System.Collections.Generic;

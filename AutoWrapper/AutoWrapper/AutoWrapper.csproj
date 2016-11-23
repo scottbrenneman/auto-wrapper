@@ -54,7 +54,7 @@
     <Compile Include="IWrappedTypeDictionary.cs" />
     <Compile Include="WrappedTypeContainer.cs" />
     <Compile Include="CodeGen\DefaultNamingStrategy.cs" />
-    <Compile Include="CodeGen\Extensions.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="CodeGen\TypeGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
