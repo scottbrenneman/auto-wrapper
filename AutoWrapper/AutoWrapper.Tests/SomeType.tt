@@ -10,4 +10,4 @@
 <# 
 	var container = new WrappedTypeContainer().Register<SomeType>().Register<SomeOtherType>();
 #>
-<#= AutoWrap.GenerateCode("AutoWrapper.Samples.WrapperForSomeType", container) #>
+<#= AutoWrap.FromContainer(container, "AutoWrapper.Samples.WrapperForSomeType") #>

@@ -6,7 +6,7 @@ using System.Reflection;
 
 namespace AutoWrapper.CodeGen
 {
-	public class ContractGenerator : GeneratorBase
+	public sealed class ContractGenerator : GeneratorBase
     {
 	    private readonly IContractGeneratorOptions _contractGeneratorOptions;
 		private readonly MemberGenerator _memberGenerator;

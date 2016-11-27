@@ -3,7 +3,7 @@ using AutoWrapper.CodeGen.Contracts;
 
 namespace AutoWrapper.CodeGen
 {
-	public class TypeGeneratorOptionsBuilder : ITypeGeneratorOptionsBuilder, ITypeGeneratorOptions
+	public sealed class TypeGeneratorOptionsBuilder : ITypeGeneratorOptionsBuilder, ITypeGeneratorOptions
 	{
 		private ITypeNamingStrategy _typeNamingStrategy;
 		private TypeAttributes _typeAttributes;

@@ -5,7 +5,7 @@ using AutoWrapper.CodeGen.Contracts;
 
 namespace AutoWrapper.CodeGen
 {
-	public class ContractGeneratorOptionsBuilder : IContractGeneratorOptionsBuilder, IContractGeneratorOptions
+	public sealed class ContractGeneratorOptionsBuilder : IContractGeneratorOptionsBuilder, IContractGeneratorOptions
 	{
 		private IContractNamingStrategy _contractNamingStrategy;
 		private TypeAttributes _typeAttributes;

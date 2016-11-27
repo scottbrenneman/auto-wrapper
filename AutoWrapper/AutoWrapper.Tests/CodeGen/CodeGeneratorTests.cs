@@ -145,7 +145,7 @@ namespace AutoWrapper.Tests.CodeGen
 
 		public sealed class Thens
 		{
-			internal AutoWrapper.CodeGen.CodeGenerator Target;
+			public AutoWrapper.CodeGen.CodeGenerator Target;
 			public string Code;
 			public CompilerResults CompilerResults;
 			public Type GeneratedType;

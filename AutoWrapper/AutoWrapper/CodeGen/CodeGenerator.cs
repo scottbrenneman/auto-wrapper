@@ -5,7 +5,7 @@ using System.IO;
 
 namespace AutoWrapper.CodeGen
 {
-	internal sealed class CodeGenerator : IDisposable
+	public sealed class CodeGenerator : IDisposable
 	{
 		public CodeGenerator(CodeGeneratorOptions generatorOptions = null)
 		{

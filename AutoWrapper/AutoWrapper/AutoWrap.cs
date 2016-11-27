@@ -1,18 +1,41 @@
 ﻿using AutoWrapper.CodeGen;
+using AutoWrapper.CodeGen.Contracts;
+using System;
 using System.CodeDom;
+using System.Reflection;
 
 namespace AutoWrapper
 {
 	public static class AutoWrap
 	{
-		public static string GenerateCode(string namespaceForWrappers, IWrappedTypeContainer container)
+		public static string Type(Type type, string namespaceForWrapper)
 		{
-			var typeOptions = new TypeGeneratorOptionsBuilder()
+			var container = new WrappedTypeContainer().Register(type);
+
+			return FromContainer(container, namespaceForWrapper);
+		}
+
+		public static string Type<T>(string namespaceForWrapper) where T : class => Type(typeof(T), namespaceForWrapper);
+
+		public static string Assembly(Assembly assembly, string namespaceForWrappers)
+		{
+			var container = new WrappedTypeContainer().RegisterAssembly(assembly);
+
+			return FromContainer(container, namespaceForWrappers);
+		}
+
+		public static string AssemblyWithType(Type type, string namespaceForWrappers) => Assembly(type.Assembly, namespaceForWrappers);
+
+		public static string AssemblyWithType<T>(string namespaceForWrappers) where T : class => AssemblyWithType(typeof(T), namespaceForWrappers);
+
+		public static string FromContainer(IWrappedTypeContainer container, string namespaceForWrappers)
+		{
+			var typeOptions = new TypeGeneratorOptionsBuilder(TypeNamingStrategy)
 				.WithPartial()
 				.WithPublic()
 				.Build();
 
-			var contractOptions = new ContractGeneratorOptionsBuilder()
+			var contractOptions = new ContractGeneratorOptionsBuilder(ContractNamingStrategy)
 				.WithPartial()
 				.WithPublic()
 				.ExcludeMembersDeclaredOn<object>()
@@ -45,5 +68,8 @@ namespace AutoWrapper
 
 			return codeGenerator.GenerateCode(targetUnit);
 		}
+
+		public static IContractNamingStrategy ContractNamingStrategy = new DefaultNamingStrategy();
+		public static ITypeNamingStrategy TypeNamingStrategy = new DefaultNamingStrategy();
 	}
 }
