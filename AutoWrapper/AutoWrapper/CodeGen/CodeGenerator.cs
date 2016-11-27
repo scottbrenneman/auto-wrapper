@@ -2,11 +2,10 @@
 using System.CodeDom;
 using System.CodeDom.Compiler;
 using System.IO;
-using ICodeGenerator = AutoWrapper.CodeGen.Contracts.ICodeGenerator;
 
 namespace AutoWrapper.CodeGen
 {
-	public class CodeGenerator : IDisposable, ICodeGenerator
+	internal sealed class CodeGenerator : IDisposable
 	{
 		public CodeGenerator(CodeGeneratorOptions generatorOptions = null)
 		{
@@ -28,6 +27,8 @@ namespace AutoWrapper.CodeGen
 		{
 			using (var writer = new StringWriter())
 			{
+				_provider.GenerateCodeFromStatement(new CodeSnippetStatement("#pragma warning disable"), writer, _options);
+
 				_provider.GenerateCodeFromCompileUnit(codeCompileUnit, writer, _options);
 
 				return writer.ToString();
