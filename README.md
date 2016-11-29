@@ -16,75 +16,31 @@ A library for generation of wrapper classes with interfaces.
     <#@ assembly name="AutoWrapper.dll" #>
     <#@ import namespace="AutoWrapper" #>
     
-    namespace MyWrappedClasses
-    {
-        <#= AutoWrap.Type<FooClass>() #>
-    }
+    <#= AutoWrap.Type<FooClass>("MyWrappedClasses") #>
 
-#### Use TypeGenerator to specify options
+#### Generate wrappers for an assembly
 
-    namespace MyWrappedClasses
-    {
-        <#= TypeGenerator.WrapperFor<FooClass>()
-                .AsPublic()
-                .AsPartial()
-                .GenerateCode() #>
-    }
+    <#= AutoWrap.AssemblyWithType<FooClass>("MyWrappedClasses") #>
 
-#### Generate a wrapper with a given name
+#### Register the types you want to wrap with WrappedTypeContainer
 
-    namespace MyWrappedClasses
-    {
-        <#= TypeGenerator.WrapperFor<FooClass>()
-                .WithName("MyWrappedFoo")
-                .GenerateCode() #>
-    }
+    <# 
+		var container =
+			new WrappedTypeContainer()
+				.Register<Class1>()
+				.Register<Class2>();
+	#>
 
-#### Use a naming strategy (implement ITypeNamingStrategy)
-
-    <# var namingStrategy = new MyNamingStrategy(); #>
+	<#= AutoWrap.FromContainer(container, "MyWrappedClasses") #>
     
-    namespace MyWrappedClasses
-    {
-        <#= TypeGenerator.WrapperFor<FooClass>()
-                .WithNamingStrategy(namingStrategy)
-                .GenerateCode() #>
-    }
+#### Use a naming strategy (implement ITypeNamingStrategy and IContractNamingStrategy)
 
-#### Exclude members from a given type
+    <#
+		var contractNamingStrategy = new MyContractNamingStrategy();
+		var typeNamingStrategy = new MyTypeNamingStrategy();
 
-    namespace MyWrappedClasses
-    {
-        <#= TypeGenerator.WrapperFor<FooClass>()
-                .ExcludingMembersFrom<object>()
-                .GenerateCode() #>
-    }
-
-#### Generate a wrapper with no interface
-
-    namespace MyWrappedClasses
-    {
-        <#= TypeGenerator.WrapperFor<FooClass>()
-                .WithNoContract()
-                .GenerateCode() #>
-    }
+		AutoWrap.ContractNamingStrategy = contractNamingStrategy;
+		AutoWrap.TypeNamingStrategy = typeNamingStrategy;
+	#>
     
-#### Or no implementation
-
-By default, AutoWrapper uses composition and will pass through all calls to the wrapped type. Specify `WithNoImplementation()` to throw `NotImplementedException` instead.
-
-    namespace MyWrappedClasses
-    {
-        <#= TypeGenerator.WrapperFor<FooClass>()
-                .WithNoImplementation()
-                .GenerateCode() #>
-    }
-    
-#### Use ContractGenerator to generate just an interface
-
-    namespace MyGeneratedInterfaces
-    {
-        <#= ContractGenerator.ContractFor<FooClass>()
-                .WithName("IFoo")
-                .GenerateCode() #>
-    }
+    <#= AutoWrap.Type<FooClass>("MyWrappedClasses") #>
