@@ -20,9 +20,9 @@ namespace AutoWrapper.Tests.CodeGen
 		{
 			When(Generating);
 
-			Then.CodeTypeDeclaration.ShouldBeEquivalentTo(new
+			Then.CodeTypeDeclaration.Should().BeEquivalentTo(new
 			{
-				Attributes = 20482,
+				Attributes = (MemberAttributes) 20482,
 				IsClass = true,
 				IsEnum = false,
 				IsInterface = false,
@@ -33,17 +33,17 @@ namespace AutoWrapper.Tests.CodeGen
 				TypeAttributes = TypeAttributes.AnsiClass | TypeAttributes.Sealed
 			}, options => options.ExcludingMissingMembers());
 
-			Then.CodeTypeDeclaration.BaseTypes.Should().HaveCount(1);
+			Then.CodeTypeDeclaration.BaseTypes.Count.Should().Be(1);
 			Then.CodeTypeDeclaration.BaseTypes[0].BaseType.Should().Be("ISomeTypeWrapper");
 
-			Then.CodeTypeDeclaration.Members.Should().HaveCount(19);
+			Then.CodeTypeDeclaration.Members.Count.Should().Be(19);
 			
-			Then.CodeTypeDeclaration.Comments.Should().HaveCount(1);
-			Then.CodeTypeDeclaration.CustomAttributes.Should().HaveCount(2);
-			Then.CodeTypeDeclaration.EndDirectives.Should().HaveCount(0);
-			Then.CodeTypeDeclaration.StartDirectives.Should().HaveCount(0);
-			Then.CodeTypeDeclaration.TypeParameters.Should().HaveCount(0);
-			Then.CodeTypeDeclaration.UserData.Should().HaveCount(0);
+			Then.CodeTypeDeclaration.Comments.Count.Should().Be(1);
+			Then.CodeTypeDeclaration.CustomAttributes.Count.Should().Be(2);
+			Then.CodeTypeDeclaration.EndDirectives.Count.Should().Be(0);
+			Then.CodeTypeDeclaration.StartDirectives.Count.Should().Be(0);
+			Then.CodeTypeDeclaration.TypeParameters.Count.Should().Be(0);
+			Then.CodeTypeDeclaration.UserData.Count.Should().Be(0);
 		}
 
 		[Fact]
@@ -89,7 +89,7 @@ namespace AutoWrapper.Tests.CodeGen
 
 			Then.Methods[index].Name.Should().Be(name);
 			Then.Methods[index].ReturnType.BaseType.Should().Be(returnType);
-			Then.Methods[index].Parameters.Should().HaveCount(parameterTypes.Length);
+			Then.Methods[index].Parameters.Count.Should().Be(parameterTypes.Length);
 
 			for (var n = 0; n < parameterTypes.Length; n++)
 			{	

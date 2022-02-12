@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <TargetFramework>net6.0</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="GwtUnit.XUnit" Version="1.2.0" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
         <PackageReference Include="Moq" Version="4.16.1" />
-        <PackageReference Include="FluentAssertions" Version="4.19.4" />
+        <PackageReference Include="FluentAssertions" Version="6.5.1" />
         <PackageReference Include="System.DirectoryServices" Version="4.7.0" />
     </ItemGroup>
 

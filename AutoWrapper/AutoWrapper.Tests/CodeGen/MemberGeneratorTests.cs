@@ -95,7 +95,7 @@ namespace AutoWrapper.Tests.CodeGen
 
 			WhenLastActionDeferred(CreatingMemberMethod);
 
-			ThenLastAction.ShouldThrow<NotSupportedException>();
+			ThenLastAction.Should().Throw<NotSupportedException>();
 		}
 
 		private void CreatingMemberMethod()
@@ -154,7 +154,7 @@ namespace AutoWrapper.Tests.CodeGen
 
 			WhenLastActionDeferred(CreatingMemberProperty);
 
-			ThenLastAction.ShouldThrow<NotSupportedException>();
+			ThenLastAction.Should().Throw<NotSupportedException>();
 		}
 
 		[Fact]
