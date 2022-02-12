@@ -19,8 +19,5 @@
       <None Update="SomeType.tt">
         <Generator>TextTemplatingFileGenerator</Generator>
       </None>
-      <None Update="DirectoryServices.tt">
-        <Generator>TextTemplatingFileGenerator</Generator>
-      </None>
     </ItemGroup>
 </Project>
