@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.InteropServices;
 using AutoWrapper.CodeGen;
 using AutoWrapper.CodeGen.Contracts;
 
@@ -103,7 +102,7 @@ namespace AutoWrapper
 
 		public static readonly List<Type> ForbiddenBaseTypes = new List<Type>
 		{
-			typeof(_Attribute)
+			typeof(Attribute)
 		};
 
 		internal struct TypeDefinition

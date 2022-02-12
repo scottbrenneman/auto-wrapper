@@ -1,72 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{47AA95AF-1528-45BE-82A2-E08C38CF5E63}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AutoWrapper</RootNamespace>
-    <AssemblyName>AutoWrapper</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AutoWrap.cs" />
-    <Compile Include="CodeGen\CodeGenerator.cs" />
-    <Compile Include="CodeGen\ContractGenerator.cs" />
-    <Compile Include="CodeGen\ContractGeneratorOptionsBuilder.cs" />
-    <Compile Include="CodeGen\Contracts\IContractGeneratorOptions.cs" />
-    <Compile Include="CodeGen\Contracts\IContractNamingStrategy.cs" />
-    <Compile Include="CodeGen\Contracts\IGenerator.cs" />
-    <Compile Include="CodeGen\Contracts\ITypeGeneratorOptions.cs" />
-    <Compile Include="CodeGen\Contracts\ITypeNamingStrategy.cs" />
-    <Compile Include="CodeGen\Extensions.cs" />
-    <Compile Include="CodeGen\GenerateAs.cs" />
-    <Compile Include="CodeGen\GeneratorBase.cs" />
-    <Compile Include="CodeGen\MemberGenerator.cs" />
-    <Compile Include="CodeGen\TypeGenerator.Members.cs" />
-    <Compile Include="IWrappedTypeContainer.cs" />
-    <Compile Include="CodeGen\TypeGeneratorOptionsBuilder.cs" />
-    <Compile Include="IWrappedTypeDictionary.cs" />
-    <Compile Include="WrappedTypeContainer.cs" />
-    <Compile Include="CodeGen\DefaultNamingStrategy.cs" />
-    <Compile Include="Extensions.cs" />
-    <Compile Include="CodeGen\TypeGenerator.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="AutoWrapper.nuspec" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <PackageReference Include="System.CodeDom" Version="4.7.0" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <AssemblyAttribute Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute">
+            <_Parameter1>AutoWrapper.Tests</_Parameter1>
+        </AssemblyAttribute>
+    </ItemGroup>
 </Project>
