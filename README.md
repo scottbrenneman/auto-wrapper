@@ -7,16 +7,13 @@ A library for generation of wrapper classes with interfaces.
 #### Quickly generate a wrapper with T4
 
     <#@ template debug="false" hostspecific="false" language="C#" #>
-    <#@ assembly name="System.Core" #>
-    <#@ import namespace="System.Linq" #>
-    <#@ import namespace="System.Text" #>
-    <#@ import namespace="System.Collections.Generic" #>
-    <#@ output extension=".cs" #>
-    
-    <#@ assembly name="AutoWrapper.dll" #>
+    <#@ output extension=".cs" #>    
+    <#@ assembly name="netstandard" #>
+    <#@ assembly name="$(TargetDir)AutoWrapper.dll" #>
+    <#@ assembly name="$(TargetDir)MyAssembly.dll" #>
     <#@ import namespace="AutoWrapper" #>
     
-    <#= AutoWrap.Type<FooClass>("MyWrappedClasses") #>
+    <#= AutoWrap.Type<MyClass>("MyWrappedClasses") #>
 
 #### Generate wrappers for an assembly
 
@@ -44,3 +41,11 @@ A library for generation of wrapper classes with interfaces.
 	#>
     
     <#= AutoWrap.Type<FooClass>("MyWrappedClasses") #>
+
+#### AutoWrapper is for design-time (use PrivateAssets to avoid proliferating it as a dependency)
+
+    <ItemGroup>
+        <PackageReference Include="AutoWrapper" Version="1.1.0">
+            <PrivateAssets>all</PrivateAssets>
+        </PackageReference>
+    </ItemGroup>

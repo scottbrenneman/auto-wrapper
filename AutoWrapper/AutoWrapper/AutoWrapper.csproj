@@ -1,6 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageVersion>1.1.0</PackageVersion>
+        <Title>AutoWrapper</Title>
+        <Authors>Scott Brenneman, Nick Randal</Authors>
+        <Description>A library for generating testable proxy classes.</Description>
+        <PackageProjectUrl>https://github.com/scottbrenneman/auto-wrapper</PackageProjectUrl>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageTags>AutoWrapper Wrapper Proxy Testable</PackageTags>
+        <PackageReleaseNotes>1.0.0 - Initial release
+1.1.0 - Nuget targeted to netstandard2.0</PackageReleaseNotes>
     </PropertyGroup>
     
     <ItemGroup>
