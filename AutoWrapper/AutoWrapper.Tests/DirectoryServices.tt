@@ -1,0 +1,9 @@
+﻿<#@ template debug="true" hostspecific="false" language="C#" #>
+<#@ output extension=".cs" #>
+<#@ assembly name="netstandard" #>
+<#@ assembly name="System.DirectoryServices" #>
+<#@ assembly name="$(TargetDir)AutoWrapper.dll" #>
+<#@ import namespace="AutoWrapper" #>
+<#@ import namespace="System.DirectoryServices" #>
+
+<#= AutoWrap.AssemblyWithType<DirectoryEntry>("AutoWrapper.Samples.WrappersForDirectoryServices") #>

@@ -8,13 +8,26 @@
         <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
         <PackageReference Include="Moq" Version="4.16.1" />
         <PackageReference Include="FluentAssertions" Version="6.5.1" />
-        <PackageReference Include="System.DirectoryServices" Version="4.7.0" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Reference Include="System.DirectoryServices" />  
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\AutoWrapper\AutoWrapper.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="DirectoryServices.tt">
+        <Generator>TextTemplatingFileGenerator</Generator>
+        <LastGenOutput>DirectoryServices.cs</LastGenOutput>
+      </None>
+      <Compile Update="DirectoryServices.cs">
+        <DependentUpon>DirectoryServices.tt</DependentUpon>
+      </Compile>
+    </ItemGroup>
+    
     <ItemGroup>
       <None Update="SomeType.tt">
         <Generator>TextTemplatingFileGenerator</Generator>
