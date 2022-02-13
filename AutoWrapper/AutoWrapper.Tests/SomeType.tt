@@ -1,12 +1,11 @@
 ﻿<#@ template debug="true" hostspecific="true" language="C#" #>
 <#@ output extension=".cs" #>
-<#@ assembly name="System.Core" #>
+<#@ assembly name="netstandard" #>
 <#@ assembly name="$(TargetDir)AutoWrapper.dll" #>
 <#@ assembly name="$(TargetDir)AutoWrapper.Tests.dll" #>
-<#@ assembly name="System.DirectoryServices" #>
 <#@ import namespace="AutoWrapper" #>
 <#@ import namespace="AutoWrapper.Tests.TestClasses" #>
-<#@ import namespace="System.DirectoryServices" #>
+
 <# 
 	var container = new WrappedTypeContainer().Register<SomeType>().Register<SomeOtherType>();
 #>
