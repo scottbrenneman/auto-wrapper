@@ -1,3 +1,5 @@
+📜 **This project is no longer active and has no further planned updates** 📜
+
 # AutoWrapper
 
 A library for generation of wrapper classes with interfaces.
